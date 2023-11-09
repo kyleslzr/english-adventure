@@ -99,11 +99,11 @@
 
     .records {
       position: absolute;
-      top: 0;
-      right: 30px;
+      bottom: 65px;
       font-size: 30px;
       display: flex;
       align-items: center;
+      padding: 10px 100px 10px 100px;
       
     }
     .centered-board {
@@ -132,10 +132,28 @@
       outline: 4px solid #fff;
       z-index: 2;
     }
+    #input-record {
+      position: absolute;
+      color: #00741E;
+      font-size: 30px;
+      font-weight: bold;
+      bottom: 200px;
+      background-color:#ffcc00;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: default;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      outline: 4px solid #00741E;
+      border: none;
+    }
+
+    #input-record::placeholder {
+      color: #ffa500;
+    }
 
   </style>
 </head>
-<body style="position: relative;">
+<body>
   <!-- <img class="logo" src="logo.png" alt="English Adventures Logo" -->
   <div class="score-label left">This educational gaming tool is made available for the esteemed institution of SAN JOSE ACADEMY OF BULACAN located in San Jose Del Monte, Bulacan, specifically intended for the benefit of Grade 1 pupils. This initiative is aligned with the content presented in "Workbook for English" authored by Darlene Niel Panganiban of Aral Pinas.</div>
 <div class="text">Workbook Link: https://www.studocu.com/en-us/document/manhattan-college/the-modern-english-novel/english-workbook-grade-1/35324175
@@ -143,8 +161,11 @@
 <div class="centered-board"></div>
 <div class="lesson-title" style="top: 52px;">Records</div>
 
-
+<div style="display: flex;">
+  <input type="text" placeholder="Please enter pupils' name" id="input-record">
+</div>
   <img class="logo-image" src="SJAB LOGO.png" alt="English Adventures Logo">
   <img class="traveler" src="traveler.png" alt="Traveler">
+
 </body>
 </html>
