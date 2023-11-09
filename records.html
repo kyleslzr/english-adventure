@@ -99,11 +99,15 @@
 
     .records {
       position: absolute;
-      bottom: 65px;
+      bottom: 74px;
+      right: 360px;
       font-size: 30px;
       display: flex;
       align-items: center;
-      padding: 10px 100px 10px 100px;
+      padding: 4px 4px 4px 4px;
+      height: 47px;
+      width: 200px;
+      
       
     }
     .centered-board {
@@ -132,25 +136,34 @@
       outline: 4px solid #fff;
       z-index: 2;
     }
-    #input-record {
-      position: absolute;
+    .input-record {
       color: #00741E;
-      font-size: 30px;
+      font-size: 20px;
       font-weight: bold;
       bottom: 200px;
+      left: 100px;
       background-color:#ffcc00;
-      padding: 10px 20px;
+      padding: 4px 4px;
       border-radius: 5px;
       cursor: default;
       box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
       outline: 4px solid #00741E;
       border: none;
+      margin: 8px;
+      height: 30px;
+      width: 180px;
     }
 
-    #input-record::placeholder {
-      color: #ffa500;
+    .input-record::placeholder {
+      color: #CD9A00;
     }
 
+    .input-grp {
+    display: flex;
+    position: absolute;
+    bottom: 70px;
+    width: 812px;
+    }
   </style>
 </head>
 <body>
@@ -158,12 +171,20 @@
   <div class="score-label left">This educational gaming tool is made available for the esteemed institution of SAN JOSE ACADEMY OF BULACAN located in San Jose Del Monte, Bulacan, specifically intended for the benefit of Grade 1 pupils. This initiative is aligned with the content presented in "Workbook for English" authored by Darlene Niel Panganiban of Aral Pinas.</div>
 <div class="text">Workbook Link: https://www.studocu.com/en-us/document/manhattan-college/the-modern-english-novel/english-workbook-grade-1/35324175
 </div>
-<div class="centered-board"></div>
-<div class="lesson-title" style="top: 52px;">Records</div>
+<div class="centered-board">
 
-<div style="display: flex;">
-  <input type="text" placeholder="Please enter pupils' name" id="input-record">
 </div>
+<div class="input-grp">
+  <input class="input-record" type="text" placeholder="Please enter pupils' name">
+  <input class="input-record" type="text" placeholder="Please enter pupils' name">
+  <input class="input-record" type="text" placeholder="Please enter pupils' name">
+</div>
+
+<div class="lesson-title" style="top: 52px;">Records</div>
+<button class="start-button records" style="position: absolute;"> 
+  Add Pupil
+</button>
+
   <img class="logo-image" src="SJAB LOGO.png" alt="English Adventures Logo">
   <img class="traveler" src="traveler.png" alt="Traveler">
 
