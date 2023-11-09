@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .sentence {
+            font-size: 18px;
+        }
+
+        .drop-box {
+            width: 100px;
+            height: 50px;
+            background-color: #f0f0f0;
+            display: inline-block;
+            margin: 10px;
+            border: 2px dashed #000;
+            border-radius: 10px;
+        }
+
+        .correct {
+            background-color: #00ff00;
+        }
+
+        .incorrect {
+            background-color: #ff0000;
+        }
+
+        .button-container {
+            margin-top: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #008CBA;
+            color: white;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="sentence" id="sentence">
+        The big puppy barks at the stranger.
+    </div>
+    <br>
+
+    <div class="drop-box" id="boxP">/p/ sound: p</div>
+    <div class="drop-box" id="boxB">/b/ sound: b</div>
+    <br>
+    
+    <div id="words" class="button-container">
+        <div class="button" id="big" draggable="true">big</div>
+        <div class="button" id="puppy" draggable="true">puppy</div>
+        <div class="button" id="barks" draggable="true">barks</div>
+        <div class="button" id="stranger" draggable="true">stranger</div>
+    </div>
+
+    <script>
+        let correctAnswers = 0;
+
+        function checkAnswer() {
+            const sentence = document.getElementById("sentence");
+            const boxP = document.getElementById("boxP");
+            const boxB = document.getElementById("boxB");
+
+            const words = document.querySelectorAll('.button');
+
+            let pSound = [];
+            let bSound = [];
+
+            words.forEach((word) => {
+                if (boxP.contains(word)) {
+                    pSound.push(word.innerText);
+                } else if (boxB.contains(word)) {
+                    bSound.push(word.innerText);
+                }
+            });
+
+            if (
+                pSound.includes("big") &&
+                pSound.includes("barks") &&
+                bSound.includes("puppy")
+            ) {
+                boxP.classList.remove("incorrect");
+                boxB.classList.remove("incorrect");
+                boxP.classList.add("correct");
+                boxB.classList.add("correct");
+
+                // Correct answer
+                correctAnswers++;
+
+                if (correctAnswers === 1) {
+                    // Display "Correct" message for 2 seconds, then proceed to the next sentence
+                    setTimeout(() => {
+                        sentence.innerHTML = "Next sentence goes here.";
+                        boxP.classList.remove("correct");
+                        boxB.classList.remove("correct");
+                        resetWords();
+                        correctAnswers = 0;
+                    }, 2000);
+                }
+            } else {
+                // Incorrect answer
+                boxP.classList.remove("correct");
+                boxB.classList.remove("correct");
+                boxP.classList.add("incorrect");
+                boxB.classList.add("incorrect");
+
+                // Reset the sentence after 2 seconds
+                setTimeout(() => {
+                    sentence.innerHTML = "The big puppy barks at the stranger.";
+                    boxP.classList.remove("incorrect");
+                    boxB.classList.remove("incorrect");
+                    resetWords();
+                    correctAnswers = 0;
+                }, 2000);
+            }
+        }
+
+        function resetWords() {
+            const words = document.querySelectorAll('.button');
+            const wordContainer = document.getElementById("words");
+
+            words.forEach((word) => {
+                wordContainer.appendChild(word);
+            });
+        }
+
+        document.getElementById("boxP").addEventListener("drop", (e) => {
+            e.preventDefault();
+            const data = e.dataTransfer.getData("text");
+            const word = document.getElementById(data);
+            e.target.appendChild(word);
+            checkAnswer();
+        });
+
+        document.getElementById("boxB").addEventListener("drop", (e) => {
+            e.preventDefault();
+            const data = e.dataTransfer.getData("text");
+            const word = document.getElementById(data);
+            e.target.appendChild(word);
+            checkAnswer();
+        });
+
+        document.getElementById("boxP").addEventListener("dragover", (e) => {
+            e.preventDefault();
+        });
+
+        document.getElementById("boxB").addEventListener("dragover", (e) => {
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>

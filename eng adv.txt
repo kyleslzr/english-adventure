@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>English Adventures</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url('cute_background1.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      font-family: Arial, sans-serif;
+      position: relative;
+    }
+
+    .logo {
+      max-width: 850px;
+      max-height: 500px;
+      width: auto;
+      height: auto;
+    }
+
+    .start-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ffcc00;
+      color: #00741E;
+      font-size: 50px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .start-button:hover {
+      background-color: #ffa500;
+    }
+
+    .traveler {
+      position: absolute;
+      bottom: 0px;
+      right: 25px;
+      max-width: 900px;
+      max-height: 500px;
+      width: auto;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <img class="logo" src="logo.png" alt="English Adventures Logo">
+  <a href="background_page.html">
+    <button class="start-button">START LEARNING</button>
+  </a>
+  <img class="traveler" src="traveler.png" alt="Traveler">
+</body>
+</html>

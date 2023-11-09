@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .box {
+            width: 200px;
+            height: 300px;
+            border: 1px solid #ccc;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .word {
+            cursor: pointer;
+        }
+
+        .word:hover {
+            background-color: #eee;
+        }
+
+        .singular, .plural {
+            min-height: 50px;
+            border: 1px dashed #000;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Drag the words to the boxes: Plural or Singular</h1>
+    <div class="container">
+        <div class="box singular" ondrop="drop(event)" ondragover="allowDrop(event)">
+            Singular
+        </div>
+        <div class="box plural" ondrop="drop(event)" ondragover="allowDrop(event)">
+            Plural
+        </div>
+    </div>
+    <div class="container">
+        <div class="word" draggable="true" ondragstart="drag(event)">cat</div>
+        <div class="word" draggable="true" ondragstart="drag(event)">bats</div>
+        <div class="word" draggable="true" ondragstart="drag(event)">mean</div>
+        <div class="word" draggable="true" ondragstart="drag(event)">legs</div>
+        <div class="word" draggable="true" ondragstart="drag(event)">shoes</div>
+        <div class="word" draggable="true" ondragstart="drag(event)">door</div>
+        <div class="word" draggable="true" ondragstart="drag(event)">mat</div>
+        <div class="word" draggable="true" ondragstart="drag(event)">mates</div>
+        <div class="word" draggable="true" ondragstart="drag(event)">desk</div>
+        <div class="word" draggable="true" ondragstart="drag(event)">hats</div>
+        <div class="word" draggable="true" ondragstart="drag(event)">boots</div>
+        <div class="word" draggable="true" ondragstart="drag(event)">chair</div>
+        <div class="word" draggable="true" ondragstart="drag(event)">under</div>
+        <div class="word" draggable="true" ondragstart="drag(event)">balls</div>
+        <div class="word" draggable="true" ondragstart="drag(event)">cherries</div>
+        <div class="word" draggable="true" ondragstart="drag(event)">birds</div>
+        <div class="word" draggable="true" ondragstart="drag(event)">boxes</div>
+    </div>
+
+    <script>
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function drag(event) {
+            event.dataTransfer.setData("text", event.target.textContent);
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            var data = event.dataTransfer.getData("text");
+            event.target.textContent = data;
+        }
+    </script>
+</body>
+</html>

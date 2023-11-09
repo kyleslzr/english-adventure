@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>English Adventures</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-image: url('cute_background1.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      position: relative; /* Add relative positioning to the body */
+    }
+
+    .logo-image {
+      position: absolute; /* Add absolute positioning to the logo image */
+      top: 10px; /* Adjust the top position as per your preference */
+      left: 10px; /* Adjust the left position as per your preference */
+      width: auto; /* Set the width of the logo image */
+      height: 80px; /* Set the height of the logo image */
+    }
+
+    .bubble-image {
+      position: absolute; /* Add absolute positioning to the bubble image */
+      top: 400px; /* Adjust the top position as per your preference */
+      left: 400px; /* Adjust the left position as per your preference */
+      width: 500px; /* Set the width of the bubble image */
+      height: 300px; /* Set the height of the bubble image */
+    }
+
+    .lesson-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-left: 550px;
+    }
+
+    .lesson-button {
+      padding: 10px 50px;
+      background-color: #ffcc00;
+      color: #00741E;
+      font-size: 60px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .lesson-button:hover {
+      background-color: #ffa500;
+    }
+
+    .traveler-image {
+      width: 600;
+      height: 600px;
+      max-width: 600px;
+      max-height: 600px;
+      margin-left: 100px;
+    }
+  </style>
+</head>
+<body>
+   <img class="logo-image" src="logo.png" alt="English Adventures Logo">
+  <img class="bubble-image" src="bubble.png" alt="Bubble">
+  <img class="traveler-image" src="traveler3.png" alt="Traveler">
+  <div class="welcome-text">Please select the lesson you want to play!</div>
+  <div class="lesson-buttons">
+    <a href="lesson1.html" class="lesson-button">Lesson 1</a>
+    <a href="lesson2.html" class="lesson-button">Lesson 2</a>
+    <a href="lesson3.html" class="lesson-button">Lesson 3</a>
+    <a href="lesson4.html" class="lesson-button">Lesson 4</a>
+    <a href="lesson5.html" class="lesson-button">Lesson 5</a>
+  </div>
+</body>
+</html>

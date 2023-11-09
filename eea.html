@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Word Game</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.word-container {
+  margin-top: 100px;
+}
+
+.word-box {
+  display: inline-block;
+  border: 1px solid black;
+  width: 30px; /* Set the width for each letter's box */
+  height: 30px; /* Set the height for each letter's box */
+  line-height: 30px; /* Vertically center the text in the box */
+  text-align: center;
+  margin: 5px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 100px;
+}
+
+.button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.correct {
+  background-color: green;
+}
+
+.wrong {
+  background-color: red;
+}
+    .image-container {
+      margin-top: 100px;
+    }
+
+    .word-image {
+      max-width: 100px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="image-container" id="imageContainer"></div>
+  <div class="word-container" id="wordContainer"></div>
+  <div class="button-container">
+    <button class="button" id="properNounBtn">Proper Noun</button>
+    <button class="button" id="commonNounBtn">Common Noun</button>
+  </div>
+  <script>
+    const words = [
+      { word: "Starbucks", isProper: true, image: "Starbucks.jpg" },
+      { word: "chocolate", isProper: false, image: "chocolate.jpg" },
+      { word: "cologne", isProper: false, image: "cologne.jpg" },
+      { word: "milk", isProper: false, image: "milk.jpg" },
+      { word: "Colgate", isProper: true, image: "Colgate.jpg" },
+      { word: "notebook", isProper: false, image: "notebook.jpg" },
+      { word: "Manila", isProper: true, image: "Manila.jpg" },
+      { word: "SM", isProper: true, image: "SM.jpg" },
+      { word: "envelope", isProper: false, image: "envelope.jpg" },
+      { word: "Snoopy", isProper: true, image: "Snoopy.jpg" }
+    ];
+
+    const imageContainer = document.getElementById("imageContainer");
+    const wordContainer = document.getElementById("wordContainer");
+    const properNounBtn = document.getElementById("properNounBtn");
+    const commonNounBtn = document.getElementById("commonNounBtn");
+
+    let currentIndex = 0;
+
+    function displayWord() {
+      if (currentIndex < words.length) {
+        const wordObj = words[currentIndex];
+        const wordBoxes = wordObj.word
+          .toUpperCase()
+          .split("")
+          .map(letter => `<div class="word-box">${letter}</div>`)
+          .join("");
+        wordContainer.innerHTML = wordBoxes;
+
+        const wordImage = `<img class="word-image" src="${wordObj.image}" alt="${wordObj.word}">`;
+        imageContainer.innerHTML = wordImage;
+      } else {
+        wordContainer.innerHTML = "Game Over";
+        imageContainer.innerHTML = ""; // Clear image container
+      }
+    }
+
+function checkNounType(isProperNoun) {
+  const wordObj = words[currentIndex];
+  if (wordObj.isProper === isProperNoun) {
+    properNounBtn.classList.remove("wrong");
+    commonNounBtn.classList.remove("wrong");
+    if (isProperNoun) {
+      properNounBtn.classList.add("correct");
+    } else {
+      commonNounBtn.classList.add("correct");
+    }
+    currentIndex++;
+    setTimeout(() => {
+      displayWord();
+      properNounBtn.classList.remove("correct");
+      commonNounBtn.classList.remove("correct");
+    }, 1000);
+  } else {
+    if (isProperNoun) {
+      properNounBtn.classList.add("wrong");
+    } else {
+      commonNounBtn.classList.add("wrong");
+    }
+  }
+}
+
+properNounBtn.addEventListener("click", () => {
+  checkNounType(true);
+});
+
+commonNounBtn.addEventListener("click", () => {
+  checkNounType(false);
+});
+
+displayWord();
+</script>
+</body>
+</html>

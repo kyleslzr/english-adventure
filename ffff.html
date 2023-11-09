@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 1 - English Adventures</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      margin: 0;
+    }
+
+    .word-button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .correct {
+      background-color: #00FF00;
+    }
+
+    .wrong {
+      background-color: #FF0000;
+    }
+  </style>
+</head>
+<body>
+  <div id="word-buttons-container"></div>
+
+  <script>
+    // Function to create and style a word button
+    function createWordButton(word, correct) {
+      const button = document.createElement("button");
+      button.textContent = word;
+      button.className = "word-button";
+      if (correct === "true") {
+        button.classList.add("correct");
+      } else {
+        button.classList.add("wrong");
+      }
+      return button;
+    }
+
+    // Load the CSV file and create word buttons
+    fetch("lesson1-1.csv")
+      .then(response => response.text())
+      .then(data => {
+        const lines = data.split("\n");
+        const wordButtonsContainer = document.getElementById("word-buttons-container");
+        lines.forEach(line => {
+          const [word, correct] = line.split(",");
+          const button = createWordButton(word, correct);
+          wordButtonsContainer.appendChild(button);
+        });
+      })
+      .catch(error => console.error("Error loading CSV:", error));
+  </script>
+</body>
+</html>

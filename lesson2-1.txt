@@ -1,0 +1,237 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 1 - English Adventures</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Word-Picture Matching Game</title>
+<style>
+  body 
+
+<h1>Word-Picture Matching Game</h1>
+{
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .word {
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    position: absolute;
+
+  }
+
+  .picture {
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    background-color: #e0e0e0;
+    width: 200px;
+    height: 150px;
+    position: absolute;
+  }
+
+    body {
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-image: url('cute_background8.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+
+    .logo-image {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: auto;
+      height: 80px;
+    }
+
+    .lesson-title {
+      position: absolute;
+      font-size: 30px;
+      font-weight: bold;
+      top: 52px;
+      background-color: #00741E;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: default;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      outline: 4px solid #fff;
+      z-index: 2;
+    }
+
+    .centered-board {
+      width: 1150px;
+      height: 1000px;
+      background-image: url('board.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+
+    .score-label {
+      position: absolute;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: #00741E;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      outline: 4px solid #fff;
+      z-index: 2;
+    }
+
+    .score-label.left {
+      left: 30px;
+      top: 100px;
+      font-size: 25px;
+      background-color: #00741E;
+      white-space: normal; /* Add this property to enable text wrapping */
+      display: inline-block; /* Add this property for variable box width */
+      width: 230px;
+      padding: 10px 10px;
+      z-index: 3;
+    }
+
+    .score-label.right {
+      right: 30px;
+      top: 90px;
+      font-size: 50px;
+      background-color: #FF5252;
+    }
+
+    .image-left {
+      width: 300px;
+      height: auto;
+      position: absolute;
+      left: 11px;
+      top: 330px;
+      z-index: 4;
+    }
+
+    .image-right {
+      width: 230px;
+      height: auto;
+      position: absolute;
+      right: 36px;
+      top: 190px;
+    }
+
+	
+
+  </style>
+</head>
+<body>
+  <img class="logo-image" src="logo.png" alt="English Adventures Logo">
+  
+  <div class="score-label left">Directions: Read the words inside the cloud. On the space provided below, write the words with Short /a/ sound.</div>
+
+  <div class="lesson-title" style="top: 52px;">Recognizing the Short i Sounds</div>
+  
+  <div class="centered-board"></div>
+
+  <div class="score-label right">Score: 75</div>
+
+  <img class="image-left" src="traveler2.png" alt="Traveler 2 Image">
+  <img class="image-right" src="traveler5.png" alt="Traveler 5 Image">
+
+<div id="wordContainer">
+  <div class="word" draggable="true" ondragstart="drag(event)">Cat</div>
+  <div class="word" draggable="true" ondragstart="drag(event)">Dog</div>
+  <div class="word" draggable="true" ondragstart="drag(event)">Bird</div>
+  <div class="word" draggable="true" ondragstart="drag(event)">Fish</div>
+  <div class="word" draggable="true" ondragstart="drag(event)">Lion</div>
+  <div class="word" draggable="true" ondragstart="drag(event)">Elephant</div>
+  <div class="word" draggable="true" ondragstart="drag(event)">Tiger</div>
+  <div class="word" draggable="true" ondragstart="drag(event)">Monkey</div>
+</div>
+
+<div id="pictureContainer">
+  <div class="picture" ondragover="allowDrop(event)" ondrop="drop(event)" data-word="Cat">
+    <img src="" alt="Target" style="max-width: 100%; max-height: 100%;">
+  </div>
+  <div class="picture" ondragover="allowDrop(event)" ondrop="drop(event)" data-word="Dog">
+    <img src="" alt="Target" style="max-width: 100%; max-height: 100%;">
+  </div>
+  <div class="picture" ondragover="allowDrop(event)" ondrop="drop(event)" data-word="Bird">
+    <img src="" alt="Target" style="max-width: 100%; max-height: 100%;">
+  </div>
+  <div class="picture" ondragover="allowDrop(event)" ondrop="drop(event)" data-word="Fish">
+    <img src="" alt="Target" style="max-width: 100%; max-height: 100%;">
+  </div>
+  <div class="picture" ondragover="allowDrop(event)" ondrop="drop(event)" data-word="Lion">
+    <img src="" alt="Target" style="max-width: 100%; max-height: 100%;">
+  </div>
+  <div class="picture" ondragover="allowDrop(event)" ondrop="drop(event)" data-word="Elephant">
+    <img src="" alt="Target" style="max-width: 100%; max-height: 100%;">
+  </div>
+  <div class="picture" ondragover="allowDrop(event)" ondrop="drop(event)" data-word="Tiger">
+    <img src="" alt="Target" style="max-width: 100%; max-height: 100%;">
+  </div>
+  <div class="picture" ondragover="allowDrop(event)" ondrop="drop(event)" data-word="Monkey">
+    <img src="" alt="Target" style="max-width: 100%; max-height: 100%;">
+  </div>
+</div>
+
+<script>
+  function allowDrop(event) {
+    event.preventDefault();
+  }
+
+  function drag(event) {
+    event.dataTransfer.setData("text", event.target.textContent);
+  }
+
+  function drop(event) {
+    event.preventDefault();
+    const word = event.dataTransfer.getData("text");
+    const picture = event.target;
+
+    if (picture.classList.contains('picture') && picture.getAttribute('data-word') === word) {
+      picture.innerHTML = `<img src="${word.toLowerCase()}.jpg" alt="${word}">`;
+      event.target.style.backgroundColor = '#c0ffc0';
+    } else {
+      event.target.style.backgroundColor = '#ffc0c0';
+    }
+  }
+
+  // Shuffle the words and pictures for randomization
+  const wordContainer = document.getElementById('wordContainer');
+  const pictureContainer = document.getElementById('pictureContainer');
+
+  shuffleChildren(wordContainer);
+  shuffleChildren(pictureContainer);
+
+  function shuffleChildren(container) {
+    for (let i = container.children.length; i >= 0; i--) {
+      container.appendChild(container.children[Math.random() * i | 0]);
+    }
+  }
+</script>
+
+</body>
+</html>

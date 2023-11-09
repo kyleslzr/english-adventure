@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noun Identification Game</title>
+    <style>
+     /* Add your creative CSS styles here */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+}
+
+#game-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+#question-container {
+    margin-top: 20px;
+}
+
+#question-text {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#word-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    width: 100px;
+    height: 50px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+margin-top: 20px;
+    text-align: left;
+    max-height: 200px; /* Set a maximum height for the container */
+    overflow-y: auto; /* Add vertical scroll if content overflows */
+}
+
+h2 {
+    font-size: 18px;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* Blink animation for incorrect nouns */
+@keyframes blink {
+    0% {
+        background-color: transparent;
+    }
+    50% {
+        background-color: red;
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+button:active {
+    animation: blink 0.5s;
+}
+
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <h1>Noun Identification Game</h1>
+        <div id="question-container">
+            <p id="question-text"></p>
+            <div id="word-buttons"></div>
+        </div>
+        <div id="correct-nouns-container">
+            <h2>Correct Nouns:</h2>
+            <ul id="correct-nouns-list"></ul>
+        </div>
+    </div>
+
+    <script>
+        // Define your questions and correct nouns here
+        const questions = [
+            "Dad drives us carefully in the car",
+            "These flowers are beautiful",
+            "Sam plays with his friend Ben",
+            "The bus stops at the red light",
+            "We saw tigers at the zoo",
+            "The boy kicked the ball",
+            "The cat is purring",
+            "I flew a kite in the fields"
+        ];
+
+        const correctNouns = [
+            ["Dad", "us", "car"],
+            ["These", "flowers"],
+            ["Sam", "friend", "Ben"],
+            ["The", "bus", "light"],
+            ["We", "tigers", "zoo"],
+            ["The", "boy", "ball"],
+            ["The", "cat"],
+            ["I", "kite", "fields"]
+        ];
+
+        let currentQuestionIndex = 0;
+        let currentWords = questions[currentQuestionIndex].split(" ");
+        let selectedNouns = [];
+
+        function displayQuestion() {
+            const questionText = document.getElementById("question-text");
+            const wordButtons = document.getElementById("word-buttons");
+
+            questionText.textContent = questions[currentQuestionIndex];
+
+            // Create buttons for each word in the current question
+            wordButtons.innerHTML = "";
+            for (const word of currentWords) {
+                const button = document.createElement("button");
+                button.textContent = word;
+                button.addEventListener("click", () => handleWordClick(word));
+                wordButtons.appendChild(button);
+            }
+        }
+
+function handleWordClick(word) {
+    const correctNounsList = document.getElementById("correct-nouns-list");
+
+    if (currentWords.includes(word)) {
+        if (correctNouns[currentQuestionIndex].includes(word)) {
+            // Move the noun to the correct nouns list
+            selectedNouns.push(word);
+            correctNounsList.innerHTML = selectedNouns.map(word => `<li>${word}</li>`).join("");
+            // Remove the word from the buttons
+            currentWords = currentWords.filter(w => w !== word);
+
+            if (selectedNouns.length === maxNouns[currentQuestionIndex]) {
+                // Maximum number of nouns selected, wait for 1 second, then flash "Correct!" text and proceed
+                setTimeout(() => {
+                    setTimeout(() => {
+                        flashCorrectText();
+                        setTimeout(() => {
+                            proceedToNextQuestion();
+                        }, 1000);
+                    }, 0); // Flash "Correct!" text immediately
+                }, 1000); // Wait for 1 second
+            }
+        } else {
+            // Blink the button red for a short duration
+            const button = document.querySelector(`button:contains('${word}')`);
+            button.style.backgroundColor = "red";
+            setTimeout(() => {
+                button.style.backgroundColor = "";
+            }, 500);
+        }
+    }
+}
+
+function flashCorrectText() {
+    const wordButtons = document.getElementById("word-buttons");
+    wordButtons.innerHTML = "<p id='correct-text'>Correct!</p>";
+}
+
+
+function proceedToNextQuestion() {
+    if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        currentWords = questions[currentQuestionIndex].split(" ");
+        selectedNouns = [];
+        const correctNounsList = document.getElementById("correct-nouns-list");
+        correctNounsList.innerHTML = ""; // Clear "Correct!" text
+        displayQuestion();
+    } else {
+        // All questions are completed
+        alert("Congratulations! You have completed the game.");
+    }
+}
+
+// Define the maximum number of nouns for each question
+const maxNouns = [3, 2, 3, 3, 3, 3, 2, 3];
+
+        // Initialize the game with the first question
+        displayQuestion();
+    </script>
+</body>
+</html>

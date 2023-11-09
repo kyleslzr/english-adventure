@@ -1,0 +1,86 @@
+<html>
+    <head>
+    <script type= "text/javascript">
+    var thisGame = ""
+    function setGame(game){
+        thisGame = game
+    }
+    //console = {}
+    //console["log"] = function(){}
+    </script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type = "text/javascript" src="json2.js"></script>
+        <script type = "text/javascript" src="gameCreation.js"></script>
+        <script type= "text/javascript">
+            var id = "a"
+            $(document).ready(function(){
+                setUp()
+            })
+        </script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div id="main">
+            <div id="banner">
+                <font color = "white">
+                4 Pics 1 Word
+                </font>
+            </div>
+            <div id="nav"style="font-weight: bold; font size=7;">
+            </div>
+            <div id="content">
+                <div id="content1" class="contentblock">
+                    <center>
+                        <table border="10"> <!--picture table-->
+                            <tr>
+                                <td width="120px" height="120px">
+                                    <img  alt="pic1" width="120px" height="120px" id="image1">
+                                </td>
+                                <td width="120px" height="120px">
+                                    <img  alt="pic2" width="120px" height="120px" id="image2">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="120px" height="120px">
+                                    <img  alt="pic3" width="120px" height="120px" id="image3">
+                                </td>
+                                <td width="120px" height="120px">
+                                    <img  alt="pic4" width="120px" height="120px" id="image4">
+                                </td>
+                            </tr>
+                        </table>
+                        <table  align="center" style="font-weight: bold; font size=7; margin: 0px auto;"> <!--letter table-->
+                            <tr>
+                                <td width="20px" height="30px" align="center"><div id="letter1"></div></td>
+                                <td width="20px" height="30px" align="center"><div id="letter2"></div></td>
+                                <td width="20px" height="30px" align="center"><div id="letter3"></div></td>
+                                <td width="20px" height="30px" align="center"><div id="letter4"></div></td>
+                                <td width="20px" height="30px" align="center"><div id="letter5"></div></td>
+                            <!--<td width="20px" height="30px" align="center"><div id="letter6"></div></td>
+                                <td width="20px" height="30px" align="center"><div id="letter7"></div></td>
+                                <td width="20px" height="30px" align="center"><div id="letter8"></div></td>-->
+                            </tr>
+                            <tr>
+                                <td width="20px" height="30px" align="center"><div id="letter6"></div></td>
+                                <td width="20px" height="30px" align="center"><div id="letter7"></div></td>
+                                <td width="20px" height="30px" align="center"><div id="letter8"></div></td>
+                                <td width="20px" height="30px" align="center"><div id="letter9"></div></td>
+                                <td width="20px" height="30px" align="center"><div id="letter10"></div></td>
+                            <!--<td width="20px" height="30px" align="center"><div id="letter14"></div></td>
+                                <td width="20px" height="30px" align="center"><div id="letter15"></div></td>
+                                <td width="20px" height="30px" align="center"><div id="letter16"></div></td>-->
+                            </tr>
+                        </table>
+                    </center>
+                    <div id="guess"></div>
+                    <div id="check"></div>
+                    <div id="feedback"></div>
+                    <div id="feedbackguess"></div>
+                    <div id="points"></div>
+                    <div id="hint"></div>
+                    <div id="scramble"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            display: flex;
+            text-align: center
+        }
+
+        .draggable {
+     
+            width: 100px;
+            height: 30px;
+            margin: 5px;
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .droppable {
+           
+            width: 200px;
+            height: 200px;
+            border: 2px dashed #3498db;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="draggable-container">
+            <div class="draggable" draggable="true" id="word1">The</div>
+            <div class="draggable" draggable="true" id="word2">big</div>
+            <div class="draggable" draggable="true" id="word3">puppy</div>
+            <div class="draggable" draggable="true" id="word4">barks</div>
+            <div class="draggable" draggable="true" id="word5">at</div>
+            <div class="draggable" draggable="true" id="word6">the</div>
+            <div class="draggable" draggable="true" id="word7">stranger.</div>
+        </div>
+
+        <div class="container">
+            <div class="droppable" id="droppable1">
+                <div class="label">p sound</div>
+                <div>Drop words here</div>
+            </div>
+
+            <div class="droppable" id="droppable2">
+                <div class="label">b sound</div>
+                <div>Drop words here</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const draggableElements = document.querySelectorAll(".draggable");
+        const droppableElements = document.querySelectorAll(".droppable");
+
+        draggableElements.forEach((element) => {
+            element.addEventListener("dragstart", (e) => {
+                e.dataTransfer.setData("text/plain", e.target.id);
+            });
+        });
+
+        droppableElements.forEach((droppableElement) => {
+            droppableElement.addEventListener("dragover", (e) => {
+                e.preventDefault();
+            });
+
+            droppableElement.addEventListener("drop", (e) => {
+                e.preventDefault();
+                const data = e.dataTransfer.getData("text/plain");
+                const draggedElement = document.getElementById(data);
+                droppableElement.appendChild(draggedElement);
+            });
+        });
+    </script>
+</body>
+</html>

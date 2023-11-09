@@ -1,0 +1,584 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 1 - English Adventures</title>
+  <style>
+    body {
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-image: url('cute_background10.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+
+    }
+  
+  .game-container {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: 700px;
+    max-height: 700px;
+    margin-left: 594px;
+    margin-top: 87px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px; /* Column gap of 20px */
+    grid-row-gap: 15px; /* Row gap of 10px */
+    
+  }
+  .image-box {
+  
+  }
+  .image-box img {
+    width: 250px;
+    height: auto;
+    outline: 5px solid #fff;
+    box-shadow: 4px 4px 8px rgba(2, 2, 2, 3);
+    border-radius: 15px;
+  }
+  .word-container {
+    flex: 1;
+    text-align: center;
+    max-width: 250px;
+    max-height: 40px;
+    margin-right: 580px;
+    margin-top: 80px;
+   
+  }
+  #word-input {
+  width: 250px; /* Occupy the full available width */
+  color: #00741E;
+  text-align: center;
+  height: 60px;
+  border: none;
+  padding: 5px; /* Add padding for a comfortable typing area */
+  font-size: 40px; /
+  font-weight: bold;
+  outline: 5px solid #00741E;
+  border-radius: 15px;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+  .erase-container {
+    position: absolute;
+    bottom: 84px; /* Adjust the positioning as needed */
+    right: 367px; /* Adjust the positioning as needed */
+  }
+
+  #erase-button {
+    background-color: #FF5252;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 90px;
+    height: 60px;
+    font-size: 22px;
+    font-weight: bold;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+       .button-clicked {
+      background-color: #FFC107;
+      color: #000;
+      transition: background-color 1s, color 1s;
+    }
+
+  .letters-container {
+  
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    max-width: 570px;
+    max-height: 570px;
+    margin-right: 570px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+  }
+  .letter-button {
+    margin: 5px;
+    background-color: #ffcc00;
+    color: #00741E;
+    border: none;
+    cursor: pointer;
+    width: 78px;
+    height: 60px;
+    font-weight: bold;
+    font-size: 40px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    
+    border-radius: 10px
+  }
+  #submit-button {
+    padding: 2px 2px;
+    background-color: #00741E;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-right: 670px;
+    margin-top: -23px;
+    width: 158px;
+    height:60px;
+    font-size: 35px;
+    font-weight: bold;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 10px
+
+  }
+  .right-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+  }
+.button-container {
+    margin-top: 15px;
+
+}
+    .logo-image {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: auto;
+      height: 80px;
+    }
+
+    .lesson-title {
+      position: absolute;
+      font-size: 30px;
+      font-weight: bold;
+      top: 52px;
+      background-color: #00741E;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: default;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      outline: 4px solid #fff;
+      z-index: 2;
+    }
+
+    .centered-board {
+      width: 1150px;
+      height: 1000px;
+      background-image: url('board.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+
+    .score-label {
+      position: absolute;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: #00741E;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      outline: 4px solid #fff;
+      z-index: 2;
+    }
+
+    .score-label.left {
+      left: 30px;
+      top: 100px;
+      font-size: 25px;
+      background-color: #00741E;
+      white-space: normal; /* Add this property to enable text wrapping */
+      display: inline-block; /* Add this property for variable box width */
+      width: 230px;
+      padding: 10px 10px;
+      z-index: 3;
+    }
+
+    .score-label.right {
+      right: 30px;
+      top: 90px;
+      font-size: 50px;
+      background-color: #FF5252;
+    }
+
+    .image-left {
+      width: 300px;
+      height: auto;
+      position: absolute;
+      left: 11px;
+      top: 330px;
+      z-index: 4;
+    }
+
+    .image-right {
+      width: 230px;
+      height: auto;
+      position: absolute;
+      right: 36px;
+      top: 190px;
+    }
+
+.retry-button {
+  position: fixed;
+  margin-right: -1050px;
+  bottom: -480px;
+  transform: scale(0.10);
+}
+
+.back-button {
+  position: fixed;
+  margin-right: -1230px;
+  bottom: -480px;
+  transform: scale(0.10);	
+}
+
+.home-button {
+  position: fixed;
+  margin-right: -1410px;
+  bottom: -480px;
+  transform: scale(0.10);
+
+}
+
+  </style>
+</head>
+<body>    
+
+    <a class="retry-button" href="lesson5-1.html">
+        <img src="retry.png" />
+    </a>
+
+    <a class="back-button" href="lesson5.html">
+        <img src="back.png" />
+    </a>
+
+    <a class="home-button" href="background_page.html">
+        <img src="home.png" />
+    </a>
+
+
+  <img class="logo-image" src="logo.png" alt="English Adventures Logo">
+  
+  <div class="score-label left">Directions: Look at the pictures. Identify whether it has /d/ or /t/ sounds. Four Pictures One Word.</div>
+
+  <div class="lesson-title" style="top: 52px;">Pronouncing words with the Sounds of d and t</div>
+  
+  <div class="centered-board"></div>
+
+  <div class="score-label right">Score: 75</div>
+
+  <img class="image-left" src="traveler2.png" alt="Traveler 2 Image">
+  <img class="image-right" src="traveler5.png" alt="Traveler 5 Image">
+<div class="game-container">
+  <div class="image-box">
+    <img id="image1" src="doctorhide1.jpg" alt="Image 1">
+  </div>
+  <div class="image-box">
+    <img id="image2" src="doctorhide2.jpg" alt="Image 2">
+  </div>
+  <div class="image-box">
+    <img id="image3" src="doctorhide3.jpg" alt="Image 3">
+  </div>
+  <div class="image-box">
+    <img id="image4" src="doctorhide4.jpg" alt="Image 4">
+  </div>
+</div>
+<div class="right-container">
+  <div class="word-container">
+    <input type="text" id="word-input" placeholder="">
+  </div>
+  <div class="letters-container">
+    <button class="letter-button" onclick="addLetter('a')">A</button>
+    <button class="letter-button" onclick="addLetter('c')">C</button>
+    <button class="letter-button" onclick="addLetter('d')">D</button>
+    <button class="letter-button" onclick="addLetter('e')">E</button>
+    <button class="letter-button" onclick="addLetter('b')">B</button>
+    <button class="letter-button" onclick="addLetter('i')">I</button>
+    <button class="letter-button" onclick="addLetter('k')">K</button>
+    <button class="letter-button" onclick="addLetter('l')">L</button>
+    <button class="letter-button" onclick="addLetter('n')">N</button>
+    <button class="letter-button" onclick="addLetter('o')">O</button>
+    <button class="letter-button" onclick="addLetter('p')">P</button>
+    <button class="letter-button" onclick="addLetter('r')">R</button>
+    <button class="letter-button" onclick="addLetter('s')">S</button>
+    <button class="letter-button" onclick="addLetter('t')">T</button>
+    <button class="letter-button" onclick="addLetter('u')">U</button>
+  </div>
+<div class="button-container">
+  <button id="submit-button" onclick="checkAnswer()">SUBMIT</button>
+
+<div class="erase-container">
+  <button id="erase-button" onclick="eraseLetters()">ERASE</button>
+</div>
+
+<script>
+        function goRetry() {
+            window.location.href = 'lesson5-1.html';
+        }
+        function goBack() {
+            window.location.href = 'lesson5.html';
+        }
+        function goHome() {
+            window.location.href = 'background_page.html';
+        }
+
+  const initialImages = ['doctorhide1.jpg', 'doctorhide2.jpg', 'doctorhide3.jpg', 'doctorhide4.jpg'];
+  const duckImages = ['duck1.jpg', 'duck2.jpg', 'duck3.jpg', 'duck4.jpg'];
+  const padImages = ['pad1.jpg', 'pad2.jpg', 'pad3.jpg', 'pad4.jpg'];
+  const dotImages = ['dot1.jpg', 'dot2.jpg', 'dot3.jpg', 'dot4.jpg'];
+  const budImages = ['bud1.jpg', 'bud2.jpg', 'bud3.jpg', 'bud4.jpg'];
+  const potImages = ['pot1.jpg', 'pot2.jpg', 'pot3.jpg', 'pot4.jpg'];
+  const ratImages = ['rat1.jpg', 'rat2.jpg', 'rat3.jpg', 'rat4.jpg'];
+  const kitImages = ['kit1.jpg', 'kit2.jpg', 'kit3.jpg', 'kit4.jpg'];
+  const tenImages = ['ten1.jpg', 'ten2.jpg', 'ten3.jpg', 'ten4.jpg'];
+  const topImages = ['top1.jpg', 'top2.jpg', 'top3.jpg', 'top4.jpg'];
+  let currentAnswer = '';
+  let correctAnswer = 'doctor'; // Set the initial correct answer
+
+  function loadInitialGame() {
+    initialImages.forEach((img, index) => {
+      document.getElementById(`image${index + 1}`).src = img;
+    });
+
+    document.getElementById('image1').style = '';
+    document.getElementById('image2').style.display = 'block';
+    document.getElementById('image3').style.display = 'block';
+    document.getElementById('image4').style.display = 'block';
+
+    eraseLetters();
+  }
+
+  function loadDuckGame() {
+    duckImages.forEach((img, index) => {
+      document.getElementById(`image${index + 1}`).src = img;
+    });
+
+    document.getElementById('image1').style = '';
+    document.getElementById('image2').style.display = 'block';
+    document.getElementById('image3').style.display = 'block';
+    document.getElementById('image4').style.display = 'block';
+
+    eraseLetters();
+  }
+
+  function loadPadGame() {
+    padImages.forEach((img, index) => {
+      document.getElementById(`image${index + 1}`).src = img;
+    });
+
+    document.getElementById('image1').style = '';
+    document.getElementById('image2').style.display = 'block';
+    document.getElementById('image3').style.display = 'block';
+    document.getElementById('image4').style.display = 'block';
+
+    correctAnswer = 'pad'; // Set the correct answer to "pad"
+
+    eraseLetters();
+  }
+
+  function loadDotGame() {
+    dotImages.forEach((img, index) => {
+      document.getElementById(`image${index + 1}`).src = img;
+    });
+
+    document.getElementById('image1').style = '';
+    document.getElementById('image2').style.display = 'block';
+    document.getElementById('image3').style.display = 'block';
+    document.getElementById('image4').style.display = 'block';
+
+    correctAnswer = 'dot'; // Set the correct answer to "dot"
+
+    eraseLetters();
+  }
+
+  function loadBudGame() {
+    budImages.forEach((img, index) => {
+      document.getElementById(`image${index + 1}`).src = img;
+    });
+
+    document.getElementById('image1').style = '';
+    document.getElementById('image2').style.display = 'block';
+    document.getElementById('image3').style.display = 'block';
+    document.getElementById('image4').style.display = 'block';
+
+    correctAnswer = 'bud'; // Set the correct answer to "bud"
+
+    eraseLetters();
+  }
+ 
+  function loadPotGame() {
+  potImages.forEach((img, index) => {
+    document.getElementById(`image${index + 1}`).src = img;
+  });
+
+  document.getElementById('image1').style = '';
+  document.getElementById('image2').style.display = 'block';
+  document.getElementById('image3').style.display = 'block';
+  document.getElementById('image4').style.display = 'block';
+
+  correctAnswer = 'pot'; // Set the correct answer to "pot"
+
+  eraseLetters();
+}
+
+   function loadRatGame() {
+  ratImages.forEach((img, index) => {
+    document.getElementById(`image${index + 1}`).src = img;
+  });
+
+  document.getElementById('image1').style = '';
+  document.getElementById('image2').style.display = 'block';
+  document.getElementById('image3').style.display = 'block';
+  document.getElementById('image4').style.display = 'block';
+
+  correctAnswer = 'rat'; // Set the correct answer to "rat"
+
+  eraseLetters();
+}
+
+   function loadKitGame() {
+  kitImages.forEach((img, index) => {
+    document.getElementById(`image${index + 1}`).src = img;
+  });
+
+  document.getElementById('image1').style = '';
+  document.getElementById('image2').style.display = 'block';
+  document.getElementById('image3').style.display = 'block';
+  document.getElementById('image4').style.display = 'block';
+
+  correctAnswer = 'kit'; // Set the correct answer to "kit"
+
+  eraseLetters();
+}
+
+   function loadTenGame() {
+  tenImages.forEach((img, index) => {
+    document.getElementById(`image${index + 1}`).src = img;
+  });
+
+  document.getElementById('image1').style = '';
+  document.getElementById('image2').style.display = 'block';
+  document.getElementById('image3').style.display = 'block';
+  document.getElementById('image4').style.display = 'block';
+
+  correctAnswer = 'ten'; // Set the correct answer to "ten"
+
+  eraseLetters();
+}
+
+  function loadTopGame() {
+  topImages.forEach((img, index) => {
+    document.getElementById(`image${index + 1}`).src = img;
+  });
+
+  document.getElementById('image1').style = '';
+  document.getElementById('image2').style.display = 'block';
+  document.getElementById('image3').style.display = 'block';
+  document.getElementById('image4').style.display = 'block';
+
+  correctAnswer = 'top'; // Set the correct answer to "top"
+
+  eraseLetters();
+}
+
+  function addLetter(letter, button) {
+    currentAnswer += letter;
+    document.getElementById('word-input').value = currentAnswer;
+
+    button.classList.add('button-clicked');
+
+    setTimeout(() => {
+      button.classList.remove('button-clicked');
+    }, 1000);
+  }
+
+  function checkAnswer() {
+  if (currentAnswer.toLowerCase() === correctAnswer) {
+    showCorrectImage(correctAnswer + '.jpg');
+    setTimeout(() => {
+      if (correctAnswer === 'doctor') {
+        loadDuckGame();
+        correctAnswer = 'duck';
+      } else if (correctAnswer === 'duck') {
+        loadPadGame();
+        correctAnswer = 'pad';
+      } else if (correctAnswer === 'pad') {
+        loadDotGame();
+        correctAnswer = 'dot';
+      } else if (correctAnswer === 'dot') {
+        loadBudGame();
+        correctAnswer = 'bud';
+      } else if (correctAnswer === 'bud') {
+        loadPotGame();
+        correctAnswer = 'pot';
+      } else if (correctAnswer === 'pot') {
+        loadRatGame();
+        correctAnswer = 'rat';
+      } else if (correctAnswer === 'rat') {
+        loadKitGame();
+        correctAnswer = 'kit';
+      } else if (correctAnswer === 'kit') {
+        loadTenGame(); 
+        correctAnswer = 'ten';
+      } else if (correctAnswer === 'ten') {
+        loadTopGame();
+        correctAnswer = 'top';
+      }
+      
+    }, 3000);
+  } else {
+    // Incorrect answer logic
+    alert('Incorrect answer. Please try again.');
+    document.getElementById('word-input').classList.add('incorrect-answer'); // Apply the CSS class
+    eraseLetters();
+  }
+}
+
+  function showCorrectImage(correctImage) {
+    const correctImg = document.getElementById('image1');
+    correctImg.style.width = '500px';
+    correctImg.style.height = 'auto';
+    correctImg.style.position = 'relative';
+    correctImg.style.left = '7px';
+    correctImg.style.top = '7px';
+    correctImg.src = correctImage;
+    document.getElementById('image2').style.display = 'none';
+    document.getElementById('image3').style.display = 'none';
+    document.getElementById('image4').style.display = 'none';
+  }
+
+  function eraseLetters() {
+    currentAnswer = '';
+    document.getElementById('word-input').value = '';
+  }
+
+  // Initialize the game with the first word ('doctor')
+  loadInitialGame();
+</script>
+

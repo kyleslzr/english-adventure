@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Four Pics One Word Game</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .game-container {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: 700px;
+    max-height: 700px;
+    margin-left: 400px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .image-box {
+    margin: 10px;
+  }
+  .image-box img {
+    width: 200px;
+    height: auto;
+  }
+  .word-container {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    margin-right: 400px;
+
+
+  }
+  .letters-container {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    max-width: 700px;
+    max-height: 700px;
+    margin-right: 500px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+  .letter-button {
+    margin: 5px;
+    background-color: #eee;
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  #submit-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-right: 400px;
+  }
+  .right-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .button-container {
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+<div class="game-container">
+  <div class="image-box">
+    <img id="image1" src="doctorhide1.jpg" alt="Image 1">
+  </div>
+  <div class="image-box">
+    <img id="image2" src="doctorhide2.jpg" alt="Image 2">
+  </div>
+  <div class="image-box">
+    <img id="image3" src="doctorhide3.jpg" alt="Image 3">
+  </div>
+  <div class="image-box">
+    <img id="image4" src="doctorhide4.jpg" alt="Image 4">
+  </div>
+</div>
+<div class="right-container">
+  <div class="word-container">
+    <input type="text" id="word-input" placeholder="Your answer">
+  </div>
+  <div class="letters-container">
+    <button class="letter-button" onclick="addLetter('a')">A</button>
+    <button class="letter-button" onclick="addLetter('c')">C</button>
+    <button class="letter-button" onclick="addLetter('d')">D</button>
+    <button class="letter-button" onclick="addLetter('e')">E</button>
+    <button class="letter-button" onclick="addLetter('f')">F</button>
+    <button class="letter-button" onclick="addLetter('i')">I</button>
+    <button class="letter-button" onclick="addLetter('k')">K</button>
+    <button class="letter-button" onclick="addLetter('l')">L</button>
+    <button class="letter-button" onclick="addLetter('n')">N</button>
+    <button class="letter-button" onclick="addLetter('o')">O</button>
+    <button class="letter-button" onclick="addLetter('p')">P</button>
+    <button class="letter-button" onclick="addLetter('r')">R</button>
+    <button class="letter-button" onclick="addLetter('s')">S</button>
+    <button class="letter-button" onclick="addLetter('t')">T</button>
+    <button class="letter-button" onclick="addLetter('u')">U</button>
+  </div>
+  <div class="button-container">
+    <button id="submit-button" onclick="checkAnswer()">Submit</button>
+  </div>
+</div>
+
+<script>
+  const images = ['doctorhide1.jpg', 'doctorhide2.jpg', 'doctorhide3.jpg', 'doctorhide4.jpg'];
+  const correctAnswer = 'doctor';
+  let displayedImageIndex = 0;
+  let currentAnswer = '';
+
+  function addLetter(letter) {
+    currentAnswer += letter;
+    document.getElementById('word-input').value = currentAnswer;
+  }
+
+  function checkAnswer() {
+    if (currentAnswer === correctAnswer) {
+      showCorrectImage();
+      currentAnswer = '';
+      document.getElementById('word-input').value = '';
+    } else {
+      alert('Incorrect answer. Please try again.');
+      currentAnswer = '';
+      document.getElementById('word-input').value = '';
+    }
+  }
+
+  function showCorrectImage() {
+    document.getElementById('image1').src = 'doctor.jpg';
+    document.getElementById('image2').style.display = 'none';
+    document.getElementById('image3').style.display = 'none';
+    document.getElementById('image4').style.display = 'none';
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 1 - English Adventures</title>
+  <style>
+    body {
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-image: url('cute_background8.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+
+    .logo-image {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: auto;
+      height: 80px;
+    }
+
+    .lesson-title {
+      position: absolute;
+      font-size: 30px;
+      font-weight: bold;
+      top: 52px;
+      background-color: #00741E;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: default;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      outline: 4px solid #fff;
+      z-index: 2;
+    }
+
+    .centered-board {
+      width: 1150px;
+      height: 1000px;
+      background-image: url('board.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+
+    .score-label {
+      position: absolute;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: #00741E;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      outline: 4px solid #fff;
+      z-index: 2;
+    }
+
+    .score-label.left {
+      left: 30px;
+      top: 100px;
+      font-size: 25px;
+      background-color: #00741E;
+      white-space: normal; /* Add this property to enable text wrapping */
+      display: inline-block; /* Add this property for variable box width */
+      width: 230px;
+      padding: 10px 10px;
+      z-index: 3;
+    }
+
+    .score-label.right {
+      right: 30px;
+      top: 90px;
+      font-size: 50px;
+      background-color: #FF5252;
+    }
+
+    .image-left {
+      width: 300px;
+      height: auto;
+      position: absolute;
+      left: 11px;
+      top: 330px;
+      z-index: 4;
+    }
+
+    .image-right {
+      width: 230px;
+      height: auto;
+      position: absolute;
+      right: 36px;
+      top: 190px;
+    }
+  </style>
+</head>
+<body>
+  <img class="logo-image" src="logo.png" alt="English Adventures Logo">
+  
+  <div class="score-label left">Directions: Read the words inside the cloud. On the space provided below, write the words with Short /a/ sound.</div>
+
+  <div class="lesson-title" style="top: 52px;">Recognizing the Short i Sounds</div>
+  
+  <div class="centered-board"></div>
+
+  <div class="score-label right">Score: 75</div>
+
+  <img class="image-left" src="traveler2.png" alt="Traveler 2 Image">
+  <img class="image-right" src="traveler5.png" alt="Traveler 5 Image">
+</body>
+</html>

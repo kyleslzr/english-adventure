@@ -1,0 +1,327 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 1 - English Adventures</title>
+  <style>
+    body {
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-image: url('cute_background4.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+
+    .logo-image {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: auto;
+      height: 80px;
+    }
+
+    .lesson-title {
+      position: absolute;
+      font-size: 30px;
+      font-weight: bold;
+      top: 52px;
+      background-color: #00741E;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: default;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      outline: 4px solid #fff;
+      z-index: 2;
+    }
+
+    .centered-board {
+      width: 1150px;
+      height: 1000px;
+      background-image: url('board.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+
+    .score-label {
+      position: absolute;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: #00741E;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      outline: 4px solid #fff;
+      z-index: 2;
+    }
+
+    .score-label.left {
+      left: 30px;
+      top: 100px;
+      font-size: 25px;
+      background-color: #00741E;
+      white-space: normal; /* Add this property to enable text wrapping */
+      display: inline-block; /* Add this property for variable box width */
+      width: 230px;
+      padding: 10px 10px;
+      z-index: 3;
+    }
+
+    .score-label.right {
+      right: 30px;
+      top: 90px;
+      font-size: 50px;
+      background-color: #FF5252;
+    }
+
+    .image-left {
+      width: 300px;
+      height: auto;
+      position: absolute;
+      left: 11px;
+      top: 330px;
+      z-index: 4;
+    }
+
+    .image-right {
+      width: 230px;
+      height: auto;
+      position: absolute;
+      right: 36px;
+      top: 190px;
+    }
+    .animal-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:15px;
+    margin: 24px 5px 5px 5px;
+  }
+  .animal-button {
+     
+    outline: 4px solid #00741E;
+    background-color: #ccc;
+    padding: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+      width: 190px;
+      height: 50px; /* Adjust as needed */
+      color: #00741E;
+      background-color: #ffcc00;
+      border: none;
+      border-radius: 15px;
+      font-weight: bold;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+   
+  }
+
+  .animal img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+     .droppable-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 14px; /* This sets the gap between rows */
+    grid-column-gap: 14px; /* This sets the gap between columns */
+    margin: 20px 5px -60px 5px;
+}
+  .droppable {
+    border: 6px solid #ffcc00;
+    width: 180px;
+    height: 173px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #ffcc00;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+ 
+   
+  }
+  .droppable img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+.retry-button {
+  position: fixed;
+  margin-right: -1050px;
+  bottom: -480px;
+  transform: scale(0.10);
+}
+
+.back-button {
+  position: fixed;
+  margin-right: -1230px;
+  bottom: -480px;
+  transform: scale(0.10);	
+}
+
+.home-button {
+  position: fixed;
+  margin-right: -1410px;
+  bottom: -480px;
+  transform: scale(0.10);
+
+}
+
+  </style>
+</head>
+<body>
+    <a class="retry-button" href="lesson2-1.html">
+        <img src="retry.png" />
+    </a>
+
+    <a class="back-button" href="lesson2.html">
+        <img src="back.png" />
+    </a>
+
+    <a class="home-button" href="background_page.html">
+        <img src="home.png" />
+    </a>
+
+<div class="animal-container">
+  <button class="animal-button" draggable="true" data-animal="elephant">ELEPHANT</button>
+  <button class="animal-button" draggable="true" data-animal="cat">CAT</button>
+  <button class="animal-button" draggable="true" data-animal="fish">FISH</button>
+  <button class="animal-button" draggable="true" data-animal="dog">DOG</button>
+  <button class="animal-button" draggable="true" data-animal="monkey">MONKEY</button>
+  <button class="animal-button" draggable="true" data-animal="tiger">TIGER</button>
+  <button class="animal-button" draggable="true" data-animal="lion">LION</button>
+  <button class="animal-button" draggable="true" data-animal="bird">BIRD</button>
+</div>
+<div class="droppable-container">
+  <div class="droppable" data-animal="elephant">
+    <img src="elephant.jpg" alt="elephant">
+    <div class="animal-word"></div>
+  </div>
+  <div class="droppable" data-animal="cat">
+    <img src="cat.jpg" alt="cat">
+    <div class="animal-word"></div>
+  </div>
+  <div class="droppable" data-animal="fish">
+    <img src="fish.jpg" alt="fish">
+    <div class="animal-word"></div>
+  </div>
+  <div class="droppable" data-animal="dog">
+    <img src="dog.jpg" alt="dog">
+    <div class="animal-word"></div>
+  </div>
+  <div class="droppable" data-animal="monkey">
+    <img src="monkey.jpg" alt="monkey">
+    <div class="animal-word"></div>
+  </div>
+  <div class="droppable" data-animal="tiger">
+    <img src="tiger.jpg" alt="tiger">
+    <div class="animal-word"></div>
+  </div>
+  <div class="droppable" data-animal="lion">
+    <img src="lion.jpg" alt="lion">
+    <div class="animal-word"></div>
+  </div>
+  <div class="droppable" data-animal="bird">
+    <img src="bird.jpg" alt="bird">
+    <div class="animal-word"></div>
+  </div>
+</div>
+<script>
+        function goRetry() {
+            window.location.href = 'lesson2-1.html';
+        }
+        function goBack() {
+            window.location.href = 'lesson2.html';
+        }
+        function goHome() {
+            window.location.href = 'background_page.html';
+        }
+
+  const animals = document.querySelectorAll('.animal-button');
+  const droppables = document.querySelectorAll('.droppable');
+
+  animals.forEach(animal => {
+    animal.addEventListener('dragstart', (e) => {
+      e.dataTransfer.setData('text/plain', animal.dataset.animal);
+    });
+  });
+
+  droppables.forEach(droppable => {
+    droppable.addEventListener('dragover', (e) => {
+      e.preventDefault();
+    });
+
+    droppable.addEventListener('drop', (e) => {
+      e.preventDefault();
+      const draggedAnimal = e.dataTransfer.getData('text/plain');
+      const animalWordElement = droppable.querySelector('.animal-word');
+
+      if (draggedAnimal === droppable.dataset.animal) {
+        const matchingButton = document.querySelector(`[data-animal="${draggedAnimal}"]`);
+        const computedStyle = window.getComputedStyle(matchingButton);
+
+        const stylesToCopy = [
+          'font-weight',
+          'font-size',
+          'color',
+          'background-color',
+          'padding',
+        ];
+
+        stylesToCopy.forEach(style => {
+          animalWordElement.style[style] = computedStyle.getPropertyValue(style);
+        });
+
+        animalWordElement.style.backgroundColor = '#00741E'; // Green background
+        animalWordElement.style.color = '#fff'; // White text
+        animalWordElement.style.textTransform = 'uppercase'; // Set text to uppercase
+
+        animalWordElement.textContent = draggedAnimal;
+        matchingButton.disabled = true;
+        matchingButton.style.backgroundColor = '#00741E'; // Turn button grey
+      } else {
+        const originalBorderColor = droppable.style.borderColor;
+        droppable.style.borderColor = 'red';
+        setTimeout(() => {
+          droppable.style.borderColor = originalBorderColor;
+        }, 1000);
+      }
+    });
+  });
+
+</script>
+
+
+<img class="logo-image" src="logo.png" alt="English Adventures Logo">
+  
+  <div class="score-label left">Directions: Read the words inside the cloud. On the space provided below, write the words with Short /a/ sound.</div>
+
+  <div class="lesson-title" style="top: 52px;">Recognizing the Short i Sounds</div>
+  
+  <div class="centered-board"></div>
+
+  <div class="score-label right">Score: 75</div>
+
+  <img class="image-left" src="traveler2.png" alt="Traveler 2 Image">
+  <img class="image-right" src="traveler5.png" alt="Traveler 5 Image">
+
+</body>
+</html>

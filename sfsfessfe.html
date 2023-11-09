@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+  
+  .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 300px; /* Adjust as needed */
+  }
+  
+  .word-button {
+    width: calc(33.33% - 10px);
+    height: 40px; /* Adjust as needed */
+    margin: 5px;
+    background-color: yellow;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s;
+  }
+  
+  .word-button[data-status="true"].active {
+    background-color: green;
+  }
+  
+  .word-button[data-status="false"].active {
+    background-color: red;
+  }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const wordButtons = document.querySelectorAll('.word-button');
+
+    wordButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Toggle the 'active' class on click
+        button.classList.toggle('active');
+      });
+    });
+  });
+</script>
+</head>
+<body>
+  <div class="button-container">
+    <button class="word-button" data-status="true">cat</button>
+    <button class="word-button" data-status="true">apple</button>
+    <button class="word-button" data-status="false">late</button>
+    <button class="word-button" data-status="false">mansion</button>
+    <button class="word-button" data-status="false">sack</button>
+    <button class="word-button" data-status="false">bake</button>
+    <button class="word-button" data-status="false">alligator</button>
+    <button class="word-button" data-status="false">ladder</button>
+    <button class="word-button" data-status="false">random</button>
+    <button class="word-button" data-status="false">sad</button>
+    <button class="word-button" data-status="false">rain</button>
+    <button class="word-button" data-status="true">cake</button>
+    <button class="word-button" data-status="false">raise</button>
+    <button class="word-button" data-status="true">mate</button>
+    <button class="word-button" data-status="true">bat</button>
+  </div>
+</body>
+</html>

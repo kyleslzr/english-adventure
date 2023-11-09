@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .word-button {
+            display: inline-block;
+            background-color: #f1f1f1;
+            padding: 5px;
+            border: 1px solid #ccc;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .drop-box {
+            width: 100px;
+            height: 50px;
+            display: inline-block;
+            border: 2px dashed #ccc;
+            margin: 5px;
+            text-align: center;
+            padding-top: 15px;
+        }
+
+        .correct {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="sentence-container">
+        <p id="sentence"></p>
+    </div>
+    <div id="buttons-container">
+        <div class="word-button" draggable="true">The</div>
+        <div class="word-button" draggable="true">big</div>
+        <div class="word-button" draggable="true">puppy</div>
+        <div class="word-button" draggable="true">barks</div>
+        <!-- Add more word buttons for your sentences -->
+    </div>
+    <div id="drop-boxes-container">
+        <div class="drop-box" id="p-box">/p/ sound</div>
+        <div class="drop-box" id="b-box">/b/ sound</div>
+    </div>
+
+    <script>
+        let sentences = [
+            "The big puppy barks at the stranger.",
+            // Add more sentences here
+        ];
+
+        let sentenceIndex = 0;
+        let words = [];
+        let correctAnswers = {
+            'b-box': [],
+            'p-box': []
+        };
+
+        const sentenceElement = document.getElementById("sentence");
+        const buttonsContainer = document.getElementById("buttons-container");
+        const pBox = document.getElementById("p-box");
+        const bBox = document.getElementById("b-box");
+
+        function displaySentence() {
+            sentenceElement.textContent = sentences[sentenceIndex];
+            words = sentences[sentenceIndex].split(" ");
+            sentenceIndex++;
+        }
+
+        function checkAnswers() {
+            const bWords = correctAnswers['b-box'];
+            const pWords = correctAnswers['p-box'];
+            const bCorrect = bWords.length === words.filter(word => word.includes('b')).length;
+            const pCorrect = pWords.length === words.filter(word => word.includes('p')).length;
+
+            return bCorrect && pCorrect;
+        }
+
+        displaySentence();
+
+        buttonsContainer.addEventListener("dragstart", (event) => {
+            event.dataTransfer.setData("text", event.target.textContent);
+        });
+
+        bBox.addEventListener("dragover", (event) => {
+            event.preventDefault();
+        });
+
+        pBox.addEventListener("dragover", (event) => {
+            event.preventDefault();
+        });
+
+        bBox.addEventListener("drop", (event) => {
+            event.preventDefault();
+            const word = event.dataTransfer.getData("text");
+            if (word.includes("b")) {
+                event.target.appendChild(document.createTextNode(word));
+                correctAnswers['b-box'].push(word);
+                event.target.classList.add("correct");
+            } else {
+                event.target.classList.add("wrong");
+            }
+        });
+
+        pBox.addEventListener("drop", (event) => {
+            event.preventDefault();
+            const word = event.dataTransfer.getData("text");
+            if (word.includes("p")) {
+                event.target.appendChild(document.createTextNode(word));
+                correctAnswers['p-box'].push(word);
+                event.target.classList.add("correct");
+            } else {
+                event.target.classList.add("wrong");
+            }
+        });
+
+        bBox.addEventListener("dragleave", (event) => {
+            event.target.classList.remove("wrong");
+        });
+
+        pBox.addEventListener("dragleave", (event) => {
+            event.target.classList.remove("wrong");
+        });
+
+        buttonsContainer.addEventListener("dragend", (event) => {
+            event.target.classList.remove("wrong");
+        });
+
+        pBox.addEventListener("transitionend", (event) => {
+            event.target.classList.remove("correct");
+        });
+
+        bBox.addEventListener("transitionend", (event) => {
+            event.target.classList.remove("correct");
+        });
+
+        document.addEventListener("dragend", () => {
+            if (checkAnswers()) {
+                setTimeout(() => {
+                    if (sentenceIndex < sentences.length) {
+                        correctAnswers['b-box'] = [];
+                        correctAnswers['p-box'] = [];
+                        displaySentence();
+                    } else {
+                        alert("Congratulations! You completed all the sentences.");
+                    }
+                }, 2000);
+            }
+        });
+    </script>
+</body>
+</html>

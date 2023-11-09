@@ -1,0 +1,112 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>English Adventures</title>
+  <style>
+    body {
+	zoom: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url('cute_background1.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      font-family: Arial, sans-serif;
+      position: relative;
+    }
+    .logo {
+      max-width: 850px;
+      max-height: 500px;
+      width: auto;
+      height: auto;
+    }
+
+      .logo-image {
+      position: absolute;
+      top: 20px;
+      left: 58px;
+      width: auto;
+      height: 200px;
+      
+	}
+    .text {
+      position: absolute;
+      left: 30px;
+      bottom: 20px;
+      color: #fff;
+      font-size: 15px;
+      display: inline-block; /* Add this property for variable box width */
+      width: 270px;
+      font-weight: bold;
+     }
+   .score-label {
+      position: absolute;
+    
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: #00741E;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      outline: 4px solid #fff;
+      z-index: 2;
+      }
+    .score-label.left {
+      left: 30px;
+      top: 248px;
+      color: #fff;
+      font-size: 20.8px;
+      background-color: #00741E;
+      white-space: normal; /* Add this property to enable text wrapping */
+      display: inline-block; /* Add this property for variable box width */
+      width: 240px;
+      padding: 10px 10px;
+      z-index: 3;
+      text-align: center;
+	}	
+
+    .start-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ffcc00;
+      color: #00741E;
+      font-size: 50px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .start-button:hover {
+      background-color: #ffa500;
+    }
+
+    .traveler {
+      position: absolute;
+      bottom: 0px;
+      right: 25px;
+      max-width: 900px;
+      max-height: 500px;
+      width: auto;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <img class="logo" src="logo.png" alt="English Adventures Logo">
+  <div class="score-label left">This educational gaming tool is made available for the esteemed institution of SAN JOSE ACADEMY OF BULACAN located in San Jose Del Monte, Bulacan, specifically intended for the benefit of Grade 1 pupils. This initiative is aligned with the content presented in "Workbook for English" authored by Darlene Niel Panganiban of Aral Pinas.</div>
+<div class="text">Workbook Link: https://www.studocu.com/en-us/document/manhattan-college/the-modern-english-novel/english-workbook-grade-1/35324175
+</div>
+  <img class="logo-image" src="SJAB LOGO.png" alt="English Adventures Logo">
+  <a href="background_page.html">
+    <button class="start-button">START LEARNING</button>
+  </a>
+  <img class="traveler" src="traveler.png" alt="Traveler">
+</body>
+</html>
