@@ -5,11 +5,8 @@
      if (isset($_POST['firstname']) && isset($_POST['surname'])) {
           // Get the form data
           $firstname = $_POST['firstname'];
-          $midllename = $_POST['middlename'];
+          $middlename = $_POST['middlename'];
           $surname = $_POST['surname'];
-          
-          // Hash the password
-          $hashed_password = password_hash($password, PASSWORD_DEFAULT);
           
           include "conn.php";
           
@@ -29,7 +26,7 @@
       
           // Execute the prepared statement
           if (mysqli_stmt_execute($stmt)) {
-               header("Location: ../records.html");
+               header("Location: ../records.php");
                exit();
           } else {
               echo "Error: " . mysqli_error($conn);

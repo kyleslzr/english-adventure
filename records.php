@@ -198,9 +198,8 @@ tr:nth-child(even) {
   <div class="score-label left">This educational gaming tool is made available for the esteemed institution of SAN JOSE ACADEMY OF BULACAN located in San Jose Del Monte, Bulacan, specifically intended for the benefit of Grade 1 pupils. This initiative is aligned with the content presented in "Workbook for English" authored by Darlene Niel Panganiban of Aral Pinas.</div>
 <div class="text">Workbook Link: https://www.studocu.com/en-us/document/manhattan-college/the-modern-english-novel/english-workbook-grade-1/35324175
 </div>
-<div class="centered-board">
-
-</div>
+<div class="centered-board"></div>
+<div class="lesson-title" style="top: 52px;">Records</div>
 <div style="
     margin-top: 25px;
     overflow: scroll;
@@ -223,200 +222,22 @@ tr:nth-child(even) {
       <th>5.2</th>
       <th>Total</th>
     </tr>
-    <tr>
-      <td>1</td>
-      <td>Alfreds Futterkiste</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td style="font-weight: 700;">100</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Centro comercial Moctezuma</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>100</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Ernst Handel</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>100</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>Island Trading</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>100</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>Laughing Bacchus Winecellars</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>100</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>Magazzini Alimentari Riuniti</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>100</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>Centro comercial Moctezuma</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>100</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>Ernst Handel</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>100</td>
-    </tr>
-    <tr>
-      <td>9</td>
-      <td>Island Trading</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>100</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>Laughing Bacchus Winecellars</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>100</td>
-    </tr>
-    <tr>
-      <td>11</td>
-      <td>Magazzini Alimentari Riuniti</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>100</td>
-    </tr>
-    <tr>
-      <td>12</td>
-      <td>Centro comercial Moctezuma</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>10</td>
-      <td>20</td>
-      <td>100</td>
-    </tr>
+     <?php include "function/retrieve-all-scores.php"; ?>
   </table>
 </div>
-<div class="input-grp">
-  <input class="input-record" type="text" placeholder="Last Name">
-  <input class="input-record" type="text" placeholder="First Name">
-  <input class="input-record" type="text" placeholder="Middle Initial">
-</div>
 
-<div class="lesson-title" style="top: 52px;">Records</div>
-<button class="start-button records" style="position: absolute;"> 
-  <svg style="margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#00741e}</style><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
-  Add Pupil
-</button>
+     <div class="input-grp">
+          <form action="function/save-name.php" method="post">
+               <input class="input-record" name="surname" type="text" placeholder="Last Name" required>
+               <input class="input-record" name="firstname" type="text" placeholder="First Name" required>
+               <input class="input-record" name="middlename" type="text" placeholder="Middle Initial">
+     </div>
 
+          <button class="start-button records" style="position: absolute;"> 
+          <svg style="margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#00741e}</style><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+          Add Pupil
+     </button>
+          </form>
   <img class="logo-image" src="SJAB LOGO.png" alt="English Adventures Logo">
   <img class="traveler" src="traveler.png" alt="Traveler">
 
