@@ -125,11 +125,14 @@
 
     .image-left {
       width: 300px;
-      height: auto;
+      min-height: 400px;
+      max-height: 400px;
       position: absolute;
       left: 11px;
-      top: 330px;
+      top: 325px;
       z-index: 4;
+      overflow-y: scroll;
+
     }
 
     .image-right {
@@ -160,6 +163,9 @@
   bottom: -480px;
   transform: scale(0.10);
 
+}
+.increment:hover, .decrement:hover {
+  background-color: #00741E;
 }
 
   </style>
@@ -241,55 +247,470 @@
   <div class="score-label right">Score: 75</div>
 
   <div class="image-left"> 
-    <div style="display: flex; margin: 5px;">
+    <div style="display: flex;margin: 7px 5px;justify-content: space-between;">
       <div style="
       background-color: #00741e;
       padding: 10px 10px;
       text-align: center;
-      width: 200px;
+      width: 48%;
       border-radius: 10px;
       border: 4px solid;
       font-size: 20px;
       font-weight: bold;
       box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-      ">jjjj</div>
+      ">Veneracion</div>
       <div style="
       display: flex;
       background-color: #fff;
       color: #00741e;
-      /* padding: 10px 10px; */
       text-align: center;
-      width: 150px;
-      border-radius: 10px;
-      /* border: 4px solid; */
-      font-size: 20px;
+      width: 40%;
+      border-radius: 10px  ;
+      font-size: 30px;
       font-weight: bold;
       box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
       justify-content: center;
       align-items: center;
-      /* margin-left: -70px; */
       z-index: -2;
       ">
-        <div style="
+        <div class="decrement" style="
         background-color: #ffcc00;
         color: #00741e;
-        border-radius: 10px;
+        border-radius: 10px 0px 0px 10px;
         padding: 0px 8px;
-        margin-right: 2px;
         width: 30px;
         height: 51px;
         display: flex;
         justify-content: center;
         align-items: center;
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         ">-</div>
-        <div>12</div>
+        <div style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        
+        ">12</div>
+        <div class="increment" style="
+        background-color: #ffcc00;
+        color: #00741e;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        border-radius: 0px 10px 10px 0px;;
+        padding: 0px 8px;
+        width: 30px;
+        height: 51px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ">+</div>
+      </div>
+    </div>
+    <div style="display: flex;margin: 7px 5px;justify-content: space-between;">
+      <div style="
+      background-color: #00741e;
+      padding: 10px 10px;
+      text-align: center;
+      width: 48%;
+      border-radius: 10px;
+      border: 4px solid;
+      font-size: 20px;
+      font-weight: bold;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      ">Salazar</div>
+      <div style="
+      display: flex;
+      background-color: #fff;
+      color: #00741e;
+      text-align: center;
+      width: 40%;
+      border-radius: 10px  ;
+      font-size: 30px;
+      font-weight: bold;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      justify-content: center;
+      align-items: center;
+      z-index: -2;
+      ">
+        <div style="
+        background-color: #ffcc00;
+        color: #00741e;
+        border-radius: 10px 0px 0px 10px;
+        padding: 0px 8px;
+        width: 30px;
+        height: 51px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        ">-</div>
+        <div style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        
+        ">12</div>
         <div style="
         background-color: #ffcc00;
         color: #00741e;
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        border-radius: 10px;
+        border-radius: 0px 10px 10px 0px;;
         padding: 0px 8px;
-        margin-right: 2px;
+        width: 30px;
+        height: 51px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ">+</div>
+      </div>
+    </div>
+    <div style="display: flex;margin: 7px 5px;justify-content: space-between;">
+      <div style="
+      background-color: #00741e;
+      padding: 10px 10px;
+      text-align: center;
+      width: 48%;
+      border-radius: 10px;
+      border: 4px solid;
+      font-size: 20px;
+      font-weight: bold;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      ">Dapadap</div>
+      <div style="
+      display: flex;
+      background-color: #fff;
+      color: #00741e;
+      text-align: center;
+      width: 40%;
+      border-radius: 10px  ;
+      font-size: 30px;
+      font-weight: bold;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      justify-content: center;
+      align-items: center;
+      z-index: -2;
+      ">
+        <div style="
+        background-color: #ffcc00;
+        color: #00741e;
+        border-radius: 10px 0px 0px 10px;
+        padding: 0px 8px;
+        width: 30px;
+        height: 51px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        ">-</div>
+        <div style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        
+        ">12</div>
+        <div style="
+        background-color: #ffcc00;
+        color: #00741e;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        border-radius: 0px 10px 10px 0px;;
+        padding: 0px 8px;
+        width: 30px;
+        height: 51px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ">+</div>
+      </div>
+    </div>
+    <div style="display: flex;margin: 7px 5px;justify-content: space-between;">
+      <div style="
+      background-color: #00741e;
+      padding: 10px 10px;
+      text-align: center;
+      width: 48%;
+      border-radius: 10px;
+      border: 4px solid;
+      font-size: 20px;
+      font-weight: bold;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      ">Condat</div>
+      <div style="
+      display: flex;
+      background-color: #fff;
+      color: #00741e;
+      text-align: center;
+      width: 40%;
+      border-radius: 10px  ;
+      font-size: 30px;
+      font-weight: bold;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      justify-content: center;
+      align-items: center;
+      z-index: -2;
+      ">
+        <div style="
+        background-color: #ffcc00;
+        color: #00741e;
+        border-radius: 10px 0px 0px 10px;
+        padding: 0px 8px;
+        width: 30px;
+        height: 51px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        ">-</div>
+        <div style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        
+        ">12</div>
+        <div style="
+        background-color: #ffcc00;
+        color: #00741e;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        border-radius: 0px 10px 10px 0px;;
+        padding: 0px 8px;
+        width: 30px;
+        height: 51px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ">+</div>
+      </div>
+    </div>
+    <div style="display: flex;margin: 7px 5px;justify-content: space-between;">
+      <div style="
+      background-color: #00741e;
+      padding: 10px 10px;
+      text-align: center;
+      width: 48%;
+      border-radius: 10px;
+      border: 4px solid;
+      font-size: 20px;
+      font-weight: bold;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      ">De Jesus</div>
+      <div style="
+      display: flex;
+      background-color: #fff;
+      color: #00741e;
+      text-align: center;
+      width: 40%;
+      border-radius: 10px  ;
+      font-size: 30px;
+      font-weight: bold;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      justify-content: center;
+      align-items: center;
+      z-index: -2;
+      ">
+        <div style="
+        background-color: #ffcc00;
+        color: #00741e;
+        border-radius: 10px 0px 0px 10px;
+        padding: 0px 8px;
+        width: 30px;
+        height: 51px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        ">-</div>
+        <div style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        
+        ">12</div>
+        <div style="
+        background-color: #ffcc00;
+        color: #00741e;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        border-radius: 0px 10px 10px 0px;;
+        padding: 0px 8px;
+        width: 30px;
+        height: 51px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ">+</div>
+      </div>
+    </div>
+    <div style="display: flex;margin: 7px 5px;justify-content: space-between;">
+      <div style="
+      background-color: #00741e;
+      padding: 10px 10px;
+      text-align: center;
+      width: 48%;
+      border-radius: 10px;
+      border: 4px solid;
+      font-size: 20px;
+      font-weight: bold;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      ">Ubaldo</div>
+      <div style="
+      display: flex;
+      background-color: #fff;
+      color: #00741e;
+      text-align: center;
+      width: 40%;
+      border-radius: 10px  ;
+      font-size: 30px;
+      font-weight: bold;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      justify-content: center;
+      align-items: center;
+      z-index: -2;
+      ">
+        <div style="
+        background-color: #ffcc00;
+        color: #00741e;
+        border-radius: 10px 0px 0px 10px;
+        padding: 0px 8px;
+        width: 30px;
+        height: 51px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        ">-</div>
+        <div style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        
+        ">12</div>
+        <div style="
+        background-color: #ffcc00;
+        color: #00741e;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        border-radius: 0px 10px 10px 0px;;
+        padding: 0px 8px;
+        width: 30px;
+        height: 51px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ">+</div>
+      </div>
+    </div>
+    <div style="display: flex;margin: 7px 5px;justify-content: space-between;">
+      <div style="
+      background-color: #00741e;
+      padding: 10px 10px;
+      text-align: center;
+      width: 48%;
+      border-radius: 10px;
+      border: 4px solid;
+      font-size: 20px;
+      font-weight: bold;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      ">Relox</div>
+      <div style="
+      display: flex;
+      background-color: #fff;
+      color: #00741e;
+      text-align: center;
+      width: 40%;
+      border-radius: 10px  ;
+      font-size: 30px;
+      font-weight: bold;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      justify-content: center;
+      align-items: center;
+      z-index: -2;
+      ">
+        <div style="
+        background-color: #ffcc00;
+        color: #00741e;
+        border-radius: 10px 0px 0px 10px;
+        padding: 0px 8px;
+        width: 30px;
+        height: 51px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        ">-</div>
+        <div style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        
+        ">12</div>
+        <div style="
+        background-color: #ffcc00;
+        color: #00741e;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        border-radius: 0px 10px 10px 0px;;
+        padding: 0px 8px;
+        width: 30px;
+        height: 51px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ">+</div>
+      </div>
+    </div>
+    <div style="display: flex;margin: 7px 5px;justify-content: space-between;">
+      <div style="
+      background-color: #00741e;
+      padding: 10px 10px;
+      text-align: center;
+      width: 48%;
+      border-radius: 10px;
+      border: 4px solid;
+      font-size: 20px;
+      font-weight: bold;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      ">Abay</div>
+      <div style="
+      display: flex;
+      background-color: #fff;
+      color: #00741e;
+      text-align: center;
+      width: 40%;
+      border-radius: 10px  ;
+      font-size: 30px;
+      font-weight: bold;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      justify-content: center;
+      align-items: center;
+      z-index: -2;
+      ">
+        <div style="
+        background-color: #ffcc00;
+        color: #00741e;
+        border-radius: 10px 0px 0px 10px;
+        padding: 0px 8px;
+        width: 30px;
+        height: 51px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        ">-</div>
+        <div style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        
+        ">12</div>
+        <div style="
+        background-color: #ffcc00;
+        color: #00741e;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        border-radius: 0px 10px 10px 0px;;
+        padding: 0px 8px;
         width: 30px;
         height: 51px;
         display: flex;
