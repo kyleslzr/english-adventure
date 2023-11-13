@@ -1,23 +1,15 @@
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
   <title>Lesson 1 - English Adventures</title>
+  <link rel="stylesheet" href="css/side-score-style.css">
   <style>
     body {
       overflow: hidden;
       margin: 0;
       padding: 0;
       height: 100vh;
-      background-image: url('cute_background10.jpg');
+      background-image: url('cute_background4.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
@@ -36,13 +28,13 @@
 
 .word-box {
   display: inline-block;
-  font-size: 50px;
+  font-size: 55px;
   font-weight: bold;
-
+  padding: 5px 5px;
   color: white;
   border-radius: 5px;
   background-color: #00741E;
-  width: 794px; /* Set the width for each letter's box */
+  width: 65px; /* Set the width for each letter's box */
   height: 65px; /* Set the height for each letter's box */
   text-align: center;
   margin: 3px;
@@ -59,7 +51,7 @@
 }
 
 .button {
-  font-size: 90px;
+  font-size: 50px;
   color: #00741E;
   border: none;
   font-weight: bold;
@@ -201,66 +193,59 @@
   </style>
 </head>
 <body>
-    <a class="retry-button" href="lesson5-2.html">
+    <a class="retry-button" href="lesson2-2.php">
         <img src="retry.png" />
     </a>
 
-    <a class="back-button" href="lesson5.html">
+    <a class="back-button" href="lesson2.php">
         <img src="back.png" />
     </a>
 
-    <a class="home-button" href="background_page.html">
+    <a class="home-button" href="lesson-list.php">
         <img src="home.png" />
     </a>
 
   <div class="image-container" id="imageContainer"></div>
   <div class="word-container" id="wordContainer"></div>
   <div class="button-container">
-    <button class="button" id="properNounBtn">A</button>
-    <button class="button" id="commonNounBtn">AN</button>
+    <button class="button" id="properNounBtn">SINGULAR WORD</button>
+    <button class="button" id="commonNounBtn">PLURAL WORD</button>
   </div>
 
   <img class="logo-image" src="logo.png" alt="English Adventures Logo">
   
-  <div class="score-label left">Directions: Read the sentences carefully. Choose between ‘a’ or ‘an’ to complete the sentence.</div>
+  <div class="score-label left">Directions: Identify Singular and Plural Nouns</div>
 
-  <div class="lesson-title" style="top: 52px;">Using A and An</div>
+  <div class="lesson-title" style="top: 52px;">Recognizing Singular and Plural Nouns</div>
   
   <div class="centered-board"></div>
 
   <div class="score-label right">Score: 75</div>
   <div class="word-container hide" id="wordContainer"></div>
-  <img class="image-left" src="traveler2.png" alt="Traveler 2 Image">
-  <img class="image-right" src="traveler5.png" alt="Traveler 5 Image">
   
+  <img class="image-right" src="traveler5.png" alt="Traveler 5 Image">
 
-
+  <div class="name-list">
+     <?php include "function/retrieve-all-scores-l2-act2.php"; ?>
+  </div>
+  <?php include "js/record-score.php"; ?>
+  
   <script>
-
-        function goRetry() {
-            window.location.href = 'lesson5-2.html';
-        }
-        function goBack() {
-            window.location.href = 'lesson5.html';
-        }
-        function goHome() {
-            window.location.href = 'background_page.html';
-        }
 
     const words = [
 
 
 
-      { word: "There is ___ cat in the yard.", isProper: true, image: "1cat.jpg" },
-      { word: "___ car is faster than ___ horse.", isProper: true, image: "1bats.jpg" },
-      { word: "If there is ___ answer, I'll find it.", isProper: false, image: "1legs.jpg" },
-      { word: "I see ___ owl on the branch.", isProper: false, image: "1shoes.jpg" },
-      { word: "Mom has ___ red dress.", isProper: true, image: "1door.jpg" },
-      { word: "Frank wants ___ new bicycle.", isProper: true, image: "1mat.jpg" },
-      { word: "The teacher read ___ story.", isProper: true, image: "1mates.jpg" },
-      { word: "___ event for my birthday.", isProper: false, image: "1desk.jpg" },
-      { word: "Put ___ apple on your plate.", isProper: false, image: "1hats.jpg" },
-      { word: "Read me ___ story.", isProper: true, image: "1boots.jpg" }
+      { word: "cat", isProper: true, image: "1cat.jpg" },
+      { word: "bats", isProper: false, image: "1bats.jpg" },
+      { word: "legs", isProper: false, image: "1legs.jpg" },
+      { word: "shoes", isProper: false, image: "1shoes.jpg" },
+      { word: "door", isProper: true, image: "1door.jpg" },
+      { word: "mat", isProper: true, image: "1mat.jpg" },
+      { word: "mates", isProper: false, image: "1mates.jpg" },
+      { word: "desk", isProper: true, image: "1desk.jpg" },
+      { word: "hats", isProper: false, image: "1hats.jpg" },
+      { word: "boots", isProper: false, image: "1boots.jpg" }
 
     ];
 
@@ -271,18 +256,21 @@
 
     let currentIndex = 0;
 
-  function displayWord() {
-  if (currentIndex < words.length) {
-    const wordObj = words[currentIndex];
-    const word = wordObj.word;
-    const wordBox = `<span class="word-box">${word}</span>`;
-    wordContainer.innerHTML = wordBox;
+    function displayWord() {
+      if (currentIndex < words.length) {
+        const wordObj = words[currentIndex];
+        const wordBoxes = wordObj.word
+          .toUpperCase()
+          .split("")
+          .map(letter => `<div class="word-box">${letter}</div>`)
+          .join("");
+        wordContainer.innerHTML = wordBoxes;
 
         const wordImage = `<img class="word-image" src="${wordObj.image}" alt="${wordObj.word}">`;
         imageContainer.innerHTML = wordImage;
       } else {
         wordContainer.innerHTML = "Game Over";
-     
+        imageContainer.innerHTML = ""; // Clear image container
       }
     }
 

@@ -1,14 +1,10 @@
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lesson 1 - English Adventures</title>
+  <link rel="stylesheet" href="css/side-score-style.css">
   <style>
     body {
       overflow: hidden;
@@ -189,15 +185,15 @@
   </style>
 </head>
 <body>
-    <a class="retry-button" href="lesson2-1.html">
+    <a class="retry-button" href="lesson2-1.php">
         <img src="retry.png" />
     </a>
 
-    <a class="back-button" href="lesson2.html">
+    <a class="back-button" href="lesson2.php">
         <img src="back.png" />
     </a>
 
-    <a class="home-button" href="background_page.html">
+    <a class="home-button" href="lesson-list.php">
         <img src="home.png" />
     </a>
 
@@ -246,15 +242,6 @@
   </div>
 </div>
 <script>
-        function goRetry() {
-            window.location.href = 'lesson2-1.html';
-        }
-        function goBack() {
-            window.location.href = 'lesson2.html';
-        }
-        function goHome() {
-            window.location.href = 'background_page.html';
-        }
 
   const animals = document.querySelectorAll('.animal-button');
   const droppables = document.querySelectorAll('.droppable');
@@ -321,8 +308,12 @@
 
   <div class="score-label right">Score: 75</div>
 
-  <img class="image-left" src="traveler2.png" alt="Traveler 2 Image">
+  
   <img class="image-right" src="traveler5.png" alt="Traveler 5 Image">
+<div class="name-list">
+     <?php include "function/retrieve-all-scores-l2-act1.php"; ?>
+</div>
+<?php include "js/record-score.php"; ?>
 
 </body>
 </html>

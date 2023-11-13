@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +8,7 @@
       margin: 0;
       padding: 0;
       height: 100vh;
-      background-image: url('cute_background8.jpg');
+      background-image: url('cute_background4.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
@@ -66,7 +64,6 @@
       position: absolute;
       left: 50px;
       top: 170px;
-      
     }
 
     .lesson-labels {
@@ -82,7 +79,7 @@
 
     .lesson-labels .lesson-label {
       background-color: #00741E;
-      padding: 10px 20px;
+      padding: 10px 10px;
       font-size: 40px;
       font-weight: bold;
       border-radius: 5px;
@@ -100,12 +97,12 @@
       cursor: pointer;
       box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
       position: relative;
-      left: 250px;
+      left: 280px;
       top: 0px;
-      text-decoration: none; /* Remove underline from links */
+	text-decoration: none; /* Remove underline from links */
     }
   
-    .play-button:hover {
+     .play-button:hover {
       background-color: #ffa500;
     }
 
@@ -122,24 +119,29 @@
     }
 
     .lesson-labels .button-group {
-      display: flex;
+      display: fixed;
       align-items: center;
     }
 
     .recognizing-sounds {
-      position: relative;
-      left: -215px;
-      top: 220px;
+      
+      position: fixed;
+      left: 151px;
+      top: 300px;
+      
+    }
+    .recognizing-sounds .lesson-label {
+      padding: 10px 30px;
     }
 
     .recognizing-nouns {
-      position: relative;
-      left: -215px;
-      top: 220px;
+      position: fixed;
+      left: 150px;
+      top: 480px;
     }
 
     .recognizing-nouns .lesson-label {
-      padding: 10px 197px;
+      padding: 10px 10px;
     }
 
     .traveler-image {
@@ -158,43 +160,32 @@
 }
 
   </style>
-<script>
-        function goHome() {
-            window.location.href = 'background_page.html';
-        }
-</script>
 </head>
 <body>
-    <a class="home-button" href="background_page.html">
+    <a class="home-button" href="lesson-list.php">
         <img src="home.png" />
     </a>
 
-<audio autoplay loop controlsList="nodownload" style="display: none">
-  <source src="m1.ogg" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
   <img class="logo-image" src="logo.png" alt="English Adventures Logo">
-  <div class="lesson-title">Lesson 1</div>
+  <div class="lesson-title">Lesson 3</div>
   <div class="lesson-bar">
     <div class="scroll-icon"></div>
     <div class="lesson-labels recognizing-sounds">
-      <div class="lesson-label">Recognizing the Short a and e Sounds</div>
+      <div class="lesson-label">Recognizing the Short o and u Sounds</div>
       <div class="button-group">
         <div class="score-button">10/10</div>
-        <!-- Link the Play button to lesson1-1.html -->
-        <a href="lesson1-1.html" class="play-button">Play</a>
+       <a href="lesson3-1.php" class="play-button">Play</a>
       </div>
     </div>
     <div class="lesson-labels recognizing-nouns">
-      <div class="lesson-label">Recognizing Nouns</div>
+      <div class="lesson-label">Recognizing Common and Proper Nouns</div>
       <div class="button-group">
         <div class="score-button">10/10</div>
-        <!-- Link the second Play button to lesson1-2.html -->
-        <a href="lesson1-2.html" class="play-button">Play</a>
+        <a href="lesson3-2.php" class="play-button">Play</a>
+ 
       </div>
     </div>
   </div>
-
   <img class="traveler-image" src="traveler4.png" alt="Traveler 4">
 </body>
 </html>

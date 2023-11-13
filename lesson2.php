@@ -13,7 +13,7 @@
       margin: 0;
       padding: 0;
       height: 100vh;
-      background-image: url('cute_background10.jpg');
+      background-image: url('cute_background4.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
@@ -78,22 +78,18 @@
       gap: 10px;
       position: absolute;
       left: 180px;
-      margin-top: -15px;
+      top: 180px;
       z-index: 1;
     }
 
     .lesson-labels .lesson-label {
       background-color: #00741E;
-      padding: 10px 20px;
+      padding: 10px 85px;
       font-size: 40px;
       font-weight: bold;
       border-radius: 5px;
       cursor: default;
       box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-      white-space: normal; /* Add this property to enable text wrapping */
-      display: inline-block; /* Add this property for variable box width */
-      width: 650px;
-      padding: 10px 10px;
     }
 
     .score-button,
@@ -106,8 +102,8 @@
       cursor: pointer;
       box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
       position: relative;
-      left: 225px;
-      top: 5px;
+      left: 250px;
+      top: 0px;
 	text-decoration: none; /* Remove underline from links */
     }
   
@@ -128,29 +124,24 @@
     }
 
     .lesson-labels .button-group {
-      display: fixed;
+      display: flex;
       align-items: center;
     }
 
     .recognizing-sounds {
-      
-      position: fixed;
-      left: 210px;
-      top: 300px;
-      
-    }
-    .recognizing-sounds .lesson-label {
-      padding: 10px 10px;
+      position: relative;
+      left: -215px;
+      top: 220px;
     }
 
     .recognizing-nouns {
-      position: fixed;
-      left: 210px;
-      top: 505px;
+      position: relative;
+      left: -215px;
+      top: 220px;
     }
 
     .recognizing-nouns .lesson-label {
-      padding: 10px 10px;
+      padding: 10px 13px;
     }
 
     .traveler-image {
@@ -160,6 +151,7 @@
       width: auto;
       height: 700px;
     }
+
 .home-button {
   position: fixed;
   margin-right: -1410px;
@@ -167,7 +159,6 @@
   transform: scale(0.10);
   z-index: 10;
 }
-
   </style>
 <script>
         function goHome() {
@@ -176,26 +167,27 @@
 </script>
 </head>
 <body>
-    <a class="home-button" href="background_page.html">
+    <a class="home-button" href="lesson-list.php">
         <img src="home.png" />
     </a>
 
   <img class="logo-image" src="logo.png" alt="English Adventures Logo">
-  <div class="lesson-title">Lesson 5</div>
+  <div class="lesson-title">Lesson 2</div>
   <div class="lesson-bar">
     <div class="scroll-icon"></div>
     <div class="lesson-labels recognizing-sounds">
-      <div class="lesson-label">Pronouncing words with the Sounds of d and t</div>
+      <div class="lesson-label">Recognizing the Short i Sounds</div>
       <div class="button-group">
         <div class="score-button">10/10</div>
-        <a href="lesson5-1.html" class="play-button">Play</a>
+       <a href="lesson2-1.php" class="play-button">Play</a>
       </div>
     </div>
     <div class="lesson-labels recognizing-nouns">
-      <div class="lesson-label">Using A and An</div>
+      <div class="lesson-label">Recognizing Singular and Plural Nouns</div>
       <div class="button-group">
         <div class="score-button">10/10</div>
-        <a href="lesson5-2.html" class="play-button">Play</a>
+        <a href="lesson2-2.php" class="play-button">Play</a>
+ 
       </div>
     </div>
   </div>
