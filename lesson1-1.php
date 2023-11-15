@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
      <head>
           <title>Lesson 1 - English Adventures</title>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link rel="stylesheet" href="css/side-score-style.css">
           <style>
                body {
                     overflow: hidden;
@@ -124,18 +127,6 @@
                     background-color: #FF5252;
                }
 
-               .image-left {
-                    width: 300px;
-                    min-height: 400px;
-                    max-height: 400px;
-                    position: absolute;
-                    left: 11px;
-                    top: 325px;
-                    z-index: 4;
-                    overflow-y: scroll;
-
-               }
-
                .image-right {
                     width: 230px;
                     height: auto;
@@ -166,10 +157,6 @@
 
                }
 
-               .increment:hover,
-               .decrement:hover {
-                    background-color: #00741E;
-               }
           </style>
           <script>
                function goRetry() {
@@ -209,15 +196,15 @@
      </head>
 
      <body>
-          <a class="retry-button" href="lesson1-1.html">
+          <a class="retry-button" href="lesson1-1.php">
                <img src="retry.png" />
           </a>
 
-          <a class="back-button" href="lesson1.html">
+          <a class="back-button" href="lesson1.php">
                <img src="back.png" />
           </a>
 
-          <a class="home-button" href="background_page.html">
+          <a class="home-button" href="lesson-list.php">
                <img src="home.png" />
           </a>
 
@@ -249,112 +236,14 @@
 
           <div class="score-label right">Score: 75</div>
 
-          <div class="image-left">
 
-                    <div style="display: flex;margin: 7px 5px;justify-content: space-between;">
-                    <div style="
-      background-color: #00741e;
-      padding: 10px 10px;
-      text-align: center;
-      width: 48%;
-      border-radius: 10px;
-      border: 4px solid;
-      font-size: 20px;
-      font-weight: bold;
-      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-      ">Veneracion</div>
-                    <div style="
-      display: flex;
-      background-color: #fff;
-      color: #00741e;
-      text-align: center;
-      width: 40%;
-      border-radius: 10px  ;
-      font-size: 30px;
-      font-weight: bold;
-      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-      justify-content: center;
-      align-items: center;
-      z-index: -2;
-      ">
-                         <div class="decrement" style="
-        background-color: #ffcc00;
-        color: #00741e;
-        border-radius: 10px 0px 0px 10px;
-        padding: 0px 8px;
-        width: 30px;
-        height: 51px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-        ">-</div>
-                         <div style="
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 5px;
-        
-        ">12</div>
-                         <div class="increment" style="
-        background-color: #ffcc00;
-        color: #00741e;
-        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        border-radius: 0px 10px 10px 0px;;
-        padding: 0px 8px;
-        width: 30px;
-        height: 51px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        ">+</div>
-                    </div>
+          <img class="image-right" src="traveler5.png" alt="Traveler 5 Image">
+
+          <div class="name-list">
+               <?php include "function/retrieve-all-scores-l1-act1.php"; ?>
           </div>
-          
-               <img class="image-right" src="traveler5.png" alt="Traveler 5 Image">
 
-               <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-               <script>
-                    $(document).ready(function () {
-                         // Attach a click event handler to the buttons with class "decrement-score" and "increment-score"
-                         $(".decrement-score, .increment-score").click(function () {
-                              // Get the action (decrement or increment) from the data-action attribute
-                              var action = $(this).data("action");
-
-                              // Find the associated score value element
-                              var scoreValueElement = $(this).siblings(".score-value");
-
-                              // Get the current score from the element
-                              var currentScore = parseInt(scoreValueElement.text());
-
-                              // Get the record_ID from a data attribute or another appropriate source (adjust as needed)
-                              var record_ID = $(this).data("record-id");
-
-                              // Adjust the score based on the action
-                              if (action === "decrement") {
-                                   currentScore--;
-                              } else if (action === "increment") {
-                                   currentScore++;
-                              }
-
-                              // Send an AJAX request to update the score on the server
-                              $.ajax({
-                                   type: "POST",
-                                   url: "function/update-score.php", // Replace with the actual URL of your PHP script
-                                   data: { action: action, newScore: currentScore, record_ID: record_ID },
-                                   success: function (response) {
-                                        // Update the score value element with the new score
-                                        scoreValueElement.text(currentScore);
-                                   },
-                                   error: function () {
-                                        alert("An error occurred while updating the score.");
-                                   }
-                              });
-                         });
-                    });
-               </script>
-
-
+          <?php include "js/record-score.php"; ?>
      </body>
 
 </html>

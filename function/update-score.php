@@ -9,12 +9,13 @@ $newScore = $_POST['newScore'];
 
 // Get the record_ID from the AJAX request to identify the record to update
 $record_ID = $_POST['record_ID'];
+$lesson_activity = $_POST['lessonActivity'];
 
 // Update the score in the database based on the record_ID
 if ($action === 'increment') {
-    $sql = "UPDATE pupil_record SET $row lesson_1_act_1 = lesson_1_act_1 + 1 WHERE record_ID = ?";
+    $sql = "UPDATE pupil_record SET $row $lesson_activity = $lesson_activity + 1 WHERE record_ID = ?";
 } elseif ($action === 'decrement') {
-    $sql = "UPDATE pupil_record SET lesson_1_act_1 = lesson_1_act_1 - 1 WHERE record_ID = ?";
+    $sql = "UPDATE pupil_record SET $lesson_activity = $lesson_activity - 1 WHERE record_ID = ?";
 }
 
 // Create a prepared statement for the update

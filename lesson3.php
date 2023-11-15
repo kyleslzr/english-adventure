@@ -1,18 +1,14 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
   <title>Lesson 1 - English Adventures</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       overflow: hidden;
       margin: 0;
       padding: 0;
       height: 100vh;
-      background-image: url('cute_background9.jpg');
+      background-image: url('cute_background4.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
@@ -89,9 +85,6 @@
       border-radius: 5px;
       cursor: default;
       box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-white-space: normal; /* Add this property to enable text wrapping */
-      display: inline-block; /* Add this property for variable box width */
-      width: 650px;
     }
 
     .score-button,
@@ -104,8 +97,8 @@ white-space: normal; /* Add this property to enable text wrapping */
       cursor: pointer;
       box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
       position: relative;
-      left: 225px;
-      top: 5px;
+      left: 280px;
+      top: 0px;
 	text-decoration: none; /* Remove underline from links */
     }
   
@@ -133,24 +126,23 @@ white-space: normal; /* Add this property to enable text wrapping */
     .recognizing-sounds {
       
       position: fixed;
-      left: 210px;
-      top: 285px;
+      left: 151px;
+      top: 300px;
       
     }
     .recognizing-sounds .lesson-label {
-      padding: 10px 10px;
+      padding: 10px 30px;
     }
 
     .recognizing-nouns {
       position: fixed;
-      left: 210px;
-      top: 495px;
+      left: 150px;
+      top: 480px;
     }
 
     .recognizing-nouns .lesson-label {
       padding: 10px 10px;
     }
-
 
     .traveler-image {
       position: absolute;
@@ -159,7 +151,6 @@ white-space: normal; /* Add this property to enable text wrapping */
       width: auto;
       height: 700px;
     }
-
 .home-button {
   position: fixed;
   margin-right: -1410px;
@@ -169,39 +160,32 @@ white-space: normal; /* Add this property to enable text wrapping */
 }
 
   </style>
-
-<script>
-        function goHome() {
-            window.location.href = 'background_page.html';
-        }
-</script>
-
 </head>
 <body>
-    <a class="home-button" href="background_page.html">
+    <a class="home-button" href="lesson-list.php">
         <img src="home.png" />
     </a>
 
   <img class="logo-image" src="logo.png" alt="English Adventures Logo">
-  <div class="lesson-title">Lesson 4</div>
+  <div class="lesson-title">Lesson 3</div>
   <div class="lesson-bar">
     <div class="scroll-icon"></div>
     <div class="lesson-labels recognizing-sounds">
-      <div class="lesson-label">Pronouncing words with the Sounds of b and p</div>
+      <div class="lesson-label">Recognizing the Short o and u Sounds</div>
       <div class="button-group">
         <div class="score-button">10/10</div>
-       <a href="lesson4-1.html" class="play-button">Play</a>
+       <a href="lesson3-1.php" class="play-button">Play</a>
       </div>
     </div>
     <div class="lesson-labels recognizing-nouns">
-      <div class="lesson-label">Using Pronouns</div>
+      <div class="lesson-label">Recognizing Common and Proper Nouns</div>
       <div class="button-group">
         <div class="score-button">10/10</div>
-        <a href="lesson4-2.html" class="play-button">Play</a>
+        <a href="lesson3-2.php" class="play-button">Play</a>
+ 
       </div>
     </div>
   </div>
-
   <img class="traveler-image" src="traveler4.png" alt="Traveler 4">
 </body>
 </html>

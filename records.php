@@ -191,7 +191,7 @@ tr:nth-child(even) {
   </style>
 </head>
 <body>
-  <a class="home-button" href="eng adv.html">
+  <a class="home-button" href="index.php">
     <img src="home1.png" />
 </a>
   <!-- <img class="logo" src="logo.png" alt="English Adventures Logo" -->

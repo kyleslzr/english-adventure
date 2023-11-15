@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lesson 1 - English Adventures</title>
+    <link rel="stylesheet" href="css/side-score-style.css">
     <style>
         body {
             overflow: hidden;
@@ -96,8 +97,6 @@
 
         button:hover {
             transform: translatey(0px);
-        }
-
         }
 
         ul {
@@ -193,14 +192,6 @@
             background-color: #FF5252;
         }
 
-        .image-left {
-            width: 300px;
-            height: auto;
-            position: absolute;
-            left: 11px;
-            top: 330px;
-            z-index: 4;
-        }
 
         .image-right {
             width: 230px;
@@ -260,7 +251,6 @@
         }
     
 
-
         h2 {
             font-size: 40px;
             margin-left: -340px;
@@ -274,18 +264,19 @@
             cursor: default;
             box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
         }
+
     </style>
 </head>
 <body>
-    <a class="retry-button" href="lesson1-2.html">
+    <a class="retry-button" href="lesson1-2.php">
         <img src="retry.png" />
     </a>
 
-    <a class="back-button" href="lesson1.html">
+    <a class="back-button" href="lesson1.php">
         <img src="back.png" />
     </a>
 
-    <a class="home-button" href="background_page.html">
+    <a class="home-button" href="lesson-list.php">
         <img src="home.png" />
     </a>
 
@@ -299,7 +290,6 @@
             <ul id="correct-nouns-list"></ul>
         </div>
     </div>
-
     <script>
         function goRetry() {
             window.location.href = 'lesson1-2.html';
@@ -433,7 +423,11 @@
 
     <div class="score-label right">Score: 75</div>
 
-    <img class="image-left" src="traveler2.png" alt="Traveler 2 Image">
     <img class="image-right" src="traveler5.png" alt="Traveler 5 Image">
+    
+    <div class="name-list">
+          <?php include "function/retrieve-all-scores-l1-act2.php"; ?>
+     </div>
+     <?php include "js/record-score.php"; ?>
 </body>
 </html>

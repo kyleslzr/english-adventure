@@ -23,9 +23,9 @@ if ($stmt === false) {
                     justify-content: space-between;">
                          <div class="name-label">' . $row['surname'] . '</div>
                          <div class="score-div"> 
-                              <div class="decrement-score" data-lesson-activity="lesson_1_act_1" data-action="decrement" data-record-id="' . $row['record_ID'] . '">-</div>
-                              <div class="score-value">' . $row['lesson_1_act_1'] . '</div>
-                              <div class="increment-score" data-lesson-activity="lesson_1_act_1" data-action="increment" data-record-id="' . $row['record_ID'] . '">+</div>
+                              <div class="decrement-score" data-lesson-activity="lesson_1_act_2" data-action="decrement" data-record-id="' . $row['record_ID'] . '">-</div>
+                              <div class="score-value">' . $row['lesson_1_act_2'] . '</div>
+                              <div class="increment-score" data-lesson-activity="lesson_1_act_2" data-action="increment" data-record-id="' . $row['record_ID'] . '">+</div>
                          </div>
                     </div>';
                }
