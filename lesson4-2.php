@@ -193,6 +193,59 @@
 
 }
 
+.centered-boardd {
+                    width: 1150px;
+                    position: absolute;
+                    bottom: -22px;
+                    z-index: 10;
+               }
+
+               .centered-boarddd {
+                    width: 1644px;
+                    position: absolute;
+                    bottom: -133.5px;
+                    z-index: 11;
+               }
+
+               .animate__fadeOut {
+               animation: fadeOut 2.3s; /* Specify the animation name and duration here */
+               animation-fill-mode: forwards;
+               
+               }
+
+               @keyframes fadeOut {
+                    0% {
+                         opacity: 1;
+                    }
+                    80% {
+                         opacity: 1; /* Adjust the opacity value as needed */
+                    }
+                    100% {
+                         opacity: 0;
+                         display: none;
+                    }
+                    }
+
+               .animate__bounceOutUp {
+               animation: bounceOutUp 6.7s; /* Specify the animation name and duration here */
+               animation-fill-mode: forwards;
+               }
+
+               @keyframes bounceOutUp {
+               0% {
+                    transform: translateY(0) scaley(1); 
+               }
+
+               37% {
+                    transform: translateY(1%) scaley(1); 
+               
+               }
+
+               100% {
+                    transform: translateY(-100%) scaley(1);
+               }
+               }
+
   </style>
 </head>
 <body>
@@ -334,6 +387,9 @@
   <div class="centered-board"></div>
   
   <img class="image-right" src="traveler5.png" alt="Traveler 5 Image">
+  <img class="centered-boardd animate__bounceOutUp" src="board1.png" alt="Traveler 5 Image">
+
+<img class="centered-boarddd animate__fadeOut" src="bg.jpg" alt="Traveler 5 Image">
 <div class="name-list">
      <?php include "function/retrieve-all-scores-l2-act1.php"; ?>
 </div>
