@@ -308,7 +308,7 @@ tr:nth-child(even) {
                </form>
 
      <img class="logo-image" src="SJAB LOGO.png" alt="English Adventures Logo">
-     <img class="traveler" src="traveler.png" alt="Traveler">
+     <img class="logo-imagee" src="logo.png" alt="Traveler">
      <script>
           function confirmDelete(formId) {
                if (confirm("Are you sure you want to delete this record?")) {

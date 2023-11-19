@@ -8,6 +8,7 @@
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <link rel="stylesheet" href="css/side-score-style.css">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
           <style>
                body {
                     overflow: hidden;
@@ -97,6 +98,13 @@
                     z-index: -1;
                }
 
+               .centered-boardd {
+                    width: 1150px;
+                    position: absolute;
+                    bottom: -22px;
+                    z-index: 10;
+               }
+
                .score-label {
                     position: absolute;
                     font-size: 20px;
@@ -167,6 +175,27 @@
                     transform: scale(0.10);
 
                }
+
+               .animate__bounceOutUp {
+               animation: bounceOutUp 3s; /* Specify the animation name and duration here */
+               animation-fill-mode: forwards;
+               }
+
+               @keyframes bounceOutUp {
+               0% {
+                    transform: translateY(0) scaley(1); 
+               }
+
+               30% {
+                    transform: translateY(1%) scaley(1); 
+               
+               }
+
+               100% {
+                    transform: translateY(-100%) scaley(1);
+               }
+               }
+
 
           </style>
           <script>
@@ -264,6 +293,8 @@
           <div class="centered-board"></div>
 
           <img class="image-right" src="traveler5.png" alt="Traveler 5 Image">
+          
+          <img class="centered-boardd animate__bounceOutUp" src="board1.png" alt="Traveler 5 Image">
 
           <div class="name-list">
                <?php include "function/retrieve-all-scores-l1-act1.php"; ?>
