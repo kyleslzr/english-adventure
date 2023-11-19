@@ -43,16 +43,21 @@ if ($stmt === false) {
                               <td>' . $row['lesson_5_act_1'] . '</td>
                               <td>' . $row['lesson_5_act_2'] . '</td>
                               <td style="font-weight: 700;">' . $total . '</td>
-                              <td> <img src="delete.png" style="
-                              width: 34px;
-                          "></td>
+                              <td>
+                                   <form id="deleteRecord" action="function/delete-record.php" method="post">
+                                        <input type="hidden" name="recordId" value="' . $row['record_ID'] . '">
+                                        <button class="delete-btn" type="button" onclick="confirmDelete()" style="background-color: transparent; border: 0px;">
+                                        <img src="delete.png" style="width: 34px;">
+                                        </button>
+                                   </form>
+                              </td>
                          </tr>';
 
                     $total = 0;
                     $count++;
                }
           } else {
-               echo '<tr><td colspan="13" style="text-align: center; color: color(srgb 0.2256 0.5047 0.1138); font-size: 15px;">No data recorded yet.</td></tr>';
+               echo '<tr><td colspan="14" style="text-align: center; color: color(srgb 0.2256 0.5047 0.1138); font-size: 15px;">No data recorded yet.</td></tr>';
           }
      } else {
           echo "Error: " . mysqli_error($conn);
