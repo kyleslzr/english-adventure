@@ -42,6 +42,11 @@
                     height: 95px;
                     z-index: 10;
 
+
+               }
+
+               .logo-image:hover {
+                    filter: brightness(.8)
                }
 
                .text {
@@ -133,7 +138,9 @@
                of Grade 1 pupils. This initiative is aligned with the content presented in "Workbook for English"
                authored by Darlene Niel Panganiban of Aral Pinas.</div>
           </div>
-          <img class="logo-image " src="SJAB LOGO.png" alt="English Adventures Logo">
+          <a href = "https://www.facebook.com/SanJoseAcademyBulacanFalcons" target="_blank"> 
+          <img class="logo-image" src="SJAB LOGO.png"  alt="English Adventures Logo">
+          </a>
           <img class="traveler-blink" src="blink.jpg" alt="English Adventures Logo">
           <a href="lesson-list.php">
                <button class="start-button animate__bounceInDown">

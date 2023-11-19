@@ -31,11 +31,11 @@
     }
 
       .logo-image {
-      position: absolute;
-      top: 20px;
-      left: 58px;
-      width: auto;
-      height: 200px;
+        position: absolute;
+    top: 18px;
+    left: 70px;
+    width: auto;
+    height: 178px;
       
 	}
     .text {
@@ -58,18 +58,19 @@
       outline: 4px solid #fff;
       z-index: 2;
       }
-    .score-label.left {
-      left: 30px;
-      top: 248px;
-      color: #fff;
-      font-size: 20.8px;
-      background-color: #00741E;
-      white-space: normal; /* Add this property to enable text wrapping */
-      display: inline-block; /* Add this property for variable box width */
-      width: 240px;
-      padding: 10px 10px;
-      z-index: 3;
-      text-align: center;
+      .score-label.left {
+        left: 30px;
+        top: 297px;
+        color: #fff;
+        font-size: 24.8px;
+        background-color: #00741E;
+        white-space: normal;
+        display: inline-block;
+        width: 240px;
+        padding: 10px 10px;
+        z-index: 3;
+        text-align: center;
+        font-weight: bolder;
 	}	
 
     .start-button, .delete-button {
@@ -80,7 +81,7 @@
       font-size: 50px;
       font-weight: bold;
       border: none;
-      border-radius: 5px;
+      border-radius: 50px;
       cursor: pointer;
       box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
@@ -118,13 +119,13 @@
     justify-content: center;
     padding: 1px;
     height: 45px;
-    width: 187px;
+    width: 179px;
     }
 
     .delete-button {
     position: absolute;
-    top: 0px;
-    right: 15px;
+    bottom: 22px;
+    left: 20px;
     font-size: 25px;
     display: flex;
     align-items: center;
@@ -215,6 +216,36 @@ tr:nth-child(even) {
   filter: brightness(0.8);
 }
 
+.rscroll::-webkit-scrollbar {
+     width: 12px; /* width of the scrollbar */
+   }
+   
+   .rscroll::-webkit-scrollbar-thumb {
+     background-color: white; /* color of the scrollbar thumb */
+     border-top-right-radius: 50px; /* roundness of the scrollbar thumb */
+   }
+   
+   .rscroll::-webkit-scrollbar-track {
+     background-color:#7FB072; /* color of the scrollbar track */
+     border-top-right-radius: 19px;
+   }
+   
+   .rscroll::-webkit-scrollbar-thumb:hover {
+     filter: brightness(.8); /* color of the scrollbar thumb on hover */
+   }
+   
+.rscroll {
+  overflow-x: hidden;
+}
+
+.logo-imagee {
+                    position: absolute;
+                    top: 27px;
+                    right: 24px;
+                    width: auto;
+                    height: 102px;
+}
+
   </style>
 </head>
 <body>
@@ -222,16 +253,19 @@ tr:nth-child(even) {
     <img src="home1.png" />
 </a>
   <!-- <img class="logo" src="logo.png" alt="English Adventures Logo" -->
-  <div class="score-label left">This educational gaming tool is made available for the esteemed institution of SAN JOSE ACADEMY OF BULACAN located in San Jose Del Monte, Bulacan, specifically intended for the benefit of Grade 1 pupils. This initiative is aligned with the content presented in "Workbook for English" authored by Darlene Niel Panganiban of Aral Pinas.</div>
-<div class="text">Workbook Link: https://www.studocu.com/en-us/document/manhattan-college/the-modern-english-novel/english-workbook-grade-1/35324175
 </div>
 <div class="centered-board"></div>
 <div class="lesson-title" style="top: 52px;">Records</div>
-<div style="
-    margin-top: 25px;
-    overflow: scroll;
-    min-height: 460px;
-    max-height: 460px;
+<div class="rscroll" style="
+    margin-top: 15px;
+    margin-left: 1px;
+    overflow-y: scroll;
+    min-height: 441px;
+    max-height: 448px;
+    border: 5px solid #7faf71;
+    border-top-left-radius: 19px;
+    border-top-right-radius: 19px;
+
 ">
   <table>
     <tr style="background-color: #00741E;color: white;font-size: 20px;position: sticky;top: 0;">
@@ -271,7 +305,8 @@ tr:nth-child(even) {
           </button>
           </form>
   <img class="logo-image" src="SJAB LOGO.png" alt="English Adventures Logo">
-  <img class="traveler" src="traveler.png" alt="Traveler">
+  <img class="logo-imagee" src="logo.png" alt="English Adventures Logo">
+
 
 </body>
 </html>
