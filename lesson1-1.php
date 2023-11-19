@@ -4,7 +4,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
      <head>
-          <title>Lesson 1 - English Adventures</title>
+          <title>Lesson 4 - English Adventures</title>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <link rel="stylesheet" href="css/side-score-style.css">
@@ -47,7 +47,7 @@
                     cursor: pointer;
                     font-size: 40px;
                     font-weight: bold;
-                    transition: background-color 0.3s;
+              
                     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
                }
 
@@ -58,13 +58,16 @@
                .word-button[data-status="false"].active {
                     background-color: #EE2F41;
                }
+               .word-button:hover {
+                    filter: brightness(.8);
+               }
 
                .logo-image {
                     position: absolute;
-                    top: 10px;
-                    left: 10px;
+                    top: 27px;
+                    right: 24px;
                     width: auto;
-                    height: 80px;
+                    height: 102px;
                }
 
                .lesson-title {
@@ -105,20 +108,17 @@
                     outline: 4px solid #fff;
                     z-index: 2;
                }
-
                .score-label.left {
                     left: 30px;
-                    top: 100px;
+                    top: 31px;
                     font-size: 25px;
                     background-color: #00741E;
                     white-space: normal;
-                    /* Add this property to enable text wrapping */
                     display: inline-block;
-                    /* Add this property for variable box width */
                     width: 230px;
                     padding: 10px 10px;
                     z-index: 3;
-               }
+                    }`
 
                .score-label.right {
                     right: 30px;
@@ -127,12 +127,23 @@
                     background-color: #FF5252;
                }
 
+               @keyframes stretchAnimation {
+               0%, 100% {
+               transform: translateY(0) scaleY(1);
+               }
+               50% {
+                transform: translateY(-1.1%) scaleY(1.025);
+               }
+                    }
+
                .image-right {
                     width: 230px;
                     height: auto;
                     position: absolute;
                     right: 36px;
                     top: 190px;
+                    animation: stretchAnimation 3s infinite; /* Adjust the duration and iteration count as needed */
+
                }
 
                .retry-button {
@@ -159,18 +170,19 @@
 
           </style>
           <script>
-               function goRetry() {
-                    window.location.href = 'lesson1-1.html';
-               }
-               function goBack() {
-                    window.location.href = 'lesson1.html';
-               }
-               function goHome() {
-                    window.location.href = 'background_page.html';
-               }
-
                document.addEventListener('DOMContentLoaded', function () {
                     const wordButtons = document.querySelectorAll('.word-button');
+
+                    // Function to play the correct sound
+                    function playCorrectSound() {
+                         const correctSound = new Audio('correct.ogg');
+                         correctSound.play();
+                    }
+                    
+                    function playWrongSound() {
+                         const wrongSound = new Audio('wrong.ogg');
+                         wrongSound.play();
+                    }
 
                     wordButtons.forEach(button => {
                          button.addEventListener('click', () => {
@@ -181,9 +193,18 @@
 
                                    // Toggle the text color to white
                                    if (button.classList.contains('active')) {
-                                        button.style.color = 'white';
+                                   button.style.color = 'white';
                                    } else {
-                                        button.style.color = '#00741E'; // Original color
+                                   button.style.color = '#00741E'; // Original color
+                                   }
+
+                                   // Play the correct sound if the button is active and has status true
+                                   if (button.classList.contains('active') && button.dataset.status === 'true') {
+                                   playCorrectSound();
+                                   }
+
+                                   if (button.classList.contains('active') && button.dataset.status === 'false') {
+                                   playWrongSound();
                                    }
 
                                    // Mark the button as clicked
@@ -196,6 +217,13 @@
      </head>
 
      <body>
+
+     <audio autoplay loop controlsList="nodownload" style="display: none">
+  <source src="music2 (2).ogg" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+
           <a class="retry-button" href="lesson1-1.php">
                <img src="retry.png" />
           </a>
@@ -214,18 +242,19 @@
                <button class="word-button" data-status="true">CAT</button>
                <button class="word-button" data-status="true">APPLE</button>
                <button class="word-button" data-status="false">LATE</button>
-               <button class="word-button" data-status="false">MANSION</button>
-               <button class="word-button" data-status="false">SACK</button>
+               <button class="word-button" data-status="true">MANSION</button>
+               <button class="word-button" data-status="true">SACK</button>
                <button class="word-button" data-status="false">BAKE</button>
-               <button class="word-button" data-status="false">ALLIGATOR</button>
-               <button class="word-button" data-status="false">LADDER</button>
-               <button class="word-button" data-status="false">RANDOM</button>
-               <button class="word-button" data-status="false">SAD</button>
+               <button class="word-button" data-status="true">ALLIGATOR</button>
+               <button class="word-button" data-status="true">LADDER</button>
+               <button class="word-button" data-status="true">RANDOM</button>
+               <button class="word-button" data-status="true">SAD</button>
                <button class="word-button" data-status="false">RAIN</button>
-               <button class="word-button" data-status="true">CAKE</button>
+               <button class="word-button" data-status="false">CAKE</button>
                <button class="word-button" data-status="false">RAISE</button>
-               <button class="word-button" data-status="true">MATE</button>
+               <button class="word-button" data-status="false">MATE</button>
                <button class="word-button" data-status="true">BAT</button>
+               <div style="position: absolute; top: 50%; display: none;"><img width="200px" class="" src="logo.png" alt="English Adventures Logo"></div>
           </div>
 
           <div class="score-label left">Directions: Click the words with Short /a/ sound.</div>
@@ -233,9 +262,6 @@
           <div class="lesson-title" style="top: 52px;">Recognizing the Short a and e Sounds</div>
 
           <div class="centered-board"></div>
-
-          <div class="score-label right">Score: 75</div>
-
 
           <img class="image-right" src="traveler5.png" alt="Traveler 5 Image">
 
@@ -245,5 +271,4 @@
 
           <?php include "js/record-score.php"; ?>
      </body>
-
 </html>

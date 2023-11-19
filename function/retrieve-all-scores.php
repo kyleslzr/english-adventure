@@ -43,6 +43,9 @@ if ($stmt === false) {
                               <td>' . $row['lesson_5_act_1'] . '</td>
                               <td>' . $row['lesson_5_act_2'] . '</td>
                               <td style="font-weight: 700;">' . $total . '</td>
+                              <td> <img src="delete.png" style="
+                              width: 34px;
+                          "></td>
                          </tr>';
 
                     $total = 0;

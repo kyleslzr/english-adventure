@@ -88,13 +88,13 @@
                     border-radius: 5px;
 
                }
-
+               
                .logo-image {
                     position: absolute;
-                    top: 10px;
-                    left: 10px;
+                    top: 27px;
+                    right: 24px;
                     width: auto;
-                    height: 80px;
+                    height: 102px;
                }
 
                .lesson-title {
@@ -134,17 +134,15 @@
                     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
                     outline: 4px solid #fff;
                     z-index: 2;
-               }
-
+               } 
+               
                .score-label.left {
                     left: 30px;
-                    top: 100px;
+                    top: 31px;
                     font-size: 25px;
                     background-color: #00741E;
                     white-space: normal;
-                    /* Add this property to enable text wrapping */
                     display: inline-block;
-                    /* Add this property for variable box width */
                     width: 230px;
                     padding: 10px 10px;
                     z-index: 3;
@@ -166,13 +164,24 @@
                     z-index: 4;
                }
 
-               .image-right {
-                    width: 230px;
-                    height: auto;
-                    position: absolute;
-                    right: 36px;
-                    top: 190px;
-               }
+               @keyframes stretchAnimation {
+  0%, 100% {
+  transform: translateY(0) scaleY(1);
+  }
+  50% {
+   transform: translateY(-1.1%) scaleY(1.025);
+  }
+       }
+
+  .image-right {
+       width: 230px;
+       height: auto;
+       position: absolute;
+       right: 36px;
+       top: 190px;
+       animation: stretchAnimation 3s infinite; /* Adjust the duration and iteration count as needed */
+
+        }
 
                .retry-button {
                     position: fixed;
@@ -199,6 +208,10 @@
      </head>
 
      <body>
+     <audio autoplay loop controlsList="nodownload" style="display: none">
+  <source src="music2 (2).ogg" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
           <a class="retry-button" href="lesson3-2.php">
                <img src="retry.png" />
           </a>
@@ -226,7 +239,6 @@
 
           <div class="centered-board"></div>
 
-          <div class="score-label right">Score: 75</div>
           <div class="word-container hide" id="wordContainer"></div>
           
 
@@ -278,28 +290,38 @@
                }
 
                function checkNounType(isProperNoun) {
-                    const wordObj = words[currentIndex];
-                    if (wordObj.isProper === isProperNoun) {
-                         properNounBtn.classList.remove("wrong");
-                         commonNounBtn.classList.remove("wrong");
-                         if (isProperNoun) {
-                              properNounBtn.classList.add("correct");
-                         } else {
-                              commonNounBtn.classList.add("correct");
-                         }
-                         currentIndex++;
-                         setTimeout(() => {
-                              displayWord();
-                              properNounBtn.classList.remove("correct");
-                              commonNounBtn.classList.remove("correct");
-                         }, 1500);
-                    } else {
-                         if (isProperNoun) {
-                              properNounBtn.classList.add("wrong");
-                         } else {
-                              commonNounBtn.classList.add("wrong");
-                         }
-                    }
+               const wordObj = words[currentIndex];
+               const correctSound = new Audio('correct.ogg');
+               const wrongSound = new Audio('wrong.ogg');
+
+               if (wordObj.isProper === isProperNoun) {
+               properNounBtn.classList.remove('wrong');
+               commonNounBtn.classList.remove('wrong');
+               if (isProperNoun) {
+                    properNounBtn.classList.add('correct');
+               } else {
+                    commonNounBtn.classList.add('correct');
+               }
+               currentIndex++;
+
+               // Play the correct sound
+               correctSound.play();
+
+               setTimeout(() => {
+                    displayWord();
+                    properNounBtn.classList.remove('correct');
+                    commonNounBtn.classList.remove('correct');
+               }, 1500);
+               } else {
+               if (isProperNoun) {
+                    properNounBtn.classList.add('wrong');
+               } else {
+                    commonNounBtn.classList.add('wrong');
+               }
+
+               // Play the wrong sound
+               wrongSound.play();
+               }
                }
 
 

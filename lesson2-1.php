@@ -27,11 +27,11 @@
 
     .logo-image {
       position: absolute;
-      top: 10px;
-      left: 10px;
+      top: 27px;
+      right: 24px;
       width: auto;
-      height: 80px;
-    }
+      height: 102px;
+     }
 
     .lesson-title {
       position: absolute;
@@ -73,16 +73,16 @@
     }
 
     .score-label.left {
-      left: 30px;
-      top: 100px;
-      font-size: 25px;
-      background-color: #00741E;
-      white-space: normal; /* Add this property to enable text wrapping */
-      display: inline-block; /* Add this property for variable box width */
-      width: 230px;
-      padding: 10px 10px;
-      z-index: 3;
-    }
+            left: 30px;
+            top: 31px;
+            font-size: 25px;
+            background-color: #00741E;
+            white-space: normal;
+            display: inline-block;
+            width: 230px;
+            padding: 10px 10px;
+            z-index: 3;
+        }
 
     .score-label.right {
       right: 30px;
@@ -91,14 +91,24 @@
       background-color: #FF5252;
     }
 
-    .image-left {
-      width: 300px;
-      height: auto;
-      position: absolute;
-      left: 11px;
-      top: 330px;
-      z-index: 4;
-    }
+    @keyframes stretchAnimation {
+  0%, 100% {
+  transform: translateY(0) scaleY(1);
+  }
+  50% {
+   transform: translateY(-1.1%) scaleY(1.025);
+  }
+       }
+
+  .image-right {
+       width: 230px;
+       height: auto;
+       position: absolute;
+       right: 36px;
+       top: 190px;
+       animation: stretchAnimation 3s infinite; /* Adjust the duration and iteration count as needed */
+
+        }
 
     .image-right {
       width: 230px;
@@ -132,6 +142,9 @@
    
   }
 
+  .animal-button:hover {
+    filter: brightness(.8);
+  }
   .animal img {
     max-width: 100%;
     max-height: 100%;
@@ -185,6 +198,10 @@
   </style>
 </head>
 <body>
+<audio autoplay loop controlsList="nodownload" style="display: none">
+  <source src="music2 (2).ogg" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
     <a class="retry-button" href="lesson2-1.php">
         <img src="retry.png" />
     </a>
@@ -263,31 +280,44 @@
       const animalWordElement = droppable.querySelector('.animal-word');
 
       if (draggedAnimal === droppable.dataset.animal) {
-        const matchingButton = document.querySelector(`[data-animal="${draggedAnimal}"]`);
-        const computedStyle = window.getComputedStyle(matchingButton);
+      const matchingButton = document.querySelector(`[data-animal="${draggedAnimal}"]`);
+      const computedStyle = window.getComputedStyle(matchingButton);
 
-        const stylesToCopy = [
-          'font-weight',
-          'font-size',
-          'color',
-          'background-color',
-          'padding',
-        ];
+      const stylesToCopy = [
+        'font-weight',
+        'font-size',
+        'color',
+        'background-color',
+        'padding',
+      ];
 
-        stylesToCopy.forEach(style => {
-          animalWordElement.style[style] = computedStyle.getPropertyValue(style);
-        });
+      stylesToCopy.forEach(style => {
+        animalWordElement.style[style] = computedStyle.getPropertyValue(style);
+      });
 
-        animalWordElement.style.backgroundColor = '#00741E'; // Green background
-        animalWordElement.style.color = '#fff'; // White text
-        animalWordElement.style.textTransform = 'uppercase'; // Set text to uppercase
+      animalWordElement.style.backgroundColor = '#00741E'; // Green background
+      animalWordElement.style.color = '#fff'; // White text
+      animalWordElement.style.textTransform = 'uppercase'; // Set text to uppercase
 
-        animalWordElement.textContent = draggedAnimal;
-        matchingButton.disabled = true;
-        matchingButton.style.backgroundColor = '#00741E'; // Turn button grey
-      } else {
+      animalWordElement.textContent = draggedAnimal;
+      matchingButton.disabled = true;
+      matchingButton.style.backgroundColor = '#00741E'; // Turn button grey
+
+      // Play the correct sound
+      const correctSound = new Audio('correct.ogg');
+      correctSound.play();
+    }
+
+      
+      else {
+        // Play the wrong sound
+        const wrongSound = new Audio('wrong.ogg');
+        wrongSound.play();
+
         const originalBorderColor = droppable.style.borderColor;
-        droppable.style.borderColor = 'red';
+        droppable.style.borderColor = '#EE2F41';
+
+        // Restore the original border color after a delay
         setTimeout(() => {
           droppable.style.borderColor = originalBorderColor;
         }, 1000);
@@ -300,14 +330,11 @@
 
 <img class="logo-image" src="logo.png" alt="English Adventures Logo">
   
-  <div class="score-label left">Directions: Read the words inside the cloud. On the space provided below, write the words with Short /a/ sound.</div>
+  <div class="score-label left">Directions: Drag the words with the short "i" sound and drop them onto the corresponding pictures.</div>
 
   <div class="lesson-title" style="top: 52px;">Recognizing the Short i Sounds</div>
   
   <div class="centered-board"></div>
-
-  <div class="score-label right">Score: 75</div>
-
   
   <img class="image-right" src="traveler5.png" alt="Traveler 5 Image">
 <div class="name-list">

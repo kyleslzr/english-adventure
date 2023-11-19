@@ -1,202 +1,275 @@
+
+
 <!DOCTYPE html>
 <html>
-     <head>
-          <title>Lesson 1 - English Adventures</title>
-          <style>
-               body {
-                    overflow: hidden;
-                    margin: 0;
-                    padding: 0;
-                    height: 100vh;
-                    background-image: url('cute_background10.jpg');
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    background-position: center center;
-                    font-family: Arial, sans-serif;
-                    display: flex;
-                    justify-content: flex-start;
-                    align-items: center;
-                    flex-direction: column;
-                    text-align: center;
-                    color: #fff;
-                    position: relative;
+<head>
+  <title>Lesson 5 - English Adventures</title>
+  <link rel="stylesheet" href="css/side-score-style.css">
+  <link rel="stylesheet" href="css/lesson-button-style.css">
+  <style>
+    body {
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-image: url('cute_background10.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+
+    .logo-image {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: auto;
+      height: 80px;
+    }
+
+    .lesson-title {
+      position: absolute;
+      font-size: 60px;
+      font-weight: bold;
+      margin-top: 50px;
+      background-color: #00741E;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: default;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      outline: 4px solid #fff; /* Add an outline */
+    }
+
+    .lesson-bar {
+      width: 100%;
+      padding: 10px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+      margin-top: 20px;
+      position: relative;
+    }
+
+    .scroll-icon::after {
+      content: "";
+      background-image: url('scroll1.png');
+      width: 1000px;
+      height: 600px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      left: 50px;
+      top: 170px;
+      
+    }
+
+    .lesson-labels {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      position: absolute;
+      left: 180px;
+      top: 180px;
+      z-index: 1;
+    }
+
+    .lesson-labels .lesson-label {
+      color: white;
+      background-color: #00741E;
+      padding: 10px 163px;
+      font-size: 40px;
+      font-weight: bolder;
+      border-radius: 5px;
+      cursor: default;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .score-button,
+    .play-button {
+      display: inline-block;
+      padding: 11px 15px;
+      border-radius: 50px;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      position: relative;
+      left: 250px;
+      top: 1px;
+      text-decoration: none; /* Remove underline from links */
+    }
+
+    .tutor-button {
+      display: inline-block;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 15px;
+      border-radius: 50px;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      position: relative;
+      left: 250px;
+      top: 1px;
+      margin-right: 7px;
+      text-decoration: none; /* Remove underline from links */
+    }
+  
+    .play-button:hover, .tutor-button:hover {
+      filter: brightness(.8);
+    }
+
+    .score-button {
+      background-color: #FF5252;
+      color: #fff;
+      margin-right: 10px;
+      pointer-events: none; /* Make the score button unclickable */
+    }
+
+    .play-button, .tutor-button {
+      background-color: #ffcc00;
+      color: #00741E;
+    }
+
+    .lesson-labels .button-group {
+      display: flex;
+      align-items: center;
+    }
+
+    .recognizing-sounds {
+      position: relative;
+      left: -220px;
+      top: 200px;
+    }
+
+    .recognizing-nouns {
+      position: relative;
+      left: -215px;
+      top: 200px;
+    }
+
+    .recognizing-nouns .lesson-label {
+      padding: 10px 197px;
+    }
+
+    @keyframes stretchAnimation {
+               0%, 100% {
+               transform: translateY(0) scaleY(1);
                }
-
-               .logo-image {
-                    position: absolute;
-                    top: 10px;
-                    left: 10px;
-                    width: auto;
-                    height: 80px;
+               50% {
+                transform: translateY(-1.1%) scaleY(1.025);
                }
+                    }
 
-               .lesson-title {
-                    position: absolute;
-                    font-size: 60px;
-                    font-weight: bold;
-                    margin-top: 50px;
-                    background-color: #00741E;
-                    padding: 10px 20px;
-                    border-radius: 5px;
-                    cursor: default;
-                    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-                    outline: 4px solid #fff;
-                    /* Add an outline */
-               }
+    .traveler-image {
+      position: absolute;
+      top: 65px;
+      right: 40px;
+      width: auto;
+      height: 700px;
+      animation: stretchAnimation 3s infinite;     
 
-               .lesson-bar {
-                    width: 100%;
-                    padding: 10px 0;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 50px;
-                    margin-top: 20px;
-                    position: relative;
-               }
+    }
+.home-button {
+  position: fixed;
+  margin-right: -1410px;
+  bottom: -480px;
+  transform: scale(0.10);
+  z-index: 10;
+}
 
-               .scroll-icon::after {
-                    content: "";
-                    background-image: url('scroll1.png');
-                    width: 1000px;
-                    height: 600px;
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    position: absolute;
-                    left: 50px;
-                    top: 170px;
-               }
+.lesson-btn {
+  
+  width: 100%;
+    text-align: start;
+    margin-left: -93px;
 
-               .lesson-labels {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    gap: 10px;
-                    position: absolute;
-                    left: 180px;
-                    margin-top: -15px;
-                    z-index: 1;
-               }
+}
 
-               .lesson-labels .lesson-label {
-                    background-color: #00741E;
-                    padding: 10px 20px;
-                    font-size: 40px;
-                    font-weight: bold;
-                    border-radius: 5px;
-                    cursor: default;
-                    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-                    white-space: normal;
-                    /* Add this property to enable text wrapping */
-                    display: inline-block;
-                    /* Add this property for variable box width */
-                    width: 650px;
-                    padding: 10px 10px;
-               }
+  </style>
+<script>
+        function goHome() {
+            window.location.href = 'background_page.html';
+        }
+</script>
+</head>
+<body>
+    <a class="home-button" href="lesson-list.php">
+        <img src="home.png" />
+    </a>
 
-               .score-button,
-               .play-button {
-                    display: inline-block;
-                    padding: 5px 10px;
-                    border-radius: 5px;
-                    font-size: 40px;
-                    font-weight: bold;
-                    cursor: pointer;
-                    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-                    position: relative;
-                    left: 225px;
-                    top: 5px;
-                    text-decoration: none;
-                    /* Remove underline from links */
-               }
+    <audio autoplay loop controlsList="nodownload" style="display: none">
+  <source src="music.ogg" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+  <img class="logo-image" src="logo.png" alt="English Adventures Logo">
+  <div class="lesson-title">Lesson 5</div>
+  <div class="lesson-bar">
+    <div class="scroll-icon"></div>
+    <div class="lesson-labels recognizing-sounds">
+      <div class="lesson-label" style="padding: 10px 41px;">Pronouncing words with the<br>Sounds of d and t</div>
+      <div class="lesson-btn">
+      <a href="#" class="tutor-button">
+        <div style="
+           display: flex;
+           align-items: center;
+        
+          ">
+          <svg style="margin-right: 5px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#00741e}</style><path d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM48 368v32c0 8.8 7.2 16 16 16H96c8.8 0 16-7.2 16-16V368c0-8.8-7.2-16-16-16H64c-8.8 0-16 7.2-16 16zm368-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V368c0-8.8-7.2-16-16-16H416zM48 240v32c0 8.8 7.2 16 16 16H96c8.8 0 16-7.2 16-16V240c0-8.8-7.2-16-16-16H64c-8.8 0-16 7.2-16 16zm368-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V240c0-8.8-7.2-16-16-16H416zM48 112v32c0 8.8 7.2 16 16 16H96c8.8 0 16-7.2 16-16V112c0-8.8-7.2-16-16-16H64c-8.8 0-16 7.2-16 16zM416 96c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V112c0-8.8-7.2-16-16-16H416zM160 128v64c0 17.7 14.3 32 32 32H320c17.7 0 32-14.3 32-32V128c0-17.7-14.3-32-32-32H192c-17.7 0-32 14.3-32 32zm32 160c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H320c17.7 0 32-14.3 32-32V320c0-17.7-14.3-32-32-32H192z"/></svg>
+          Tutorial
+        </div>
+      </a>
+      <a href="lesson5-1.php" class="play-button">
+        <div style="
+           display: flex;
+           align-items: center;
+        
+          ">
+        <svg style="margin-right: 5px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#00741e}</style><path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9V344c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"/></svg>
+        PLAY
+        </div>
+      </a>
+      </div>
+    </div>
+    <div class="lesson-labels recognizing-sounds" style="
+    top: 188px;
+">
+      <div class="lesson-label" >Using A and An</div>
+      <div class="lesson-btn">
+      <a href="#" class="tutor-button">
+        <div style="
+           display: flex;
+           align-items: center;
+        
+          ">
+          <svg style="margin-right: 5px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#00741e}</style><path d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM48 368v32c0 8.8 7.2 16 16 16H96c8.8 0 16-7.2 16-16V368c0-8.8-7.2-16-16-16H64c-8.8 0-16 7.2-16 16zm368-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V368c0-8.8-7.2-16-16-16H416zM48 240v32c0 8.8 7.2 16 16 16H96c8.8 0 16-7.2 16-16V240c0-8.8-7.2-16-16-16H64c-8.8 0-16 7.2-16 16zm368-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V240c0-8.8-7.2-16-16-16H416zM48 112v32c0 8.8 7.2 16 16 16H96c8.8 0 16-7.2 16-16V112c0-8.8-7.2-16-16-16H64c-8.8 0-16 7.2-16 16zM416 96c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V112c0-8.8-7.2-16-16-16H416zM160 128v64c0 17.7 14.3 32 32 32H320c17.7 0 32-14.3 32-32V128c0-17.7-14.3-32-32-32H192c-17.7 0-32 14.3-32 32zm32 160c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H320c17.7 0 32-14.3 32-32V320c0-17.7-14.3-32-32-32H192z"/></svg>
+          Tutorial
+        </div>
+      </a>
+      <a href="lesson5-2.php" class="play-button">
+        <div style="
+           display: flex;
+           align-items: center;
+        
+          ">
+        <svg style="margin-right: 5px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#00741e}</style><path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9V344c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"/></svg>
+        PLAY
+        </div>
+      </a>
+      </div>
+    </div>
+  </div>
 
-               .play-button:hover {
-                    background-color: #ffa500;
-               }
-
-               .score-button {
-                    background-color: #FF5252;
-                    color: #fff;
-                    margin-right: 10px;
-                    pointer-events: none;
-                    /* Make the score button unclickable */
-               }
-
-               .play-button {
-                    background-color: #ffcc00;
-                    color: #00741E;
-               }
-
-               .lesson-labels .button-group {
-                    display: fixed;
-                    align-items: center;
-               }
-
-               .recognizing-sounds {
-
-                    position: fixed;
-                    left: 210px;
-                    top: 300px;
-
-               }
-
-               .recognizing-sounds .lesson-label {
-                    padding: 10px 10px;
-               }
-
-               .recognizing-nouns {
-                    position: fixed;
-                    left: 210px;
-                    top: 505px;
-               }
-
-               .recognizing-nouns .lesson-label {
-                    padding: 10px 10px;
-               }
-
-               .traveler-image {
-                    position: absolute;
-                    top: 65px;
-                    right: 40px;
-                    width: auto;
-                    height: 700px;
-               }
-
-               .home-button {
-                    position: fixed;
-                    margin-right: -1410px;
-                    bottom: -480px;
-                    transform: scale(0.10);
-                    z-index: 10;
-               }
-          </style>
-     </head>
-
-     <body>
-          <a class="home-button" href="background_page.html">
-               <img src="home.png" />
-          </a>
-
-          <img class="logo-image" src="logo.png" alt="English Adventures Logo">
-          <div class="lesson-title">Lesson 5</div>
-          <div class="lesson-bar">
-               <div class="scroll-icon"></div>
-               <div class="lesson-labels recognizing-sounds">
-                    <div class="lesson-label">Pronouncing words with the Sounds of d and t</div>
-                    <div class="button-group">
-                         <div class="score-button">10/10</div>
-                         <a href="lesson5-1.php" class="play-button">Play</a>
-                    </div>
-               </div>
-               <div class="lesson-labels recognizing-nouns">
-                    <div class="lesson-label">Using A and An</div>
-                    <div class="button-group">
-                         <div class="score-button">10/10</div>
-                         <a href="lesson5-2.php" class="play-button">Play</a>
-                    </div>
-               </div>
-          </div>
-          <img class="traveler-image" src="traveler4.png" alt="Traveler 4">
-     </body>
-
+  <img class="traveler-image" src="traveler4.png" alt="Traveler 4">
+</body>
 </html>

@@ -1,282 +1,343 @@
 <!DOCTYPE html>
 <html lang="en">
-     <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Pronoun Replacement Game</title>
-          <link rel="stylesheet" href="css/side-score-style.css">
-          <style>
-               body {
-                    overflow: hidden;
-                    margin: 0;
-                    padding: 0;
-                    height: 100vh;
-                    background-image: url('cute_background9.jpg');
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    background-position: center center;
-                    font-family: Arial, sans-serif;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    flex-direction: column;
-                    text-align: center;
-                    color: #fff;
-                    position: relative;
-               }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 4 - English Adventures</title>
+  <link rel="stylesheet" href="css/side-score-style.css">
+  <style>
+    body {
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-image: url('cute_background9.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
 
-               .logo-image {
+    .logo-image {
                     position: absolute;
-                    top: 10px;
-                    left: 10px;
+                    top: 27px;
+                    right: 24px;
                     width: auto;
-                    height: 80px;
+                    height: 102px;
                }
 
-               .lesson-title {
-                    position: absolute;
-                    font-size: 30px;
-                    font-weight: bold;
-                    top: 52px;
-                    background-color: #00741E;
-                    padding: 10px 20px;
-                    border-radius: 5px;
-                    cursor: default;
-                    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-                    outline: 4px solid #fff;
-                    z-index: 2;
-               }
+    .lesson-title {
+      position: absolute;
+      font-size: 30px;
+      font-weight: bold;
+      top: 52px;
+      background-color: #00741E;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: default;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      outline: 4px solid #fff;
+      z-index: 2;
+    }
 
-               .centered-board {
-                    width: 1150px;
-                    height: 1000px;
-                    background-image: url('board.png');
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    z-index: 1;
-               }
+    .centered-board {
+      width: 1150px;
+      height: 1000px;
+      background-image: url('board.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
 
-               .score-label {
-                    position: absolute;
-                    font-size: 20px;
-                    font-weight: bold;
-                    padding: 5px 10px;
-                    border-radius: 5px;
-                    background-color: #00741E;
-                    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-                    outline: 4px solid #fff;
-                    z-index: 2;
-               }
+    .score-label {
+      position: absolute;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: #00741E;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      outline: 4px solid #fff;
+      z-index: 2;
+    }
+    .score-label.left {
+            left: 30px;
+            top: 31px;
+            font-size: 25px;
+            background-color: #00741E;
+            white-space: normal;
+            display: inline-block;
+            width: 230px;
+            padding: 10px 10px;
+            z-index: 3;
+        }
 
-               .score-label.left {
-                    left: 30px;
-                    top: 100px;
-                    font-size: 25px;
-                    background-color: #00741E;
-                    white-space: normal;
-                    /* Add this property to enable text wrapping */
-                    display: inline-block;
-                    /* Add this property for variable box width */
-                    width: 230px;
-                    padding: 10px 10px;
-                    z-index: 3;
-               }
+    .score-label.right {
+      right: 30px;
+      top: 90px;
+      font-size: 50px;
+      background-color: #FF5252;
+    }
 
-               .score-label.right {
-                    right: 30px;
-                    top: 90px;
-                    font-size: 50px;
-                    background-color: #FF5252;
-               }
+    .image-left {
+      width: 300px;
+      height: auto;
+      position: absolute;
+      left: 11px;
+      top: 330px;
+      z-index: 4;
+    }
 
-               .image-left {
-                    width: 300px;
-                    height: auto;
-                    position: absolute;
-                    left: 11px;
-                    top: 330px;
-                    z-index: 4;
-               }
+    @keyframes stretchAnimation {
+  0%, 100% {
+  transform: translateY(0) scaleY(1);
+  }
+  50% {
+   transform: translateY(-1.1%) scaleY(1.025);
+  }
+       }
 
-               .image-right {
-                    width: 230px;
-                    height: auto;
-                    position: absolute;
-                    right: 36px;
-                    top: 190px;
-               }
+  .image-right {
+       width: 230px;
+       height: auto;
+       position: absolute;
+       right: 36px;
+       top: 190px;
+       animation: stretchAnimation 3s infinite; /* Adjust the duration and iteration count as needed */
 
-               .retry-button {
-                    position: fixed;
-                    margin-right: -1050px;
-                    bottom: -480px;
-                    transform: scale(0.10);
-               }
+        }
+        
+    .animal-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:15px;
+    margin: 24px 5px 5px 5px;
+  }
+  .animal-button {
+     
+    outline: 4px solid #00741E;
+    background-color: #ccc;
+    padding: 2px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+      width: 190px;
+      height: 50px; /* Adjust as needed */
+      color: #00741E;
+      background-color: #ffcc00;
+      border: none;
+      border-radius: 15px;
+      font-weight: bold;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+   
+  }
 
-               .back-button {
-                    position: fixed;
-                    margin-right: -1230px;
-                    bottom: -480px;
-                    transform: scale(0.10);
-               }
+  .animal img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+     .droppable-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 14px; /* This sets the gap between rows */
+    grid-column-gap: 14px; /* This sets the gap between columns */
+    margin: 20px 5px -60px 5px;
+}
+  .droppable {
+    border: 6px solid #ffcc00;
+    width: 180px;
+    height: 173px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #ffcc00;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+ 
+   
+  }
+  .droppable img {
+    max-width: 100%;
+    max-height: 100%;
+  }
 
-               .home-button {
-                    position: fixed;
-                    margin-right: -1410px;
-                    bottom: -480px;
-                    transform: scale(0.10);
+.retry-button {
+  position: fixed;
+  margin-right: -1050px;
+  bottom: -480px;
+  transform: scale(0.10);
+}
 
-               }
+.back-button {
+  position: fixed;
+  margin-right: -1230px;
+  bottom: -480px;
+  transform: scale(0.10);	
+}
 
-               .container {
-                    max-width: 600px;
-                    margin: 0 auto;
-                    z-index: 10;
-                    color: black;
-               }
+.home-button {
+  position: fixed;
+  margin-right: -1410px;
+  bottom: -480px;
+  transform: scale(0.10);
 
-               .sentence {
-                    margin: 10px 0;
-                    z-index: 10;
-               }
-          </style>
-     </head>
+}
 
-     <body>
-          <a class="retry-button" href="lesson4-2.php">
-               <img src="retry.png" />
-          </a>
+  </style>
+</head>
+<body>
+<audio autoplay loop controlsList="nodownload" style="display: none">
+  <source src="music2 (2).ogg" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+    <a class="retry-button" href="lesson4-2.php">
+        <img src="retry.png" />
+    </a>
 
-          <a class="back-button" href="lesson4.php">
-               <img src="back.png" />
-          </a>
+    <a class="back-button" href="lesson4.php">
+        <img src="back.png" />
+    </a>
 
-          <a class="home-button" href="lesson-list.php">
-               <img src="home.png" />
-          </a>
+    <a class="home-button" href="lesson-list.php">
+        <img src="home.png" />
+    </a>
 
-          <div class="container">
-               <h1>Pronoun Replacement Game</h1>
-               <form id="pronounForm">
-                    <div class="sentence">
-                         <p>1. (Pam) made lunch for (her) brother.</p>
-                         <label>
-                              <input type="radio" name="sentence1" value="he"> He
-                         </label>
-                         <label>
-                              <input type="radio" name="sentence1" value="she"> She
-                         </label>
-                    </div>
-                    <div class="sentence">
-                         <p>2. (Sue and Ron) played tag with (Tim).</p>
-                         <label>
-                              <input type="radio" name="sentence2" value="we"> We
-                         </label>
-                         <label>
-                              <input type="radio" name="sentence2" value="they"> They
-                         </label>
-                    </div>
-                    <div class="sentence">
-                         <p>3. (Ted) went to school with (his) friend.</p>
-                         <label>
-                              <input type="radio" name="sentence3" value="he"> He
-                         </label>
-                         <label>
-                              <input type="radio" name="sentence3" value="they"> They
-                         </label>
-                    </div>
-                    <div class="sentence">
-                         <p>4. (car) needs new tires.</p>
-                         <label>
-                              <input type="radio" name="sentence4" value="it"> It
-                         </label>
-                         <label>
-                              <input type="radio" name="sentence4" value="she"> She
-                         </label>
-                    </div>
-                    <div class="sentence">
-                         <p>5. (dogs) are sleeping.</p>
-                         <label>
-                              <input type="radio" name="sentence5" value="it"> It
-                         </label>
-                         <label>
-                              <input type="radio" name="sentence5" value="they"> They
-                         </label>
-                    </div>
-                    <input type="submit" value="Submit">
-               </form>
-               <div id="result"></div>
-          </div>
+<div class="animal-container">
+  <button class="animal-button" draggable="true" data-animal="he">HE</button>
+  <button class="animal-button" draggable="true" data-animal="she">SHE</button>
+  <button class="animal-button" draggable="true" data-animal="it">IT</button>
+  <button class="animal-button" draggable="true" data-animal="they">THEY</button>
+  <button class="animal-button" draggable="true" data-animal="they.">THEY</button>
+  <button class="animal-button" draggable="true" data-animal="we">WE</button>
+  <button class="animal-button" draggable="true" data-animal="it.">IT</button>
+  <button class="animal-button" draggable="true" data-animal="you">YOU</button>
+</div>
+<div class="droppable-container">
+  <div class="droppable" data-animal="they">
+    <img src="they.jpg" alt="they">
+    <div class="animal-word"></div>
+  </div>
+  <div class="droppable" data-animal="it">
+    <img src="it.jpg" alt="it">
+    <div class="animal-word"></div>
+  </div>
+  <div class="droppable" data-animal="she">
+    <img src="she.jpg" alt="she">
+    <div class="animal-word"></div>
+  </div>
+  <div class="droppable" data-animal="he">
+    <img src="he.jpg" alt="he">
+    <div class="animal-word"></div>
+  </div>
+  <div class="droppable" data-animal="you">
+    <img src="you.jpg" alt="you">
+    <div class="animal-word"></div>
+  </div>
+  <div class="droppable" data-animal="it.">
+    <img src="it1.jpg" alt="it.">
+    <div class="animal-word"></div>
+  </div>
+  <div class="droppable" data-animal="we">
+    <img src="we.jpg" alt="we">
+    <div class="animal-word"></div>
+  </div>
+  <div class="droppable" data-animal="they.">
+    <img src="they1.jpg" alt="they.">
+    <div class="animal-word"></div>
+  </div>
+</div>
+<script>
 
-          <img class="logo-image" src="logo.png" alt="English Adventures Logo">
+  const animals = document.querySelectorAll('.animal-button');
+  const droppables = document.querySelectorAll('.droppable');
 
-          <div class="score-label left">Directions: Read the words inside the cloud. On the space provided below, write
-               the words with Short /a/ sound.</div>
+  animals.forEach(animal => {
+    animal.addEventListener('dragstart', (e) => {
+      e.dataTransfer.setData('text/plain', animal.dataset.animal);
+    });
+  });
 
-          <div class="lesson-title" style="top: 52px;">Recognizing the Short o and u Sounds</div>
+  droppables.forEach(droppable => {
+    droppable.addEventListener('dragover', (e) => {
+      e.preventDefault();
+    });
 
-          <div class="centered-board"></div>
+    droppable.addEventListener('drop', (e) => {
+      e.preventDefault();
+      const draggedAnimal = e.dataTransfer.getData('text/plain');
+      const animalWordElement = droppable.querySelector('.animal-word');
 
-          <div class="score-label right">Score: 75</div>
+      if (draggedAnimal === droppable.dataset.animal) {
+        const matchingButton = document.querySelector(`[data-animal="${draggedAnimal}"]`);
+        const computedStyle = window.getComputedStyle(matchingButton);
 
-          <img class="image-right" src="traveler5.png" alt="Traveler 5 Image">
-          <div class="name-list">
-               <?php include "function/retrieve-all-scores-l4-act2.php"; ?>
-          </div>
+        const stylesToCopy = [
+          'font-weight',
+          'font-size',
+          'color',
+          'background-color',
+          'padding',
+        ];
 
-          <?php include "js/record-score.php"; ?>
-          <script>
+        stylesToCopy.forEach(style => {
+          animalWordElement.style[style] = computedStyle.getPropertyValue(style);
+        });
 
-               function goRetry() {
-                    window.location.href = 'lesson4-2.html';
-               }
-               function goBack() {
-                    window.location.href = 'lesson4.html';
-               }
-               function goHome() {
-                    window.location.href = 'background_page.html';
-               }
+        animalWordElement.style.backgroundColor = '#00741E'; // Green background
+        animalWordElement.style.color = '#fff'; // White text
+        animalWordElement.style.textTransform = 'uppercase'; // Set text to uppercase
 
-               const pronounForm = document.getElementById('pronounForm');
-               const result = document.getElementById('result');
+        animalWordElement.textContent = draggedAnimal;
+        matchingButton.disabled = true;
+        matchingButton.style.backgroundColor = '#00741E'; // Turn button grey
+      // Play the correct sound
+      
+      
+      const correctSound = new Audio('correct.ogg');
+            correctSound.play();
+          }
+      else {
+        // Play the wrong sound
+        const wrongSound = new Audio('wrong.ogg');
+        wrongSound.play();
 
-               pronounForm.addEventListener('submit', function (event) {
-                    event.preventDefault();
+        const originalBorderColor = droppable.style.borderColor;
+        droppable.style.borderColor = '#EE2F41';
 
-                    let score = 0;
+        // Restore the original border color after a delay
+        setTimeout(() => {
+          droppable.style.borderColor = originalBorderColor;
+        }, 1000);
+      }
+    });
+  });
 
-                    const answers = {
-                         sentence1: 'she',
-                         sentence2: 'they',
-                         sentence3: 'he',
-                         sentence4: 'it',
-                         sentence5: 'they',
-                    };
+</script>
 
-                    for (let i = 1; i <= 5; i++) {
-                         const sentenceRadioButtons = document.getElementsByName(`sentence${i}`);
-                         let selectedPronoun = null;
 
-                         for (const radioButton of sentenceRadioButtons) {
-                              if (radioButton.checked) {
-                                   selectedPronoun = radioButton.value;
-                                   break;
-                              }
-                         }
+<img class="logo-image" src="logo.png" alt="English Adventures Logo">
+  
+  <div class="score-label left">Directions: Read the words inside the cloud. On the space provided below, write the words with Short /a/ sound.</div>
 
-                         if (selectedPronoun === answers[`sentence${i}`]) {
-                              score++;
-                         }
-                    }
+  <div class="lesson-title" style="top: 52px;">Using Pronouns</div>
+  
+  <div class="centered-board"></div>
+  
+  <img class="image-right" src="traveler5.png" alt="Traveler 5 Image">
+<div class="name-list">
+     <?php include "function/retrieve-all-scores-l2-act1.php"; ?>
+</div>
+<?php include "js/record-score.php"; ?>
 
-                    result.textContent = `You got ${score} out of 5 correct.`;
-               });
-
-          </script>
-     </body>
-
+</body>
 </html>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -21,21 +22,25 @@
                     background-position: center center;
                     font-family: Arial, sans-serif;
                     position: relative;
+                    overflow: hidden;
                }
 
                .logo {
-                    max-width: 850px;
-                    max-height: 500px;
-                    width: auto;
-                    height: auto;
+          position: absolute;
+          max-width: 850px;
+          max-height: 500px;
+          width: auto;
+          height: auto;
+          top: 155px;
                }
 
                .logo-image {
                     position: absolute;
-                    top: 20px;
-                    left: 58px;
+                    bottom: 14px;
+                    left: 22px;
                     width: auto;
-                    height: 200px;
+                    height: 95px;
+                    z-index: 10;
 
                }
 
@@ -58,112 +63,103 @@
                     border-radius: 5px;
                     background-color: #00741E;
                     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-                    outline: 4px solid #fff;
                     z-index: 2;
                }
 
-               .score-label.left {
-                    left: 30px;
-                    top: 248px;
+               .score-label.left {  
+                    left: 129px;
+                    bottom: 17px;
                     color: #fff;
-                    font-size: 20.8px;
-                    background-color: #00741E;
+                    font-size: 13.8px;
+                    background-color: #00741e9c;
                     white-space: normal;
-                    /* Add this property to enable text wrapping */
                     display: inline-block;
-                    /* Add this property for variable box width */
-                    width: 240px;
-                    padding: 10px 10px;
+                    width: 565px;
+                    padding: 8px;
                     z-index: 3;
-                    text-align: center;
+                    text-align: justify;
+                    line-height: 18px;
+
                }
 
                .start-button {
-                    margin-top: 20px;
-                    padding: 10px 20px;
+                    position: absolute;
+                    bottom: 214px;
+                    left: 623px;
+                    padding: 7px 20px;
                     background-color: #ffcc00;
                     color: #00741E;
-                    font-size: 50px;
+                    font-size: 65px;
                     font-weight: bold;
-                    border: none;
-                    border-radius: 5px;
+                    border: 7px solid white;
+                    border-radius: 100px;
                     cursor: pointer;
                     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                }
 
                .start-button:hover {
-                    background-color: #ffa500;
+                    filter: brightness(.8);
                }
 
-               .traveler {
+               @keyframes stretchAnimation {
+               0%, 100% {
+               transform: translateY(0) scaleY(1);
+               }
+               50% {
+                    transform: translateY(-1.1%) scaleY(1.025);
+               }
+                    }
+
+                    .traveler {
                     position: absolute;
-                    bottom: 0px;
-                    right: 25px;
-                    max-width: 900px;
-                    max-height: 500px;
-                    width: auto;
-                    height: auto;
-               }
+                    bottom: -142px;
+                    right: 8px;
+                    width: 371px;
+                    height: auto;  
+                    animation: stretchAnimation 3s infinite;     
+                    z-index: 10;                       
+                }
 
-               .records {
-                    position: absolute;
-                    top: 0;
-                    right: 30px;
-                    font-size: 30px;
-                    display: flex;
-                    align-items: center;
 
-               }
-
-               .animate__bounceInDown {
-                    animation: bounceInDown;
-                    animation-duration: 3s;
-               }
           </style>
      </head>
 
      <body style="position: relative;">
           <img class="logo animate__bounceInDown" src="logo.png" alt="English Adventures Logo">
-          <div class="score-label left">This educational gaming tool is made available for the esteemed institution of
-               SAN JOSE ACADEMY OF BULACAN located in San Jose Del Monte, Bulacan, specifically intended for the benefit
+          <div class="score-label left">This&nbsp; educational&nbsp; gaming tool&nbsp; is made available &nbsp;for the&nbsp; esteemed institution of<br>SAN JOSE ACADEMY OF BULACAN located in San Jose Del Monte, Bulacan, specifically intended for the benefit
                of Grade 1 pupils. This initiative is aligned with the content presented in "Workbook for English"
                authored by Darlene Niel Panganiban of Aral Pinas.</div>
-          <div class="text" style="z-index: 5;">Workbook Link:
-               https://www.studocu.com/en-us/document/manhattan-college/the-modern-english-novel/english-workbook-grade-1/35324175
           </div>
           <img class="logo-image " src="SJAB LOGO.png" alt="English Adventures Logo">
+          <img class="traveler-blink" src="blink.jpg" alt="English Adventures Logo">
           <a href="lesson-list.php">
-               <button class="start-button animate__bounceInDown">START LEARNING</button>
+               <button class="start-button animate__bounceInDown">
+               <svg style="margin-right: 15px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#00741e}</style><path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9V344c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"/></svg>
+ 
+               PLAY</button>
           </a>
-          <a href="records.php" style="z-index: 5;">
-               <button class="start-button records" style="position: absolute;">
-                    <svg style="margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" height="1em"
-                         viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                         <style>
-                              svg {
-                                   fill: #00741e
-                              }
-                         </style>
-                         <path
-                              d="M40 48C26.7 48 16 58.7 16 72v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24H40zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM16 232v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V232c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V392c0-13.3-10.7-24-24-24H40z" />
-                    </svg>
-                    Records
-               </button>
-          </a>
-          <img class="traveler" src="traveler.png" alt="Traveler" style="z-index: 5;">
+          <audio autoplay loop controlsList="nodownload" style="display: none">
+  <source src="music.ogg" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<img class="traveler" src="traveler.png" alt="Traveler">
+
 
           <!-- sample shining shit -->
-          <!-- <div style="z-index: 1; display: flex; position: absolute; top: 70px; left: 360px; margin-bottom: -1px;">
+          <div style="z-index: 1; display: flex; position: absolute; top: 70px; left: 360px; margin-bottom: -1px;">
                <div><img width="400px" style="margin-left: -80px;" src="shining.gif" alt="" srcset=""></div>
-          </div> -->
+          </div>
 
           <!-- sample falling leaves -->
-          <!-- <div style="z-index: 1; display: flex; position: absolute; top: 0; right: 0; margin-bottom: -1px;">
+          <div style="z-index: 1; display: flex; position: absolute; top: 0; right: 0; margin-bottom: -1px;">
                <div><img width="400px" style="margin-left: -80px;" src="falling-leaf.gif" alt="" srcset=""></div>
-          </div> -->
+          </div>
 
           <!-- sample moving grass -->
-          <!-- <div>
+          <div>
                <div style="z-index: 1; display: flex; position: absolute; bottom: -17px; left: 0; margin-bottom: -1px;">
                     <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
                     <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
@@ -212,7 +208,7 @@
                     <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
                     <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
                </div>
-          </div> -->
+          </div>
      </body>
 
 </html>

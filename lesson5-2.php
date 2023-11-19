@@ -92,10 +92,10 @@
 
                .logo-image {
                     position: absolute;
-                    top: 10px;
-                    left: 10px;
+                    top: 27px;
+                    right: 24px;
                     width: auto;
-                    height: 80px;
+                    height: 102px;
                }
 
                .lesson-title {
@@ -138,18 +138,16 @@
                }
 
                .score-label.left {
-                    left: 30px;
-                    top: 100px;
-                    font-size: 25px;
-                    background-color: #00741E;
-                    white-space: normal;
-                    /* Add this property to enable text wrapping */
-                    display: inline-block;
-                    /* Add this property for variable box width */
-                    width: 230px;
-                    padding: 10px 10px;
-                    z-index: 3;
-               }
+            left: 30px;
+            top: 31px;
+            font-size: 25px;
+            background-color: #00741E;
+            white-space: normal;
+            display: inline-block;
+            width: 230px;
+            padding: 10px 10px;
+            z-index: 3;
+        }
 
                .score-label.right {
                     right: 30px;
@@ -167,13 +165,24 @@
                     z-index: 4;
                }
 
-               .image-right {
-                    width: 230px;
-                    height: auto;
-                    position: absolute;
-                    right: 36px;
-                    top: 190px;
-               }
+               @keyframes stretchAnimation {
+  0%, 100% {
+  transform: translateY(0) scaleY(1);
+  }
+  50% {
+   transform: translateY(-1.1%) scaleY(1.025);
+  }
+       }
+
+  .image-right {
+       width: 230px;
+       height: auto;
+       position: absolute;
+       right: 36px;
+       top: 190px;
+       animation: stretchAnimation 3s infinite; /* Adjust the duration and iteration count as needed */
+
+        }
 
                .retry-button {
                     position: fixed;
@@ -200,6 +209,11 @@
      </head>
 
      <body>
+     <audio autoplay loop controlsList="nodownload" style="display: none">
+  <source src="music2 (2).ogg" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
           <a class="retry-button" href="lesson5-2.php">
                <img src="retry.png" />
           </a>
@@ -228,7 +242,6 @@
 
           <div class="centered-board"></div>
 
-          <div class="score-label right">Score: 75</div>
           <div class="word-container hide" id="wordContainer"></div>
           
           <img class="image-right" src="traveler5.png" alt="Traveler 5 Image">
@@ -241,16 +254,16 @@
 
           <script>
                const words = [
-                    { word: "There is ___ cat in the yard.", isProper: true, image: "1cat.jpg" },
-                    { word: "___ car is faster than ___ horse.", isProper: true, image: "1bats.jpg" },
-                    { word: "If there is ___ answer, I'll find it.", isProper: false, image: "1legs.jpg" },
-                    { word: "I see ___ owl on the branch.", isProper: false, image: "1shoes.jpg" },
-                    { word: "Mom has ___ red dress.", isProper: true, image: "1door.jpg" },
-                    { word: "Frank wants ___ new bicycle.", isProper: true, image: "1mat.jpg" },
-                    { word: "The teacher read ___ story.", isProper: true, image: "1mates.jpg" },
-                    { word: "___ event for my birthday.", isProper: false, image: "1desk.jpg" },
-                    { word: "Put ___ apple on your plate.", isProper: false, image: "1hats.jpg" },
-                    { word: "Read me ___ story.", isProper: true, image: "1boots.jpg" }
+                    { word: "There is ___ cat in the yard.", isProper: true, image: "1an.jpg" },
+                    { word: "___ car is faster than ___ horse.", isProper: true, image: "2an.jpg" },
+                    { word: "If there is ___ answer, I'll find it.", isProper: false, image: "3an.jpg" },
+                    { word: "I see ___ owl on the branch.", isProper: false, image: "4an.jpg" },
+                    { word: "Mom has ___ red dress.", isProper: true, image: "5an.jpg" },
+                    { word: "Frank wants ___ new bicycle.", isProper: true, image: "6an.jpg" },
+                    { word: "The teacher read ___ story.", isProper: true, image: "7an.jpg" },
+                    { word: "___ event for my birthday.", isProper: false, image: "8an.jpg" },
+                    { word: "Put ___ apple on your plate.", isProper: false, image: "9an.jpg" },
+                    { word: "Read me ___ story.", isProper: true, image: "10an.jpg" }
 
                ];
 
@@ -277,28 +290,38 @@
                }
 
                function checkNounType(isProperNoun) {
-                    const wordObj = words[currentIndex];
-                    if (wordObj.isProper === isProperNoun) {
-                         properNounBtn.classList.remove("wrong");
-                         commonNounBtn.classList.remove("wrong");
-                         if (isProperNoun) {
-                              properNounBtn.classList.add("correct");
-                         } else {
-                              commonNounBtn.classList.add("correct");
-                         }
-                         currentIndex++;
-                         setTimeout(() => {
-                              displayWord();
-                              properNounBtn.classList.remove("correct");
-                              commonNounBtn.classList.remove("correct");
-                         }, 1500);
-                    } else {
-                         if (isProperNoun) {
-                              properNounBtn.classList.add("wrong");
-                         } else {
-                              commonNounBtn.classList.add("wrong");
-                         }
-                    }
+               const wordObj = words[currentIndex];
+               const correctSound = new Audio('correct.ogg');
+               const wrongSound = new Audio('wrong.ogg');
+
+               if (wordObj.isProper === isProperNoun) {
+               properNounBtn.classList.remove('wrong');
+               commonNounBtn.classList.remove('wrong');
+               if (isProperNoun) {
+                    properNounBtn.classList.add('correct');
+               } else {
+                    commonNounBtn.classList.add('correct');
+               }
+               currentIndex++;
+
+               // Play the correct sound
+               correctSound.play();
+
+               setTimeout(() => {
+                    displayWord();
+                    properNounBtn.classList.remove('correct');
+                    commonNounBtn.classList.remove('correct');
+               }, 1500);
+               } else {
+               if (isProperNoun) {
+                    properNounBtn.classList.add('wrong');
+               } else {
+                    commonNounBtn.classList.add('wrong');
+               }
+
+               // Play the wrong sound
+               wrongSound.play();
+               }
                }
 
 

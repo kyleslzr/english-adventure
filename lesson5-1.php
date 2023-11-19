@@ -87,7 +87,7 @@
                }
 
                #erase-button {
-                    background-color: #FF5252;
+                    background-color: #EE2F41;
                     color: #fff;
                     border: none;
                     cursor: pointer;
@@ -161,16 +161,16 @@
                }
 
                .button-container {
-                    margin-top: 15px;
+                    margin-top: 10px;
 
                }
 
                .logo-image {
                     position: absolute;
-                    top: 10px;
-                    left: 10px;
+                    top: 27px;
+                    right: 24px;
                     width: auto;
-                    height: 80px;
+                    height: 102px;
                }
 
                .lesson-title {
@@ -211,20 +211,17 @@
                     outline: 4px solid #fff;
                     z-index: 2;
                }
-
                .score-label.left {
-                    left: 30px;
-                    top: 100px;
-                    font-size: 25px;
-                    background-color: #00741E;
-                    white-space: normal;
-                    /* Add this property to enable text wrapping */
-                    display: inline-block;
-                    /* Add this property for variable box width */
-                    width: 230px;
-                    padding: 10px 10px;
-                    z-index: 3;
-               }
+            left: 30px;
+            top: 31px;
+            font-size: 25px;
+            background-color: #00741E;
+            white-space: normal;
+            display: inline-block;
+            width: 230px;
+            padding: 10px 10px;
+            z-index: 3;
+        }
 
                .score-label.right {
                     right: 30px;
@@ -242,13 +239,24 @@
                     z-index: 4;
                }
 
-               .image-right {
-                    width: 230px;
-                    height: auto;
-                    position: absolute;
-                    right: 36px;
-                    top: 190px;
-               }
+               @keyframes stretchAnimation {
+  0%, 100% {
+  transform: translateY(0) scaleY(1);
+  }
+  50% {
+   transform: translateY(-1.1%) scaleY(1.025);
+  }
+       }
+
+  .image-right {
+       width: 230px;
+       height: auto;
+       position: absolute;
+       right: 36px;
+       top: 190px;
+       animation: stretchAnimation 3s infinite; /* Adjust the duration and iteration count as needed */
+
+        }
 
                .retry-button {
                     position: fixed;
@@ -271,11 +279,24 @@
                     transform: scale(0.10);
 
                }
+               
+               .letter-button:hover, .erase-container:hover, #submit-button:hover {
+               filter: brightness(.8);
+               }
+
+               #word-input.incorrect-answer {
+               background-color: #EE2F41; /* Change the color to red */
+               }
+
           </style>
      </head>
 
      <body>
 
+     <audio autoplay loop controlsList="nodownload" style="display: none">
+  <source src="music2 (2).ogg" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
           <a class="retry-button" href="lesson5-1.php">
                <img src="retry.png" />
           </a>
@@ -296,8 +317,6 @@
           <div class="lesson-title" style="top: 52px;">Pronouncing words with the Sounds of d and t</div>
 
           <div class="centered-board"></div>
-
-          <div class="score-label right">Score: 75</div>
 
           <div class="name-list">
                <?php include "function/retrieve-all-scores-l5-act1.php"; ?>
@@ -520,10 +539,27 @@
                     }, 1000);
                }
 
-               function checkAnswer() {
-                    if (currentAnswer.toLowerCase() === correctAnswer) {
-                         showCorrectImage(correctAnswer + '.jpg');
-                         setTimeout(() => {
+               const correctSound = new Audio('correct.ogg');
+const wrongSound = new Audio('wrong.ogg');
+
+function addLetter(letter, button) {
+    currentAnswer += letter;
+    document.getElementById('word-input').value = currentAnswer;
+
+    button.classList.add('button-clicked');
+
+    setTimeout(() => {
+        button.classList.remove('button-clicked');
+    }, 1000);
+}
+
+function checkAnswer() {
+    const wordInput = document.getElementById('word-input');
+
+    if (currentAnswer.toLowerCase() === correctAnswer) {
+        correctSound.play(); // Play correct sound
+        showCorrectImage(correctAnswer + '.jpg');
+        setTimeout(() => {
                               if (correctAnswer === 'doctor') {
                                    loadDuckGame();
                                    correctAnswer = 'duck';
@@ -555,12 +591,18 @@
 
                          }, 3000);
                     } else {
-                         // Incorrect answer logic
-                         alert('Incorrect answer. Please try again.');
-                         document.getElementById('word-input').classList.add('incorrect-answer'); // Apply the CSS class
-                         eraseLetters();
-                    }
-               }
+                         wrongSound.play(); // Play wrong sound
+        // Incorrect answer logic
+        wordInput.classList.add('incorrect-answer'); // Apply the CSS class
+
+        // Add a setTimeout to remove the class after a delay (adjust as needed)
+        setTimeout(() => {
+            wordInput.classList.remove('incorrect-answer');
+        }, 1000);
+
+        eraseLetters();
+    }
+}
 
                function showCorrectImage(correctImage) {
                     const correctImg = document.getElementById('image1');

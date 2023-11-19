@@ -26,10 +26,10 @@
 
                .logo-image {
                     position: absolute;
-                    top: 10px;
-                    left: 10px;
+                    top: 27px;
+                    right: 24px;
                     width: auto;
-                    height: 80px;
+                    height: 102px;
                }
 
                .lesson-title {
@@ -73,13 +73,11 @@
 
                .score-label.left {
                     left: 30px;
-                    top: 100px;
+                    top: 31px;
                     font-size: 25px;
-                    background-color: #00741e;
+                    background-color: #00741E;
                     white-space: normal;
-                    /* Add this property to enable text wrapping */
                     display: inline-block;
-                    /* Add this property for variable box width */
                     width: 230px;
                     padding: 10px 10px;
                     z-index: 3;
@@ -101,19 +99,31 @@
                     z-index: 4;
                }
 
-               .image-right {
-                    width: 230px;
-                    height: auto;
-                    position: absolute;
-                    right: 36px;
-                    top: 190px;
-               }
+               @keyframes stretchAnimation {
+  0%, 100% {
+  transform: translateY(0) scaleY(1);
+  }
+  50% {
+   transform: translateY(-1.1%) scaleY(1.025);
+  }
+       }
+
+  .image-right {
+       width: 230px;
+       height: auto;
+       position: absolute;
+       right: 36px;
+       top: 190px;
+       animation: stretchAnimation 3s infinite; /* Adjust the duration and iteration count as needed */
+
+        }
 
                .retry-button {
                     position: fixed;
                     margin-right: -1050px;
                     bottom: -480px;
                     transform: scale(0.1);
+                    z-index: 10;
                }
 
                .back-button {
@@ -178,6 +188,10 @@
      </head>
 
      <body>
+     <audio autoplay loop controlsList="nodownload" style="display: none">
+  <source src="music2 (2).ogg" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
           <a class="retry-button" href="lesson3-1.php">
                <img src="retry.png" />
           </a>
@@ -191,38 +205,37 @@
           </a>
 
           <div class="container">
-               <div class="box" data-answer="box">
-                    <img src="box.jpg" alt="Box" />
-                    <input class="answer-input" type="text" />
-               </div>
-               <div class="box" data-answer="cup">
-                    <img src="cup.jpg" alt="Cup" />
-                    <input class="answer-input" type="text" />
-               </div>
-               <div class="box" data-answer="fox">
-                    <img src="fox.jpg" alt="Fox" />
-                    <input class="answer-input" type="text" />
-               </div>
-               <div class="box" data-answer="duck">
-                    <img src="ducks.jpg" alt="Duck" />
-                    <input class="answer-input" type="text" />
-               </div>
-               <div class="box" data-answer="cop">
-                    <img src="cop.jpg" alt="Cop" />
-                    <input class="answer-input" type="text" />
-               </div>
-               <div class="box" data-answer="mop">
-                    <img src="mop.jpg" alt="Mop" />
-                    <input class="answer-input" type="text" />
-               </div>
-          </div>
+    <div class="box" data-answer="box">
+      <img src="boxx.jpg" alt="Box">
+      <input class="answer-input" type="text">
+    </div>
+    <div class="box" data-answer="cup">
+      <img src="cupp.jpg" alt="Cup">
+      <input class="answer-input" type="text">
+    </div>
+    <div class="box" data-answer="fox">
+      <img src="fox.jpg" alt="Fox">
+      <input class="answer-input" type="text">
+    </div>
+    <div class="box" data-answer="duck">
+      <img src="ducks.jpg" alt="Duck">
+      <input class="answer-input" type="text">
+    </div>
+    <div class="box" data-answer="cop">
+      <img src="copp.jpg" alt="Cop">
+      <input class="answer-input" type="text">
+    </div>
+        <div class="box" data-answer="mop">
+      <img src="mop.jpg" alt="Mop">
+      <input class="answer-input" type="text">
+    </div>
+  </div>
           <p id="result"></p>
 
           <img class="logo-image" src="logo.png" alt="English Adventures Logo" />
 
           <div class="score-label left">
-               Directions: Read the words inside the cloud. On the space provided below,
-               write the words with Short /a/ sound.
+          Directions: Type the words with the short "o"  and  "u" sound that correspond to the pictures.
           </div>
 
           <div class="lesson-title" style="top: 52px">
@@ -230,8 +243,6 @@
           </div>
 
           <div class="centered-board"></div>
-
-          <div class="score-label right">Score: 75</div>
 
           <img class="image-right" src="traveler5.png" alt="Traveler 5 Image" />
           <div class="name-list">
@@ -249,15 +260,26 @@
                     const userAnswer = box.querySelector(".answer-input");
                     const correctAnswer = box.getAttribute("data-answer");
                     const userInput = userAnswer.value.toLowerCase();
+                    
+                    // Get the audio elements
+                    const correctSound = new Audio('correct.ogg');
+                    const wrongSound = new Audio('wrong.ogg');
 
                     if (userInput === correctAnswer) {
                          userAnswer.style.backgroundColor = "#00741E"; // Green background color
+                         userAnswer.style.borderColor = "#00741E";
                          userAnswer.style.color = "#fff"; // White font color
                          userAnswer.disabled = true; // Disable the input field
+
+                         // Play correct sound
+                         correctSound.play();
                     } else {
-                         userAnswer.style.backgroundColor = "red"; // Red background color for incorrect answers
-                         userAnswer.style.borderColor = "red"; // Red border color for incorrect answers
+                         userAnswer.style.backgroundColor = "#EE2F41"; // Red background color for incorrect answers
+                         userAnswer.style.borderColor = "#EE2F41"; // Red border color for incorrect answers
                          userAnswer.style.color = "#fff"; // White font color for incorrect answers
+                         // userAnswer.value = "";
+                         // Play wrong sound
+                         wrongSound.play();
                     }
 
                     currentIndex++;
@@ -266,7 +288,7 @@
                     } else {
                          showResult();
                     }
-               }
+                    }
 
                boxes[currentIndex].querySelector(".answer-input").focus();
 

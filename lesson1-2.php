@@ -42,13 +42,23 @@
 
         #question-container {
             position: fixed;
-            margin-top: 10px;
-            margin-left: 300px;
+            margin-top:38px;
+            margin-left:292px;
         }
 
+        #question-container img {
+        max-width: 800px;
+        height: auto;
+        border-radius: 10px; /* Add border-radius for rounded corners */
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a subtle box shadow */
+        margin-bottom: 10px; /* Add some bottom margin for spacing */
+        border: 7px solid white;
+        }
+
+
         #question-text {
-            line-height: 75px;
-            font-size: 50px;
+            line-height: 10px;
+            font-size: 19px;
             font-weight: bold;
             color: #00741E;
             margin-bottom: 15px;
@@ -58,45 +68,40 @@
         #word-buttons {
             margin-bottom: 15px;
             width: 800px;
-            
+            height: 80px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
+            background-color: #ffcc00;
+            /* padding: 14px; */
+            border-radius: 5px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            border: 7px solid;
         }
 
         button {
-            /* Existing styles */
-            background-color: #3498db;
-            width: 190px;
-            height: 70px;
             border: none;
-            padding: 10px 10px 10px 10px;
-            font-size: 35px;
-            font-weight: bold;
-            border-radius: 5px;
+            font-size: 54px;
             cursor: pointer;
             transition: background-color 0.3s ease;
             color: #00741E;
-            background-color: #ffcc00;
             border: none;
-            border-radius: 15px;
             cursor: pointer;
             font-weight: bold;
             transition: background-color 0.3s;
-            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            
-            /* Add this new style for animation */
             transform: translateX(0);
             transition: transform 0.2s;
-        }
-
-        button:hover {
-            background-color: #2980b9;
+            background-color: transparent;
+            padding: 0px;
         }
 
         button:hover {
             transform: translatey(0px);
+        }
+        button:hover {
+            color: white;
+
         }
 
         ul {
@@ -110,29 +115,19 @@
         }
 
         /* Blink animation for incorrect nouns */
-        @keyframes blink {
-            0% {
-                background-color: transparent;
-            }
-            50% {
-                background-color: red;
-            }
-            100% {
-                background-color: transparent;
-            }
-        }
+
 
         button:active {
             animation: blink 0.5s;
         }
 
-        .logo-image {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: auto;
-            height: 80px;
-        }
+                       .logo-image {
+                    position: absolute;
+                    top: 27px;
+                    right: 24px;
+                    width: auto;
+                    height: 102px;
+               }
 
         .lesson-title {
             position: absolute;
@@ -175,7 +170,7 @@
 
         .score-label.left {
             left: 30px;
-            top: 100px;
+            top: 31px;
             font-size: 25px;
             background-color: #00741E;
             white-space: normal;
@@ -193,12 +188,23 @@
         }
 
 
-        .image-right {
-            width: 230px;
-            height: auto;
-            position: absolute;
-            right: 36px;
-            top: 190px;
+        @keyframes stretchAnimation {
+  0%, 100% {
+  transform: translateY(0) scaleY(1);
+  }
+  50% {
+   transform: translateY(-1.1%) scaleY(1.025);
+  }
+       }
+
+  .image-right {
+       width: 230px;
+       height: auto;
+       position: absolute;
+       right: 36px;
+       top: 190px;
+       animation: stretchAnimation 3s infinite; /* Adjust the duration and iteration count as needed */
+
         }
 
         .retry-button {
@@ -234,40 +240,57 @@
         }
 
         .correct-noun {
-      
             display: inline-block;
-            margin-top: -200px;
-            margin: 20px;
-            width: 220px;
-            height: 70px;
-            color: #333;
+            margin: 6px;
+            width: 189px;
+            color: white;
             font-size: 40px;
             font-weight: bold;
             padding: 10px;
-            background-color: #ffcc00;
-            border-radius: 5px;
-            text-align:center;
-        
+            background-color: #00741E;
+            border-radius: 52px;
+            text-align: center;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            border: 7px solid;
         }
     
 
         h2 {
-            font-size: 40px;
-            margin-left: -340px;
+            font-size: 10px;
+            margin-top: 413px;
             width: 798px;
             text-align: center;
-            color: #fff;
+            color: transparent;
             text-transform: uppercase;
-            background-color: #00741E;
+            background-color: transparent;
             padding: 10px;
             border-radius: 5px;
             cursor: default;
-            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
         }
+
+        #correct-text {
+            font-size: 50px;
+            font-weight: bold;
+            color: #fff;
+            height: 60px;
+            background-color: #00741E;
+            width: 810px;
+            padding: 10px;
+
+            margin: 0 auto; /* Center the text horizontally */
+            margin-top: 0px; /* Add some top margin for spacing */
+
+            
+}
+
 
     </style>
 </head>
 <body>
+<audio autoplay loop controlsList="nodownload" style="display: none">
+  <source src="music2 (2).ogg" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
     <a class="retry-button" href="lesson1-2.php">
         <img src="retry.png" />
     </a>
@@ -285,11 +308,16 @@
             <p id="question-text"></p>
             <div id="word-buttons"></div>
         </div>
-        <div id="correct-nouns-container">
-            <h2>Correct Nouns</h2>
-            <ul id="correct-nouns-list"></ul>
-        </div>
+
     </div>
+
+    <div id="">
+            <h2>Correct Nouns</h2>
+            <ul id="correct-nouns-list" style="
+        height: 46px;
+
+        "></ul>
+        </div>
     <script>
         function goRetry() {
             window.location.href = 'lesson1-2.html';
@@ -313,6 +341,17 @@
             "I flew a kite in the fields"
         ];
 
+        const images = [
+            "<img src='aan.jpg' />",
+            "<img src='ban.jpg' />",
+            "<img src='can.jpg' />",
+            "<img src='dan.jpg' />",
+            "<img src='ean.jpg' />",
+            "<img src='fan.jpg' />",
+            "<img src='gan.jpg' />",
+            "<img src='han.jpg' />"
+        ];
+
         const correctNouns = [
             ["Dad", "us", "car"],
             ["These", "flowers"],
@@ -332,7 +371,7 @@
             const questionText = document.getElementById("question-text");
             const wordButtons = document.getElementById("word-buttons");
 
-            questionText.textContent = questions[currentQuestionIndex];
+            questionText.innerHTML = images[currentQuestionIndex];
 
             // Create buttons for each word in the current question
             wordButtons.innerHTML = "";
@@ -344,11 +383,18 @@
             }
         }
 
+        const correctSound = new Audio('correct.ogg');
+        const wrongSound = new Audio('wrong.ogg');
+
         function handleWordClick(word) {
             const correctNounsList = document.getElementById("correct-nouns-list");
 
             if (currentWords.includes(word)) {
                 if (correctNouns[currentQuestionIndex].includes(word)) {
+                    // Move the noun to the correct nouns list
+                    // Play the correct sound
+                    correctSound.play();
+
                     // Move the noun to the correct nouns list
                     selectedNouns.push(word);
                     const nounItem = document.createElement("li");
@@ -366,31 +412,30 @@
                                 flashCorrectText();
                                 setTimeout(() => {
                                     proceedToNextQuestion();
-                                }, 1000);
+                                }, 4000);
                             }, 0); // Flash "Correct!" text immediately
-                        }, 1000); // Wait for 1 second
+                        }, 0); // Wait for 1 second
                     }
                 } else {
+                    wrongSound.play();
+
                     // Blink the button red for a short duration
                     const button = Array.from(document.getElementById('word-buttons').querySelectorAll('button')).find(b => b.textContent === word);
-                    button.style.backgroundColor = "red";
+                    button.style.color = "#EE2F41";
                     setTimeout(() => {
-                        button.style.backgroundColor = "";
-                    }, 500);
+                        button.style.color = "";
+                    }, 1000);
                 }
             }
         }
 
         function flashCorrectText() {
             const wordButtons = document.getElementById("word-buttons");
-            wordButtons.innerHTML = "<p id='correct-text'>Correct!</p>";
+            wordButtons.innerHTML = "<p id='correct-text'>CORRECT!</p>";
 
             const correctText = document.getElementById("correct-text");
-            correctText.style.fontSize = "50px"; // Adjust the font size to make it a bit smaller
-            correctText.style.color = "#fff"; // Change text color for better contrast
-            correctText.style.backgroundColor = "#00741E"; // Change background color for better visibility
-            correctText.style.padding = "10px"; // Add padding for spacing
-            correctText.style.borderRadius = "5px"; // Add rounded corners
+
+            
         }
 
         function proceedToNextQuestion() {
@@ -420,8 +465,6 @@
     <div class="lesson-title" style="top: 52px;">Recognizing Nouns</div>
 
     <div class="centered-board"></div>
-
-    <div class="score-label right">Score: 75</div>
 
     <img class="image-right" src="traveler5.png" alt="Traveler 5 Image">
     
