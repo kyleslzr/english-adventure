@@ -44,9 +44,9 @@ if ($stmt === false) {
                               <td>' . $row['lesson_5_act_2'] . '</td>
                               <td style="font-weight: 700;">' . $total . '</td>
                               <td>
-                                   <form id="deleteRecord" action="function/delete-record.php" method="post">
+                                   <form id="deleteRecord_' . $row['record_ID'] . '" action="function/delete-record.php" method="post">
                                         <input type="hidden" name="recordId" value="' . $row['record_ID'] . '">
-                                        <button class="delete-btn" type="button" onclick="confirmDelete()" style="background-color: transparent; border: 0px;">
+                                        <button class="delete-btn" type="button" onclick="confirmDelete(\'deleteRecord_' . $row['record_ID'] . '\')" style="background-color: transparent; border: 0px;">
                                         <img src="delete.png" style="width: 34px;">
                                         </button>
                                    </form>
