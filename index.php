@@ -156,12 +156,12 @@
 
 
           <!-- sample shining shit -->
-          <div style="z-index: 1; display: flex; position: absolute; top: 70px; left: 360px; margin-bottom: -1px;">
+          <div style="z-index: 1; display: none; position: absolute; top: 70px; left: 360px; margin-bottom: -1px;">
                <div><img width="400px" style="margin-left: -80px;" src="shining.gif" alt="" srcset=""></div>
           </div>
 
           <!-- sample falling leaves -->
-          <div style="z-index: 1; display: flex; position: absolute; top: 0; right: 0; margin-bottom: -1px;">
+          <div style="z-index: 1; display: none; position: absolute; top: 0; right: 0; margin-bottom: -1px;">
                <div><img width="400px" style="margin-left: -80px;" src="falling-leaf.gif" alt="" srcset=""></div>
           </div>
 

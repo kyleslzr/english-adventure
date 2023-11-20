@@ -199,7 +199,7 @@
 td, th {
   border: 2px solid #00741E;
   text-align: left;
-  padding: 8px;
+  padding: 1px 1px 0px 5px;
 }
 
 tr:nth-child(even) {
