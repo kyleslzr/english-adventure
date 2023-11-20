@@ -12,17 +12,21 @@
           <style>
                body {
                     overflow: hidden;
-                    margin: 0;
-                    padding: 0;
-                    height: 100vh;
-                    background-image: url('cute_background8.jpg');
-                    background-size: cover;
-                    font-family: Arial, sans-serif;
-                    display: flex;
-                    align-items: center;
-                    flex-direction: column;
-                    text-align: center;
-                    color: #fff;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-image: url('cute_background8.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      color: #fff;
+      position: relative;
                }
 
                .button-container {
