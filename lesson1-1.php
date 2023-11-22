@@ -10,6 +10,13 @@
           <link rel="stylesheet" href="css/side-score-style.css">
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
           <style>
+                              html {
+                    width: 1535.2px;
+                    height: 747px;
+                    overflow: scroll;
+                    background-color:green;
+
+               }
                body {
                     overflow: hidden;
       margin: 0;

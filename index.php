@@ -3,10 +3,21 @@
 <html>
 
      <head>
-          <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
+            <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
           <title>English Adventures</title>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
           <style>
+               html {
+                    width: 1535.2px;
+                    height: 747px;
+                    overflow: scroll;
+                    background-color:green;
+
+               }
+
+
                body {
                     zoom: 100%;
                     margin: 0; /* Add this line to remove default margin */
