@@ -252,7 +252,7 @@
        right: 36px;
        top: 190px;
        animation: stretchAnimation 3s infinite; /* Adjust the duration and iteration count as needed */
-
+        z-index: -2;
         }
 
 .retry-button {
@@ -336,6 +336,27 @@
                     transform: translateY(-100%) scaley(1);
                }
                }
+               .snow {
+                width: 560px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -2;
+               }
+               .snoww {
+                width: 560px;
+                position: absolute;
+                top: 0;
+                left: 552px;
+                z-index: -2;
+               }
+               .snowww {
+                width: 594px;
+                position: absolute;
+                top: 0;
+                right: -158px;
+                z-index: -2;
+               }
 
   </style>
 </head>
@@ -374,6 +395,10 @@
   <img class="image-right" src="traveler5.png" alt="Traveler 5 Image">
 
   <img class="centered-boardd animate__bounceOutUp" src="board1.png" alt="Traveler 5 Image">
+  <img class="snow" src="snow.gif" alt="Traveler 5 Image" />
+  <img class="snoww" src="snow.gif" alt="Traveler 5 Image" />
+  <img class="snowww" src="snow.gif" alt="Traveler 5 Image" />
+
 
 <img class="centered-boarddd animate__fadeOut" src="bg.jpg" alt="Traveler 5 Image">
 <div class="game-container">

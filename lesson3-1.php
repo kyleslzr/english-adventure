@@ -99,14 +99,7 @@
                     z-index: 4;
                }
 
-               @keyframes stretchAnimation {
-  0%, 100% {
-  transform: translateY(0) scaleY(1);
-  }
-  50% {
-   transform: translateY(-1.1%) scaleY(1.025);
-  }
-       }
+
 
   .image-right {
        width: 230px;
@@ -117,6 +110,8 @@
        animation: stretchAnimation 3s infinite; /* Adjust the duration and iteration count as needed */
 
         }
+
+
 
                .retry-button {
                     position: fixed;
@@ -237,6 +232,64 @@
                     transform: translateY(-100%) scaley(1);
                }
                }
+
+
+               @keyframes stretchAnimation {
+  0%, 100% {
+  transform: translateY(0) scaleY(1);
+  }
+  50% {
+   transform: translateY(-1.1%) scaleY(1.025);
+  }
+}
+.vine, .vinee, .vineee {
+    animation: bounceAnimation 2s linear infinite;
+}
+
+@keyframes bounceAnimation {
+     0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+}
+40% {
+    transform: translateY(-3px);
+}
+60% {
+    transform: translateY(9px);
+}}
+
+               .vine {
+                    width: 439px;
+    height: auto;
+    position: absolute;
+    left: 36px;
+    top: -87px;
+
+        }
+        .vinee {
+          width: 373px;
+    height: auto;
+    position: absolute;
+    right: -39px;
+    top: -67px;
+    z-index: -2;
+    animation-delay: 1s;
+
+        }
+
+        .bush {
+          width: 512px;
+    height: auto;
+    position: absolute;
+    right: -119px;
+    bottom: -25px;
+    z-index: -2;
+    animation: stretchAnimation 1.5s infinite;
+    z-index: -1;
+    animation-delay: 1s;
+    filter: saturate(1.5);
+}
+               
+    
           </style>
      </head>
 
@@ -298,6 +351,10 @@
           <div class="centered-board"></div>
 
           <img class="image-right" src="traveler5.png" alt="Traveler 5 Image" />
+          <img class="vine animate__bounce" src="vine1.png" alt="Traveler 5 Image" />
+          <img class="vinee animate__bounce" src="vine2.png" alt="Traveler 5 Image" />
+          <img class="bush animate__bounce" src="bush.webp" alt="Traveler 5 Image" />
+
 
           <img class="centered-boardd animate__bounceOutUp" src="board1.png" alt="Traveler 5 Image">
 

@@ -9,21 +9,21 @@
     <style>
         body {
             overflow: hidden;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            background-image: url('cute_background8.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center center;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-            color: #fff;
-            position: relative;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-image: url('cute_background8.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position-y: -71px;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      color: #fff;
+      position: relative;
         }
 
         #game-container {
@@ -41,9 +41,9 @@
         }
 
         #question-container {
-            position: fixed;
-            margin-top:38px;
-            margin-left:292px;
+           position: fixed;
+    margin-top: 13px;
+    margin-left: 292px;
         }
 
         #question-container img {
@@ -258,7 +258,7 @@
        right: 36px;
        top: 190px;
        animation: stretchAnimation 3s infinite; /* Adjust the duration and iteration count as needed */
-
+        z-index: -2;
         }
 
         .retry-button {
@@ -294,18 +294,20 @@
         }
 
         .correct-noun {
-            display: inline-block;
-            margin: 6px;
-            width: 189px;
-            color: white;
-            font-size: 40px;
-            font-weight: bold;
-            padding: 10px;
-            background-color: #00741E;
-            border-radius: 52px;
-            text-align: center;
-            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            border: 7px solid;
+            position: relative;
+    display: inline-block;
+    margin: 6px;
+    width: 189px;
+    color: white;
+    font-size: 51px;
+    font-weight: bold;
+    padding: 17px 10px;
+    background-color: #00741E;
+    border-radius: 84px;
+    text-align: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    border: 7px solid;
+    bottom: -96px;
         }
     
 
@@ -336,6 +338,72 @@
 
             
 }
+.move {
+                    width: 420px;
+                    position: absolute;
+                    bottom: -4.5px;
+                    z-index: -2;
+                    left: -500px;
+                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
+                    animation-fill-mode: forwards;
+                    animation-delay: 0s;
+               }
+
+               .movee {
+                    width: 420px;
+                    position: absolute;
+                    bottom: -4.5px;
+                    z-index: -2;
+                    left: -500px;
+                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
+                    animation-fill-mode: forwards;
+                    animation-delay: 3s;
+               }
+
+               .moveee {
+                    width: 420px;
+                    position: absolute;
+                    bottom: -4.5px;
+                    z-index: -2;
+                    left: -500px;
+                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
+                    animation-fill-mode: forwards;
+                    animation-delay: 4.5s;
+               }
+
+               .moveeee {
+                    width: 420px;
+                    position: absolute;
+                    bottom: -4.5px;
+                    z-index: -2;
+                    left: -500px;
+                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
+                    animation-fill-mode: forwards;
+                    animation-delay: 6s;
+               }
+
+               .moveeeee {
+                    width: 700px;
+                    position: absolute;
+                    bottom: -73.5px;
+                    z-index: -2;
+                    left: -500px;
+                    animation: slideOutRight 12s linear infinite;
+                    animation-fill-mode: forwards;
+                    animation-delay: 4s;
+               }
+          
+
+                    @keyframes slideOutRight {
+                    0% {
+                         transform: translateX(0);
+                    }
+
+                    100% {
+                         transform: translateX(500%); /* Adjust the value to slide farther */
+                    }
+                    }
+
 
 
     </style>
@@ -527,6 +595,11 @@
           <img class="centered-boarddd animate__fadeOut" src="bg.jpg" alt="Traveler 5 Image">
           
     <img class="image-right" src="traveler5.png" alt="Traveler 5 Image">
+    <img class="move" src="wave.png" alt="Traveler 5 Image">
+          <img class="movee" src="wave.png" alt="Traveler 5 Image">
+          <img class="moveee" src="wave.png" alt="Traveler 5 Image">
+          <img class="moveeee" src="wave.png" alt="Traveler 5 Image">
+          <img class="moveeeee" src="boat.png" alt="Traveler 5 Image">
     
     <div class="name-list">
           <?php include "function/retrieve-all-scores-l1-act2.php"; ?>

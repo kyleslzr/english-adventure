@@ -15,7 +15,7 @@
       background-image: url('cute_background8.jpg');
       background-size: cover;
       background-repeat: no-repeat;
-      background-position: center center;
+      background-position-y: -71px;
       font-family: Arial, sans-serif;
       display: flex;
       justify-content: flex-start;
@@ -208,8 +208,74 @@
     z-index: 100;
     top: 234px;
     left: 104px;
-    background-color: #ebbf95;
+    background-color: #00741e;;
 }
+
+.move {
+                    width: 420px;
+                    position: absolute;
+                    bottom: -4.5px;
+                    z-index: -2;
+                    left: -500px;
+                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
+                    animation-fill-mode: forwards;
+                    animation-delay: 0s;
+               }
+
+               .movee {
+                    width: 420px;
+                    position: absolute;
+                    bottom: -4.5px;
+                    z-index: -2;
+                    left: -500px;
+                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
+                    animation-fill-mode: forwards;
+                    animation-delay: 3s;
+               }
+
+               .moveee {
+                    width: 420px;
+                    position: absolute;
+                    bottom: -4.5px;
+                    z-index: -2;
+                    left: -500px;
+                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
+                    animation-fill-mode: forwards;
+                    animation-delay: 4.5s;
+               }
+
+               .moveeee {
+                    width: 420px;
+                    position: absolute;
+                    bottom: -4.5px;
+                    z-index: -2;
+                    left: -500px;
+                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
+                    animation-fill-mode: forwards;
+                    animation-delay: 6s;
+               }
+
+               .moveeeee {
+                    width: 700px;
+                    position: absolute;
+                    bottom: -73.5px;
+                    z-index: -2;
+                    left: -500px;
+                    animation: slideOutRight 12s linear infinite;
+                    animation-fill-mode: forwards;
+                    animation-delay: 4s;
+               }
+          
+
+                    @keyframes slideOutRight {
+                    0% {
+                         transform: translateX(0);
+                    }
+
+                    100% {
+                         transform: translateX(500%); /* Adjust the value to slide farther */
+                    }
+                    }
 
 
   </style>
@@ -256,7 +322,12 @@
 
 
 <video id="tutorialVideo" class="lesson-video" controls style="display: none;">
-  <source src="tvid.mp4" type="video/mp4">
+  <source src="l11.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<video id="tutorialVideo" class="lesson-videoo" controls style="display: none;">
+  <source src="l12.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -318,7 +389,7 @@
     <div class="lesson-labels recognizing-sounds">
       <div class="lesson-label">Recognizing Nouns</div>
       <div class="lesson-btn">
-      <a href="#" class="tutor-button">
+      <a href="#" class="tutor-button" onclick="showTutorialVideo()">
         <div style="
            display: flex;
            align-items: center;
@@ -343,5 +414,10 @@
   </div>
 
   <img class="traveler-image" src="traveler4.png" alt="Traveler 4">
+  <img class="move" src="wave.png" alt="Traveler 5 Image">
+          <img class="movee" src="wave.png" alt="Traveler 5 Image">
+          <img class="moveee" src="wave.png" alt="Traveler 5 Image">
+          <img class="moveeee" src="wave.png" alt="Traveler 5 Image">
+          <img class="moveeeee" src="boat.png" alt="Traveler 5 Image">
 </body>
 </html>

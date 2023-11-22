@@ -256,6 +256,54 @@
                     transform: translateY(-100%) scaley(1);
                }
                }
+               .vine, .vinee, .vineee {
+    animation: bounceAnimation 2s linear infinite;
+}
+
+@keyframes bounceAnimation {
+     0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+}
+40% {
+    transform: translateY(-3px);
+}
+60% {
+    transform: translateY(9px);
+}}
+
+               .vine {
+                    width: 439px;
+    height: auto;
+    position: absolute;
+    left: 36px;
+    top: -87px;
+    z-index: -2;
+
+        }
+        .vinee {
+          width: 373px;
+    height: auto;
+    position: absolute;
+    right: -39px;
+    top: -67px;
+    z-index: -2;
+    animation-delay: 1s;
+
+        }
+
+        .bush {
+          width: 512px;
+    height: auto;
+    position: absolute;
+    right: -119px;
+    bottom: -25px;
+    z-index: -2;
+    animation: stretchAnimation 1.5s infinite;
+    z-index: -3;
+    animation-delay: 1s;
+    filter: saturate(1.5);
+}
+    
           </style>
      </head>
 
@@ -299,6 +347,10 @@
           <img class="centered-boardd animate__bounceOutUp" src="board1.png" alt="Traveler 5 Image">
 
 <img class="centered-boarddd animate__fadeOut" src="bg.jpg" alt="Traveler 5 Image">
+<img class="vine animate__bounce" src="vine1.png" alt="Traveler 5 Image" />
+          <img class="vinee animate__bounce" src="vine2.png" alt="Traveler 5 Image" />
+          <img class="bush animate__bounce" src="bush.webp" alt="Traveler 5 Image" />
+
           <div class="name-list">
                <?php include "function/retrieve-all-scores-l3-act2.php"; ?>
           </div>

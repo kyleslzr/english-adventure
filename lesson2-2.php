@@ -257,6 +257,35 @@
                     transform: translateY(-100%) scaley(1);
                }
                }
+               .flies {
+                width: 438px;
+                position: absolute;
+                top: -86px;
+                right: -49px;
+                filter: saturate(2);
+                z-index: -3;
+                mix-blend-mode: lighten;
+               }
+
+               .fliess {
+                width: 689px;
+                position: absolute;
+                bottom: -407px;
+                right: -190px;
+                filter: saturate(2);
+                z-index: -2;
+                mix-blend-mode: lighten;
+               }
+
+               .fliesss {
+                width: 748px;
+                position: absolute;
+                top: -194px;
+                left: -90px;
+                filter: saturate(2);
+                z-index: -2;
+                mix-blend-mode: lighten;
+               }
 
   </style>
 </head>
@@ -299,6 +328,9 @@
   <img class="centered-boardd animate__bounceOutUp" src="board1.png" alt="Traveler 5 Image">
 
 <img class="centered-boarddd animate__fadeOut" src="bg.jpg" alt="Traveler 5 Image">
+<img class="flies" src="flies.gif" alt="Traveler 5 Image">
+<img class="fliess" src="flies.gif" alt="Traveler 5 Image">
+<img class="fliesss" src="flies.gif" alt="Traveler 5 Image">
 
   <div class="name-list">
      <?php include "function/retrieve-all-scores-l2-act2.php"; ?>
@@ -404,7 +436,7 @@ commonNounBtn.addEventListener("click", () => {
     commonNounBtn.style.color = "#00741E"; // Change button text color back to original color
     commonNounBtn.classList.remove("wrong"); // Remove red color from commonNounBtn
     properNounBtn.classList.remove("wrong"); // Remove red color from properNounBtn
-  }, 1000);
+  }, 1500);
 });
 
   displayWord();

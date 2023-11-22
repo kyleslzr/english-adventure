@@ -195,12 +195,75 @@
     margin-left: -93px;
 
 }
+.snow {
+                width: 560px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -2;
+               }
+               .snoww {
+                width: 560px;
+                position: absolute;
+                top: 0;
+                left: 552px;
+                z-index: -2;
+               }
+               .snowww {
+                width: 594px;
+                position: absolute;
+                top: 0;
+                right: -158px;
+                z-index: -2;
+               }
+
+               .lesson-video {
+  width: 873px;
+    height: 390px;
+    margin: 20px 0;
+    border: 5px solid #2c0f11;
+    border-radius: 17px;
+    position: absolute;
+    z-index: 100;
+    top: 234px;
+    left: 104px;
+    background-color: #00741e;;
+}
 
   </style>
 <script>
         function goHome() {
             window.location.href = 'background_page.html';
         }
+
+        document.addEventListener("DOMContentLoaded", function () {
+        // Ensure the video and close button are initially hidden on page load
+        var videoElement = document.getElementById("tutorialVideo");
+        var closeButton = document.getElementById("closeVideoButton");
+
+        videoElement.style.display = "none";
+        closeButton.style.display = "none";
+    });
+
+    function goHome() {
+        window.location.href = 'background_page.html';
+    }
+
+    function showTutorialVideo() {
+        var videoElement = document.getElementById("tutorialVideo");
+        var closeButton = document.getElementById("closeVideoButton");
+
+        videoElement.style.display = "block";
+        closeButton.style.display = "block";
+    }
+
+    function closeTutorialVideo() {
+        var videoElement = document.getElementById("tutorialVideo");
+        var closeButton = document.getElementById("closeVideoButton");
+
+        videoElement.style.display = "none";
+        closeButton.style.display = "none";
+    }
 </script>
 </head>
 <body>
@@ -212,6 +275,41 @@
   <source src="music.ogg" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
+
+
+<video id="tutorialVideo" class="lesson-video" controls style="display: none;">
+  <source src="l41.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<video id="tutorialVideo" class="lesson-videoo" controls style="display: none;">
+  <source src="l42.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<button id="closeVideoButton" onclick="closeTutorialVideo()" style="
+    display: block;
+    font-size: 24px;
+    position: absolute;
+    background-color: rgb(255, 204, 0);
+    width: 42px;
+    height: 42px;
+    border-radius: 60px;
+    top: 265px;
+    right: 562px;
+    z-index: 105;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 4px;
+    cursor: pointer;
+    
+"><svg xmlns="http://www.w3.org/2000/svg" height="1.2em" viewBox="0 0 384 512" style="
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#00741e}</style><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+</svg></button>
+
   <img class="logo-image" src="logo.png" alt="English Adventures Logo">
   <div class="lesson-title">Lesson 4</div>
   <div class="lesson-bar">
@@ -219,7 +317,7 @@
     <div class="lesson-labels recognizing-sounds">
       <div class="lesson-label" style="padding: 10px 41px;">Pronouncing words with the<br>Sounds of b and p</div>
       <div class="lesson-btn">
-      <a href="#" class="tutor-button">
+      <a href="#" class="tutor-button" onclick="showTutorialVideo()">
         <div style="
            display: flex;
            align-items: center;
@@ -246,7 +344,7 @@
 ">
       <div class="lesson-label" >Using Pronouns</div>
       <div class="lesson-btn">
-      <a href="#" class="tutor-button">
+      <a href="#" class="tutor-button" onclick="showTutorialVideo()">
         <div style="
            display: flex;
            align-items: center;
@@ -271,5 +369,9 @@
   </div>
 
   <img class="traveler-image" src="traveler4.png" alt="Traveler 4">
+
+  <img class="snow" src="snow.gif" alt="Traveler 5 Image" />
+  <img class="snoww" src="snow.gif" alt="Traveler 5 Image" />
+  <img class="snowww" src="snow.gif" alt="Traveler 5 Image" />
 </body>
 </html>

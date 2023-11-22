@@ -18,7 +18,7 @@
       background-image: url('cute_background8.jpg');
       background-size: cover;
       background-repeat: no-repeat;
-      background-position: center center;
+      background-position-y: -71px;
       font-family: Arial, sans-serif;
       display: flex;
       justify-content: flex-start;
@@ -116,6 +116,112 @@
                     z-index: 11;
                }
 
+               .move {
+                    width: 420px;
+                    position: absolute;
+                    bottom: -4.5px;
+                    z-index: -2;
+                    left: -500px;
+                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
+                    animation-fill-mode: forwards;
+                    animation-delay: 0s;
+               }
+
+               .movee {
+                    width: 420px;
+                    position: absolute;
+                    bottom: -4.5px;
+                    z-index: -2;
+                    left: -500px;
+                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
+                    animation-fill-mode: forwards;
+                    animation-delay: 3s;
+               }
+
+               .moveee {
+                    width: 420px;
+                    position: absolute;
+                    bottom: -4.5px;
+                    z-index: -2;
+                    left: -500px;
+                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
+                    animation-fill-mode: forwards;
+                    animation-delay: 4.5s;
+               }
+
+               .moveeee {
+                    width: 420px;
+                    position: absolute;
+                    bottom: -4.5px;
+                    z-index: -2;
+                    left: -500px;
+                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
+                    animation-fill-mode: forwards;
+                    animation-delay: 6s;
+               }
+
+               .moveeeee {
+                    width: 700px;
+                    position: absolute;
+                    bottom: -73.5px;
+                    z-index: -2;
+                    left: -500px;
+                    animation: slideOutRight 12s linear infinite;
+                    animation-fill-mode: forwards;
+                    animation-delay: 4s;
+               }
+          
+
+                    @keyframes slideOutRight {
+                    0% {
+                         transform: translateX(0);
+                    }
+
+                    100% {
+                         transform: translateX(500%); /* Adjust the value to slide farther */
+                    }
+                    }
+
+
+               .animate__fadeOut {
+               animation: fadeOut 2.3s; /* Specify the animation name and duration here */
+               animation-fill-mode: forwards;
+               
+               }
+
+               @keyframes fadeOut {
+                    0% {
+                         opacity: 1;
+                    }
+                    80% {
+                         opacity: 1; /* Adjust the opacity value as needed */
+                    }
+                    100% {
+                         opacity: 0;
+                         display: none;
+                    }
+                    }
+
+               .animate__bounceOutUp {
+               animation: bounceOutUp 6.7s; /* Specify the animation name and duration here */
+               animation-fill-mode: forwards;
+               }
+
+               @keyframes bounceOutUp {
+               0% {
+                    transform: translateY(0) scaley(1); 
+               }
+
+               37% {
+                    transform: translateY(1%) scaley(1); 
+               
+               }
+
+               100% {
+                    transform: translateY(-100%) scaley(1);
+               }
+               }
+
                .score-label {
                     position: absolute;
                     font-size: 20px;
@@ -162,7 +268,7 @@
                     right: 36px;
                     top: 190px;
                     animation: stretchAnimation 3s infinite; /* Adjust the duration and iteration count as needed */
-
+                    z-index: -2;
                }
 
                .retry-button {
@@ -187,92 +293,101 @@
 
                }
 
-
-               .animate__fadeOut {
-               animation: fadeOut 2.3s; /* Specify the animation name and duration here */
-               animation-fill-mode: forwards;
-               
-               }
-
-               @keyframes fadeOut {
-                    0% {
-                         opacity: 1;
-                    }
-                    80% {
-                         opacity: 1; /* Adjust the opacity value as needed */
-                    }
-                    100% {
-                         opacity: 0;
-                         display: none;
-                    }
+               /* Add this to your existing styles or create a new style block */
+                    #gjImage {
+                         width: 598px;
+                         height: auto;
+                         position: fixed;
+                         top: 222px;
+                         z-index: 1000;
+                         animation: bounceIn 1s;
                     }
 
-               .animate__bounceOutUp {
-               animation: bounceOutUp 6.7s; /* Specify the animation name and duration here */
-               animation-fill-mode: forwards;
-               }
+                    #gjjImage {
+                         width: 825px;
+                         height: auto;
+                         position: fixed;
+                         top: 149px;
+                         z-index: 200;
+                         animation: fadeIn .5s;
+                    }
 
-               @keyframes bounceOutUp {
-               0% {
-                    transform: translateY(0) scaley(1); 
-               }
-
-               37% {
-                    transform: translateY(1%) scaley(1); 
-               
-               }
-
-               100% {
-                    transform: translateY(-100%) scaley(1);
-               }
-               }
 
 
           </style>
           <script>
-               document.addEventListener('DOMContentLoaded', function () {
-                    const wordButtons = document.querySelectorAll('.word-button');
+ document.addEventListener('DOMContentLoaded', function () {
+    const wordButtons = document.querySelectorAll('.word-button');
+    const gjImage = document.createElement('img');
+    gjImage.src = 'gj.png';
+    gjImage.alt = 'GJ Image';
+    gjImage.style.display = 'none'; // Initially hide the image
 
-                    // Function to play the correct sound
-                    function playCorrectSound() {
-                         const correctSound = new Audio('correct.ogg');
-                         correctSound.play();
+    const gjjImage = document.createElement('img');
+    gjjImage.src = 'gj1.png';
+    gjjImage.alt = 'GJ Image';
+    gjjImage.style.display = 'none'; // Initially hide the image
+    // Function to play the correct sound
+    function playCorrectSound() {
+        const correctSound = new Audio('correct.ogg');
+        correctSound.play();
+    }
+
+    function playWrongSound() {
+        const wrongSound = new Audio('wrong.ogg');
+        wrongSound.play();
+    }
+
+    
+    
+
+    wordButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Check if the button has already been clicked
+            if (!button.classList.contains('clicked')) {
+                // Toggle the 'active' class on click
+                button.classList.toggle('active');
+
+                // Toggle the text color to white
+                if (button.classList.contains('active')) {
+                    button.style.color = 'white';
+                } else {
+                    button.style.color = '#00741E'; // Original color
+                }
+
+                // Play the correct sound if the button is active and has status true
+                if (button.classList.contains('active') && button.dataset.status === 'true') {
+                    playCorrectSound();
+                }
+
+                if (button.classList.contains('active') && button.dataset.status === 'false') {
+                    playWrongSound();
+                }
+
+                // Mark the button as clicked
+                button.classList.add('clicked');
+
+                // Check if all buttons are clicked
+                const allButtonsClicked = Array.from(wordButtons).every(button => button.classList.contains('clicked'));
+
+                if (allButtonsClicked) {
+                    // Wait for 2 seconds (2000 milliseconds) before displaying gjImage
+                    setTimeout(function () {
+                         document.body.appendChild(gjImage);
+                         gjImage.style.display = 'block';
+                         gjImage.id = 'gjImage'; // Add this line
+                    }, 500); // Adjust the delay time as needed (in milliseconds)
                     }
-                    
-                    function playWrongSound() {
-                         const wrongSound = new Audio('wrong.ogg');
-                         wrongSound.play();
-                    }
+                if (allButtonsClicked) {
+                    document.body.appendChild(gjjImage);
+                    gjjImage.style.display = 'block';
+                    gjjImage.id = 'gjjImage'; // Add this line
+                }
+            }
+        });
+    });
+});
 
-                    wordButtons.forEach(button => {
-                         button.addEventListener('click', () => {
-                              // Check if the button has already been clicked
-                              if (!button.classList.contains('clicked')) {
-                                   // Toggle the 'active' class on click
-                                   button.classList.toggle('active');
-
-                                   // Toggle the text color to white
-                                   if (button.classList.contains('active')) {
-                                   button.style.color = 'white';
-                                   } else {
-                                   button.style.color = '#00741E'; // Original color
-                                   }
-
-                                   // Play the correct sound if the button is active and has status true
-                                   if (button.classList.contains('active') && button.dataset.status === 'true') {
-                                   playCorrectSound();
-                                   }
-
-                                   if (button.classList.contains('active') && button.dataset.status === 'false') {
-                                   playWrongSound();
-                                   }
-
-                                   // Mark the button as clicked
-                                   button.classList.add('clicked');
-                              }
-                         });
-                    });
-               });
           </script>
      </head>
 
@@ -328,6 +443,12 @@
           <img class="centered-boardd animate__bounceOutUp" src="board1.png" alt="Traveler 5 Image">
 
           <img class="centered-boarddd animate__fadeOut" src="bg.jpg" alt="Traveler 5 Image">
+
+          <img class="move" src="wave.png" alt="Traveler 5 Image">
+          <img class="movee" src="wave.png" alt="Traveler 5 Image">
+          <img class="moveee" src="wave.png" alt="Traveler 5 Image">
+          <img class="moveeee" src="wave.png" alt="Traveler 5 Image">
+          <img class="moveeeee" src="boat.png" alt="Traveler 5 Image">
 
 
           <div class="name-list">

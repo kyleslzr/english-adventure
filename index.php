@@ -9,7 +9,7 @@
           <style>
                body {
                     zoom: 100%;
-                    margin: 0;
+                    margin: 0; /* Add this line to remove default margin */
                     padding: 0;
                     display: flex;
                     flex-direction: column;
@@ -25,14 +25,18 @@
                     overflow: hidden;
                }
 
+/* Rest of your existing styles */
+
+
                .logo {
-          position: absolute;
-          max-width: 850px;
-          max-height: 500px;
-          width: auto;
-          height: auto;
-          top: 155px;
+                    position: absolute;
+                    max-width: 850px;
+                    max-height: 500px;
+                    width: auto;
+                    height: auto;
+                    top: 155px;
                }
+
 
                .logo-image {
                     position: absolute;
@@ -120,7 +124,7 @@
 
                     .traveler {
                     position: absolute;
-                    bottom: -142px;
+                    bottom: 0px;
                     right: 8px;
                     width: 371px;
                     height: auto;  
@@ -128,12 +132,20 @@
                     z-index: 10;                       
                 }
 
+                .animate__bounceIn {
+               animation: bounceIn 1s; /* Specify the animation name and duration here */
+               }
+
+
+                
+
 
           </style>
      </head>
 
      <body style="position: relative;">
-          <img class="logo animate__bounceInDown" src="logo.png" alt="English Adventures Logo">
+          <img class="logo animate__bounceIn" src="logo.png" alt="English Adventures Logo">
+
           <div class="score-label left">This&nbsp; educational&nbsp; gaming tool&nbsp; is made available &nbsp;for the&nbsp; esteemed institution of<br>SAN JOSE ACADEMY OF BULACAN located in San Jose Del Monte, Bulacan, specifically intended for the benefit
                of Grade 1 pupils. This initiative is aligned with the content presented in "Workbook for English"
                authored by Darlene Niel Panganiban of Aral Pinas.</div>
@@ -153,68 +165,8 @@
 </audio>
 <img class="traveler" src="traveler.png" alt="Traveler">
 
-
-          <!-- sample shining shit -->
-          <div style="z-index: 1; display: none; position: absolute; top: 70px; left: 360px; margin-bottom: -1px;">
-               <div><img width="400px" style="margin-left: -80px;" src="shining.gif" alt="" srcset=""></div>
           </div>
 
-          <!-- sample falling leaves -->
-          <div style="z-index: 1; display: none; position: absolute; top: 0; right: 0; margin-bottom: -1px;">
-               <div><img width="400px" style="margin-left: -80px;" src="falling-leaf.gif" alt="" srcset=""></div>
-          </div>
-
-          <!-- sample moving grass -->
-          <div>
-               <div style="z-index: 1; display: flex; position: absolute; bottom: -17px; left: 0; margin-bottom: -1px;">
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-                    <div><img width="200px" style="margin-left: -80px;" src="grass.gif" alt="" srcset=""></div>
-               </div>
-          </div>
      </body>
 
 </html>

@@ -341,6 +341,68 @@
                }
                }
 
+               .sun{
+                    position: absolute;
+                    width: 202px;
+                    z-index: -5;
+                    top: -31px;
+                    right: 219px;
+                    filter: saturate(1.7);
+               }
+
+               .bg {
+                    position: absolute;
+                     width: 1536px;
+                     z-index: -2;
+               }
+
+               .move {
+                    width: 278px;
+                    position: absolute;
+                    top: -50px;
+                    z-index: -4;
+                    left: -313px;
+                    animation: slideOutRight 30s linear infinite;
+                    animation-fill-mode: forwards;
+                    animation-delay: 3s;
+                    filter: sepia(1);
+               }
+
+               .mover {
+                    width: 298px;
+                    position: absolute;
+                    top: -18px;
+                    z-index: -4;
+                    left: -539px;
+                    animation: slideOutRight 28s linear infinite;
+                    animation-fill-mode: forwards;
+                    animation-delay: 14s;
+                    filter: sepia(1);
+               }
+
+               .movee {
+                    width: 420px;
+                    position: absolute;
+                    top: 11px;
+                    z-index: -4;
+                    left: -500px;
+                    animation: slideOutRight 28s linear infinite;
+                    animation-fill-mode: forwards;
+                    animation-delay: 12s;
+                    filter: sepia(1);
+               }
+
+               
+               @keyframes slideOutRight {
+                    0% {
+                         transform: translateX(0);
+                    }
+
+                    100% {
+                         transform: translateX(700%); /* Adjust the value to slide farther */
+                    }
+                    }
+
           </style>
      </head>
 
@@ -378,6 +440,13 @@
           <?php include "js/record-score.php"; ?>
           <img class="image-right" src="traveler5.png" alt="Traveler 5 Image">
           <img class="centered-boardd animate__bounceOutUp" src="board1.png" alt="Traveler 5 Image">
+
+          <img class="bg" src="cute_background101.png" alt="Traveler 5 Image">
+          <img class="move" src="cloud.png" alt="Traveler 5 Image">
+          <img class="mover" src="cloud.png" alt="Traveler 5 Image">
+          <img class="movee" src="cloud.png" alt="Traveler 5 Image">
+          <img class="sun" src="sun.gif" alt="Traveler 5 Image">
+
 
 <img class="centered-boarddd animate__fadeOut" src="bg.jpg" alt="Traveler 5 Image">
           <div class="game-container">

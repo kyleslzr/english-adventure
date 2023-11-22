@@ -107,16 +107,9 @@
        right: 36px;
        top: 190px;
        animation: stretchAnimation 3s infinite; /* Adjust the duration and iteration count as needed */
-
+       z-index: -2;
         }
 
-    .image-right {
-      width: 230px;
-      height: auto;
-      position: absolute;
-      right: 36px;
-      top: 190px;
-    }
     .animal-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -247,6 +240,38 @@
                     transform: translateY(-100%) scaley(1);
                }
                }
+
+               .flies {
+                width: 438px;
+                position: absolute;
+                top: -86px;
+                right: -49px;
+                filter: saturate(2);
+                z-index: -3;
+                mix-blend-mode: lighten;
+               }
+
+               .fliess {
+                width: 689px;
+                position: absolute;
+                bottom: -407px;
+                right: -190px;
+                filter: saturate(2);
+                z-index: -2;
+                mix-blend-mode: lighten;
+               }
+
+               .fliesss {
+                width: 748px;
+                position: absolute;
+                top: -194px;
+                left: -90px;
+                filter: saturate(2);
+                z-index: -2;
+                mix-blend-mode: lighten;
+               }
+
+               
 
 
   </style>
@@ -394,6 +419,10 @@
   <img class="centered-boardd animate__bounceOutUp" src="board1.png" alt="Traveler 5 Image">
 
 <img class="centered-boarddd animate__fadeOut" src="bg.jpg" alt="Traveler 5 Image">
+<img class="flies" src="flies.gif" alt="Traveler 5 Image">
+<img class="fliess" src="flies.gif" alt="Traveler 5 Image">
+<img class="fliesss" src="flies.gif" alt="Traveler 5 Image">
+
 <div class="name-list">
      <?php include "function/retrieve-all-scores-l2-act1.php"; ?>
 </div>
