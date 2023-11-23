@@ -5,13 +5,6 @@
           <link rel="stylesheet" href="css/side-score-style.css">
           <style>
 
-html {
-                    width: 1535.2px;
-                    height: 747px;
-                    overflow: scroll;
-                    background-color:green;
-               }
-
                body {
                     margin: 0;
                     padding: 0;

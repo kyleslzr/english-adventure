@@ -7,6 +7,7 @@
     <title>Lesson 1 - English Adventures</title>
     <link rel="stylesheet" href="css/side-score-style.css">
     <style>
+        
         body {
             overflow: hidden;
       margin: 0;
@@ -582,7 +583,7 @@
         // Initialize the game with the first question
         displayQuestion();
     </script>
-    <img class="logo-image" src="logo.png" alt="English Adventures Logo">
+    <img class="logo-image" src="logo.png" alt="English Adventures Logo">f
 
     <div class="score-label left">Directions: Click the noun/s in the sentence.</div>
 

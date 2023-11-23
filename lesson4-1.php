@@ -15,6 +15,7 @@
   <title>Lesson 1 - English Adventures</title>
   <link rel="stylesheet" href="css/side-score-style.css">
   <style>
+    
     body {
       overflow: hidden;
       margin: 0;

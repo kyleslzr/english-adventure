@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/side-score-style.css">
   <link rel="stylesheet" href="css/lesson-button-style.css">
   <style>
+
     body {
       overflow: hidden;
       margin: 0;

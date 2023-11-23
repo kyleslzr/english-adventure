@@ -9,10 +9,10 @@
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
           <style>
-               html {
+              < html {
                     width: 1535.2px;
                     height: 747px;
-                    overflow: scroll;
+                    overflow: hidden;
                     background-color:green;
 
                }
