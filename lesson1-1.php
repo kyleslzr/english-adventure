@@ -435,22 +435,23 @@
           <img class="logo-image" src="logo.png" alt="English Adventures Logo">
 
           <div class="button-container">
-               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/CAT.mp3">CAT</button>
-               <button class="word-button" data-status="true">APPLE</button>
-               <button class="word-button" data-status="false">LATE</button>
-               <button class="word-button" data-status="true">MANSION</button>
-               <button class="word-button" data-status="true">SACK</button>
-               <button class="word-button" data-status="false">BAKE</button>
-               <button class="word-button" data-status="true">ALLIGATOR</button>
-               <button class="word-button" data-status="true">LADDER</button>
-               <button class="word-button" data-status="true">RANDOM</button>
-               <button class="word-button" data-status="true">SAD</button>
-               <button class="word-button" data-status="false">RAIN</button>
-               <button class="word-button" data-status="false">CAKE</button>
-               <button class="word-button" data-status="false">RAISE</button>
-               <button class="word-button" data-status="false">MATE</button>
-               <button class="word-button" data-status="true">BAT</button>
-               <div style="position: absolute; top: 50%; display: none;"><img width="200px" class="" src="logo.png" alt="English Adventures Logo"></div>
+               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/.mp3">CAT</button>
+               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/.mp3">APPLE</button>
+               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/.mp3">LATE</button>
+               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/.mp3">MANSION</button>
+               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/.mp3">SACK</button>
+               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/.mp3">BAKE</button>
+               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/.mp3">ALLIGATOR</button>
+               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/.mp3">LADDER</button>
+               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/.mp3">RANDOM</button>
+               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/.mp3">SAD</button>
+               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/.mp3">RAIN</button>
+               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/.mp3">CAKE</button>
+               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/.mp3">RAISE</button>
+               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/.mp3">MATE</button>
+               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/.mp3">BAT</button>
+               <div style="position: absolute; top: 50%; display: none;"><img width="200px" class="" src="logo.png"
+                         alt="English Adventures Logo"></div>
           </div>
 
           <div class="score-label left">Directions: Click the words with Short /a/ sound.</div>
@@ -483,31 +484,30 @@
                }, 2500);
           </script>
 
-          <!-- Include this script in your HTML file -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // Get all elements with class 'word-button'
-    var wordButtons = document.querySelectorAll(".word-button");
+          <script>
+               document.addEventListener("DOMContentLoaded", function () {
+                    // Get all elements with class 'word-button'
+                    var wordButtons = document.querySelectorAll(".word-button");
 
-    // Iterate through each button
-    wordButtons.forEach(function (button) {
-      // Add a 'mouseover' event listener
-      button.addEventListener("mouseover", function () {
-        // Get the 'pronounce-sound-src' attribute value
-        var soundSrc = button.getAttribute("pronounce-sound-src");
+                    // Iterate through each button
+                    wordButtons.forEach(function (button) {
+                         // Add a 'mouseover' event listener
+                         button.addEventListener("mouseover", function () {
+                              // Get the 'pronounce-sound-src' attribute value
+                              var soundSrc = button.getAttribute("pronounce-sound-src");
 
-        // Check if the attribute value is not null or empty
-        if (soundSrc) {
-          // Create an audio element
-          var audio = new Audio(soundSrc);
+                              // Check if the attribute value is not null or empty
+                              if (soundSrc) {
+                                   // Create an audio element
+                                   var audio = new Audio(soundSrc);
 
-          // Play the audio
-          audio.play();
-        }
-      });
-    });
-  });
-</script>
+                                   // Play the audio
+                                   audio.play();
+                              }
+                         });
+                    });
+               });
+          </script>
 
 
 
