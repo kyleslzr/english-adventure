@@ -388,6 +388,10 @@
 
                          // Play correct sound
                          correctSound.play();
+                         // play the pronunciation
+
+                         const pronounceCorrect = new Audio(`pronounce/${correctAnswer}.mp3`);
+                         pronounceCorrect.play();
                     } else {
                          userAnswer.style.backgroundColor = "#EE2F41"; // Red background color for incorrect answers
                          userAnswer.style.borderColor = "#EE2F41"; // Red border color for incorrect answers

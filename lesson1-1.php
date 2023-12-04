@@ -453,6 +453,8 @@
                <div style="position: absolute; top: 50%; display: none;"><img width="200px" class="" src="logo.png"
                          alt="English Adventures Logo"></div>
           </div>
+          <div style="position: absolute; top: 50%;"><img width="200px" class="" src="logo.png"
+                    alt="English Adventures Logo"></div>
 
           <div class="score-label left">Directions: Click the words with Short /a/ sound.</div>
 
@@ -505,6 +507,36 @@
                                    audio.play();
                               }
                          });
+                    });
+               });
+          </script>
+          
+          <!-- random -->
+          <script>
+               document.addEventListener("DOMContentLoaded", function () {
+                    // Get the container element
+                    var container = document.getElementById("random");
+
+                    // Get all the buttons inside the container
+                    var buttons = container.querySelectorAll(".word-button");
+
+                    // Convert NodeList to array for easier manipulation
+                    var buttonsArray = Array.from(buttons);
+
+                    // Function to shuffle array elements using Fisher-Yates algorithm
+                    function shuffleArray(array) {
+                         for (let i = array.length - 1; i > 0; i--) {
+                              const j = Math.floor(Math.random() * (i + 1));
+                              [array[i], array[j]] = [array[j], array[i]];
+                         }
+                    }
+
+                    // Shuffle the buttons array
+                    shuffleArray(buttonsArray);
+
+                    // Append shuffled buttons back to the container
+                    buttonsArray.forEach(function (button) {
+                         container.appendChild(button);
                     });
                });
           </script>

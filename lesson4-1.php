@@ -635,7 +635,11 @@ function checkAnswer() {
 
     if (currentAnswer.toLowerCase() === correctAnswer) {
         correctSound.play(); // Play correct sound
+
         showCorrectImage(correctAnswer + '.jpg');
+        const pronounceCorrect = new Audio(`pronounce/${correctAnswer}.mp3`);
+        pronounceCorrect.play();
+
         setTimeout(() => {
             if (correctAnswer === 'bee') {
                 loadDuckGame();

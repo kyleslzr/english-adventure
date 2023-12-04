@@ -7,7 +7,6 @@
           <title>Lesson 1 - English Adventures</title>
           <link rel="stylesheet" href="css/side-score-style.css">
           <style>
-               
                body {
                     overflow: hidden;
                     margin: 0;
@@ -212,17 +211,18 @@
                     outline: 4px solid #fff;
                     z-index: 2;
                }
+
                .score-label.left {
-            left: 30px;
-            top: 31px;
-            font-size: 25px;
-            background-color: #00741E;
-            white-space: normal;
-            display: inline-block;
-            width: 230px;
-            padding: 10px 10px;
-            z-index: 3;
-        }
+                    left: 30px;
+                    top: 31px;
+                    font-size: 25px;
+                    background-color: #00741E;
+                    white-space: normal;
+                    display: inline-block;
+                    width: 230px;
+                    padding: 10px 10px;
+                    z-index: 3;
+               }
 
                .score-label.right {
                     right: 30px;
@@ -241,23 +241,27 @@
                }
 
                @keyframes stretchAnimation {
-  0%, 100% {
-  transform: translateY(0) scaleY(1);
-  }
-  50% {
-   transform: translateY(-1.1%) scaleY(1.025);
-  }
-       }
 
-  .image-right {
-       width: 230px;
-       height: auto;
-       position: absolute;
-       right: 36px;
-       top: 190px;
-       animation: stretchAnimation 3s infinite; /* Adjust the duration and iteration count as needed */
+                    0%,
+                    100% {
+                         transform: translateY(0) scaleY(1);
+                    }
 
-        }
+                    50% {
+                         transform: translateY(-1.1%) scaleY(1.025);
+                    }
+               }
+
+               .image-right {
+                    width: 230px;
+                    height: auto;
+                    position: absolute;
+                    right: 36px;
+                    top: 190px;
+                    animation: stretchAnimation 3s infinite;
+                    /* Adjust the duration and iteration count as needed */
+
+               }
 
                .retry-button {
                     position: fixed;
@@ -280,13 +284,16 @@
                     transform: scale(0.10);
 
                }
-               
-               .letter-button:hover, .erase-container:hover, #submit-button:hover {
-               filter: brightness(.8);
+
+               .letter-button:hover,
+               .erase-container:hover,
+               #submit-button:hover {
+                    filter: brightness(.8);
                }
 
                #word-input.incorrect-answer {
-               background-color: #EE2F41; /* Change the color to red */
+                    background-color: #EE2F41;
+                    /* Change the color to red */
                }
 
                .centered-boardd {
@@ -304,45 +311,50 @@
                }
 
                .animate__fadeOut {
-               animation: fadeOut 2.3s; /* Specify the animation name and duration here */
-               animation-fill-mode: forwards;
-               
+                    animation: fadeOut 2.3s;
+                    /* Specify the animation name and duration here */
+                    animation-fill-mode: forwards;
+
                }
 
                @keyframes fadeOut {
                     0% {
                          opacity: 1;
                     }
+
                     80% {
-                         opacity: 1; /* Adjust the opacity value as needed */
+                         opacity: 1;
+                         /* Adjust the opacity value as needed */
                     }
+
                     100% {
                          opacity: 0;
                          display: none;
                     }
-                    }
+               }
 
                .animate__bounceOutUp {
-               animation: bounceOutUp 6.7s; /* Specify the animation name and duration here */
-               animation-fill-mode: forwards;
+                    animation: bounceOutUp 6.7s;
+                    /* Specify the animation name and duration here */
+                    animation-fill-mode: forwards;
                }
 
                @keyframes bounceOutUp {
-               0% {
-                    transform: translateY(0) scaley(1); 
+                    0% {
+                         transform: translateY(0) scaley(1);
+                    }
+
+                    37% {
+                         transform: translateY(1%) scaley(1);
+
+                    }
+
+                    100% {
+                         transform: translateY(-100%) scaley(1);
+                    }
                }
 
-               37% {
-                    transform: translateY(1%) scaley(1); 
-               
-               }
-
-               100% {
-                    transform: translateY(-100%) scaley(1);
-               }
-               }
-
-               .sun{
+               .sun {
                     position: absolute;
                     width: 202px;
                     z-index: -5;
@@ -353,8 +365,8 @@
 
                .bg {
                     position: absolute;
-                     width: 1536px;
-                     z-index: -2;
+                    width: 1536px;
+                    z-index: -2;
                }
 
                .move {
@@ -393,26 +405,26 @@
                     filter: sepia(1);
                }
 
-               
+
                @keyframes slideOutRight {
                     0% {
                          transform: translateX(0);
                     }
 
                     100% {
-                         transform: translateX(700%); /* Adjust the value to slide farther */
+                         transform: translateX(700%);
+                         /* Adjust the value to slide farther */
                     }
-                    }
-
+               }
           </style>
      </head>
 
      <body>
 
-     <audio autoplay loop controlsList="nodownload" style="display: none">
-  <source src="music2 (2).ogg" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+          <audio autoplay loop controlsList="nodownload" style="display: none">
+               <source src="music2 (2).ogg" type="audio/mpeg">
+               Your browser does not support the audio element.
+          </audio>
           <a class="retry-button" href="lesson5-1.php">
                <img src="retry.png" />
           </a>
@@ -449,7 +461,7 @@
           <img class="sun" src="sun.gif" alt="Traveler 5 Image">
 
 
-<img class="centered-boarddd animate__fadeOut" src="bg.jpg" alt="Traveler 5 Image">
+          <img class="centered-boarddd animate__fadeOut" src="bg.jpg" alt="Traveler 5 Image">
           <div class="game-container">
                <div class="image-box">
                     <img id="image1" src="" alt="Image 1">
@@ -666,26 +678,29 @@
                }
 
                const correctSound = new Audio('correct.ogg');
-const wrongSound = new Audio('wrong.ogg');
+               const wrongSound = new Audio('wrong.ogg');
 
-function addLetter(letter, button) {
-    currentAnswer += letter;
-    document.getElementById('word-input').value = currentAnswer;
+               function addLetter(letter, button) {
+                    currentAnswer += letter;
+                    document.getElementById('word-input').value = currentAnswer;
 
-    button.classList.add('button-clicked');
+                    button.classList.add('button-clicked');
 
-    setTimeout(() => {
-        button.classList.remove('button-clicked');
-    }, 1000);
-}
+                    setTimeout(() => {
+                         button.classList.remove('button-clicked');
+                    }, 1000);
+               }
 
-function checkAnswer() {
-    const wordInput = document.getElementById('word-input');
+               function checkAnswer() {
+                    const wordInput = document.getElementById('word-input');
 
-    if (currentAnswer.toLowerCase() === correctAnswer) {
-        correctSound.play(); // Play correct sound
-        showCorrectImage(correctAnswer + '.jpg');
-        setTimeout(() => {
+                    if (currentAnswer.toLowerCase() === correctAnswer) {
+                         correctSound.play(); // Play correct sound
+                         showCorrectImage(correctAnswer + '.jpg');
+                         const pronounceCorrect = new Audio(`pronounce/${correctAnswer}.mp3`);
+                         pronounceCorrect.play();
+                         
+                         setTimeout(() => {
                               if (correctAnswer === 'doctor') {
                                    loadDuckGame();
                                    correctAnswer = 'duck';
@@ -718,17 +733,17 @@ function checkAnswer() {
                          }, 3000);
                     } else {
                          wrongSound.play(); // Play wrong sound
-        // Incorrect answer logic
-        wordInput.classList.add('incorrect-answer'); // Apply the CSS class
+                         // Incorrect answer logic
+                         wordInput.classList.add('incorrect-answer'); // Apply the CSS class
 
-        // Add a setTimeout to remove the class after a delay (adjust as needed)
-        setTimeout(() => {
-            wordInput.classList.remove('incorrect-answer');
-        }, 1000);
+                         // Add a setTimeout to remove the class after a delay (adjust as needed)
+                         setTimeout(() => {
+                              wordInput.classList.remove('incorrect-answer');
+                         }, 1000);
 
-        eraseLetters();
-    }
-}
+                         eraseLetters();
+                    }
+               }
 
                function showCorrectImage(correctImage) {
                     const correctImg = document.getElementById('image1');
