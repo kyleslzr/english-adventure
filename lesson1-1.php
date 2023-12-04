@@ -435,7 +435,7 @@
           <img class="logo-image" src="logo.png" alt="English Adventures Logo">
 
           <div class="button-container">
-               <button class="word-button" data-status="true" pronounce-sound-src="cat.mp3">CAT</button>
+               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/CAT.mp3">CAT</button>
                <button class="word-button" data-status="true">APPLE</button>
                <button class="word-button" data-status="false">LATE</button>
                <button class="word-button" data-status="true">MANSION</button>
