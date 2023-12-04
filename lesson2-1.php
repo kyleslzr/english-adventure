@@ -308,7 +308,7 @@
                <img src="home.png" />
           </a>
 
-          <div class="animal-container">
+          <div class="animal-container" id="random">
                <button class="animal-button" draggable="true" data-animal="kit" pronounce-sound-src="pronounce/KIT.mp3">KIT</button>
                <button class="animal-button" draggable="true" data-animal="mix" pronounce-sound-src="pronounce/MIX.mp3">MIX</button>
                <button class="animal-button" draggable="true" data-animal="pin" pronounce-sound-src="pronounce/PIN.mp3">PIN</button>
@@ -458,7 +458,7 @@
                     var container = document.getElementById("random2");
 
                     // Get all the buttons inside the container
-                    var buttons = container.querySelectorAll(".dropppable");
+                    var buttons = container.querySelectorAll(".droppable");
 
                     // Convert NodeList to array for easier manipulation
                     var buttonsArray = Array.from(buttons);
@@ -480,7 +480,6 @@
                     });
                });
           </script>
-
 
 
           <img class="logo-image" src="logo.png" alt="English Adventures Logo">
