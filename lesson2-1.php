@@ -309,14 +309,14 @@
           </a>
 
           <div class="animal-container">
-               <button class="animal-button" draggable="true" data-animal="kit" pronounce-sound-src="pronounce/.mp3">KIT</button>
-               <button class="animal-button" draggable="true" data-animal="mix" pronounce-sound-src="pronounce/.mp3">MIX</button>
-               <button class="animal-button" draggable="true" data-animal="pin" pronounce-sound-src="pronounce/.mp3">PIN</button>
-               <button class="animal-button" draggable="true" data-animal="zip" pronounce-sound-src="pronounce/.mp3">ZIP</button>
-               <button class="animal-button" draggable="true" data-animal="bin" pronounce-sound-src="pronounce/.mp3">BIN</button>
-               <button class="animal-button" draggable="true" data-animal="bib" pronounce-sound-src="pronounce/.mp3">BIB</button>
-               <button class="animal-button" draggable="true" data-animal="lip" pronounce-sound-src="pronounce/.mp3">LIP</button>
-               <button class="animal-button" draggable="true" data-animal="pig" pronounce-sound-src="pronounce/.mp3">PIG</button>
+               <button class="animal-button" draggable="true" data-animal="kit" pronounce-sound-src="pronounce/KIT.mp3">KIT</button>
+               <button class="animal-button" draggable="true" data-animal="mix" pronounce-sound-src="pronounce/MIX.mp3">MIX</button>
+               <button class="animal-button" draggable="true" data-animal="pin" pronounce-sound-src="pronounce/PIN.mp3">PIN</button>
+               <button class="animal-button" draggable="true" data-animal="zip" pronounce-sound-src="pronounce/ZIP.mp3">ZIP</button>
+               <button class="animal-button" draggable="true" data-animal="bin" pronounce-sound-src="pronounce/BIN.mp3">BIN</button>
+               <button class="animal-button" draggable="true" data-animal="bib" pronounce-sound-src="pronounce/BIB.mp3">BIB</button>
+               <button class="animal-button" draggable="true" data-animal="lip" pronounce-sound-src="pronounce/LIP.mp3">LIP</button>
+               <button class="animal-button" draggable="true" data-animal="pig" pronounce-sound-src="pronounce/PIG.mp3">PIG</button>
           </div>
           <div class="droppable-container">
                <div class="droppable" data-animal="bib">
