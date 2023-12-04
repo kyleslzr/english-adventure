@@ -434,7 +434,7 @@
 
           <img class="logo-image" src="logo.png" alt="English Adventures Logo">
 
-          <div class="button-container">
+          <div class="button-container" id="random">
                <button class="word-button" data-status="true" pronounce-sound-src="pronounce/CAT.mp3">CAT</button>
                <button class="word-button" data-status="true" pronounce-sound-src="pronounce/APPLE.mp3">APPLE</button>
                <button class="word-button" data-status="false" pronounce-sound-src="pronounce/LATE.mp3">LATE</button>
@@ -450,8 +450,7 @@
                <button class="word-button" data-status="false" pronounce-sound-src="pronounce/RAISE.mp3">RAISE</button>
                <button class="word-button" data-status="false" pronounce-sound-src="pronounce/MATE.mp3">MATE</button>
                <button class="word-button" data-status="true" pronounce-sound-src="pronounce/BAT.mp3">BAT</button>
-               <div style="position: absolute; top: 50%; display: none;"><img width="200px" class="" src="logo.png"
-                         alt="English Adventures Logo"></div>
+
           </div>
           <div style="position: absolute; top: 50%;"><img width="200px" class="" src="logo.png"
                     alt="English Adventures Logo"></div>

@@ -434,7 +434,7 @@
 
           <img class="logo-image" src="logo.png" alt="English Adventures Logo">
 
-          <div class="button-container">
+          <div class="button-container" id="random">
                <button class="word-button" data-status="true" pronounce-sound-src="pronounce/AMPLE.mp3">AMPLE</button>
                <button class="word-button" data-status="false" pronounce-sound-src="pronounce/LAKE.mp3">LAKE</button>
                <button class="word-button" data-status="false" pronounce-sound-src="pronounce/SNAKE.mp3">SNAKE</button>
@@ -506,6 +506,35 @@
                                    audio.play();
                               }
                          });
+                    });
+               });
+          </script>
+               <!-- random -->
+               <script>
+               document.addEventListener("DOMContentLoaded", function () {
+                    // Get the container element
+                    var container = document.getElementById("random");
+
+                    // Get all the buttons inside the container
+                    var buttons = container.querySelectorAll(".word-button");
+
+                    // Convert NodeList to array for easier manipulation
+                    var buttonsArray = Array.from(buttons);
+
+                    // Function to shuffle array elements using Fisher-Yates algorithm
+                    function shuffleArray(array) {
+                         for (let i = array.length - 1; i > 0; i--) {
+                              const j = Math.floor(Math.random() * (i + 1));
+                              [array[i], array[j]] = [array[j], array[i]];
+                         }
+                    }
+
+                    // Shuffle the buttons array
+                    shuffleArray(buttonsArray);
+
+                    // Append shuffled buttons back to the container
+                    buttonsArray.forEach(function (button) {
+                         container.appendChild(button);
                     });
                });
           </script>

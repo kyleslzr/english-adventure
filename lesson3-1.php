@@ -5,7 +5,6 @@
           <title>Lesson 1 - English Adventures</title>
           <link rel="stylesheet" href="css/side-score-style.css">
           <style>
-               
                body {
                     overflow: hidden;
                     margin: 0;
@@ -102,15 +101,16 @@
 
 
 
-  .image-right {
-       width: 230px;
-       height: auto;
-       position: absolute;
-       right: 36px;
-       top: 190px;
-       animation: stretchAnimation 3s infinite; /* Adjust the duration and iteration count as needed */
+               .image-right {
+                    width: 230px;
+                    height: auto;
+                    position: absolute;
+                    right: 36px;
+                    top: 190px;
+                    animation: stretchAnimation 3s infinite;
+                    /* Adjust the duration and iteration count as needed */
 
-        }
+               }
 
 
 
@@ -196,109 +196,127 @@
                }
 
                .animate__fadeOut {
-               animation: fadeOut 2.3s; /* Specify the animation name and duration here */
-               animation-fill-mode: forwards;
-               
+                    animation: fadeOut 2.3s;
+                    /* Specify the animation name and duration here */
+                    animation-fill-mode: forwards;
+
                }
 
                @keyframes fadeOut {
                     0% {
                          opacity: 1;
                     }
+
                     80% {
-                         opacity: 1; /* Adjust the opacity value as needed */
+                         opacity: 1;
+                         /* Adjust the opacity value as needed */
                     }
+
                     100% {
                          opacity: 0;
                          display: none;
                     }
-                    }
+               }
 
                .animate__bounceOutUp {
-               animation: bounceOutUp 6.7s; /* Specify the animation name and duration here */
-               animation-fill-mode: forwards;
+                    animation: bounceOutUp 6.7s;
+                    /* Specify the animation name and duration here */
+                    animation-fill-mode: forwards;
                }
 
                @keyframes bounceOutUp {
-               0% {
-                    transform: translateY(0) scaley(1); 
-               }
+                    0% {
+                         transform: translateY(0) scaley(1);
+                    }
 
-               37% {
-                    transform: translateY(1%) scaley(1); 
-               
-               }
+                    37% {
+                         transform: translateY(1%) scaley(1);
 
-               100% {
-                    transform: translateY(-100%) scaley(1);
-               }
+                    }
+
+                    100% {
+                         transform: translateY(-100%) scaley(1);
+                    }
                }
 
 
                @keyframes stretchAnimation {
-  0%, 100% {
-  transform: translateY(0) scaleY(1);
-  }
-  50% {
-   transform: translateY(-1.1%) scaleY(1.025);
-  }
-}
-.vine, .vinee, .vineee {
-    animation: bounceAnimation 2s linear infinite;
-}
 
-@keyframes bounceAnimation {
-     0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-}
-40% {
-    transform: translateY(-3px);
-}
-60% {
-    transform: translateY(9px);
-}}
+                    0%,
+                    100% {
+                         transform: translateY(0) scaleY(1);
+                    }
+
+                    50% {
+                         transform: translateY(-1.1%) scaleY(1.025);
+                    }
+               }
+
+               .vine,
+               .vinee,
+               .vineee {
+                    animation: bounceAnimation 2s linear infinite;
+               }
+
+               @keyframes bounceAnimation {
+
+                    0%,
+                    20%,
+                    50%,
+                    80%,
+                    100% {
+                         transform: translateY(0);
+                    }
+
+                    40% {
+                         transform: translateY(-3px);
+                    }
+
+                    60% {
+                         transform: translateY(9px);
+                    }
+               }
 
                .vine {
                     width: 439px;
-    height: auto;
-    position: absolute;
-    left: 36px;
-    top: -87px;
+                    height: auto;
+                    position: absolute;
+                    left: 36px;
+                    top: -87px;
 
-        }
-        .vinee {
-          width: 373px;
-    height: auto;
-    position: absolute;
-    right: -39px;
-    top: -67px;
-    z-index: -2;
-    animation-delay: 1s;
+               }
 
-        }
+               .vinee {
+                    width: 373px;
+                    height: auto;
+                    position: absolute;
+                    right: -39px;
+                    top: -67px;
+                    z-index: -2;
+                    animation-delay: 1s;
 
-        .bush {
-          width: 512px;
-    height: auto;
-    position: absolute;
-    right: -119px;
-    bottom: -25px;
-    z-index: -2;
-    animation: stretchAnimation 1.5s infinite;
-    z-index: -1;
-    animation-delay: 1s;
-    filter: saturate(1.5);
-}
-               
-    
+               }
+
+               .bush {
+                    width: 512px;
+                    height: auto;
+                    position: absolute;
+                    right: -119px;
+                    bottom: -25px;
+                    z-index: -2;
+                    animation: stretchAnimation 1.5s infinite;
+                    z-index: -1;
+                    animation-delay: 1s;
+                    filter: saturate(1.5);
+               }
           </style>
      </head>
 
      <body>
-     <audio autoplay loop controlsList="nodownload" style="display: none">
-  <source src="music2 (2).ogg" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+          <audio autoplay loop controlsList="nodownload" style="display: none">
+               <source src="music2 (2).ogg" type="audio/mpeg">
+               Your browser does not support the audio element.
+          </audio>
           <a class="retry-button" href="lesson3-1.php">
                <img src="retry.png" />
           </a>
@@ -312,37 +330,37 @@
           </a>
 
           <div class="container">
-    <div class="box" data-answer="box">
-      <img src="boxx.jpg" alt="Box">
-      <input class="answer-input" type="text">
-    </div>
-    <div class="box" data-answer="cup">
-      <img src="cupp.jpg" alt="Cup">
-      <input class="answer-input" type="text">
-    </div>
-    <div class="box" data-answer="fox">
-      <img src="fox.jpg" alt="Fox">
-      <input class="answer-input" type="text">
-    </div>
-    <div class="box" data-answer="duck">
-      <img src="ducks.jpg" alt="Duck">
-      <input class="answer-input" type="text">
-    </div>
-    <div class="box" data-answer="cop">
-      <img src="copp.jpg" alt="Cop">
-      <input class="answer-input" type="text">
-    </div>
-        <div class="box" data-answer="mop">
-      <img src="mop.jpg" alt="Mop">
-      <input class="answer-input" type="text">
-    </div>
-  </div>
+               <div class="box" data-answer="box">
+                    <img src="boxx.jpg" alt="Box">
+                    <input class="answer-input" type="text">
+               </div>
+               <div class="box" data-answer="cup">
+                    <img src="cupp.jpg" alt="Cup">
+                    <input class="answer-input" type="text">
+               </div>
+               <div class="box" data-answer="fox">
+                    <img src="fox.jpg" alt="Fox">
+                    <input class="answer-input" type="text">
+               </div>
+               <div class="box" data-answer="duck">
+                    <img src="ducks.jpg" alt="Duck">
+                    <input class="answer-input" type="text">
+               </div>
+               <div class="box" data-answer="cop">
+                    <img src="copp.jpg" alt="Cop">
+                    <input class="answer-input" type="text">
+               </div>
+               <div class="box" data-answer="mop">
+                    <img src="mop.jpg" alt="Mop">
+                    <input class="answer-input" type="text">
+               </div>
+          </div>
           <p id="result"></p>
 
           <img class="logo-image" src="logo.png" alt="English Adventures Logo" />
 
           <div class="score-label left">
-          Directions: Type the words with the short "o"  and  "u" sound that correspond to the pictures.
+               Directions: Type the words with the short "o" and "u" sound that correspond to the pictures.
           </div>
 
           <div class="lesson-title" style="top: 52px">
@@ -359,7 +377,7 @@
 
           <img class="centered-boardd animate__bounceOutUp" src="board1.png" alt="Traveler 5 Image">
 
-<img class="centered-boarddd animate__fadeOut" src="bg.jpg" alt="Traveler 5 Image">
+          <img class="centered-boarddd animate__fadeOut" src="bg.jpg" alt="Traveler 5 Image">
           <div class="name-list">
                <?php include "function/retrieve-all-scores-l3-act1.php"; ?>
           </div>
@@ -375,7 +393,7 @@
                     const userAnswer = box.querySelector(".answer-input");
                     const correctAnswer = box.getAttribute("data-answer");
                     const userInput = userAnswer.value.toLowerCase();
-                    
+
                     // Get the audio elements
                     const correctSound = new Audio('correct.ogg');
                     const wrongSound = new Audio('wrong.ogg');
@@ -407,7 +425,7 @@
                     } else {
                          showResult();
                     }
-                    }
+               }
 
                boxes[currentIndex].querySelector(".answer-input").focus();
 

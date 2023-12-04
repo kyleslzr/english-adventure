@@ -318,7 +318,7 @@
                <button class="animal-button" draggable="true" data-animal="lip" pronounce-sound-src="pronounce/LIP.mp3">LIP</button>
                <button class="animal-button" draggable="true" data-animal="pig" pronounce-sound-src="pronounce/PIG.mp3">PIG</button>
           </div>
-          <div class="droppable-container">
+          <div class="droppable-container" id="random2">
                <div class="droppable" data-animal="bib">
                     <img src="bib.jpg" alt="bib">
                     <div class="animal-word"></div>
@@ -420,6 +420,67 @@
                });
 
           </script>
+
+          <!-- random -->
+          <script>
+               document.addEventListener("DOMContentLoaded", function () {
+                    // Get the container element
+                    var container = document.getElementById("random");
+
+                    // Get all the buttons inside the container
+                    var buttons = container.querySelectorAll(".animal-button");
+
+                    // Convert NodeList to array for easier manipulation
+                    var buttonsArray = Array.from(buttons);
+
+                    // Function to shuffle array elements using Fisher-Yates algorithm
+                    function shuffleArray(array) {
+                         for (let i = array.length - 1; i > 0; i--) {
+                              const j = Math.floor(Math.random() * (i + 1));
+                              [array[i], array[j]] = [array[j], array[i]];
+                         }
+                    }
+
+                    // Shuffle the buttons array
+                    shuffleArray(buttonsArray);
+
+                    // Append shuffled buttons back to the container
+                    buttonsArray.forEach(function (button) {
+                         container.appendChild(button);
+                    });
+               });
+          </script>
+
+          <!-- random2 -->
+          <script>
+               document.addEventListener("DOMContentLoaded", function () {
+                    // Get the container element
+                    var container = document.getElementById("random2");
+
+                    // Get all the buttons inside the container
+                    var buttons = container.querySelectorAll(".dropppable");
+
+                    // Convert NodeList to array for easier manipulation
+                    var buttonsArray = Array.from(buttons);
+
+                    // Function to shuffle array elements using Fisher-Yates algorithm
+                    function shuffleArray(array) {
+                         for (let i = array.length - 1; i > 0; i--) {
+                              const j = Math.floor(Math.random() * (i + 1));
+                              [array[i], array[j]] = [array[j], array[i]];
+                         }
+                    }
+
+                    // Shuffle the buttons array
+                    shuffleArray(buttonsArray);
+
+                    // Append shuffled buttons back to the container
+                    buttonsArray.forEach(function (button) {
+                         container.appendChild(button);
+                    });
+               });
+          </script>
+
 
 
           <img class="logo-image" src="logo.png" alt="English Adventures Logo">

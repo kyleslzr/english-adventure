@@ -434,7 +434,7 @@
 
           <img class="logo-image" src="logo.png" alt="English Adventures Logo">
 
-          <div class="button-container">
+          <div class="button-container" id="random">
                <button class="word-button" data-status="true" pronounce-sound-src="pronounce/BET.mp3">BET</button>
                <button class="word-button" data-status="false" pronounce-sound-src="pronounce/READ.mp3">READ</button>
                <button class="word-button" data-status="false" pronounce-sound-src="pronounce/SEED.mp3">SEED</button>
@@ -450,10 +450,9 @@
                <button class="word-button" data-status="true" pronounce-sound-src="pronounce/FED.mp3">FED</button>
                <button class="word-button" data-status="false" pronounce-sound-src="pronounce/FLEET.mp3">FLEET</button>
                <button class="word-button" data-status="false" pronounce-sound-src="pronounce/DEAN.mp3">DEAN</button>
-
-               <div style="position: absolute; top: 50%; display: none;"><img width="200px" class="" src="logo.png"
-                         alt="English Adventures Logo"></div>
           </div>
+          <div style="position: absolute; top: 50%; display: none;"><img width="200px" class="" src="logo.png"
+                         alt="English Adventures Logo"></div>
 
           <div class="score-label left">Directions: Click the words with Short /a/ sound.</div>
 
@@ -509,8 +508,35 @@
                     });
                });
           </script>
+          <!-- random -->
+          <script>
+               document.addEventListener("DOMContentLoaded", function () {
+                    // Get the container element
+                    var container = document.getElementById("random");
 
+                    // Get all the buttons inside the container
+                    var buttons = container.querySelectorAll(".word-button");
 
+                    // Convert NodeList to array for easier manipulation
+                    var buttonsArray = Array.from(buttons);
+
+                    // Function to shuffle array elements using Fisher-Yates algorithm
+                    function shuffleArray(array) {
+                         for (let i = array.length - 1; i > 0; i--) {
+                              const j = Math.floor(Math.random() * (i + 1));
+                              [array[i], array[j]] = [array[j], array[i]];
+                         }
+                    }
+
+                    // Shuffle the buttons array
+                    shuffleArray(buttonsArray);
+
+                    // Append shuffled buttons back to the container
+                    buttonsArray.forEach(function (button) {
+                         container.appendChild(button);
+                    });
+               });
+          </script>
 
           <?php include "js/record-score.php"; ?>
      </body>
