@@ -10,24 +10,31 @@
           <link rel="stylesheet" href="css/side-score-style.css">
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
           <style>
-               
+               html {
+                    width: 1535.2px;
+                    height: 747px;
+                    overflow: scroll;
+                    background-color: green;
+
+               }
+
                body {
                     overflow: hidden;
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      background-image: url('cute_background8.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position-y: -71px;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-      color: #fff;
-      position: relative;
+                    margin: 0;
+                    padding: 0;
+                    height: 100vh;
+                    background-image: url('cute_background8.jpg');
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position-y: -71px;
+                    font-family: Arial, sans-serif;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    flex-direction: column;
+                    text-align: center;
+                    color: #fff;
+                    position: relative;
                }
 
                .button-container {
@@ -53,7 +60,7 @@
                     cursor: pointer;
                     font-size: 40px;
                     font-weight: bold;
-              
+
                     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
                }
 
@@ -64,6 +71,7 @@
                .word-button[data-status="false"].active {
                     background-color: #EE2F41;
                }
+
                .word-button:hover {
                     filter: brightness(.8);
                }
@@ -123,7 +131,8 @@
                     bottom: -4.5px;
                     z-index: -2;
                     left: -500px;
-                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
+                    animation: slideOutRight 6s linear infinite;
+                    /* Specify the animation name and duration here */
                     animation-fill-mode: forwards;
                     animation-delay: 0s;
                }
@@ -134,7 +143,8 @@
                     bottom: -4.5px;
                     z-index: -2;
                     left: -500px;
-                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
+                    animation: slideOutRight 6s linear infinite;
+                    /* Specify the animation name and duration here */
                     animation-fill-mode: forwards;
                     animation-delay: 3s;
                }
@@ -145,7 +155,8 @@
                     bottom: -4.5px;
                     z-index: -2;
                     left: -500px;
-                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
+                    animation: slideOutRight 6s linear infinite;
+                    /* Specify the animation name and duration here */
                     animation-fill-mode: forwards;
                     animation-delay: 4.5s;
                }
@@ -156,7 +167,8 @@
                     bottom: -4.5px;
                     z-index: -2;
                     left: -500px;
-                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
+                    animation: slideOutRight 6s linear infinite;
+                    /* Specify the animation name and duration here */
                     animation-fill-mode: forwards;
                     animation-delay: 6s;
                }
@@ -171,56 +183,62 @@
                     animation-fill-mode: forwards;
                     animation-delay: 4s;
                }
-          
 
-                    @keyframes slideOutRight {
+
+               @keyframes slideOutRight {
                     0% {
                          transform: translateX(0);
                     }
 
                     100% {
-                         transform: translateX(500%); /* Adjust the value to slide farther */
+                         transform: translateX(500%);
+                         /* Adjust the value to slide farther */
                     }
-                    }
+               }
 
 
                .animate__fadeOut {
-               animation: fadeOut 2.3s; /* Specify the animation name and duration here */
-               animation-fill-mode: forwards;
-               
+                    animation: fadeOut 2.3s;
+                    /* Specify the animation name and duration here */
+                    animation-fill-mode: forwards;
+
                }
 
                @keyframes fadeOut {
                     0% {
                          opacity: 1;
                     }
+
                     80% {
-                         opacity: 1; /* Adjust the opacity value as needed */
+                         opacity: 1;
+                         /* Adjust the opacity value as needed */
                     }
+
                     100% {
                          opacity: 0;
                          display: none;
                     }
-                    }
+               }
 
                .animate__bounceOutUp {
-               animation: bounceOutUp 6.7s; /* Specify the animation name and duration here */
-               animation-fill-mode: forwards;
+                    animation: bounceOutUp 6.7s;
+                    /* Specify the animation name and duration here */
+                    animation-fill-mode: forwards;
                }
 
                @keyframes bounceOutUp {
-               0% {
-                    transform: translateY(0) scaley(1); 
-               }
+                    0% {
+                         transform: translateY(0) scaley(1);
+                    }
 
-               37% {
-                    transform: translateY(1%) scaley(1); 
-               
-               }
+                    37% {
+                         transform: translateY(1%) scaley(1);
 
-               100% {
-                    transform: translateY(-100%) scaley(1);
-               }
+                    }
+
+                    100% {
+                         transform: translateY(-100%) scaley(1);
+                    }
                }
 
                .score-label {
@@ -234,6 +252,7 @@
                     outline: 4px solid #fff;
                     z-index: 2;
                }
+
                .score-label.left {
                     left: 30px;
                     top: 31px;
@@ -244,7 +263,7 @@
                     width: 230px;
                     padding: 10px 10px;
                     z-index: 3;
-                    }`
+               }
 
                .score-label.right {
                     right: 30px;
@@ -254,13 +273,16 @@
                }
 
                @keyframes stretchAnimation {
-               0%, 100% {
-               transform: translateY(0) scaleY(1);
-               }
-               50% {
-                transform: translateY(-1.1%) scaleY(1.025);
-               }
+
+                    0%,
+                    100% {
+                         transform: translateY(0) scaleY(1);
                     }
+
+                    50% {
+                         transform: translateY(-1.1%) scaleY(1.025);
+                    }
+               }
 
                .image-right {
                     width: 230px;
@@ -268,7 +290,8 @@
                     position: absolute;
                     right: 36px;
                     top: 190px;
-                    animation: stretchAnimation 3s infinite; /* Adjust the duration and iteration count as needed */
+                    animation: stretchAnimation 3s infinite;
+                    /* Adjust the duration and iteration count as needed */
                     z-index: -2;
                }
 
@@ -295,109 +318,106 @@
                }
 
                /* Add this to your existing styles or create a new style block */
-                    #gjImage {
-                         width: 598px;
-                         height: auto;
-                         position: fixed;
-                         top: 222px;
-                         z-index: 1000;
-                         animation: bounceIn 1s;
-                    }
+               #gjImage {
+                    width: 598px;
+                    height: auto;
+                    position: fixed;
+                    top: 222px;
+                    z-index: 1000;
+                    animation: bounceIn 1s;
+               }
 
-                    #gjjImage {
-                         width: 825px;
-                         height: auto;
-                         position: fixed;
-                         top: 149px;
-                         z-index: 200;
-                         animation: fadeIn .5s;
-                    }
-
-
-
+               #gjjImage {
+                    width: 825px;
+                    height: auto;
+                    position: fixed;
+                    top: 149px;
+                    z-index: 200;
+                    animation: fadeIn .5s;
+               }
           </style>
           <script>
- document.addEventListener('DOMContentLoaded', function () {
-    const wordButtons = document.querySelectorAll('.word-button');
-    const gjImage = document.createElement('img');
-    gjImage.src = 'gj.png';
-    gjImage.alt = 'GJ Image';
-    gjImage.style.display = 'none'; // Initially hide the image
+               document.addEventListener('DOMContentLoaded', function () {
+                    const wordButtons = document.querySelectorAll('.word-button');
+                    const gjImage = document.createElement('img');
+                    gjImage.src = 'gj.png';
+                    gjImage.alt = 'GJ Image';
+                    gjImage.style.display = 'none'; // Initially hide the image
 
-    const gjjImage = document.createElement('img');
-    gjjImage.src = 'gj1.png';
-    gjjImage.alt = 'GJ Image';
-    gjjImage.style.display = 'none'; // Initially hide the image
-    // Function to play the correct sound
-    function playCorrectSound() {
-        const correctSound = new Audio('correct.ogg');
-        correctSound.play();
-    }
-
-    function playWrongSound() {
-        const wrongSound = new Audio('wrong.ogg');
-        wrongSound.play();
-    }
-
-    
-    
-
-    wordButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Check if the button has already been clicked
-            if (!button.classList.contains('clicked')) {
-                // Toggle the 'active' class on click
-                button.classList.toggle('active');
-
-                // Toggle the text color to white
-                if (button.classList.contains('active')) {
-                    button.style.color = 'white';
-                } else {
-                    button.style.color = '#00741E'; // Original color
-                }
-
-                // Play the correct sound if the button is active and has status true
-                if (button.classList.contains('active') && button.dataset.status === 'true') {
-                    playCorrectSound();
-                }
-
-                if (button.classList.contains('active') && button.dataset.status === 'false') {
-                    playWrongSound();
-                }
-
-                // Mark the button as clicked
-                button.classList.add('clicked');
-
-                // Check if all buttons are clicked
-                const allButtonsClicked = Array.from(wordButtons).every(button => button.classList.contains('clicked'));
-
-                if (allButtonsClicked) {
-                    // Wait for 2 seconds (2000 milliseconds) before displaying gjImage
-                    setTimeout(function () {
-                         document.body.appendChild(gjImage);
-                         gjImage.style.display = 'block';
-                         gjImage.id = 'gjImage'; // Add this line
-                    }, 500); // Adjust the delay time as needed (in milliseconds)
+                    const gjjImage = document.createElement('img');
+                    gjjImage.src = 'gj1.png';
+                    gjjImage.alt = 'GJ Image';
+                    gjjImage.style.display = 'none'; // Initially hide the image
+                    // Function to play the correct sound
+                    function playCorrectSound() {
+                         const correctSound = new Audio('correct.ogg');
+                         correctSound.play();
                     }
-                if (allButtonsClicked) {
-                    document.body.appendChild(gjjImage);
-                    gjjImage.style.display = 'block';
-                    gjjImage.id = 'gjjImage'; // Add this line
-                }
-            }
-        });
-    });
-});
+
+                    function playWrongSound() {
+                         const wrongSound = new Audio('wrong.ogg');
+                         wrongSound.play();
+                    }
+
+
+
+
+                    wordButtons.forEach(button => {
+                         button.addEventListener('click', () => {
+                              // Check if the button has already been clicked
+                              if (!button.classList.contains('clicked')) {
+                                   // Toggle the 'active' class on click
+                                   button.classList.toggle('active');
+
+                                   // Toggle the text color to white
+                                   if (button.classList.contains('active')) {
+                                        button.style.color = 'white';
+                                   } else {
+                                        button.style.color = '#00741E'; // Original color
+                                   }
+
+                                   // Play the correct sound if the button is active and has status true
+                                   if (button.classList.contains('active') && button.dataset.status === 'true') {
+                                        playCorrectSound();
+                                   }
+
+                                   if (button.classList.contains('active') && button.dataset.status === 'false') {
+                                        playWrongSound();
+                                   }
+
+                                   // Mark the button as clicked
+                                   button.classList.add('clicked');
+
+                                   // Check if all buttons are clicked
+                                   const allButtonsClicked = Array.from(wordButtons).every(button => button.classList.contains('clicked'));
+
+                                   if (allButtonsClicked) {
+                                        // Wait for 2 seconds (2000 milliseconds) before displaying gjImage
+                                        setTimeout(function () {
+                                             document.body.appendChild(gjImage);
+                                             gjImage.style.display = 'block';
+                                             gjImage.id = 'gjImage'; // Add this line
+                                        }, 500); // Adjust the delay time as needed (in milliseconds)
+                                   }
+                                   if (allButtonsClicked) {
+                                        document.body.appendChild(gjjImage);
+                                        gjjImage.style.display = 'block';
+                                        gjjImage.id = 'gjjImage'; // Add this line
+                                   }
+                              }
+                         });
+                    });
+               });
 
           </script>
      </head>
 
      <body>
 
-     <audio autoplay loop controlsList="nodownload" style="display: none">
-  <source src="music2 (2).ogg" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+          <audio autoplay loop controlsList="nodownload" style="display: none">
+               <source src="music2 (2).ogg" type="audio/mpeg">
+               Your browser does not support the audio element.
+          </audio>
 
 
           <a class="retry-button" href="lesson1-1.php">
@@ -415,7 +435,7 @@
           <img class="logo-image" src="logo.png" alt="English Adventures Logo">
 
           <div class="button-container">
-               <button class="word-button" data-status="true">CAT</button>
+               <button class="word-button" data-status="true" pronounce-sound-src="cat.mp3">CAT</button>
                <button class="word-button" data-status="true">APPLE</button>
                <button class="word-button" data-status="false">LATE</button>
                <button class="word-button" data-status="true">MANSION</button>
@@ -440,7 +460,7 @@
           <div class="centered-board"></div>
 
           <img class="image-right" src="traveler5.png" alt="Traveler 5 Image">
-          
+
           <img class="centered-boardd animate__bounceOutUp" src="board1.png" alt="Traveler 5 Image">
 
           <img class="centered-boarddd animate__fadeOut" src="bg.jpg" alt="Traveler 5 Image">
@@ -456,6 +476,42 @@
                <?php include "function/retrieve-all-scores-l1-act1.php"; ?>
           </div>
 
+          <script>
+               var firstEffect = document.querySelector('.centered-boarddd');
+               setTimeout(function () {
+                    firstEffect.style.display = "none";
+               }, 2500);
+          </script>
+
+          <!-- Include this script in your HTML file -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Get all elements with class 'word-button'
+    var wordButtons = document.querySelectorAll(".word-button");
+
+    // Iterate through each button
+    wordButtons.forEach(function (button) {
+      // Add a 'mouseover' event listener
+      button.addEventListener("mouseover", function () {
+        // Get the 'pronounce-sound-src' attribute value
+        var soundSrc = button.getAttribute("pronounce-sound-src");
+
+        // Check if the attribute value is not null or empty
+        if (soundSrc) {
+          // Create an audio element
+          var audio = new Audio(soundSrc);
+
+          // Play the audio
+          audio.play();
+        }
+      });
+    });
+  });
+</script>
+
+
+
           <?php include "js/record-score.php"; ?>
      </body>
+
 </html>
