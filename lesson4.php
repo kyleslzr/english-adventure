@@ -92,6 +92,7 @@
       border-radius: 5px;
       cursor: default;
       box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      width: 468px;
     }
 
     .score-button,
@@ -193,7 +194,7 @@
   
   width: 100%;
     text-align: start;
-    margin-left: -93px;
+    margin-left: -247px;
 
 }
 .snow {
@@ -316,7 +317,7 @@
   <div class="lesson-bar">
     <div class="scroll-icon"></div>
     <div class="lesson-labels recognizing-sounds">
-      <div class="lesson-label" style="padding: 10px 41px;">Pronouncing words with the<br>Sounds of b and p</div>
+      <div class="lesson-label" style="padding: 10px 41px; width: 700px;">Pronouncing words with the Sounds of b and p</div>
       <div class="lesson-btn">
       <a href="#" class="tutor-button" onclick="showTutorialVideo()">
         <div style="
@@ -335,9 +336,32 @@
         
           ">
         <svg style="margin-right: 5px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#00741e}</style><path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9V344c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"/></svg>
-        PLAY
+        EASY
         </div>
       </a>
+
+      <a href="lesson4-1.php" class="play-button">
+        <div style="
+           display: flex;
+           align-items: center;
+        
+          ">
+        <svg style="margin-right: 5px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#00741e}</style><path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9V344c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"/></svg>
+        AVERAGE
+        </div>
+      </a>
+
+      <a href="lesson4-1.php" class="play-button">
+        <div style="
+           display: flex;
+           align-items: center;
+        
+          ">
+        <svg style="margin-right: 5px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#00741e}</style><path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9V344c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"/></svg>
+        DIFFICULT
+        </div>
+      </a>
+
       </div>
     </div>
     <div class="lesson-labels recognizing-sounds" style="
@@ -362,7 +386,29 @@
         
           ">
         <svg style="margin-right: 5px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#00741e}</style><path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9V344c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"/></svg>
-        PLAY
+        EASY
+        </div>
+      </a>
+
+      <a href="lesson4-2.php" class="play-button">
+        <div style="
+           display: flex;
+           align-items: center;
+        
+          ">
+        <svg style="margin-right: 5px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#00741e}</style><path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9V344c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"/></svg>
+        AVERAGE
+        </div>
+      </a>
+
+      <a href="lesson4-2.php" class="play-button">
+        <div style="
+           display: flex;
+           align-items: center;
+        
+          ">
+        <svg style="margin-right: 5px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#00741e}</style><path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9V344c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"/></svg>
+        DIFFICULT
         </div>
       </a>
       </div>
