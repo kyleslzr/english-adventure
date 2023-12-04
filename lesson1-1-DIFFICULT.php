@@ -4,7 +4,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
      <head>
-          <title>Lesson 1 EASY - English Adventures</title>
+          <title>Lesson 1 DIFFICULT - English Adventures</title>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <link rel="stylesheet" href="css/side-score-style.css">
@@ -435,21 +435,22 @@
           <img class="logo-image" src="logo.png" alt="English Adventures Logo">
 
           <div class="button-container">
-               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/CAT.mp3">CAT</button>
-               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/APPLE.mp3">APPLE</button>
-               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/LATE.mp3">LATE</button>
-               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/MANSION.mp3">MANSION</button>
-               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/SACK.mp3">SACK</button>
-               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/BAKE.mp3">BAKE</button>
-               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/ALLIGATOR.mp3">ALLIGATOR</button>
-               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/LADDER.mp3">LADDER</button>
-               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/RANDOM.mp3">RANDOM</button>
-               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/SAD.mp3">SAD</button>
-               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/RAIN.mp3">RAIN</button>
-               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/CAKE.mp3">CAKE</button>
-               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/RAISE.mp3">RAISE</button>
-               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/MATE.mp3">MATE</button>
-               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/BAT.mp3">BAT</button>
+               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/AMPLE.mp3">AMPLE</button>
+               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/LAKE.mp3">LAKE</button>
+               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/SNAKE.mp3">SNAKE</button>
+               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/AMEND.mp3">AMEND</button>
+               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/PLATE.mp3">PLATE</button>
+               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/ANKLE.mp3">ANKLE</button>
+               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/ANGEL.mp3">ANGEL</button>
+               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/GRAPE.mp3">GRAPE</button>
+               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/FLAKE.mp3">FLAKE</button>
+               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/BRAVE.mp3">BRAVE</button>
+               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/WAVE.mp3">WAVE</button>
+               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/SHEET.mp3">SHEET</button>
+               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/AGREE.mp3">AGREE</button>
+               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/COMPLETE.mp3">COMPLETE</button>
+               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/PANEL.mp3">PANEL</button>
+
                <div style="position: absolute; top: 50%; display: none;"><img width="200px" class="" src="logo.png"
                          alt="English Adventures Logo"></div>
           </div>

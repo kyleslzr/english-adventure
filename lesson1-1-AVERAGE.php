@@ -4,7 +4,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
      <head>
-          <title>Lesson 1 EASY - English Adventures</title>
+          <title>Lesson 1 AVERAGE - English Adventures</title>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <link rel="stylesheet" href="css/side-score-style.css">
@@ -435,21 +435,22 @@
           <img class="logo-image" src="logo.png" alt="English Adventures Logo">
 
           <div class="button-container">
-               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/CAT.mp3">CAT</button>
-               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/APPLE.mp3">APPLE</button>
-               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/LATE.mp3">LATE</button>
-               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/MANSION.mp3">MANSION</button>
-               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/SACK.mp3">SACK</button>
-               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/BAKE.mp3">BAKE</button>
-               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/ALLIGATOR.mp3">ALLIGATOR</button>
-               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/LADDER.mp3">LADDER</button>
-               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/RANDOM.mp3">RANDOM</button>
-               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/SAD.mp3">SAD</button>
-               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/RAIN.mp3">RAIN</button>
-               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/CAKE.mp3">CAKE</button>
-               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/RAISE.mp3">RAISE</button>
-               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/MATE.mp3">MATE</button>
-               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/BAT.mp3">BAT</button>
+               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/BET.mp3">BET</button>
+               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/READ.mp3">READ</button>
+               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/SEED.mp3">SEED</button>
+               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/GET.mp3">GET</button>
+               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/SET.mp3">SET</button>
+               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/HEED.mp3">HEED</button>
+               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/PEA.mp3">PEA</button>
+               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/FEED.mp3">FEED</button>
+               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/MEN.mp3">MEN</button>
+               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/PETE.mp3">PETE</button>
+               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/LED.mp3">LED</button>
+               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/NET.mp3">NET</button>
+               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/FED.mp3">FED</button>
+               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/FLEET.mp3">FLEET</button>
+               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/DEAN.mp3">DEAN</button>
+
                <div style="position: absolute; top: 50%; display: none;"><img width="200px" class="" src="logo.png"
                          alt="English Adventures Logo"></div>
           </div>
