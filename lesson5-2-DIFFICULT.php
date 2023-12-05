@@ -30,7 +30,7 @@
 
                .word-box {
                     display: inline-block;
-                    font-size: 50px;
+                    font-size: 30px;
                     font-weight: bold;
 
                     color: white;
@@ -379,16 +379,16 @@
 
           <script>
                const words = [
-                    { word: "There is ___ cat in the yard.", isProper: true, image: "1an.jpg" },
-                    { word: "___ car is faster than ___ horse.", isProper: true, image: "2an.jpg" },
-                    { word: "If there is ___ answer, I'll find it.", isProper: false, image: "3an.jpg" },
-                    { word: "I see ___ owl on the branch.", isProper: false, image: "4an.jpg" },
-                    { word: "Mom has ___ red dress.", isProper: true, image: "5an.jpg" },
-                    { word: "Frank wants ___ new bicycle.", isProper: true, image: "6an.jpg" },
-                    { word: "The teacher read ___ story.", isProper: true, image: "7an.jpg" },
-                    { word: "___ event for my birthday.", isProper: false, image: "8an.jpg" },
-                    { word: "Put ___ apple on your plate.", isProper: false, image: "9an.jpg" },
-                    { word: "Read me ___ story.", isProper: true, image: "10an.jpg" }
+                    { word: "___ curious cat chased ___ playful butterfly across ___ sunny meadow.", isProper: true, image: "diff1.jpg" },
+                    { word: "In ___ old town, ___ artist created ___ extraordinary mural.", isProper: false, image: "diff2.jpg" },
+                    { word: "After ___ long day, she enjoyed ___ soothing bath in ___ fragrant tub.", isProper: true, image: "diff3.jpg" },
+                    { word: "During ___ exciting expedition, ___ archaeologist uncovered __- ancient artifact.", isProper: false, image: "diff4.jpg" },
+                    { word: "With ___ enthusiastic spirit, ___ athlete achieved ___ impressive feat.", isProper: false, image: "diff5.jpg" },
+                    { word: "On ___ enchanted island, ___ explorer encountered ___ elusive creature.", isProper: false, image: "diff6.jpg" },
+                    { word: "___ friendly waiter served ___ delicious dessert on ___ sparkling plate.", isProper: true, image: "diff7.jpg" },
+                    { word: "In ___ alternate reality, ___ inventor built ___ incredible machine.", isProper: false, image: "diff8.jpg" },
+                    { word: "___ diligent student always carries ___ well-organized backpack, ___ notebook, and pen to class.", isProper: true, image: "diff9.jpg" },
+                    { word: "The hiker spotted ___ majestic eagle soaring above ___ breathtaking mountain peak during ___ serene sunrise.", isProper: true, image: "diff10.jpg" }
 
                ];
 

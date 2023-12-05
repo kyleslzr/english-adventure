@@ -30,7 +30,7 @@
 
                .word-box {
                     display: inline-block;
-                    font-size: 50px;
+                    font-size: 33px;
                     font-weight: bold;
 
                     color: white;
@@ -38,7 +38,7 @@
                     background-color: #00741E;
                     width: 794px;
                     /* Set the width for each letter's box */
-                    height: 65px;
+                    height: 100px;
                     /* Set the height for each letter's box */
                     text-align: center;
                     margin: 3px;
@@ -379,16 +379,16 @@
 
           <script>
                const words = [
-                    { word: "There is ___ cat in the yard.", isProper: true, image: "1an.jpg" },
-                    { word: "___ car is faster than ___ horse.", isProper: true, image: "2an.jpg" },
-                    { word: "If there is ___ answer, I'll find it.", isProper: false, image: "3an.jpg" },
-                    { word: "I see ___ owl on the branch.", isProper: false, image: "4an.jpg" },
-                    { word: "Mom has ___ red dress.", isProper: true, image: "5an.jpg" },
-                    { word: "Frank wants ___ new bicycle.", isProper: true, image: "6an.jpg" },
-                    { word: "The teacher read ___ story.", isProper: true, image: "7an.jpg" },
-                    { word: "___ event for my birthday.", isProper: false, image: "8an.jpg" },
-                    { word: "Put ___ apple on your plate.", isProper: false, image: "9an.jpg" },
-                    { word: "Read me ___ story.", isProper: true, image: "10an.jpg" }
+                    { word: "___ curious cat made its way into the yard, causing ___ commotion among the birds.", isProper: true, image: "aver1.jpg" },
+                    { word: "She wore ___ stunning dress to the gala, creating ___ spectacle and attracting attention and admiration.", isProper: true, image: "aver2.jpg" },
+                    { word: "He found ___ rare coin and placed it in ___ special box on his desk.", isProper: true, image: "aver3.jpg" },
+                    { word: "___ unexpected visitor arrived at the door, carrying ___ intriguing proposal.", isProper: false, image: "aver4.jpg" },
+                    { word: "The scientist conducted ___ groundbreaking experiment and published ___ comprehensive paper.", isProper: true, image: "aver5.jpg" },
+                    { word: "She became ___ accomplished pianist and performed at ___ international music festival.", isProper: false, image: "aver6.jpg" },
+                    { word: "The chef prepared ___ exquisite dish using ___ assortment of fresh herbs and spices.", isProper: false, image: "aver7.jpg" },
+                    { word: "It was ___ challenging project, but with dedication and teamwork, they achieved ___ successful outcome.", isProper: true, image: "aver8.jpg" },
+                    { word: "It's ___ elaborate plan, requiring ___ extensive amount of time and resources.", isProper: false, image: "aver9.jpg" },
+                    { word: "He adopted ___ abandoned puppy from the shelter and named it ___ endearing name.", isProper: false, image: "aver10.jpg" }
 
                ];
 
