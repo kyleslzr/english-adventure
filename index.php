@@ -1,26 +1,37 @@
+<?php
+     session_start();
+
+     if (isset($_SESSION['user_ID'])) {
+          header("Location: lesson-list.php");
+          exit();
+     }
+
+     $user_ID = $_SESSION['user_ID'];
+?>
 
 <!DOCTYPE html>
 <html>
 
      <head>
-            <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
+          <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
           <title>English Adventures</title>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
           <style>
-              html {
+               html {
                     width: 1535.2px;
                     height: 747px;
                     overflow: hidden;
-                    background-color:green;
+                    background-color: green;
 
                }
 
 
                body {
                     zoom: 100%;
-                    margin: 0; /* Add this line to remove default margin */
+                    margin: 0;
+                    /* Add this line to remove default margin */
                     padding: 0;
                     display: flex;
                     flex-direction: column;
@@ -36,7 +47,7 @@
                     overflow: hidden;
                }
 
-/* Rest of your existing styles */
+               /* Rest of your existing styles */
 
 
                .logo {
@@ -86,7 +97,7 @@
                     z-index: 2;
                }
 
-               .score-label.left {  
+               .score-label.left {
                     left: 129px;
                     bottom: 17px;
                     color: #fff;
@@ -125,69 +136,79 @@
                }
 
                @keyframes stretchAnimation {
-               0%, 100% {
-               transform: translateY(0) scaleY(1);
-               }
-               50% {
-                    transform: translateY(-1.1%) scaleY(1.025);
-               }
+
+                    0%,
+                    100% {
+                         transform: translateY(0) scaleY(1);
                     }
 
-                    .traveler {
+                    50% {
+                         transform: translateY(-1.1%) scaleY(1.025);
+                    }
+               }
+
+               .traveler {
                     position: absolute;
                     bottom: 0px;
                     right: 8px;
                     width: 371px;
-                    height: auto;  
-                    animation: stretchAnimation 3s infinite;     
-                    z-index: 10;                       
-                }
+                    height: auto;
+                    animation: stretchAnimation 3s infinite;
+                    z-index: 10;
+               }
 
-                .animate__bounceIn {
-               animation: bounceIn 1s; /* Specify the animation name and duration here */
+               .animate__bounceIn {
+                    animation: bounceIn 1s;
+                    /* Specify the animation name and duration here */
                }
 
                .login-form {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 10px;
-            border-radius: 5px;
-        }
-
-
-                
-
-
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                    background-color: rgba(255, 255, 255, 0.8);
+                    padding: 10px;
+                    border-radius: 5px;
+               }
           </style>
      </head>
 
      <body style="position: relative;">
           <img class="logo animate__bounceIn" src="logo.png" alt="English Adventures Logo">
 
-          <div class="score-label left">This&nbsp; educational&nbsp; gaming tool&nbsp; is made available &nbsp;for the&nbsp; esteemed institution of<br>SAN JOSE ACADEMY OF BULACAN located in San Jose Del Monte, Bulacan, specifically intended for the benefit
+          <div class="score-label left">This&nbsp; educational&nbsp; gaming tool&nbsp; is made available &nbsp;for
+               the&nbsp; esteemed institution of<br>SAN JOSE ACADEMY OF BULACAN located in San Jose Del Monte, Bulacan,
+               specifically intended for the benefit
                of Grade 1 pupils. This initiative is aligned with the content presented in "Workbook for English"
                authored by Darlene Niel Panganiban of Aral Pinas.</div>
 
-              
+
 
 
           </div>
-          <a href = "https://www.facebook.com/SanJoseAcademyBulacanFalcons" target="_blank"> 
-          <img class="logo-image" src="SJAB LOGO.png"  alt="English Adventures Logo">
+          <a href="https://www.facebook.com/SanJoseAcademyBulacanFalcons" target="_blank">
+               <img class="logo-image" src="SJAB LOGO.png" alt="English Adventures Logo">
           </a>
-          <a href="lesson-list.php">
+          <a href="userlogin.php">
                <button class="start-button animate__bounceInDown">
-               <svg style="margin-right: 15px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#00741e}</style><path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9V344c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"/></svg>
- 
-               PLAY</button>
+                    <svg style="margin-right: 15px;" xmlns="http://www.w3.org/2000/svg" height="1em"
+                         viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                         <style>
+                              svg {
+                                   fill: #00741e
+                              }
+                         </style>
+                         <path
+                              d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9V344c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z" />
+                    </svg>
+
+                    PLAY</button>
           </a>
           <audio autoplay loop controlsList="nodownload" style="display: none">
-  <source src="music.ogg" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-<img class="traveler" src="traveler.png" alt="Traveler">
+               <source src="music.ogg" type="audio/mpeg">
+               Your browser does not support the audio element.
+          </audio>
+          <img class="traveler" src="traveler.png" alt="Traveler">
 
           </div>
 

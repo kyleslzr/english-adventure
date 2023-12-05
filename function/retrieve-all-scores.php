@@ -1,9 +1,12 @@
 <?php
+session_start();
+$user_ID = $_SESSION['user_ID'];
+
 include "conn.php";
 
 
 // Create a prepared statement to select data
-$query = "SELECT * FROM pupil_record;";
+$query = "SELECT * FROM pupil_record WHERE user_ID = $user_ID;";
 $stmt = mysqli_prepare($conn, $query);
 
 if ($stmt === false) {

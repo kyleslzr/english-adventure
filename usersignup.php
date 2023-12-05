@@ -1,12 +1,5 @@
 <?php
      session_start();
-
-     if (isset($_SESSION['user_ID'])) {
-          header("Location: lesson-list.php");
-          exit();
-     }
-
-     $user_ID = $_SESSION['user_ID'];
 ?>
 
 <!DOCTYPE html>
@@ -259,8 +252,7 @@
           <!-- <img class="logo" src="logo.png" alt="English Adventures Logo" -->
           </div>
           <div class="centered-board"></div>
-          <div class="lesson-title" style="top: 52px;">Login</div>
-
+          <div class="lesson-title" style="top: 52px;">Signup</div>
           <span style="color: color(srgb 0.3028 0.538 0.2358); font-size: 13px; margin: 15px 0px;">
              <?php 
                // Check if the session variable is set
@@ -273,9 +265,8 @@
                     }
              ?>
           </span>
-
           <div class="login-form">
-               <form class="form"  action="function/sign-in.php" method="post">
+               <form class="form" action="function/save-user.php" method="post">
                     <div>
                          <input type="text" id="username" name="username" placeholder="username" required>
                     </div>
@@ -285,7 +276,7 @@
                     </div>
 
                     <div style="text-align: end;">
-                         <button type="button" class="buttonb" style="margin: 0px 10px;" onclick="window.location.href = 'usersignup.php';">Signup</button><button type="submit">Login</button>
+                         <button type="button" class="buttonb" style="margin: 0px 10px;" onclick="window.location.href = 'userlogin.php';">Login</button><button type="submit">Signup</button>
                     </div>
 
                </form>

@@ -651,22 +651,22 @@
           </div>
 
           <script>
-          // Function to open the modal
-          document.getElementById('upload-tutorial-video-l11').addEventListener('click', function() {
-               document.getElementById('myModal1').style.display = 'flex';
-          });
-
-          document.getElementById('upload-EASY-l11').addEventListener('click', function() {
-               document.getElementById('myModal2').style.display = 'flex';
-          });
-
-          function closeModal() {
-               const modals = document.querySelectorAll('.modal');
-               
-               modals.forEach(modal => {
-                    modal.style.display = 'none';
+               // Function to open the modal
+               document.getElementById('upload-tutorial-video-l11').addEventListener('click', function() {
+                    document.getElementById('myModal1').style.display = 'flex';
                });
-          }
+
+               document.getElementById('upload-EASY-l11').addEventListener('click', function() {
+                    document.getElementById('myModal2').style.display = 'flex';
+               });
+
+               function closeModal() {
+                    const modals = document.querySelectorAll('.modal');
+                    
+                    modals.forEach(modal => {
+                         modal.style.display = 'none';
+                    });
+               }
           </script>
      </body>
 

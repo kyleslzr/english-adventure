@@ -2,12 +2,10 @@
      session_start();
 
      // Check if the form has been submitted
-     if (isset($_POST['firstname']) && isset($_POST['surname'])) {
+     if (isset($_POST['username']) && isset($_POST['password'])) {
           // Get the form data
-          $user_ID = $_POST['user_ID'];
-          $firstname = $_POST['firstname'];
-          $middlename = $_POST['middlename'];
-          $surname = $_POST['surname'];
+          $username = $_POST['username'];
+          $password = $_POST['password'];
           
           include "conn.php";
           
@@ -17,17 +15,18 @@
           }
       
           // Create a prepared statement with placeholders
-          $query = "INSERT INTO pupil_record (`user_ID`, firstname, middlename, surname) VALUES (?, ?, ?, ?)";
+          $query = "INSERT INTO user_login (username, `password`) VALUES (?, ?)";
       
           // Prepare the statement
           $stmt = mysqli_prepare($conn, $query);
       
           // Bind parameters to the prepared statement
-          mysqli_stmt_bind_param($stmt, "ssss", $user_ID, $firstname, $middlename, $surname);
+          mysqli_stmt_bind_param($stmt, "ss", $username, $password);
       
           // Execute the prepared statement
           if (mysqli_stmt_execute($stmt)) {
-               header("Location: ../records.php");
+               $_SESSION['message'] = 'Hello ' . $username . ', your account has been successfully created. You can now sign in.';
+               header("Location: ../usersignup.php");
                exit();
           } else {
               echo "Error: " . mysqli_error($conn);
