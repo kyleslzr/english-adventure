@@ -432,7 +432,7 @@
         </div>
       </a>
 
-      <a href="lesson1-2.php" class="play-button">
+      <a href="lesson1-2-AVERAGE.php" class="play-button">
         <div style="
            display: flex;
            align-items: center;
@@ -443,7 +443,7 @@
         </div>
       </a>
 
-      <a href="lesson1-2.php" class="play-button">
+      <a href="lesson1-2-DIFFICULT.php" class="play-button">
         <div style="
            display: flex;
            align-items: center;
