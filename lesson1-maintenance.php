@@ -418,7 +418,7 @@
           <div class="lesson-bar">
                <div class="scroll-icon"></div>
                <div class="lesson-labels recognizing-sounds">
-                    <div class="lesson-label">Recognizing Nouns</div>
+                    <div class="lesson-label">Recognizing the Short a and e Sounds</div>
                     <div class="lesson-btn">
                          <a href="#" class="tutor-button" id="upload-tutorial-video-l11">
                               <div style="
@@ -546,16 +546,103 @@
 
           <!-- l11 easy -->
           <div id="myModal2" class="modal">
-               <div class="modal-content">
+               <div class="modal-content" style="height: 500px;overflow: scroll;">
                <span class="close" onclick="closeModal()">&times;</span>
                <h2 style="text-align: start; margin: 0px;">Enter words with Short a sound.</h2>
                     <form id="uploadForm" action="your_upload_handler_script.php" method="post" enctype="multipart/form-data" style="text-align: start;">
                          <br>
                          <div>
-                              1. <input type="text" name="l11-given-1">
-                              w/ short a sound <input type="radio" name="l11-given-1-status" id="">
-                              w/o short a sound <input type="radio" name="l11-given-1-status" id="">
+                              1. <input type="text" name="l11-given-1"> <br>
+                              <input type="radio" name="l11-given-1-status" id="" value= "1"> w/ short a sound <br>
+                              <input type="radio" name="l11-given-1-status" id="" value= "0"> w/o short a sound 
                          </div>
+                         <br>
+                         <div>
+                              2. <input type="text" name="l11-given-2"> <br>
+                              <input type="radio" name="l11-given-2-status" id="" value= "1"> w/ short a sound <br>
+                              <input type="radio" name="l11-given-2-status" id="" value= "0"> w/o short a sound 
+                         </div>
+                         <br>
+                         <div>
+                              3. <input type="text" name="l11-given-3"> <br>
+                              <input type="radio" name="l11-given-3-status" id="" value= "1"> w/ short a sound <br>
+                              <input type="radio" name="l11-given-3-status" id="" value= "0"> w/o short a sound 
+                         </div>
+                         <br>
+                         <div>
+                              4. <input type="text" name="l11-given-4"> <br>
+                              <input type="radio" name="l11-given-4-status" id="" value= "1"> w/ short a sound <br>
+                              <input type="radio" name="l11-given-4-status" id="" value= "0"> w/o short a sound 
+                         </div>
+                         <br>
+                         <div>
+                              5. <input type="text" name="l11-given-5"> <br>
+                              <input type="radio" name="l11-given-5-status" id="" value= "1"> w/ short a sound <br>
+                              <input type="radio" name="l11-given-5-status" id="" value= "0"> w/o short a sound 
+                         </div>
+                         <br>
+                         <div>
+                              6. <input type="text" name="l11-given-6"> <br>
+                              <input type="radio" name="l11-given-6-status" id="" value= "1"> w/ short a sound <br>
+                              <input type="radio" name="l11-given-6-status" id="" value= "0"> w/o short a sound 
+                         </div>
+                         <br>
+                         <div>
+                              7. <input type="text" name="l11-given-7"> <br>
+                              <input type="radio" name="l11-given-7-status" id="" value= "1"> w/ short a sound <br>
+                              <input type="radio" name="l11-given-7-status" id="" value= "0"> w/o short a sound 
+                         </div>
+                         <br>
+                         <div>
+                              8. <input type="text" name="l11-given-8"> <br>
+                              <input type="radio" name="l11-given-8-status" id="" value= "1"> w/ short a sound <br>
+                              <input type="radio" name="l11-given-8-status" id="" value= "0"> w/o short a sound 
+                         </div>
+                         <br>
+                         <div>
+                              9. <input type="text" name="l11-given-9"> <br>
+                              <input type="radio" name="l11-given-9-status" id="" value= "1"> w/ short a sound <br>
+                              <input type="radio" name="l11-given-9-status" id="" value= "0"> w/o short a sound 
+                         </div>
+                         <br>
+                         <div>
+                              10. <input type="text" name="l11-given-10"> <br>
+                              <input type="radio" name="l11-given-10-status" id="" value= "1"> w/ short a sound <br>
+                              <input type="radio" name="l11-given-10-status" id="" value= "0"> w/o short a sound 
+                         </div>
+                         <br>
+                         <div>
+                              11. <input type="text" name="l11-given-11"> <br>
+                              <input type="radio" name="l11-given-11-status" id="" value= "1"> w/ short a sound <br>
+                              <input type="radio" name="l11-given-11-status" id="" value= "0"> w/o short a sound 
+                         </div>
+                         <br>
+                         <div>
+                              12. <input type="text" name="l11-given-12"> <br>
+                              <input type="radio" name="l11-given-12-status" id="" value= "1"> w/ short a sound <br>
+                              <input type="radio" name="l11-given-12-status" id="" value= "0"> w/o short a sound 
+                         </div>
+                         <br>
+                         <div>
+                              13. <input type="text" name="l11-given-13"> <br>
+                              <input type="radio" name="l11-given-13-status" id="" value= "1"> w/ short a sound <br>
+                              <input type="radio" name="l11-given-13-status" id="" value= "0"> w/o short a sound 
+                         </div>
+                         <br>
+                         <div>
+                              14. <input type="text" name="l11-given-14"> <br>
+                              <input type="radio" name="l11-given-14-status" id="" value= "1"> w/ short a sound <br>
+                              <input type="radio" name="l11-given-14-status" id="" value= "0"> w/o short a sound 
+                         </div>
+                         <br>
+                         <div>
+                              15. <input type="text" name="l11-given-15"> <br>
+                              <input type="radio" name="l11-given-15-status" id="" value= "1"> w/ short a sound <br>
+                              <input type="radio" name="l11-given-15-status" id="" value= "0"> w/o short a sound 
+                         </div>
+                         
+                         
+                         
                               
                          <br>
                          <button type="submit" style="margin: 0px 10px; float: right;">Upload</button>
