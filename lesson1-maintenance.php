@@ -3,20 +3,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Lesson 3 - English Adventures</title>
+  <title>Lesson 1- Maintenance - English Adventures</title>
   <link rel="stylesheet" href="css/side-score-style.css">
   <link rel="stylesheet" href="css/lesson-button-style.css">
-  <style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+  <style>
     body {
       overflow: hidden;
       margin: 0;
       padding: 0;
       height: 100vh;
-      background-image: url('cute_background7.jpg');
+      background-image: url('cute_background8.jpg');
       background-size: cover;
       background-repeat: no-repeat;
-      background-position: center center;
+      background-position-y: -71px;
       font-family: Arial, sans-serif;
       display: flex;
       justify-content: flex-start;
@@ -92,6 +96,7 @@
       border-radius: 5px;
       cursor: default;
       box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      width: 732px;
     }
 
     .score-button,
@@ -181,6 +186,7 @@
       animation: stretchAnimation 3s infinite;     
 
     }
+
 .home-button {
   position: fixed;
   margin-right: -1410px;
@@ -193,57 +199,8 @@
   
   width: 100%;
     text-align: start;
-    margin-left: -227px;
+    margin-left: -249px;
 
-}
-
-
-.vine, .vinee, .vineee {
-    animation: bounceAnimation 2s linear infinite;
-}
-
-@keyframes bounceAnimation {
-     0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-}
-40% {
-    transform: translateY(-3px);
-}
-60% {
-    transform: translateY(9px);
-}}
-
-               .vine {
-                    width: 439px;
-    height: auto;
-    position: absolute;
-    left: 36px;
-    top: -87px;
-    z-index: -2;
-
-        }
-        .vinee {
-          width: 512px;
-    height: auto;
-    position: absolute;
-    right: -39px;
-    top: -67px;
-    z-index: -2;
-    animation-delay: 1s;
-
-        }
-
-        .bush {
-          width: 599px;
-    height: auto;
-    position: absolute;
-    right: -58px;
-    bottom: -25px;
-    z-index: -2;
-    animation: stretchAnimation 1.5s infinite;
-    z-index: -3;
-    animation-delay: 1s;
-    filter: saturate(1.5);
 }
 
 .lesson-video {
@@ -256,27 +213,113 @@
     z-index: 100;
     top: 234px;
     left: 104px;
-    background-color: #ebbf95;
-}
-
-.lesson-videoo {
-  width: 873px;
-    height: 390px;
-    margin: 20px 0;
-    border: 5px solid #2c0f11;
-    border-radius: 17px;
-    position: absolute;
-    z-index: 100;
-    top: 234px;
-    left: 104px;
     background-color: #00741e;;
 }
+
+.move {
+                    width: 420px;
+                    position: absolute;
+                    bottom: -4.5px;
+                    z-index: -2;
+                    left: -500px;
+                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
+                    animation-fill-mode: forwards;
+                    animation-delay: 0s;
+               }
+
+               .movee {
+                    width: 420px;
+                    position: absolute;
+                    bottom: -4.5px;
+                    z-index: -2;
+                    left: -500px;
+                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
+                    animation-fill-mode: forwards;
+                    animation-delay: 3s;
+               }
+
+               .moveee {
+                    width: 420px;
+                    position: absolute;
+                    bottom: -4.5px;
+                    z-index: -2;
+                    left: -500px;
+                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
+                    animation-fill-mode: forwards;
+                    animation-delay: 4.5s;
+               }
+
+               .moveeee {
+                    width: 420px;
+                    position: absolute;
+                    bottom: -4.5px;
+                    z-index: -2;
+                    left: -500px;
+                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
+                    animation-fill-mode: forwards;
+                    animation-delay: 6s;
+               }
+
+               .moveeeee {
+                    width: 700px;
+                    position: absolute;
+                    bottom: -73.5px;
+                    z-index: -2;
+                    left: -500px;
+                    animation: slideOutRight 12s linear infinite;
+                    animation-fill-mode: forwards;
+                    animation-delay: 4s;
+               }
+          
+
+                    @keyframes slideOutRight {
+                    0% {
+                         transform: translateX(0);
+                    }
+
+                    100% {
+                         transform: translateX(500%); /* Adjust the value to slide farther */
+                    }
+                    }
+
+
+                    #myModal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
   </style>
 <script>
-        function goHome() {
-            window.location.href = 'background_page.html';
-        }
-        document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function () {
         // Ensure the video and close button are initially hidden on page load
         var videoElement = document.getElementById("tutorialVideo");
         var closeButton = document.getElementById("closeVideoButton");
@@ -307,16 +350,23 @@
 </script>
 </head>
 <body>
+    <a class="home-button" href="userhome.php">
+        <img src="home.png" />
+    </a>
 
+<audio autoplay loop controlsList="nodownload" style="display: none">
+  <source src="music.ogg" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 
 
 <video id="tutorialVideo" class="lesson-video" controls style="display: none;">
-  <source src="l31.mp4" type="video/mp4">
+  <source src="l11.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
 <video id="tutorialVideo" class="lesson-videoo" controls style="display: none;">
-  <source src="l32.mp4" type="video/mp4">
+  <source src="l12.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -343,22 +393,26 @@
 "><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#00741e}</style><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
 </svg></button>
 
-    <a class="home-button" href="lesson-list.php">
-        <img src="home.png" />
-    </a>
 
-    <audio autoplay loop controlsList="nodownload" style="display: none">
-  <source src="music.ogg" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <form id="videoUploadForm">
+      <label for="videoFile">Choose a video file (MP4 format):</label>
+      <input type="file" id="videoFile" name="videoFile" accept=".mp4" required>
+      <button type="button" onclick="uploadVideo()">Upload</button>
+    </form>
+  </div>
+</div>
+
   <img class="logo-image" src="logo.png" alt="English Adventures Logo">
-  <div class="lesson-title">Lesson 3</div>
+  <div class="lesson-title">Lesson 1- Maintenance</div>
   <div class="lesson-bar">
     <div class="scroll-icon"></div>
     <div class="lesson-labels recognizing-sounds">
-      <div class="lesson-label" style="padding: 10px 41px;">Recognizing the Short o and u Sounds</div>
+      <div class="lesson-label">Recognizing the Short a and e Sounds</div>
       <div class="lesson-btn">
-      <a href="#" class="tutor-button" onclick="showTutorialVideo()">
+      <a href="#" class="tutor-button" id="upload-tutorial-video-l11">
         <div style="
            display: flex;
            align-items: center;
@@ -368,7 +422,7 @@
           Tutorial
         </div>
       </a>
-      <a href="lesson3-1.php" class="play-button">
+      <a href="lesson1-1.php" class="play-button">
         <div style="
            display: flex;
            align-items: center;
@@ -378,8 +432,7 @@
         EASY
         </div>
       </a>
-
-      <a href="lesson3-1-AVERAGE.php" class="play-button">
+      <a href="lesson1-1-AVERAGE.php" class="play-button">
         <div style="
            display: flex;
            align-items: center;
@@ -389,8 +442,7 @@
         AVERAGE
         </div>
       </a>
-
-      <a href="lesson3-1-DIFFICULT.php" class="play-button">
+      <a href="lesson1-1-DIFFICULT.php" class="play-button">
         <div style="
            display: flex;
            align-items: center;
@@ -400,13 +452,12 @@
         DIFFICULT
         </div>
       </a>
-
       </div>
     </div>
     <div class="lesson-labels recognizing-sounds">
-      <div class="lesson-label">Recognizing Common and Proper Nouns</div>
+      <div class="lesson-label">Recognizing Nouns</div>
       <div class="lesson-btn">
-      <a href="#" class="tutor-button" onclick="showTutorialVideo()">
+      <a href="#" class="tutor-button" id="upload-tutorial-video-l12">
         <div style="
            display: flex;
            align-items: center;
@@ -416,7 +467,7 @@
           Tutorial
         </div>
       </a>
-      <a href="lesson3-2.php" class="play-button">
+      <a href="lesson1-2.php" class="play-button">
         <div style="
            display: flex;
            align-items: center;
@@ -427,7 +478,7 @@
         </div>
       </a>
 
-      <a href="lesson3-2-AVERAGE.php" class="play-button">
+      <a href="lesson1-2-AVERAGE.php" class="play-button">
         <div style="
            display: flex;
            align-items: center;
@@ -438,7 +489,7 @@
         </div>
       </a>
 
-      <a href="lesson3-2-DIFFICULT.php" class="play-button">
+      <a href="lesson1-2-DIFFICULT.php" class="play-button">
         <div style="
            display: flex;
            align-items: center;
@@ -453,8 +504,52 @@
   </div>
 
   <img class="traveler-image" src="traveler4.png" alt="Traveler 4">
-  <img class="vine animate__bounce" src="vine1.png" alt="Traveler 5 Image" />
-          <img class="vinee animate__bounce" src="vine2.png" alt="Traveler 5 Image" />
-          <img class="bush animate__bounce" src="bush.webp" alt="Traveler 5 Image" />
+  <img class="move" src="wave.png" alt="Traveler 5 Image">
+          <img class="movee" src="wave.png" alt="Traveler 5 Image">
+          <img class="moveee" src="wave.png" alt="Traveler 5 Image">
+          <img class="moveeee" src="wave.png" alt="Traveler 5 Image">
+          <img class="moveeeee" src="boat.png" alt="Traveler 5 Image">
+          <!-- Modal -->
+<div class="modal" id="videoUploadModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Upload Video</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <form action="#" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="videoFile">Choose Video (MP4):</label>
+            <input type="file" class="form-control-file" id="videoFile" name="videoFile" accept=".mp4">
+          </div>
+          <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Include Bootstrap JS (Popper.js and jQuery are required dependencies) -->
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"> </script>
+
+<script>
+  // JavaScript to trigger the modal
+  $(document).ready(function(){
+    $("#upload-tutorial-video-l11").click(function(){
+      $("#videoUploadModal").modal();
+    });
+  });
+</script>
 </body>
 </html>

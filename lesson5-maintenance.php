@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Lesson 3 - English Adventures</title>
+  <title>Lesson 5- Maintenance - English Adventures</title>
   <link rel="stylesheet" href="css/side-score-style.css">
   <link rel="stylesheet" href="css/lesson-button-style.css">
   <style>
@@ -13,7 +13,7 @@
       margin: 0;
       padding: 0;
       height: 100vh;
-      background-image: url('cute_background7.jpg');
+      background-image: url('cute_background10.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
@@ -86,12 +86,13 @@
     .lesson-labels .lesson-label {
       color: white;
       background-color: #00741E;
-      padding: 10px 20px;
+      padding: 10px 163px;
       font-size: 40px;
       font-weight: bolder;
       border-radius: 5px;
       cursor: default;
       box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      width: 600px;
     }
 
     .score-button,
@@ -150,13 +151,13 @@
     .recognizing-sounds {
       position: relative;
       left: -220px;
-      top: 220px;
+      top: 200px;
     }
 
     .recognizing-nouns {
       position: relative;
       left: -215px;
-      top: 220px;
+      top: 200px;
     }
 
     .recognizing-nouns .lesson-label {
@@ -190,76 +191,75 @@
 }
 
 .lesson-btn {
-  
-  width: 100%;
+  width: 125%;
     text-align: start;
-    margin-left: -227px;
+    margin-left: -294px;
 
 }
 
+                .sun{
+                  position: absolute;
+                    width: 267px;
+                    z-index: -5;
+                    top: 23px;
+                    left: 396px;
+                    filter: saturate(1.7);
+               }
 
-.vine, .vinee, .vineee {
-    animation: bounceAnimation 2s linear infinite;
-}
+               .bg {
+                    position: absolute;
+                     width: 1536px;
+                     z-index: -2;
+                     top: -45px;
+               }
 
-@keyframes bounceAnimation {
-     0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-}
-40% {
-    transform: translateY(-3px);
-}
-60% {
-    transform: translateY(9px);
-}}
+               .move {
+                    width: 278px;
+                    position: absolute;
+                    top: -50px;
+                    z-index: -4;
+                    left: -313px;
+                    animation: slideOutRight 30s linear infinite;
+                    animation-fill-mode: forwards;
+                    animation-delay: -6s;
+                    filter: sepia(1);
+               }
 
-               .vine {
-                    width: 439px;
-    height: auto;
-    position: absolute;
-    left: 36px;
-    top: -87px;
-    z-index: -2;
+               .mover {
+                    width: 298px;
+                    position: absolute;
+                    top: -18px;
+                    z-index: -4;
+                    left: -539px;
+                    animation: slideOutRight 28s linear infinite;
+                    animation-fill-mode: forwards;
+                    animation-delay: 7s;
+                    filter: sepia(1);
+               }
 
-        }
-        .vinee {
-          width: 512px;
-    height: auto;
-    position: absolute;
-    right: -39px;
-    top: -67px;
-    z-index: -2;
-    animation-delay: 1s;
+               .movee {
+                    width: 420px;
+                    position: absolute;
+                    top: 11px;
+                    z-index: -4;
+                    left: -500px;
+                    animation: slideOutRight 28s linear infinite;
+                    animation-fill-mode: forwards;
+                    animation-delay: 5s;
+                    filter: sepia(1);
+               }
+                              
+               @keyframes slideOutRight {
+                    0% {
+                         transform: translateX(0);
+                    }
 
-        }
+                    100% {
+                         transform: translateX(700%); /* Adjust the value to slide farther */
+                    }
+                    }
 
-        .bush {
-          width: 599px;
-    height: auto;
-    position: absolute;
-    right: -58px;
-    bottom: -25px;
-    z-index: -2;
-    animation: stretchAnimation 1.5s infinite;
-    z-index: -3;
-    animation-delay: 1s;
-    filter: saturate(1.5);
-}
-
-.lesson-video {
-  width: 873px;
-    height: 390px;
-    margin: 20px 0;
-    border: 5px solid #2c0f11;
-    border-radius: 17px;
-    position: absolute;
-    z-index: 100;
-    top: 234px;
-    left: 104px;
-    background-color: #ebbf95;
-}
-
-.lesson-videoo {
+                    .lesson-video {
   width: 873px;
     height: 390px;
     margin: 20px 0;
@@ -271,11 +271,13 @@
     left: 104px;
     background-color: #00741e;;
 }
+
   </style>
 <script>
         function goHome() {
             window.location.href = 'background_page.html';
         }
+
         document.addEventListener("DOMContentLoaded", function () {
         // Ensure the video and close button are initially hidden on page load
         var videoElement = document.getElementById("tutorialVideo");
@@ -307,16 +309,23 @@
 </script>
 </head>
 <body>
+    <a class="home-button" href="userhome.php">
+        <img src="home.png" />
+    </a>
 
+    <audio autoplay loop controlsList="nodownload" style="display: none">
+  <source src="music.ogg" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 
 
 <video id="tutorialVideo" class="lesson-video" controls style="display: none;">
-  <source src="l31.mp4" type="video/mp4">
+  <source src="l51.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
 <video id="tutorialVideo" class="lesson-videoo" controls style="display: none;">
-  <source src="l32.mp4" type="video/mp4">
+  <source src="l52.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -343,20 +352,12 @@
 "><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#00741e}</style><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
 </svg></button>
 
-    <a class="home-button" href="lesson-list.php">
-        <img src="home.png" />
-    </a>
-
-    <audio autoplay loop controlsList="nodownload" style="display: none">
-  <source src="music.ogg" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
   <img class="logo-image" src="logo.png" alt="English Adventures Logo">
-  <div class="lesson-title">Lesson 3</div>
+  <div class="lesson-title">Lesson 5- Maintenance</div>
   <div class="lesson-bar">
     <div class="scroll-icon"></div>
     <div class="lesson-labels recognizing-sounds">
-      <div class="lesson-label" style="padding: 10px 41px;">Recognizing the Short o and u Sounds</div>
+      <div class="lesson-label" style="padding: 10px 41px;">Pronouncing words with the<br>Sounds of d and t</div>
       <div class="lesson-btn">
       <a href="#" class="tutor-button" onclick="showTutorialVideo()">
         <div style="
@@ -368,7 +369,7 @@
           Tutorial
         </div>
       </a>
-      <a href="lesson3-1.php" class="play-button">
+      <a href="lesson5-1.php" class="play-button">
         <div style="
            display: flex;
            align-items: center;
@@ -379,7 +380,7 @@
         </div>
       </a>
 
-      <a href="lesson3-1-AVERAGE.php" class="play-button">
+      <a href="lesson5-1-AVERAGE.php" class="play-button">
         <div style="
            display: flex;
            align-items: center;
@@ -390,7 +391,7 @@
         </div>
       </a>
 
-      <a href="lesson3-1-DIFFICULT.php" class="play-button">
+      <a href="lesson5-1-DIFFICULT.php" class="play-button">
         <div style="
            display: flex;
            align-items: center;
@@ -403,8 +404,10 @@
 
       </div>
     </div>
-    <div class="lesson-labels recognizing-sounds">
-      <div class="lesson-label">Recognizing Common and Proper Nouns</div>
+    <div class="lesson-labels recognizing-sounds" style="
+    top: 188px;
+">
+      <div class="lesson-label" style=" width: 354px;">Using A and An</div>
       <div class="lesson-btn">
       <a href="#" class="tutor-button" onclick="showTutorialVideo()">
         <div style="
@@ -416,7 +419,7 @@
           Tutorial
         </div>
       </a>
-      <a href="lesson3-2.php" class="play-button">
+      <a href="lesson5-2.php" class="play-button">
         <div style="
            display: flex;
            align-items: center;
@@ -427,7 +430,7 @@
         </div>
       </a>
 
-      <a href="lesson3-2-AVERAGE.php" class="play-button">
+      <a href="lesson5-2-AVERAGE.php" class="play-button">
         <div style="
            display: flex;
            align-items: center;
@@ -438,7 +441,7 @@
         </div>
       </a>
 
-      <a href="lesson3-2-DIFFICULT.php" class="play-button">
+      <a href="lesson5-2-DIFFICULT.php" class="play-button">
         <div style="
            display: flex;
            align-items: center;
@@ -448,13 +451,16 @@
         DIFFICULT
         </div>
       </a>
+
       </div>
     </div>
   </div>
 
   <img class="traveler-image" src="traveler4.png" alt="Traveler 4">
-  <img class="vine animate__bounce" src="vine1.png" alt="Traveler 5 Image" />
-          <img class="vinee animate__bounce" src="vine2.png" alt="Traveler 5 Image" />
-          <img class="bush animate__bounce" src="bush.webp" alt="Traveler 5 Image" />
+  <img class="bg" src="cute_background101.png" alt="Traveler 5 Image">
+          <img class="move" src="cloud.png" alt="Traveler 5 Image">
+          <img class="mover" src="cloud.png" alt="Traveler 5 Image">
+          <img class="movee" src="cloud.png" alt="Traveler 5 Image">
+          <img class="sun" src="sun.gif" alt="Traveler 5 Image">
 </body>
 </html>

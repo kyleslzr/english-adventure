@@ -12,7 +12,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lesson 1 - English Adventures</title>
+  <title>Lesson 1 AVERAGE- English Adventures</title>
   <link rel="stylesheet" href="css/side-score-style.css">
   <style>
     
@@ -368,7 +368,7 @@
   <source src="music2 (2).ogg" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
-    <a class="retry-button" href="lesson4-1.php">
+    <a class="retry-button" href="lesson4-1-AVERAGE.php">
         <img src="retry.png" />
     </a>
 

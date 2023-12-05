@@ -300,6 +300,7 @@
                     margin-right: -1050px;
                     bottom: -480px;
                     transform: scale(0.10);
+                    z-index: 10;
                }
 
                .back-button {
@@ -420,7 +421,7 @@
           </audio>
 
 
-          <a class="retry-button" href="lesson1-1.php">
+          <a class="retry-button" href="lesson1-1-AVERAGE.php">
                <img src="retry.png" />
           </a>
 

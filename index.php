@@ -147,6 +147,15 @@
                animation: bounceIn 1s; /* Specify the animation name and duration here */
                }
 
+               .login-form {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
 
                 
 
@@ -160,6 +169,10 @@
           <div class="score-label left">This&nbsp; educational&nbsp; gaming tool&nbsp; is made available &nbsp;for the&nbsp; esteemed institution of<br>SAN JOSE ACADEMY OF BULACAN located in San Jose Del Monte, Bulacan, specifically intended for the benefit
                of Grade 1 pupils. This initiative is aligned with the content presented in "Workbook for English"
                authored by Darlene Niel Panganiban of Aral Pinas.</div>
+
+              
+
+
           </div>
           <a href = "https://www.facebook.com/SanJoseAcademyBulacanFalcons" target="_blank"> 
           <img class="logo-image" src="SJAB LOGO.png"  alt="English Adventures Logo">

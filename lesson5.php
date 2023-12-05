@@ -191,7 +191,6 @@
 }
 
 .lesson-btn {
-  
   width: 125%;
     text-align: start;
     margin-left: -294px;
@@ -381,7 +380,7 @@
         </div>
       </a>
 
-      <a href="lesson5-1.php" class="play-button">
+      <a href="lesson5-1-AVERAGE.php" class="play-button">
         <div style="
            display: flex;
            align-items: center;
@@ -392,7 +391,7 @@
         </div>
       </a>
 
-      <a href="lesson5-1.php" class="play-button">
+      <a href="lesson5-1-DIFFICULT.php" class="play-button">
         <div style="
            display: flex;
            align-items: center;
@@ -431,7 +430,7 @@
         </div>
       </a>
 
-      <a href="lesson5-2.php" class="play-button">
+      <a href="lesson5-2-AVERAGE.php" class="play-button">
         <div style="
            display: flex;
            align-items: center;
@@ -442,7 +441,7 @@
         </div>
       </a>
 
-      <a href="lesson5-2.php" class="play-button">
+      <a href="lesson5-2-DIFFICULT.php" class="play-button">
         <div style="
            display: flex;
            align-items: center;

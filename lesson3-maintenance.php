@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Lesson 3 - English Adventures</title>
+  <title>Lesson 3- Maintenance - English Adventures</title>
   <link rel="stylesheet" href="css/side-score-style.css">
   <link rel="stylesheet" href="css/lesson-button-style.css">
   <style>
@@ -343,7 +343,7 @@
 "><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#00741e}</style><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
 </svg></button>
 
-    <a class="home-button" href="lesson-list.php">
+    <a class="home-button" href="userhome.php">
         <img src="home.png" />
     </a>
 
@@ -352,7 +352,7 @@
   Your browser does not support the audio element.
 </audio>
   <img class="logo-image" src="logo.png" alt="English Adventures Logo">
-  <div class="lesson-title">Lesson 3</div>
+  <div class="lesson-title">Lesson 3- Maintenance</div>
   <div class="lesson-bar">
     <div class="scroll-icon"></div>
     <div class="lesson-labels recognizing-sounds">
