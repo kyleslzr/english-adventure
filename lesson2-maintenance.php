@@ -318,7 +318,7 @@
     <div class="lesson-labels recognizing-sounds">
       <div class="lesson-label" style="padding: 10px 92px;">Recognizing the Short i Sounds</div>
       <div class="lesson-btn">
-      <a href="#" class="tutor-button" onclick="showTutorialVideo()">
+      <a href="#" class="tutor-button" id="upload-tutorial-video-l21">
         <div style="
            display: flex;
            align-items: center;
@@ -328,7 +328,7 @@
           Tutorial
         </div>
       </a>
-      <a href="lesson2-1.php" class="play-button">
+      <a href="#" class="play-button" id="upload-EASY-l21">
         <div style="
            display: flex;
            align-items: center;
@@ -339,7 +339,7 @@
         </div>
       </a>
 
-      <a href="lesson2-1-AVERAGE.php" class="play-button">
+      <a href="#" class="play-button" id="upload-AVERAGE-l21">
         <div style="
            display: flex;
            align-items: center;
@@ -350,7 +350,7 @@
         </div>
       </a>
 
-      <a href="lesson2-1-DIFFICULT.php" class="play-button">
+      <a href="#" class="play-button" id="upload-DIFFICULT-l21">
         <div style="
            display: flex;
            align-items: center;
@@ -366,7 +366,7 @@
     <div class="lesson-labels recognizing-sounds">
       <div class="lesson-label">Recognizing Singular and Plural Nouns</div>
       <div class="lesson-btn">
-      <a href="#" class="tutor-button" onclick="showTutorialVideo()">
+      <a href="#" class="tutor-button" id="upload-tutorial-video-l22">
         <div style="
            display: flex;
            align-items: center;
@@ -376,7 +376,7 @@
           Tutorial
         </div>
       </a>
-      <a href="lesson2-2.php" class="play-button">
+      <a href="#" class="play-button" id="upload-EASY-l22">
         <div style="
            display: flex;
            align-items: center;
@@ -387,7 +387,7 @@
         </div>
       </a>
 
-      <a href="lesson2-2-AVERAGE.php" class="play-button">
+      <a href="#" class="play-button" id="upload-AVERAGE-l22">
         <div style="
            display: flex;
            align-items: center;
@@ -398,7 +398,7 @@
         </div>
       </a>
 
-      <a href="lesson2-2-DIFFICULT.php" class="play-button">
+      <a href="#" class="play-button" id="upload-DIFFICULT-l22">
         <div style="
            display: flex;
            align-items: center;

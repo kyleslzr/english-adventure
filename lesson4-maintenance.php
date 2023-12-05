@@ -319,7 +319,7 @@
     <div class="lesson-labels recognizing-sounds">
       <div class="lesson-label" style="padding: 10px 41px; width: 700px;">Pronouncing words with the Sounds of b and p</div>
       <div class="lesson-btn">
-      <a href="#" class="tutor-button" onclick="showTutorialVideo()">
+      <a href="#" class="tutor-button" id="upload-tutorial-video-l41">
         <div style="
            display: flex;
            align-items: center;
@@ -329,7 +329,7 @@
           Tutorial
         </div>
       </a>
-      <a href="lesson4-1.php" class="play-button">
+      <a href="#" class="play-button" id="upload-EASY-l41">
         <div style="
            display: flex;
            align-items: center;
@@ -340,7 +340,7 @@
         </div>
       </a>
 
-      <a href="lesson4-1-AVERAGE.php" class="play-button">
+      <a href="#" class="play-button" id="upload-AVERAGE-l41">
         <div style="
            display: flex;
            align-items: center;
@@ -351,7 +351,7 @@
         </div>
       </a>
 
-      <a href="lesson4-1-DIFFICULT.php" class="play-button">
+      <a href="#" class="play-button" id="upload-DIFFICULT-l41">
         <div style="
            display: flex;
            align-items: center;
@@ -369,7 +369,7 @@
 ">
       <div class="lesson-label" >Using Pronouns</div>
       <div class="lesson-btn">
-      <a href="#" class="tutor-button" onclick="showTutorialVideo()">
+      <a href="#" class="tutor-button" id="upload-tutorial-video-l42">
         <div style="
            display: flex;
            align-items: center;
@@ -379,7 +379,7 @@
           Tutorial
         </div>
       </a>
-      <a href="lesson4-2.php" class="play-button">
+      <a href="#" class="play-button" id="upload-EASY-l42">
         <div style="
            display: flex;
            align-items: center;
@@ -390,7 +390,7 @@
         </div>
       </a>
 
-      <a href="lesson4-2-AVERAGE.php" class="play-button">
+      <a href="#" class="play-button" id="upload-AVERAGE-l42">
         <div style="
            display: flex;
            align-items: center;
@@ -401,7 +401,7 @@
         </div>
       </a>
 
-      <a href="lesson4-2-DIFFICULT.php" class="play-button">
+      <a href="#" class="play-button" id="upload-EDIFFICULT-l42">
         <div style="
            display: flex;
            align-items: center;

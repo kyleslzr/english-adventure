@@ -422,7 +422,7 @@
           Tutorial
         </div>
       </a>
-      <a href="lesson1-1.php" class="play-button">
+      <a href="#" class="play-button" id="upload-EASY-l11">
         <div style="
            display: flex;
            align-items: center;
@@ -432,7 +432,7 @@
         EASY
         </div>
       </a>
-      <a href="lesson1-1-AVERAGE.php" class="play-button">
+      <a href="#" class="play-button" id="upload-AVERAGE-l11">
         <div style="
            display: flex;
            align-items: center;
@@ -442,7 +442,7 @@
         AVERAGE
         </div>
       </a>
-      <a href="lesson1-1-DIFFICULT.php" class="play-button">
+      <a href="#" class="play-button" id="upload-DIFFICULT-l11">
         <div style="
            display: flex;
            align-items: center;
@@ -467,7 +467,7 @@
           Tutorial
         </div>
       </a>
-      <a href="lesson1-2.php" class="play-button">
+      <a href="#" class="play-button" id="upload-EASY-l12">
         <div style="
            display: flex;
            align-items: center;
@@ -478,7 +478,7 @@
         </div>
       </a>
 
-      <a href="lesson1-2-AVERAGE.php" class="play-button">
+      <a href="#" class="play-button" id="upload-AVERAGE-l12">
         <div style="
            display: flex;
            align-items: center;
@@ -489,7 +489,7 @@
         </div>
       </a>
 
-      <a href="lesson1-2-DIFFICULT.php" class="play-button">
+      <a href="#" class="play-button" id="upload-DIFFICULT-l12">
         <div style="
            display: flex;
            align-items: center;
