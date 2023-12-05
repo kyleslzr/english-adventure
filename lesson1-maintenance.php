@@ -1,228 +1,233 @@
-
-
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Lesson 1- Maintenance - English Adventures</title>
-  <link rel="stylesheet" href="css/side-score-style.css">
-  <link rel="stylesheet" href="css/lesson-button-style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-  <style>
-    body {
-      overflow: hidden;
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      background-image: url('cute_background8.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position-y: -71px;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-      color: #fff;
-      position: relative;
-    }
-
-    .logo-image {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      width: auto;
-      height: 80px;
-    }
-
-    .lesson-title {
-      position: absolute;
-      font-size: 60px;
-      font-weight: bold;
-      margin-top: 50px;
-      background-color: #00741E;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: default;
-      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-      outline: 4px solid #fff; /* Add an outline */
-    }
-
-    .lesson-bar {
-      width: 100%;
-      padding: 10px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 50px;
-      margin-top: 20px;
-      position: relative;
-    }
-
-    .scroll-icon::after {
-      content: "";
-      background-image: url('scroll1.png');
-      width: 1000px;
-      height: 600px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      position: absolute;
-      left: 50px;
-      top: 170px;
-      
-    }
-
-    .lesson-labels {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-      position: absolute;
-      left: 180px;
-      top: 180px;
-      z-index: 1;
-    }
-
-    .lesson-labels .lesson-label {
-      color: white;
-      background-color: #00741E;
-      padding: 10px 20px;
-      font-size: 40px;
-      font-weight: bolder;
-      border-radius: 5px;
-      cursor: default;
-      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-      width: 732px;
-    }
-
-    .score-button,
-    .play-button {
-      display: inline-block;
-      padding: 11px 15px;
-      border-radius: 50px;
-      font-size: 30px;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-      position: relative;
-      left: 250px;
-      top: 1px;
-      text-decoration: none; /* Remove underline from links */
-    }
-
-    .tutor-button {
-      display: inline-block;
-      align-items: center;
-      justify-content: center;
-      padding: 11px 15px;
-      border-radius: 50px;
-      font-size: 30px;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-      position: relative;
-      left: 250px;
-      top: 1px;
-      margin-right: 7px;
-      text-decoration: none; /* Remove underline from links */
-    }
-  
-    .play-button:hover, .tutor-button:hover {
-      filter: brightness(.8);
-    }
-
-    .score-button {
-      background-color: #FF5252;
-      color: #fff;
-      margin-right: 10px;
-      pointer-events: none; /* Make the score button unclickable */
-    }
-
-    .play-button, .tutor-button {
-      background-color: #ffcc00;
-      color: #00741E;
-    }
-
-    .lesson-labels .button-group {
-      display: flex;
-      align-items: center;
-    }
-
-    .recognizing-sounds {
-      position: relative;
-      left: -220px;
-      top: 220px;
-    }
-
-    .recognizing-nouns {
-      position: relative;
-      left: -215px;
-      top: 220px;
-    }
-
-    .recognizing-nouns .lesson-label {
-      padding: 10px 197px;
-    }
-
-    @keyframes stretchAnimation {
-               0%, 100% {
-               transform: translateY(0) scaleY(1);
+     <head>
+          <title>Lesson 1- Maintenance - English Adventures</title>
+          <link rel="stylesheet" href="css/side-score-style.css">
+          <link rel="stylesheet" href="css/lesson-button-style.css">
+          <style>
+               body {
+                    overflow: hidden;
+                    margin: 0;
+                    padding: 0;
+                    height: 100vh;
+                    background-image: url('cute_background8.jpg');
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position-y: -71px;
+                    font-family: Arial, sans-serif;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    flex-direction: column;
+                    text-align: center;
+                    color: #fff;
+                    position: relative;
                }
-               50% {
-                transform: translateY(-1.1%) scaleY(1.025);
+
+               .logo-image {
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    width: auto;
+                    height: 80px;
                }
+
+               .lesson-title {
+                    position: absolute;
+                    font-size: 60px;
+                    font-weight: bold;
+                    margin-top: 50px;
+                    background-color: #00741E;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    cursor: default;
+                    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+                    outline: 4px solid #fff;
+                    /* Add an outline */
+               }
+
+               .lesson-bar {
+                    width: 100%;
+                    padding: 10px 0;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 50px;
+                    margin-top: 20px;
+                    position: relative;
+               }
+
+               .scroll-icon::after {
+                    content: "";
+                    background-image: url('scroll1.png');
+                    width: 1000px;
+                    height: 600px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    left: 50px;
+                    top: 170px;
+
+               }
+
+               .lesson-labels {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+                    position: absolute;
+                    left: 180px;
+                    top: 180px;
+                    z-index: 1;
+               }
+
+               .lesson-labels .lesson-label {
+                    color: white;
+                    background-color: #00741E;
+                    padding: 10px 20px;
+                    font-size: 40px;
+                    font-weight: bolder;
+                    border-radius: 5px;
+                    cursor: default;
+                    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+                    width: 732px;
+               }
+
+               .score-button,
+               .play-button {
+                    display: inline-block;
+                    padding: 11px 15px;
+                    border-radius: 50px;
+                    font-size: 30px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+                    position: relative;
+                    left: 250px;
+                    top: 1px;
+                    text-decoration: none;
+                    /* Remove underline from links */
+               }
+
+               .tutor-button {
+                    display: inline-block;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 11px 15px;
+                    border-radius: 50px;
+                    font-size: 30px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+                    position: relative;
+                    left: 250px;
+                    top: 1px;
+                    margin-right: 7px;
+                    text-decoration: none;
+                    /* Remove underline from links */
+               }
+
+               .play-button:hover,
+               .tutor-button:hover {
+                    filter: brightness(.8);
+               }
+
+               .score-button {
+                    background-color: #FF5252;
+                    color: #fff;
+                    margin-right: 10px;
+                    pointer-events: none;
+                    /* Make the score button unclickable */
+               }
+
+               .play-button,
+               .tutor-button {
+                    background-color: #ffcc00;
+                    color: #00741E;
+               }
+
+               .lesson-labels .button-group {
+                    display: flex;
+                    align-items: center;
+               }
+
+               .recognizing-sounds {
+                    position: relative;
+                    left: -220px;
+                    top: 220px;
+               }
+
+               .recognizing-nouns {
+                    position: relative;
+                    left: -215px;
+                    top: 220px;
+               }
+
+               .recognizing-nouns .lesson-label {
+                    padding: 10px 197px;
+               }
+
+               @keyframes stretchAnimation {
+
+                    0%,
+                    100% {
+                         transform: translateY(0) scaleY(1);
                     }
 
-    .traveler-image {
-      position: absolute;
-      top: 65px;
-      right: 40px;
-      width: auto;
-      height: 700px;
-      animation: stretchAnimation 3s infinite;     
+                    50% {
+                         transform: translateY(-1.1%) scaleY(1.025);
+                    }
+               }
 
-    }
+               .traveler-image {
+                    position: absolute;
+                    top: 65px;
+                    right: 40px;
+                    width: auto;
+                    height: 700px;
+                    animation: stretchAnimation 3s infinite;
 
-.home-button {
-  position: fixed;
-  margin-right: -1410px;
-  bottom: -480px;
-  transform: scale(0.10);
-  z-index: 10;
-}
+               }
 
-.lesson-btn {
-  
-  width: 100%;
-    text-align: start;
-    margin-left: -249px;
+               .home-button {
+                    position: fixed;
+                    margin-right: -1410px;
+                    bottom: -480px;
+                    transform: scale(0.10);
+                    z-index: 10;
+               }
 
-}
+               .lesson-btn {
 
-.lesson-video {
-  width: 873px;
-    height: 390px;
-    margin: 20px 0;
-    border: 5px solid #2c0f11;
-    border-radius: 17px;
-    position: absolute;
-    z-index: 100;
-    top: 234px;
-    left: 104px;
-    background-color: #00741e;;
-}
+                    width: 100%;
+                    text-align: start;
+                    margin-left: -249px;
 
-.move {
+               }
+
+               .lesson-video {
+                    width: 873px;
+                    height: 390px;
+                    margin: 20px 0;
+                    border: 5px solid #2c0f11;
+                    border-radius: 17px;
+                    position: absolute;
+                    z-index: 100;
+                    top: 234px;
+                    left: 104px;
+                    background-color: #00741e;
+                    ;
+               }
+
+               .move {
                     width: 420px;
                     position: absolute;
                     bottom: -4.5px;
                     z-index: -2;
                     left: -500px;
-                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
+                    animation: slideOutRight 6s linear infinite;
+                    /* Specify the animation name and duration here */
                     animation-fill-mode: forwards;
                     animation-delay: 0s;
                }
@@ -233,7 +238,8 @@
                     bottom: -4.5px;
                     z-index: -2;
                     left: -500px;
-                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
+                    animation: slideOutRight 6s linear infinite;
+                    /* Specify the animation name and duration here */
                     animation-fill-mode: forwards;
                     animation-delay: 3s;
                }
@@ -244,7 +250,8 @@
                     bottom: -4.5px;
                     z-index: -2;
                     left: -500px;
-                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
+                    animation: slideOutRight 6s linear infinite;
+                    /* Specify the animation name and duration here */
                     animation-fill-mode: forwards;
                     animation-delay: 4.5s;
                }
@@ -255,7 +262,8 @@
                     bottom: -4.5px;
                     z-index: -2;
                     left: -500px;
-                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
+                    animation: slideOutRight 6s linear infinite;
+                    /* Specify the animation name and duration here */
                     animation-fill-mode: forwards;
                     animation-delay: 6s;
                }
@@ -270,39 +278,43 @@
                     animation-fill-mode: forwards;
                     animation-delay: 4s;
                }
-          
 
-                    @keyframes slideOutRight {
+
+               @keyframes slideOutRight {
                     0% {
                          transform: translateX(0);
                     }
 
                     100% {
-                         transform: translateX(500%); /* Adjust the value to slide farther */
+                         transform: translateX(500%);
+                         /* Adjust the value to slide farther */
                     }
-                    }
+               }
 
-
-                    #myModal {
+               /* Styles for the modal */
+    .modal {
       display: none;
       position: fixed;
-      z-index: 1;
-      left: 0;
       top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      overflow: auto;
       background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+      color: black;
     }
 
     .modal-content {
-      background-color: #fefefe;
-      margin: 15% auto;
+      background-color: #fff;
       padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
+      max-width: 400px;
+      margin: auto;
+      border-radius: 5px;
     }
 
+    /* Styles for the close button */
     .close {
       color: #aaa;
       float: right;
@@ -316,61 +328,61 @@
       text-decoration: none;
       cursor: pointer;
     }
+          </style>
+          <script>
+               document.addEventListener("DOMContentLoaded", function () {
+                    // Ensure the video and close button are initially hidden on page load
+                    var videoElement = document.getElementById("tutorialVideo");
+                    var closeButton = document.getElementById("closeVideoButton");
 
-  </style>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Ensure the video and close button are initially hidden on page load
-        var videoElement = document.getElementById("tutorialVideo");
-        var closeButton = document.getElementById("closeVideoButton");
+                    videoElement.style.display = "none";
+                    closeButton.style.display = "none";
+               });
 
-        videoElement.style.display = "none";
-        closeButton.style.display = "none";
-    });
+               function goHome() {
+                    window.location.href = 'background_page.html';
+               }
 
-    function goHome() {
-        window.location.href = 'background_page.html';
-    }
+               function showTutorialVideo() {
+                    var videoElement = document.getElementById("tutorialVideo");
+                    var closeButton = document.getElementById("closeVideoButton");
 
-    function showTutorialVideo() {
-        var videoElement = document.getElementById("tutorialVideo");
-        var closeButton = document.getElementById("closeVideoButton");
+                    videoElement.style.display = "block";
+                    closeButton.style.display = "block";
+               }
 
-        videoElement.style.display = "block";
-        closeButton.style.display = "block";
-    }
+               function closeTutorialVideo() {
+                    var videoElement = document.getElementById("tutorialVideo");
+                    var closeButton = document.getElementById("closeVideoButton");
 
-    function closeTutorialVideo() {
-        var videoElement = document.getElementById("tutorialVideo");
-        var closeButton = document.getElementById("closeVideoButton");
+                    videoElement.style.display = "none";
+                    closeButton.style.display = "none";
+               }
+          </script>
+     </head>
 
-        videoElement.style.display = "none";
-        closeButton.style.display = "none";
-    }
-</script>
-</head>
-<body>
-    <a class="home-button" href="userhome.php">
-        <img src="home.png" />
-    </a>
+     <body>
+          <a class="home-button" href="userhome.php">
+               <img src="home.png" />
+          </a>
 
-<audio autoplay loop controlsList="nodownload" style="display: none">
-  <source src="music.ogg" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+          <audio autoplay loop controlsList="nodownload" style="display: none">
+               <source src="music.ogg" type="audio/mpeg">
+               Your browser does not support the audio element.
+          </audio>
 
 
-<video id="tutorialVideo" class="lesson-video" controls style="display: none;">
-  <source src="l11.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+          <video id="tutorialVideo" class="lesson-video" controls style="display: none;">
+               <source src="l11.mp4" type="video/mp4">
+               Your browser does not support the video tag.
+          </video>
 
-<video id="tutorialVideo" class="lesson-videoo" controls style="display: none;">
-  <source src="l12.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+          <video id="tutorialVideo" class="lesson-videoo" controls style="display: none;">
+               <source src="l12.mp4" type="video/mp4">
+               Your browser does not support the video tag.
+          </video>
 
-<button id="closeVideoButton" onclick="closeTutorialVideo()" style="
+          <button id="closeVideoButton" onclick="closeTutorialVideo()" style="
     display: block;
     font-size: 24px;
     position: absolute;
@@ -385,43 +397,49 @@
     box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 4px;
     cursor: pointer;
     
-"><svg xmlns="http://www.w3.org/2000/svg" height="1.2em" viewBox="0 0 384 512" style="
+"><svg xmlns="http://www.w3.org/2000/svg" height="1.2em" viewBox="0 0 384 512"
+                    style="
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 4px;
-"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#00741e}</style><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
-</svg></button>
+"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <style>
+                         svg {
+                              fill: #00741e
+                         }
+                    </style>
+                    <path
+                         d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+               </svg></button>
 
-
-<div id="myModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <form id="videoUploadForm">
-      <label for="videoFile">Choose a video file (MP4 format):</label>
-      <input type="file" id="videoFile" name="videoFile" accept=".mp4" required>
-      <button type="button" onclick="uploadVideo()">Upload</button>
-    </form>
-  </div>
-</div>
-
-  <img class="logo-image" src="logo.png" alt="English Adventures Logo">
-  <div class="lesson-title">Lesson 1- Maintenance</div>
-  <div class="lesson-bar">
-    <div class="scroll-icon"></div>
-    <div class="lesson-labels recognizing-sounds">
-      <div class="lesson-label">Recognizing the Short a and e Sounds</div>
-      <div class="lesson-btn">
-      <a href="#" class="tutor-button" id="upload-tutorial-video-l11">
-        <div style="
+          <img class="logo-image" src="logo.png" alt="English Adventures Logo">
+          <div class="lesson-title">Lesson 1- Maintenance</div>
+          <div class="lesson-bar">
+               <div class="scroll-icon"></div>
+               <div class="lesson-labels recognizing-sounds">
+                    <div class="lesson-label">Recognizing Nouns</div>
+                    <div class="lesson-btn">
+                         <a href="#" class="tutor-button" id="upload-tutorial-video-l11">
+                              <div style="
            display: flex;
            align-items: center;
         
           ">
-          <svg style="margin-right: 5px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#00741e}</style><path d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM48 368v32c0 8.8 7.2 16 16 16H96c8.8 0 16-7.2 16-16V368c0-8.8-7.2-16-16-16H64c-8.8 0-16 7.2-16 16zm368-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V368c0-8.8-7.2-16-16-16H416zM48 240v32c0 8.8 7.2 16 16 16H96c8.8 0 16-7.2 16-16V240c0-8.8-7.2-16-16-16H64c-8.8 0-16 7.2-16 16zm368-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V240c0-8.8-7.2-16-16-16H416zM48 112v32c0 8.8 7.2 16 16 16H96c8.8 0 16-7.2 16-16V112c0-8.8-7.2-16-16-16H64c-8.8 0-16 7.2-16 16zM416 96c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V112c0-8.8-7.2-16-16-16H416zM160 128v64c0 17.7 14.3 32 32 32H320c17.7 0 32-14.3 32-32V128c0-17.7-14.3-32-32-32H192c-17.7 0-32 14.3-32 32zm32 160c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H320c17.7 0 32-14.3 32-32V320c0-17.7-14.3-32-32-32H192z"/></svg>
-          Tutorial
-        </div>
-      </a>
+                                   <svg style="margin-right: 5px;" xmlns="http://www.w3.org/2000/svg" height="1em"
+                                        viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                        <style>
+                                             svg {
+                                                  fill: #00741e
+                                             }
+                                        </style>
+                                        <path
+                                             d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM48 368v32c0 8.8 7.2 16 16 16H96c8.8 0 16-7.2 16-16V368c0-8.8-7.2-16-16-16H64c-8.8 0-16 7.2-16 16zm368-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V368c0-8.8-7.2-16-16-16H416zM48 240v32c0 8.8 7.2 16 16 16H96c8.8 0 16-7.2 16-16V240c0-8.8-7.2-16-16-16H64c-8.8 0-16 7.2-16 16zm368-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V240c0-8.8-7.2-16-16-16H416zM48 112v32c0 8.8 7.2 16 16 16H96c8.8 0 16-7.2 16-16V112c0-8.8-7.2-16-16-16H64c-8.8 0-16 7.2-16 16zM416 96c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V112c0-8.8-7.2-16-16-16H416zM160 128v64c0 17.7 14.3 32 32 32H320c17.7 0 32-14.3 32-32V128c0-17.7-14.3-32-32-32H192c-17.7 0-32 14.3-32 32zm32 160c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H320c17.7 0 32-14.3 32-32V320c0-17.7-14.3-32-32-32H192z" />
+                                   </svg>
+                                   Tutorial
+                              </div>
+                         </a>
+                         
       <a href="#" class="play-button" id="upload-EASY-l11">
         <div style="
            display: flex;
@@ -509,47 +527,60 @@
           <img class="moveee" src="wave.png" alt="Traveler 5 Image">
           <img class="moveeee" src="wave.png" alt="Traveler 5 Image">
           <img class="moveeeee" src="boat.png" alt="Traveler 5 Image">
-          <!-- Modal -->
-<div class="modal" id="videoUploadModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
 
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Upload Video</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <!-- Modal Body -->
-      <div class="modal-body">
-        <form action="#" method="post" enctype="multipart/form-data">
-          <div class="form-group">
-            <label for="videoFile">Choose Video (MP4):</label>
-            <input type="file" class="form-control-file" id="videoFile" name="videoFile" accept=".mp4">
+          <!-- tutorial l11 -->
+          <div id="myModal1" class="modal">
+               <!-- Modal content -->
+               <div class="modal-content">
+               <span class="close" onclick="closeModal()">&times;</span>
+               <h2 style="text-align: start;">Upload Recognizing the Short a and e Sounds Tutorial Video</h2>
+                    <form id="uploadForm" action="your_upload_handler_script.php" method="post" enctype="multipart/form-data" style="text-align: start;">
+                         <label for="videoFile">Choose a video file:</label>
+                         <br>
+                         <input type="file" id="videoFile" name="videoFile" accept="video/mp4">
+                         <br>
+                         <button type="submit" style="margin: 0px 10px; float: right;">Upload</button>
+                    </form>
+               </div>
           </div>
-          <button type="submit" class="btn btn-primary">Upload</button>
-        </form>
-      </div>
 
-    </div>
-  </div>
-</div>
+          <!-- l11 easy -->
+          <div id="myModal2" class="modal">
+               <div class="modal-content">
+               <span class="close" onclick="closeModal()">&times;</span>
+               <h2 style="text-align: start; margin: 0px;">Enter words with Short a sound.</h2>
+                    <form id="uploadForm" action="your_upload_handler_script.php" method="post" enctype="multipart/form-data" style="text-align: start;">
+                         <br>
+                         <div>
+                              1. <input type="text" name="l11-given-1">
+                              w/ short a sound <input type="radio" name="l11-given-1-status" id="">
+                              w/o short a sound <input type="radio" name="l11-given-1-status" id="">
+                         </div>
+                              
+                         <br>
+                         <button type="submit" style="margin: 0px 10px; float: right;">Upload</button>
+                    </form>
+               </div>
+          </div>
 
+          <script>
+          // Function to open the modal
+          document.getElementById('upload-tutorial-video-l11').addEventListener('click', function() {
+               document.getElementById('myModal1').style.display = 'flex';
+          });
 
+          document.getElementById('upload-EASY-l11').addEventListener('click', function() {
+               document.getElementById('myModal2').style.display = 'flex';
+          });
 
-<!-- Include Bootstrap JS (Popper.js and jQuery are required dependencies) -->
+          function closeModal() {
+               const modals = document.querySelectorAll('.modal');
+               
+               modals.forEach(modal => {
+                    modal.style.display = 'none';
+               });
+          }
+          </script>
+     </body>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"> </script>
-
-<script>
-  // JavaScript to trigger the modal
-  $(document).ready(function(){
-    $("#upload-tutorial-video-l11").click(function(){
-      $("#videoUploadModal").modal();
-    });
-  });
-</script>
-</body>
 </html>
