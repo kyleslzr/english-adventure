@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 $user_ID = $_SESSION['user_ID'];
 
 include "conn.php";

@@ -6,7 +6,7 @@
           exit();
      }
 
-     $user_ID = $_SESSION['user_ID'];
+    
 ?>
 
 <!DOCTYPE html>
