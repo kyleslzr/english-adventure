@@ -235,19 +235,6 @@
   </style>
 <script>
         function goHome() {
-            window.location.href = 'background_page.html';
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-        // Ensure the video and close button are initially hidden on page load
-        var videoElement = document.getElementById("tutorialVideo");
-        var closeButton = document.getElementById("closeVideoButton");
-
-        videoElement.style.display = "none";
-        closeButton.style.display = "none";
-    });
-
-    function goHome() {
         window.location.href = 'background_page.html';
     }
 
@@ -258,12 +245,22 @@
         videoElement.style.display = "block";
         closeButton.style.display = "block";
     }
+    
+    function showTutorialVideo2() {
+        var videoElement = document.getElementById("tutorialVideo2");
+        var closeButton = document.getElementById("closeVideoButton");
+
+        videoElement.style.display = "block";
+        closeButton.style.display = "block";
+    }
 
     function closeTutorialVideo() {
         var videoElement = document.getElementById("tutorialVideo");
+        var videoElement2 = document.getElementById("tutorialVideo2");
         var closeButton = document.getElementById("closeVideoButton");
 
         videoElement.style.display = "none";
+        videoElement2.style.display = "none";
         closeButton.style.display = "none";
     }
 </script>
@@ -284,7 +281,7 @@
   Your browser does not support the video tag.
 </video>
 
-<video id="tutorialVideo" class="lesson-videoo" controls style="display: none;">
+<video id="tutorialVideo2" class="lesson-video" controls style="display: none;">
   <source src="l42.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -369,7 +366,7 @@
 ">
       <div class="lesson-label" >Using Pronouns</div>
       <div class="lesson-btn">
-      <a href="#" class="tutor-button" onclick="showTutorialVideo()">
+      <a href="#" class="tutor-button" onclick="showTutorialVideo2()">
         <div style="
            display: flex;
            align-items: center;

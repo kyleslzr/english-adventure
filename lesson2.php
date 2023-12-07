@@ -257,24 +257,35 @@
         videoElement.style.display = "block";
         closeButton.style.display = "block";
     }
+    function showTutorialVideo2() {
+        var videoElement = document.getElementById("tutorialVideo2");
+        var closeButton = document.getElementById("closeVideoButton");
+
+        videoElement.style.display = "block";
+        closeButton.style.display = "block";
+    }
 
     function closeTutorialVideo() {
         var videoElement = document.getElementById("tutorialVideo");
+        var videoElement2 = document.getElementById("tutorialVideo2");
         var closeButton = document.getElementById("closeVideoButton");
 
         videoElement.style.display = "none";
+        videoElement2.style.display = "none";
         closeButton.style.display = "none";
     }
 </script>
 </head>
 <body>
 
+
+
 <video id="tutorialVideo" class="lesson-video" controls style="display: none;">
   <source src="l21.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
-<video id="tutorialVideo" class="lesson-videoo" controls style="display: none;">
+<video id="tutorialVideo2" class="lesson-video" controls style="display: none;">
   <source src="l22.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -294,13 +305,18 @@
     box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 4px;
     cursor: pointer;
     
-"><svg xmlns="http://www.w3.org/2000/svg" height="1.2em" viewBox="0 0 384 512" style="
+">
+ 
+<svg xmlns="http://www.w3.org/2000/svg" height="1.2em" viewBox="0 0 384 512" style="
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 4px;
 "><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#00741e}</style><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
 </svg></button>
+
+
+
 <audio autoplay loop controlsList="nodownload" style="display: none">
   <source src="music.ogg" type="audio/mpeg">
   Your browser does not support the audio element.
@@ -366,7 +382,7 @@
     <div class="lesson-labels recognizing-sounds">
       <div class="lesson-label">Recognizing Singular and Plural Nouns</div>
       <div class="lesson-btn">
-      <a href="#" class="tutor-button" onclick="showTutorialVideo()">
+      <a href="#" class="tutor-button" onclick="showTutorialVideo2()">
         <div style="
            display: flex;
            align-items: center;

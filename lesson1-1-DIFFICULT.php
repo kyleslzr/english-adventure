@@ -303,7 +303,7 @@ $user_ID = $_SESSION['user_ID'];
                     top: 190px;
                     animation: stretchAnimation 3s infinite;
                     /* Adjust the duration and iteration count as needed */
-                    z-index: -2;
+                    z-index: 1;
                }
 
                .retry-button {
