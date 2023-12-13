@@ -1,31 +1,22 @@
-<?php 
-     require "common/get-session-id.php";
-     $returnToThisPage = "../lesson1-maintenance.php";   
 
-     $lessonActivity1 = 11;
-     $lessonActivity2 = 12;
-
-     include "function/retrieve-lesson-title-direction-url.php";
-?>
 
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Lesson 1 - English Adventures</title>
+  <title>Lesson 5- Maintenance - English Adventures</title>
   <link rel="stylesheet" href="css/side-score-style.css">
   <link rel="stylesheet" href="css/lesson-button-style.css">
   <style>
-
 
     body {
       overflow: hidden;
       margin: 0;
       padding: 0;
       height: 100vh;
-      background-image: url('cute_background8.jpg');
+      background-image: url('cute_background10.jpg');
       background-size: cover;
       background-repeat: no-repeat;
-      background-position-y: -71px;
+      background-position: center center;
       font-family: Arial, sans-serif;
       display: flex;
       justify-content: flex-start;
@@ -95,13 +86,13 @@
     .lesson-labels .lesson-label {
       color: white;
       background-color: #00741E;
-      padding: 10px 20px;
+      padding: 10px 163px;
       font-size: 40px;
       font-weight: bolder;
       border-radius: 5px;
       cursor: default;
       box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-      width: 732px;
+      width: 600px;
     }
 
     .score-button,
@@ -160,13 +151,13 @@
     .recognizing-sounds {
       position: relative;
       left: -220px;
-      top: 220px;
+      top: 200px;
     }
 
     .recognizing-nouns {
       position: relative;
       left: -215px;
-      top: 220px;
+      top: 200px;
     }
 
     .recognizing-nouns .lesson-label {
@@ -191,7 +182,6 @@
       animation: stretchAnimation 3s infinite;     
 
     }
-
 .home-button {
   position: fixed;
   margin-right: -1410px;
@@ -201,14 +191,75 @@
 }
 
 .lesson-btn {
-  
-  width: 100%;
+  width: 125%;
     text-align: start;
-    margin-left: -249px;
+    margin-left: -294px;
 
 }
 
-.lesson-video {
+                .sun{
+                  position: absolute;
+                    width: 267px;
+                    z-index: -5;
+                    top: 23px;
+                    left: 396px;
+                    filter: saturate(1.7);
+               }
+
+               .bg {
+                    position: absolute;
+                     width: 1536px;
+                     z-index: -2;
+                     top: -45px;
+               }
+
+               .move {
+                    width: 278px;
+                    position: absolute;
+                    top: -50px;
+                    z-index: -4;
+                    left: -313px;
+                    animation: slideOutRight 30s linear infinite;
+                    animation-fill-mode: forwards;
+                    animation-delay: -6s;
+                    filter: sepia(1);
+               }
+
+               .mover {
+                    width: 298px;
+                    position: absolute;
+                    top: -18px;
+                    z-index: -4;
+                    left: -539px;
+                    animation: slideOutRight 28s linear infinite;
+                    animation-fill-mode: forwards;
+                    animation-delay: 7s;
+                    filter: sepia(1);
+               }
+
+               .movee {
+                    width: 420px;
+                    position: absolute;
+                    top: 11px;
+                    z-index: -4;
+                    left: -500px;
+                    animation: slideOutRight 28s linear infinite;
+                    animation-fill-mode: forwards;
+                    animation-delay: 5s;
+                    filter: sepia(1);
+               }
+                              
+               @keyframes slideOutRight {
+                    0% {
+                         transform: translateX(0);
+                    }
+
+                    100% {
+                         transform: translateX(700%); /* Adjust the value to slide farther */
+                    }
+                    }
+
+                    .lesson-video {
   width: 873px;
     height: 390px;
     margin: 20px 0;
@@ -221,76 +272,13 @@
     background-color: #00741e;;
 }
 
-.move {
-                    width: 420px;
-                    position: absolute;
-                    bottom: -4.5px;
-                    z-index: -2;
-                    left: -500px;
-                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
-                    animation-fill-mode: forwards;
-                    animation-delay: 0s;
-               }
-
-               .movee {
-                    width: 420px;
-                    position: absolute;
-                    bottom: -4.5px;
-                    z-index: -2;
-                    left: -500px;
-                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
-                    animation-fill-mode: forwards;
-                    animation-delay: 3s;
-               }
-
-               .moveee {
-                    width: 420px;
-                    position: absolute;
-                    bottom: -4.5px;
-                    z-index: -2;
-                    left: -500px;
-                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
-                    animation-fill-mode: forwards;
-                    animation-delay: 4.5s;
-               }
-
-               .moveeee {
-                    width: 420px;
-                    position: absolute;
-                    bottom: -4.5px;
-                    z-index: -2;
-                    left: -500px;
-                    animation: slideOutRight 6s linear infinite; /* Specify the animation name and duration here */
-                    animation-fill-mode: forwards;
-                    animation-delay: 6s;
-               }
-
-               .moveeeee {
-                    width: 700px;
-                    position: absolute;
-                    bottom: -73.5px;
-                    z-index: -2;
-                    left: -500px;
-                    animation: slideOutRight 12s linear infinite;
-                    animation-fill-mode: forwards;
-                    animation-delay: 4s;
-               }
-          
-
-                    @keyframes slideOutRight {
-                    0% {
-                         transform: translateX(0);
-                    }
-
-                    100% {
-                         transform: translateX(500%); /* Adjust the value to slide farther */
-                    }
-                    }
-
-
   </style>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+        function goHome() {
+            window.location.href = 'background_page.html';
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
         // Ensure the video and close button are initially hidden on page load
         var videoElement = document.getElementById("tutorialVideo");
         var closeButton = document.getElementById("closeVideoButton");
@@ -310,43 +298,34 @@
         videoElement.style.display = "block";
         closeButton.style.display = "block";
     }
-    function showTutorialVideo2() {
-        var videoElement = document.getElementById("tutorialVideo2");
-        var closeButton = document.getElementById("closeVideoButton");
-
-        videoElement.style.display = "block";
-        closeButton.style.display = "block";
-    }
 
     function closeTutorialVideo() {
         var videoElement = document.getElementById("tutorialVideo");
-        var videoElement2 = document.getElementById("tutorialVideo2");
         var closeButton = document.getElementById("closeVideoButton");
 
         videoElement.style.display = "none";
-        videoElement2.style.display = "none";
         closeButton.style.display = "none";
     }
 </script>
 </head>
 <body>
-    <a class="home-button" href="lesson-list.php">
+    <a class="home-button" href="userhome.php">
         <img src="home.png" />
     </a>
 
-<audio autoplay loop controlsList="nodownload" style="display: none">
+    <audio autoplay loop controlsList="nodownload" style="display: none">
   <source src="music.ogg" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
 
 <video id="tutorialVideo" class="lesson-video" controls style="display: none;">
-  <source src="l11.mp4" type="video/mp4">
+  <source src="l51.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
-<video id="tutorialVideo2" class="lesson-video" controls style="display: none;">
-  <source src="l12.mp4" type="video/mp4">
+<video id="tutorialVideo" class="lesson-videoo" controls style="display: none;">
+  <source src="l52.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -373,17 +352,14 @@
 "><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#00741e}</style><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
 </svg></button>
 
-
-
-
   <img class="logo-image" src="logo.png" alt="English Adventures Logo">
-  <div class="lesson-title">Lesson 1</div>
+  <div class="lesson-title">Lesson 5- Maintenance</div>
   <div class="lesson-bar">
     <div class="scroll-icon"></div>
     <div class="lesson-labels recognizing-sounds">
-      <div class="lesson-label"><?= $lesson1 ?></div>
+      <div class="lesson-label" style="padding: 10px 41px;">Pronouncing words with the<br>Sounds of d and t</div>
       <div class="lesson-btn">
-      <a href="#" class="tutor-button" onclick="showTutorialVideo()">
+      <a href="#" class="tutor-button" id="upload-tutorial-video-l51">
         <div style="
            display: flex;
            align-items: center;
@@ -393,7 +369,7 @@
           Tutorial
         </div>
       </a>
-      <a href="lesson1-1.php" class="play-button">
+      <a href="#" class="play-button" id="upload-EASY-l51">
         <div style="
            display: flex;
            align-items: center;
@@ -403,7 +379,8 @@
         EASY
         </div>
       </a>
-      <a href="lesson1-1-AVERAGE.php" class="play-button">
+
+      <a href="#" class="play-button" id="upload-AVERAGE-l51">
         <div style="
            display: flex;
            align-items: center;
@@ -413,7 +390,8 @@
         AVERAGE
         </div>
       </a>
-      <a href="lesson1-1-DIFFICULT.php" class="play-button">
+
+      <a href="#" class="play-button" id="upload-DIFFICULT-l51">
         <div style="
            display: flex;
            align-items: center;
@@ -423,12 +401,15 @@
         DIFFICULT
         </div>
       </a>
+
       </div>
     </div>
-    <div class="lesson-labels recognizing-sounds">
-      <div class="lesson-label"><?= $lesson2 ?></div>
+    <div class="lesson-labels recognizing-sounds" style="
+    top: 188px;
+">
+      <div class="lesson-label" style=" width: 354px;">Using A and An</div>
       <div class="lesson-btn">
-      <a href="#" class="tutor-button" onclick="showTutorialVideo2()">
+      <a href="#" class="tutor-button" id="upload-tutorial-video-l52">
         <div style="
            display: flex;
            align-items: center;
@@ -438,7 +419,7 @@
           Tutorial
         </div>
       </a>
-      <a href="lesson1-2.php" class="play-button">
+      <a href="#" class="play-button" id="upload-EASY-l52"> 
         <div style="
            display: flex;
            align-items: center;
@@ -449,7 +430,7 @@
         </div>
       </a>
 
-      <a href="lesson1-2-AVERAGE.php" class="play-button">
+      <a href="#" class="play-button" id="upload-AVERAGE-l52">
         <div style="
            display: flex;
            align-items: center;
@@ -460,7 +441,7 @@
         </div>
       </a>
 
-      <a href="lesson1-2-DIFFICULT.php" class="play-button">
+      <a href="#" class="play-button" id="upload-DIFFICULT-l52">
         <div style="
            display: flex;
            align-items: center;
@@ -470,15 +451,16 @@
         DIFFICULT
         </div>
       </a>
+
       </div>
     </div>
   </div>
 
   <img class="traveler-image" src="traveler4.png" alt="Traveler 4">
-  <img class="move" src="wave.png" alt="Traveler 5 Image">
-          <img class="movee" src="wave.png" alt="Traveler 5 Image">
-          <img class="moveee" src="wave.png" alt="Traveler 5 Image">
-          <img class="moveeee" src="wave.png" alt="Traveler 5 Image">
-          <img class="moveeeee" src="boat.png" alt="Traveler 5 Image">
+  <img class="bg" src="cute_background101.png" alt="Traveler 5 Image">
+          <img class="move" src="cloud.png" alt="Traveler 5 Image">
+          <img class="mover" src="cloud.png" alt="Traveler 5 Image">
+          <img class="movee" src="cloud.png" alt="Traveler 5 Image">
+          <img class="sun" src="sun.gif" alt="Traveler 5 Image">
 </body>
 </html>

@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,9 +39,6 @@
     grid-column-gap: 20px; /* Column gap of 20px */
     grid-row-gap: 15px; /* Row gap of 10px */
     
-  }
-  .image-box {
-  
   }
   .image-box img {
     width: 250px;
