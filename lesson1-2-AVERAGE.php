@@ -7,6 +7,12 @@ if (!isset($_SESSION['user_ID'])) {
 }
 
 $user_ID = $_SESSION['user_ID'];
+$lessonActivity1 = 11;
+$lessonActivity2 = 12;
+
+include "function/retrieve-lesson-title-direction-url.php";
+include "function/retrieve-lesson-1-activity-1.php";
+include "function/retrieve-lesson-1-activity-2.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -80,7 +86,8 @@ $user_ID = $_SESSION['user_ID'];
                }
 
                #question-container img {
-                    max-width: 800px;
+                    max-width: 500px;
+                    max-height: 300px;
                     height: auto;
                     border-radius: 10px;
                     /* Add border-radius for rounded corners */
@@ -514,36 +521,36 @@ $user_ID = $_SESSION['user_ID'];
 
                // Define your questions and correct nouns here
                const questions = [
-                    "Dad drives us safely in the car , enjoying the scenic route through the mountains .",
-                    "These flowers are beautiful , blooming in a myriad of colors under the warm sunlight .",
-                    "Sam plays with his friend Ben , sharing laughter and joy on the playground .",
-                    "The bus stops at the red light , patiently waiting for the signal to continue its journey .",
-                    "We saw tigers at the zoo , marveling at their majestic presence and powerful demeanor .",
-                    "The boy kicked the ball , sending it soaring through the air with swift precision .",
-                    "The cat is purring , contentedly nestled on the windowsill as the rain gently taps against the glass .",
-                    "I flew a kite in the fields , feeling the exhilarating pull against the wind in the open expanse ."
+                    "<?= $l12_average_statement_1 ?>",
+                    "<?= $l12_average_statement_2 ?>",
+                    "<?= $l12_average_statement_3 ?>",
+                    "<?= $l12_average_statement_4 ?>",
+                    "<?= $l12_average_statement_5 ?>",
+                    "<?= $l12_average_statement_6 ?>",
+                    "<?= $l12_average_statement_7 ?>",
+                    "<?= $l12_average_statement_8 ?>"
                ];
 
                const images = [
-                    "<img src='aan.jpg' />",
-                    "<img src='ban.jpg' />",
-                    "<img src='can.jpg' />",
-                    "<img src='dan.jpg' />",
-                    "<img src='ean.jpg' />",
-                    "<img src='fan.jpg' />",
-                    "<img src='gan.jpg' />",
-                    "<img src='han.jpg' />"
+                    "<img src='data:image/png;base64,<?= $l12_average_statement_1_image ?>'/>",
+                    "<img src='data:image/png;base64,<?= $l12_average_statement_2_image ?>'/>",
+                    "<img src='data:image/png;base64,<?= $l12_average_statement_3_image ?>'/>",
+                    "<img src='data:image/png;base64,<?= $l12_average_statement_4_image ?>'/>",
+                    "<img src='data:image/png;base64,<?= $l12_average_statement_5_image ?>'/>",
+                    "<img src='data:image/png;base64,<?= $l12_average_statement_6_image ?>'/>",
+                    "<img src='data:image/png;base64,<?= $l12_average_statement_7_image ?>'/>",
+                    "<img src='data:image/png;base64,<?= $l12_average_statement_8_image ?>'/>"
                ];
 
                const correctNouns = [
-                    ["Dad", "us", "car", "route", "mountains"],
-                    ["These", "flowers", "colors", "sunlight"],
-                    ["Sam", "friend", "Ben", "laughter", "joy", "playground"],
-                    ["The", "bus", "light", "signal", "journey"],
-                    ["We", "tigers", "zoo", "presence", "demeanor"],
-                    ["The", "boy", "ball", "air", "precision"],
-                    ["The", "cat", "windowsill", "rain", "glass"],
-                    ["I", "kite", "fields", "pull", "wind", "expanse"]
+                    ["<?= implode('", "' ,$l12_average_statement_1_correct_nouns) ?>"],
+                    ["<?= implode('", "' ,$l12_average_statement_2_correct_nouns) ?>"],
+                    ["<?= implode('", "' ,$l12_average_statement_3_correct_nouns) ?>"],
+                    ["<?= implode('", "' ,$l12_average_statement_4_correct_nouns) ?>"],
+                    ["<?= implode('", "' ,$l12_average_statement_5_correct_nouns) ?>"],
+                    ["<?= implode('", "' ,$l12_average_statement_6_correct_nouns) ?>"],
+                    ["<?= implode('", "' ,$l12_average_statement_7_correct_nouns) ?>"],
+                    ["<?= implode('", "' ,$l12_average_statement_8_correct_nouns) ?>"]
                ];
 
                let currentQuestionIndex = 0;
@@ -643,16 +650,19 @@ $user_ID = $_SESSION['user_ID'];
                }
 
                // Define the maximum number of nouns for each question
-               const maxNouns = [5, 4, 6, 5, 5, 5, 5, 6];
+               // const maxNouns = [5, 4, 6, 5, 5, 5, 5, 6];
+               const maxNouns = correctNouns.map(question => question.length);
+
+               console.log(maxNouns);
 
                // Initialize the game with the first question
                displayQuestion();
           </script>
           <img class="logo-image" src="logo.png" alt="English Adventures Logo">
 
-          <div class="score-label left">Directions: Click the noun/s in the sentence.</div>
+          <div class="score-label left">Directions: <?= $lessonDirections2 ?></div>
 
-          <div class="lesson-title" style="top: 52px;">Recognizing Nouns</div>
+          <div class="lesson-title" style="top: 52px;"><?= $lesson2 ?></div>
 
           <div class="centered-board"></div>
 

@@ -7,6 +7,11 @@ if (!isset($_SESSION['user_ID'])) {
 }
 
 $user_ID = $_SESSION['user_ID'];
+$lessonActivity1 = 11;
+$lessonActivity2 = 12;
+
+include "function/retrieve-lesson-title-direction-url.php";
+include "function/retrieve-lesson-1-activity-1.php";
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +25,7 @@ $user_ID = $_SESSION['user_ID'];
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <link rel="stylesheet" href="css/side-score-style.css">
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+          <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
           <style>
                html {
                     width: 1535.2px;
@@ -447,29 +453,29 @@ $user_ID = $_SESSION['user_ID'];
           <img class="logo-image" src="logo.png" alt="English Adventures Logo">
 
           <div class="button-container" id="random">
-               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/AMPLE.mp3">AMPLE</button>
-               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/LAKE.mp3">LAKE</button>
-               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/SNAKE.mp3">SNAKE</button>
-               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/AMEND.mp3">AMEND</button>
-               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/PLATE.mp3">PLATE</button>
-               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/ANKLE.mp3">ANKLE</button>
-               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/ANGEL.mp3">ANGEL</button>
-               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/GRAPE.mp3">GRAPE</button>
-               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/FLAKE.mp3">FLAKE</button>
-               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/BRAVE.mp3">BRAVE</button>
-               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/WAVE.mp3">WAVE</button>
-               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/SHEET.mp3">SHEET</button>
-               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/AGREE.mp3">AGREE</button>
-               <button class="word-button" data-status="false" pronounce-sound-src="pronounce/COMPLETE.mp3">COMPLETE</button>
-               <button class="word-button" data-status="true" pronounce-sound-src="pronounce/PANEL.mp3">PANEL</button>
-
-               <div style="position: absolute; top: 50%; display: none;"><img width="200px" class="" src="logo.png"
-                         alt="English Adventures Logo"></div>
+               <button class="word-button" data-status="<?= $l11_difficult_word_1_status ?>" pronounce-sound="<?= $l11_difficult_word_1 ?>"><?= $l11_difficult_word_1 ?></button>
+               <button class="word-button" data-status="<?= $l11_difficult_word_2_status ?>" pronounce-sound="<?= $l11_difficult_word_2 ?>"><?= $l11_difficult_word_2 ?></button>
+               <button class="word-button" data-status="<?= $l11_difficult_word_3_status ?>" pronounce-sound="<?= $l11_difficult_word_3 ?>"><?= $l11_difficult_word_3 ?></button>
+               <button class="word-button" data-status="<?= $l11_difficult_word_4_status ?>" pronounce-sound="<?= $l11_difficult_word_4 ?>"><?= $l11_difficult_word_4 ?></button>
+               <button class="word-button" data-status="<?= $l11_difficult_word_5_status ?>" pronounce-sound="<?= $l11_difficult_word_5 ?>"><?= $l11_difficult_word_5 ?></button>
+               <button class="word-button" data-status="<?= $l11_difficult_word_6_status ?>" pronounce-sound="<?= $l11_difficult_word_6 ?>"><?= $l11_difficult_word_6 ?></button>
+               <button class="word-button" data-status="<?= $l11_difficult_word_7_status ?>" pronounce-sound="<?= $l11_difficult_word_7 ?>"><?= $l11_difficult_word_7 ?></button>
+               <button class="word-button" data-status="<?= $l11_difficult_word_8_status ?>" pronounce-sound="<?= $l11_difficult_word_8 ?>"><?= $l11_difficult_word_8 ?></button>
+               <button class="word-button" data-status="<?= $l11_difficult_word_9_status ?>" pronounce-sound="<?= $l11_difficult_word_9 ?>"><?= $l11_difficult_word_9 ?></button>
+               <button class="word-button" data-status="<?= $l11_difficult_word_10_status ?>" pronounce-sound="<?= $l11_difficult_word_10 ?>"><?= $l11_difficult_word_10 ?></button>
+               <button class="word-button" data-status="<?= $l11_difficult_word_11_status ?>" pronounce-sound="<?= $l11_difficult_word_11 ?>"><?= $l11_difficult_word_11 ?></button>
+               <button class="word-button" data-status="<?= $l11_difficult_word_12_status ?>" pronounce-sound="<?= $l11_difficult_word_12 ?>"><?= $l11_difficult_word_12 ?></button>
+               <button class="word-button" data-status="<?= $l11_difficult_word_13_status ?>" pronounce-sound="<?= $l11_difficult_word_13 ?>"><?= $l11_difficult_word_13 ?></button>
+               <button class="word-button" data-status="<?= $l11_difficult_word_14_status ?>" pronounce-sound="<?= $l11_difficult_word_14 ?>"><?= $l11_difficult_word_14 ?></button>
+               <button class="word-button" data-status="<?= $l11_difficult_word_15_status ?>" pronounce-sound="<?= $l11_difficult_word_15 ?>"><?= $l11_difficult_word_15 ?></button>
           </div>
 
-          <div class="score-label left">Directions: Click the words with Short /a/ sound.</div>
+          <div style="position: absolute; top: 50%; display: none;"><img width="200px" class="" src="logo.png"
+                         alt="English Adventures Logo"></div>
 
-          <div class="lesson-title" style="top: 52px;">Recognizing the Short a and e Sounds</div>
+          <div class="score-label left">Directions: <?= $lessonDirections1 ?></div>
+
+          <div class="lesson-title" style="top: 52px;"><?= $lesson1 ?></div>
 
           <div class="centered-board"></div>
 
@@ -506,16 +512,13 @@ $user_ID = $_SESSION['user_ID'];
                     wordButtons.forEach(function (button) {
                          // Add a 'mouseover' event listener
                          button.addEventListener("mouseover", function () {
-                              // Get the 'pronounce-sound-src' attribute value
-                              var soundSrc = button.getAttribute("pronounce-sound-src");
+                              // Get the 'pronounce-sound' attribute value
+                              var soundSrc = button.getAttribute("pronounce-sound");
 
-                              // Check if the attribute value is not null or empty
+                              // Check if the sound source is available
                               if (soundSrc) {
-                                   // Create an audio element
-                                   var audio = new Audio(soundSrc);
-
-                                   // Play the audio
-                                   audio.play();
+                                   // Use ResponsiveVoice to speak the text
+                                   responsiveVoice.speak(soundSrc);
                               }
                          });
                     });

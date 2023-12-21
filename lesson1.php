@@ -339,11 +339,17 @@
   Your browser does not support the audio element.
 </audio>
 
-
+<!-- eto yung luma -->
 <video id="tutorialVideo" class="lesson-video" controls style="display: none;">
   <source src="l11.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
+
+<!-- eto yung youtube embed -->
+<div id="tutorialVideo" class="lesson-video" style="display: none;">
+     <iframe width="100%" height="100%" src="https://www.youtube.com/embed/cyyBumnc7AU?si=zWJqpg0QuvJb3Xwa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
 
 <video id="tutorialVideo2" class="lesson-video" controls style="display: none;">
   <source src="l12.mp4" type="video/mp4">

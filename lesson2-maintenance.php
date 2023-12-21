@@ -765,11 +765,11 @@
                                                                       <textarea name="' . $inputName . '" class="mb-3 fs-5 rounded ms-2 form-control" placeholder="Enter given item" aria-describedby="basic-addon1" required>' . $inputValue . '</textarea>
                                                                       <div class="d-flex align-items-center mb-3">
                                                                            <input class="form-check-input" type="radio" name="' . $inputName . '_status" id="inlineRadio2_' . $i . '" value="1" ' . ($inputStatus === 1 ? 'checked' : '') . ' required>
-                                                                           <input type="text" name="' . $inputName . '_choice_answer_1" class="fs-5 rounded ms-2 form-control" placeholder="Enter 1st choice" aria-describedby="basic-addon1" value="' . $correctAnswer1 . '" required>
+                                                                           <input type="text" name="' . $inputName . '_choice_answer_1" class="fs-5 rounded ms-2 form-control l22-option-1" placeholder="Enter 1st choice" aria-describedby="basic-addon1" value="' . $correctAnswer1 . '" required>
                                                                       </div>
                                                                       <div class="d-flex align-items-center">
                                                                            <input class="form-check-input" type="radio" name="' . $inputName . '_status" id="inlineRadio2_' . $i . '" value="2" ' . ($inputStatus === 2 ? 'checked' : '') . '>
-                                                                           <input type="text" name="' . $inputName . '_choice_answer_2" class="fs-5 rounded ms-2 form-control" placeholder="Enter 2nd choice" aria-describedby="basic-addon1" value="' . $correctAnswer2 . '" required>
+                                                                           <input type="text" name="' . $inputName . '_choice_answer_2" class="fs-5 rounded ms-2 form-control l22-option-2" placeholder="Enter 2nd choice" aria-describedby="basic-addon1" value="' . $correctAnswer2 . '" required>
                                                                       </div>
                                                                  </div>
                                                             </div>
@@ -795,5 +795,43 @@
           <!-- act 1 form -->
 
           <?php include "common/alert.php" ?>
+          <script>
+               document.addEventListener('DOMContentLoaded', function () {
+               // Get all inputs with class="l22-option-1"
+               var inputs = document.querySelectorAll('.l22-option-1');
+
+               // Add a change event listener to each input
+               inputs.forEach(function (input) {
+                    input.addEventListener('input', function () {
+                    // Get the value of the changed input
+                    var value = input.value;
+
+                    // Update the value of all inputs with class="l22-option-1"
+                    inputs.forEach(function (otherInput) {
+                         otherInput.value = value;
+                    });
+                    });
+               });
+               });
+          </script>
+          <script>
+               document.addEventListener('DOMContentLoaded', function () {
+               // Get all inputs with class="l22-option-1"
+               var inputs = document.querySelectorAll('.l22-option-2');
+
+               // Add a change event listener to each input
+               inputs.forEach(function (input) {
+                    input.addEventListener('input', function () {
+                    // Get the value of the changed input
+                    var value = input.value;
+
+                    // Update the value of all inputs with class="l22-option-1"
+                    inputs.forEach(function (otherInput) {
+                         otherInput.value = value;
+                    });
+                    });
+               });
+               });
+          </script>
      </body>
 </html>

@@ -1,3 +1,19 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_ID'])) {
+     header("Location: userlogin.php");
+     exit();
+}
+
+$user_ID = $_SESSION['user_ID'];
+$lessonActivity1 = 21;
+$lessonActivity2 = 22;
+
+include "function/retrieve-lesson-title-direction-url.php";
+include "function/retrieve-lesson-2-activities.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +22,7 @@
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>Lesson 1 AVERAGE - English Adventures</title>
           <link rel="stylesheet" href="css/side-score-style.css">
+          <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
           <style>
                body {
                     overflow: hidden;
@@ -176,7 +193,8 @@
 
                .droppable img {
                     max-width: 100%;
-                    max-height: 100%;
+                    max-height: 70%;
+                    margin: 0 auto;
                }
 
                .retry-button {
@@ -309,46 +327,46 @@
           </a>
 
           <div class="animal-container" id="random">
-               <button class="animal-button" draggable="true" data-animal="spin" pronounce-sound-src="pronounce/SPIN.mp3">SPIN</button>
-               <button class="animal-button" draggable="true" data-animal="gift" pronounce-sound-src="pronounce/GIFT.mp3">GIFT</button>
-               <button class="animal-button" draggable="true" data-animal="brick" pronounce-sound-src="pronounce/BRICK.mp3">BRICK</button>
-               <button class="animal-button" draggable="true" data-animal="wrist" pronounce-sound-src="pronounce/WRIST.mp3">WRIST</button>
-               <button class="animal-button" draggable="true" data-animal="milk" pronounce-sound-src="pronounce/MILK.mp3">MILK</button>
-               <button class="animal-button" draggable="true" data-animal="sink" pronounce-sound-src="pronounce/SINK.mp3">SINK</button>
-               <button class="animal-button" draggable="true" data-animal="twin" pronounce-sound-src="pronounce/TWIN.mp3">TWIN</button>
-               <button class="animal-button" draggable="true" data-animal="cling" pronounce-sound-src="pronounce/CLING.mp3">CLING</button>
+               <button class="animal-button" draggable="true" data-animal="<?= $l21_average_word_1_correct_word ?>" pronounce-sound="<?= $l21_average_word_1_correct_word ?>"><?= $l21_average_word_1_correct_word ?></button>
+               <button class="animal-button" draggable="true" data-animal="<?= $l21_average_word_2_correct_word ?>" pronounce-sound="<?= $l21_average_word_2_correct_word ?>"><?= $l21_average_word_2_correct_word ?></button>
+               <button class="animal-button" draggable="true" data-animal="<?= $l21_average_word_3_correct_word ?>" pronounce-sound="<?= $l21_average_word_3_correct_word ?>"><?= $l21_average_word_3_correct_word ?></button>
+               <button class="animal-button" draggable="true" data-animal="<?= $l21_average_word_4_correct_word ?>" pronounce-sound="<?= $l21_average_word_4_correct_word ?>"><?= $l21_average_word_4_correct_word ?></button>
+               <button class="animal-button" draggable="true" data-animal="<?= $l21_average_word_5_correct_word ?>" pronounce-sound="<?= $l21_average_word_5_correct_word ?>"><?= $l21_average_word_5_correct_word ?></button>
+               <button class="animal-button" draggable="true" data-animal="<?= $l21_average_word_6_correct_word ?>" pronounce-sound="<?= $l21_average_word_6_correct_word ?>"><?= $l21_average_word_6_correct_word ?></button>
+               <button class="animal-button" draggable="true" data-animal="<?= $l21_average_word_7_correct_word ?>" pronounce-sound="<?= $l21_average_word_7_correct_word ?>"><?= $l21_average_word_7_correct_word ?></button>
+               <button class="animal-button" draggable="true" data-animal="<?= $l21_average_word_8_correct_word ?>" pronounce-sound="<?= $l21_average_word_8_correct_word ?>"><?= $l21_average_word_8_correct_word ?></button>
           </div>
           <div class="droppable-container" id="random2">
-               <div class="droppable" data-animal="sink">
-                    <img src="sinkk.jpg" alt="sink">
+               <div class="droppable" data-animal="<?= $l21_average_word_1_correct_word ?>">
+                    <img src='data:image/png;base64,<?= $l21_average_word_1_image ?>'/>
                     <div class="animal-word"></div>
                </div>
-               <div class="droppable" data-animal="milk">
-                    <img src="milkk.jpg" alt="milk">
+               <div class="droppable" data-animal="<?= $l21_average_word_2_correct_word ?>">
+                    <img src='data:image/png;base64,<?= $l21_average_word_2_image ?>'/>
                     <div class="animal-word"></div>
                </div>
-               <div class="droppable" data-animal="twin">
-                    <img src="twinn.jpg" alt="twin">
+               <div class="droppable" data-animal="<?= $l21_average_word_3_correct_word ?>">
+                    <img src='data:image/png;base64,<?= $l21_average_word_3_image ?>'/>
                     <div class="animal-word"></div>
                </div>
-               <div class="droppable" data-animal="brick">
-                    <img src="brickk.jpg" alt="brick">
+               <div class="droppable" data-animal="<?= $l21_average_word_4_correct_word ?>">
+                    <img src='data:image/png;base64,<?= $l21_average_word_4_image ?>'/>
                     <div class="animal-word"></div>
                </div>
-               <div class="droppable" data-animal="spin">
-                    <img src="spinn.jpg" alt="spin">
+               <div class="droppable" data-animal="<?= $l21_average_word_5_correct_word ?>">
+                    <img src='data:image/png;base64,<?= $l21_average_word_5_image ?>'/>
                     <div class="animal-word"></div>
                </div>
-               <div class="droppable" data-animal="gift">
-                    <img src="giftt.jpg" alt="gift">
+               <div class="droppable" data-animal="<?= $l21_average_word_6_correct_word ?>">
+                    <img src='data:image/png;base64,<?= $l21_average_word_6_image ?>'/>
                     <div class="animal-word"></div>
                </div>
-               <div class="droppable" data-animal="cling">
-                    <img src="clingg.jpg" alt="cling">
+               <div class="droppable" data-animal="<?= $l21_average_word_7_correct_word ?>">
+                    <img src='data:image/png;base64,<?= $l21_average_word_7_image ?>'/>
                     <div class="animal-word"></div>
                </div>
-               <div class="droppable" data-animal="wrist">
-                    <img src="wristt.jpg" alt="wrist">
+               <div class="droppable" data-animal="<?= $l21_average_word_8_correct_word ?>">
+                    <img src='data:image/png;base64,<?= $l21_average_word_8_image ?>'/>
                     <div class="animal-word"></div>
                </div>
           </div>
@@ -484,10 +502,9 @@
 
           <img class="logo-image" src="logo.png" alt="English Adventures Logo">
 
-          <div class="score-label left">Directions: Drag the words with the short "i" sound and drop them onto the
-               corresponding pictures.</div>
+          <div class="score-label left">Directions: <?= $lessonDirections1 ?></div>
 
-          <div class="lesson-title" style="top: 52px;">Recognizing the Short i Sounds</div>
+          <div class="lesson-title" style="top: 52px;"><?= $lesson1 ?></div>
 
           <div class="centered-board"></div>
 
@@ -513,16 +530,13 @@
                     wordButtons.forEach(function (button) {
                          // Add a 'mouseover' event listener
                          button.addEventListener("mouseover", function () {
-                              // Get the 'pronounce-sound-src' attribute value
-                              var soundSrc = button.getAttribute("pronounce-sound-src");
+                              // Get the 'pronounce-sound' attribute value
+                              var soundSrc = button.getAttribute("pronounce-sound");
 
-                              // Check if the attribute value is not null or empty
+                              // Check if the sound source is available
                               if (soundSrc) {
-                                   // Create an audio element
-                                   var audio = new Audio(soundSrc);
-
-                                   // Play the audio
-                                   audio.play();
+                                   // Use ResponsiveVoice to speak the text
+                                   responsiveVoice.speak(soundSrc);
                               }
                          });
                     });

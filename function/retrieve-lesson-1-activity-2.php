@@ -3,13 +3,12 @@
 
      // Check for a successful connection
      if (!$conn) {
-          die("Connection failed: " . mysqli_connect_error());
+     die("Connection failed: " . mysqli_connect_error());
      }
-     
      $user_ID = $_SESSION['user_ID'];
 
      // Retrieve data for l11_easy
-     $retrieveQuery = "SELECT * FROM word_sound_activity WHERE user_ID = ?";
+     $retrieveQuery = "SELECT * FROM recognizing_noun_activity WHERE user_ID = ?";
      $retrieveStmt = mysqli_prepare($conn, $retrieveQuery);
      mysqli_stmt_bind_param($retrieveStmt, "i", $user_ID);
      mysqli_stmt_execute($retrieveStmt);
@@ -21,14 +20,14 @@
      $count = 1;
 
      while ($row = mysqli_fetch_assoc($result)) {
-     for ($i = 1; $i <= 15; $i++) {
-          $inputName = "l11_easy_word_$count";
-          $statusName = "l11_easy_word_" . $count . "_status";
+     for ($i = 1; $i <= 8; $i++) {
+          $inputName = "l12_easy_statement_$i";
+          $inputNameImage = $inputName . "_image";
+          $correctNounsName = $inputName . "_correct_nouns";
 
-          // ${$inputName} = $row[$inputName];
-          ${$inputName} = strtoupper($row[$inputName]);
-          // ${$statusName} = $row[$statusName];
-          ${$statusName} = $row[$statusName] === 'correct' ? 'true' : 'false';
+          ${$inputName} = $row[$inputName];
+          ${$correctNounsName} = explode(', ',$row[$correctNounsName]);
+          ${$inputNameImage} = base64_encode($row[$inputNameImage]);
 
           $count++;
      }
@@ -42,7 +41,7 @@
      mysqli_stmt_close($retrieveStmt);
 
      // Retrieve data for l11_average
-     $retrieveQuery = "SELECT * FROM word_sound_activity WHERE user_ID = ?";
+     $retrieveQuery = "SELECT * FROM recognizing_noun_activity WHERE user_ID = ?";
      $retrieveStmt = mysqli_prepare($conn, $retrieveQuery);
      mysqli_stmt_bind_param($retrieveStmt, "i", $user_ID);
      mysqli_stmt_execute($retrieveStmt);
@@ -54,15 +53,14 @@
      $count = 1;
 
      while ($row = mysqli_fetch_assoc($result)) {
-     for ($i = 1; $i <= 15; $i++) {
-          $inputName = "l11_average_word_$count";
-          $statusName = "l11_average_word_" . $count . "_status";
+     for ($i = 1; $i <= 8; $i++) {
+          $inputName = "l12_average_statement_$i";
+          $inputNameImage = $inputName . "_image";
+          $correctNounsName = $inputName . "_correct_nouns";
 
-          // ${$inputName} = $row[$inputName];
-
-          ${$inputName} = strtoupper($row[$inputName]);
-          // ${$statusName} = $row[$statusName];
-          ${$statusName} = $row[$statusName] === 'correct' ? 'true' : 'false';
+          ${$inputName} = $row[$inputName];
+          ${$correctNounsName} = explode(', ',$row[$correctNounsName]);
+          ${$inputNameImage} = base64_encode($row[$inputNameImage]);
 
           $count++;
      }
@@ -76,7 +74,7 @@
      mysqli_stmt_close($retrieveStmt);
 
      // Retrieve data for l11_difficult
-     $retrieveQuery = "SELECT * FROM word_sound_activity WHERE user_ID = ?";
+     $retrieveQuery = "SELECT * FROM recognizing_noun_activity WHERE user_ID = ?";
      $retrieveStmt = mysqli_prepare($conn, $retrieveQuery);
      mysqli_stmt_bind_param($retrieveStmt, "i", $user_ID);
      mysqli_stmt_execute($retrieveStmt);
@@ -88,14 +86,14 @@
      $count = 1;
 
      while ($row = mysqli_fetch_assoc($result)) {
-     for ($i = 1; $i <= 15; $i++) {
-          $inputName = "l11_difficult_word_$count";
-          $statusName = "l11_difficult_word_" . $count . "_status";
+     for ($i = 1; $i <= 8; $i++) {
+          $inputName = "l12_difficult_statement_$i";
+          $inputNameImage = $inputName . "_image";
+          $correctNounsName = $inputName . "_correct_nouns";
 
-          // ${$inputName} = $row[$inputName];
-          ${$inputName} = strtoupper($row[$inputName]);
-          // ${$statusName} = $row[$statusName];
-          ${$statusName} = $row[$statusName] === 'correct' ? 'true' : 'false';
+          ${$inputName} = $row[$inputName];
+          ${$correctNounsName} = explode(', ',$row[$correctNounsName]);
+          ${$inputNameImage} = base64_encode($row[$inputNameImage]);
 
           $count++;
      }

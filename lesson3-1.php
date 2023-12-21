@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_ID'])) {
+     header("Location: userlogin.php");
+     exit();
+}
+
+$user_ID = $_SESSION['user_ID'];
+$lessonActivity1 = 31;
+$lessonActivity2 = 32;
+
+include "function/retrieve-lesson-title-direction-url.php";
+include "function/retrieve-lesson-3-activities.php";
+?>
 <!DOCTYPE html>
 <html>
 
@@ -330,28 +345,28 @@
           </a>
 
           <div class="container">
-               <div class="box" data-answer="box">
-                    <img src="boxx.jpg" alt="Box">
+               <div class="box" data-answer="<?= $l31_easy_word_1_correct_word ?>">
+                    <img src="data:image/png;base64,<?= $l31_easy_word_1_image ?>" alt="<?= $l31_easy_word_1_correct_word ?>">
                     <input class="answer-input" type="text">
                </div>
-               <div class="box" data-answer="cup">
-                    <img src="cupp.jpg" alt="Cup">
+               <div class="box" data-answer="<?= $l31_easy_word_2_correct_word ?>">
+                    <img src="data:image/png;base64,<?= $l31_easy_word_2_image ?>" alt="<?= $l31_easy_word_2_correct_word ?>">
                     <input class="answer-input" type="text">
                </div>
-               <div class="box" data-answer="fox">
-                    <img src="fox.jpg" alt="Fox">
+               <div class="box" data-answer="<?= $l31_easy_word_3_correct_word ?>">
+                    <img src="data:image/png;base64,<?= $l31_easy_word_3_image ?>" alt="<?= $l31_easy_word_3_correct_word ?>">
                     <input class="answer-input" type="text">
                </div>
-               <div class="box" data-answer="duck">
-                    <img src="ducks.jpg" alt="Duck">
+               <div class="box" data-answer="<?= $l31_easy_word_4_correct_word ?>">
+                    <img src="data:image/png;base64,<?= $l31_easy_word_4_image ?>" alt="<?= $l31_easy_word_4_correct_word ?>">
                     <input class="answer-input" type="text">
                </div>
-               <div class="box" data-answer="cop">
-                    <img src="copp.jpg" alt="Cop">
+               <div class="box" data-answer="<?= $l31_easy_word_5_correct_word ?>">
+                    <img src="data:image/png;base64,<?= $l31_easy_word_5_image ?>" alt="<?= $l31_easy_word_5_correct_word ?>">
                     <input class="answer-input" type="text">
                </div>
-               <div class="box" data-answer="mop">
-                    <img src="mop.jpg" alt="Mop">
+               <div class="box" data-answer="<?= $l31_easy_word_6_correct_word ?>">
+                    <img src="data:image/png;base64,<?= $l31_easy_word_6_image ?>" alt="<?= $l31_easy_word_6_correct_word ?>">
                     <input class="answer-input" type="text">
                </div>
           </div>
@@ -359,13 +374,9 @@
 
           <img class="logo-image" src="logo.png" alt="English Adventures Logo" />
 
-          <div class="score-label left">
-               Directions: Type the words with the short "o" and "u" sound that correspond to the pictures.
-          </div>
+          <div class="score-label left">Directions: <?= $lessonDirections1 ?></div>
 
-          <div class="lesson-title" style="top: 52px">
-               Recognizing the Short o and u Sounds
-          </div>
+          <div class="lesson-title" style="top: 52px;"><?= $lesson1 ?></div>
 
           <div class="centered-board"></div>
 

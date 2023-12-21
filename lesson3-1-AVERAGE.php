@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_ID'])) {
+     header("Location: userlogin.php");
+     exit();
+}
+
+$user_ID = $_SESSION['user_ID'];
+$lessonActivity1 = 31;
+$lessonActivity2 = 32;
+
+include "function/retrieve-lesson-title-direction-url.php";
+include "function/retrieve-lesson-3-activities.php";
+?>
 <!DOCTYPE html>
 <html>
 
@@ -330,28 +345,28 @@
           </a>
 
           <div class="container">
-               <div class="box" data-answer="cute">
-                    <img src="cutee.jpg" alt="Cute">
+               <div class="box" data-answer="<?= $l31_average_word_1_correct_word ?>">
+                    <img src="data:image/png;base64,<?= $l31_average_word_1_image ?>" alt="<?= $l31_average_word_1_correct_word ?>">
                     <input class="answer-input" type="text">
                </div>
-               <div class="box" data-answer="true">
-                    <img src="truee.jpg" alt="True">
+               <div class="box" data-answer="<?= $l31_average_word_2_correct_word ?>">
+                    <img src="data:image/png;base64,<?= $l31_average_word_2_image ?>" alt="<?= $l31_average_word_2_correct_word ?>">
                     <input class="answer-input" type="text">
                </div>
-               <div class="box" data-answer="flute">
-                    <img src="flutee.jpg" alt="Flute">
+               <div class="box" data-answer="<?= $l31_average_word_3_correct_word ?>">
+                    <img src="data:image/png;base64,<?= $l31_average_word_3_image ?>" alt="<?= $l31_average_word_3_correct_word ?>">
                     <input class="answer-input" type="text">
                </div>
-               <div class="box" data-answer="fruit">
-                    <img src="fruitt.jpg" alt="Fruit">
+               <div class="box" data-answer="<?= $l31_average_word_4_correct_word ?>">
+                    <img src="data:image/png;base64,<?= $l31_average_word_4_image ?>" alt="<?= $l31_average_word_4_correct_word ?>">
                     <input class="answer-input" type="text">
                </div>
-               <div class="box" data-answer="cupid">
-                    <img src="cupidd.jpg" alt="Cupid">
+               <div class="box" data-answer="<?= $l31_average_word_5_correct_word ?>">
+                    <img src="data:image/png;base64,<?= $l31_average_word_5_image ?>" alt="<?= $l31_average_word_5_correct_word ?>">
                     <input class="answer-input" type="text">
                </div>
-               <div class="box" data-answer="group">
-                    <img src="groupp.jpg" alt="Group">
+               <div class="box" data-answer="<?= $l31_average_word_6_correct_word ?>">
+                    <img src="data:image/png;base64,<?= $l31_average_word_6_image ?>" alt="<?= $l31_average_word_6_correct_word ?>">
                     <input class="answer-input" type="text">
                </div>
           </div>
@@ -359,13 +374,10 @@
 
           <img class="logo-image" src="logo.png" alt="English Adventures Logo" />
 
-          <div class="score-label left">
-               Directions: Type the words with the short "o" and "u" sound that correspond to the pictures.
-          </div>
+          <div class="score-label left">Directions: <?= $lessonDirections1 ?></div>
 
-          <div class="lesson-title" style="top: 52px">
-               Recognizing the Short o and u Sounds
-          </div>
+          <div class="lesson-title" style="top: 52px;"><?= $lesson1 ?></div>
+
 
           <div class="centered-board"></div>
 
