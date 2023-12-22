@@ -1,10 +1,26 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_ID'])) {
+     header("Location: userlogin.php");
+     exit();
+}
+
+$user_ID = $_SESSION['user_ID'];
+$lessonActivity1 = 51;
+$lessonActivity2 = 52;
+
+include "function/retrieve-lesson-title-direction-url.php";
+include "function/retrieve-lesson-5-activities.php";
+?>
+
 <!DOCTYPE html>
 <html>
+
      <head>
           <title>Lesson 1 - English Adventures</title>
           <link rel="stylesheet" href="css/side-score-style.css">
           <style>
-               
                body {
                     overflow: hidden;
                     margin: 0;
@@ -83,10 +99,10 @@
                }
 
                .word-image {
-                    max-width: 320px;
+                    max-width: 200px;
+                    max-height: 193px;
                     height: auto;
-                    outline: 15px solid white;
-                    box-shadow: 12px 12px 12px rgba(3, 3, 3, 3);
+                    outline: 15px solid #00741E;
                     border-radius: 5px;
 
                }
@@ -139,16 +155,16 @@
                }
 
                .score-label.left {
-            left: 30px;
-            top: 31px;
-            font-size: 25px;
-            background-color: #00741E;
-            white-space: normal;
-            display: inline-block;
-            width: 230px;
-            padding: 10px 10px;
-            z-index: 3;
-        }
+                    left: 30px;
+                    top: 31px;
+                    font-size: 25px;
+                    background-color: #00741E;
+                    white-space: normal;
+                    display: inline-block;
+                    width: 230px;
+                    padding: 10px 10px;
+                    z-index: 3;
+               }
 
                .score-label.right {
                     right: 30px;
@@ -167,23 +183,27 @@
                }
 
                @keyframes stretchAnimation {
-  0%, 100% {
-  transform: translateY(0) scaleY(1);
-  }
-  50% {
-   transform: translateY(-1.1%) scaleY(1.025);
-  }
-       }
 
-  .image-right {
-       width: 230px;
-       height: auto;
-       position: absolute;
-       right: 36px;
-       top: 190px;
-       animation: stretchAnimation 3s infinite; /* Adjust the duration and iteration count as needed */
+                    0%,
+                    100% {
+                         transform: translateY(0) scaleY(1);
+                    }
 
-        }
+                    50% {
+                         transform: translateY(-1.1%) scaleY(1.025);
+                    }
+               }
+
+               .image-right {
+                    width: 230px;
+                    height: auto;
+                    position: absolute;
+                    right: 36px;
+                    top: 190px;
+                    animation: stretchAnimation 3s infinite;
+                    /* Adjust the duration and iteration count as needed */
+
+               }
 
                .retry-button {
                     position: fixed;
@@ -206,6 +226,7 @@
                     transform: scale(0.10);
 
                }
+
                .centered-boardd {
                     width: 1150px;
                     position: absolute;
@@ -221,45 +242,50 @@
                }
 
                .animate__fadeOut {
-               animation: fadeOut 2.3s; /* Specify the animation name and duration here */
-               animation-fill-mode: forwards;
-               
+                    animation: fadeOut 2.3s;
+                    /* Specify the animation name and duration here */
+                    animation-fill-mode: forwards;
+
                }
 
                @keyframes fadeOut {
                     0% {
                          opacity: 1;
                     }
+
                     80% {
-                         opacity: 1; /* Adjust the opacity value as needed */
+                         opacity: 1;
+                         /* Adjust the opacity value as needed */
                     }
+
                     100% {
                          opacity: 0;
                          display: none;
                     }
-                    }
+               }
 
                .animate__bounceOutUp {
-               animation: bounceOutUp 6.7s; /* Specify the animation name and duration here */
-               animation-fill-mode: forwards;
+                    animation: bounceOutUp 6.7s;
+                    /* Specify the animation name and duration here */
+                    animation-fill-mode: forwards;
                }
 
                @keyframes bounceOutUp {
-               0% {
-                    transform: translateY(0) scaley(1); 
+                    0% {
+                         transform: translateY(0) scaley(1);
+                    }
+
+                    37% {
+                         transform: translateY(1%) scaley(1);
+
+                    }
+
+                    100% {
+                         transform: translateY(-100%) scaley(1);
+                    }
                }
 
-               37% {
-                    transform: translateY(1%) scaley(1); 
-               
-               }
-
-               100% {
-                    transform: translateY(-100%) scaley(1);
-               }
-               }
-
-               .sun{
+               .sun {
                     position: absolute;
                     width: 202px;
                     z-index: -5;
@@ -270,8 +296,8 @@
 
                .bg {
                     position: absolute;
-                     width: 1536px;
-                     z-index: -2;
+                    width: 1536px;
+                    z-index: -2;
                }
 
                .move {
@@ -310,24 +336,25 @@
                     filter: sepia(1);
                }
 
-               
+
                @keyframes slideOutRight {
                     0% {
                          transform: translateX(0);
                     }
 
                     100% {
-                         transform: translateX(700%); /* Adjust the value to slide farther */
+                         transform: translateX(700%);
+                         /* Adjust the value to slide farther */
                     }
-                    }
+               }
           </style>
      </head>
 
      <body>
-     <audio autoplay loop controlsList="nodownload" style="display: none">
-  <source src="music2 (2).ogg" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+          <audio autoplay loop controlsList="nodownload" style="display: none">
+               <source src="music2 (2).ogg" type="audio/mpeg">
+               Your browser does not support the audio element.
+          </audio>
 
           <a class="retry-button" href="lesson5-2.php">
                <img src="retry.png" />
@@ -344,27 +371,26 @@
           <div class="image-container" id="imageContainer"></div>
           <div class="word-container" id="wordContainer"></div>
           <div class="button-container">
-               <button class="button" id="properNounBtn">A</button>
-               <button class="button" id="commonNounBtn">AN</button>
+               <button class="button" id="properNounBtn"><?= $l52_easy_statement_1_choice_answer_1 ?></button>
+               <button class="button" id="commonNounBtn"><?= $l52_easy_statement_1_choice_answer_2 ?></button>
           </div>
 
           <img class="logo-image" src="logo.png" alt="English Adventures Logo">
 
-          <div class="score-label left">Directions: Read the sentences carefully. Choose between ‘a’ or ‘an’ to complete
-               the sentence.</div>
+          <div class="score-label left">Directions: <?= $lessonDirections2 ?></div>
 
-          <div class="lesson-title" style="top: 52px;">Using A and An</div>
+          <div class="lesson-title" style="top: 52px;"><?= $lesson2 ?></div>
 
           <div class="centered-board"></div>
 
           <div class="word-container hide" id="wordContainer"></div>
-          
+
           <img class="image-right" src="traveler5.png" alt="Traveler 5 Image">
 
           <img class="centered-boardd animate__bounceOutUp" src="board1.png" alt="Traveler 5 Image">
 
-<img class="centered-boarddd animate__fadeOut" src="bg.jpg" alt="Traveler 5 Image">
-<img class="bg" src="cute_background101.png" alt="Traveler 5 Image">
+          <img class="centered-boarddd animate__fadeOut" src="bg.jpg" alt="Traveler 5 Image">
+          <img class="bg" src="cute_background101.png" alt="Traveler 5 Image">
           <img class="move" src="cloud.png" alt="Traveler 5 Image">
           <img class="mover" src="cloud.png" alt="Traveler 5 Image">
           <img class="movee" src="cloud.png" alt="Traveler 5 Image">
@@ -379,16 +405,16 @@
 
           <script>
                const words = [
-                    { word: "There is ___ cat in the yard.", isProper: true, image: "1an.jpg" },
-                    { word: "___ car is faster than ___ horse.", isProper: true, image: "2an.jpg" },
-                    { word: "If there is ___ answer, I'll find it.", isProper: false, image: "3an.jpg" },
-                    { word: "I see ___ owl on the branch.", isProper: false, image: "4an.jpg" },
-                    { word: "Mom has ___ red dress.", isProper: true, image: "5an.jpg" },
-                    { word: "Frank wants ___ new bicycle.", isProper: true, image: "6an.jpg" },
-                    { word: "The teacher read ___ story.", isProper: true, image: "7an.jpg" },
-                    { word: "___ event for my birthday.", isProper: false, image: "8an.jpg" },
-                    { word: "Put ___ apple on your plate.", isProper: false, image: "9an.jpg" },
-                    { word: "Read me ___ story.", isProper: true, image: "10an.jpg" }
+                    { word: "<?= $l52_easy_statement_1 ?>", isProper: <?= $l52_easy_statement_1_status_for_1 ?>, image: "data:image/png;base64,<?= $l52_easy_statement_1_image ?>" },
+                    { word: "<?= $l52_easy_statement_2 ?>", isProper: <?= $l52_easy_statement_2_status_for_1 ?>, image: "data:image/png;base64,<?= $l52_easy_statement_2_image ?>" },
+                    { word: "<?= $l52_easy_statement_3 ?>", isProper: <?= $l52_easy_statement_3_status_for_1 ?>, image: "data:image/png;base64,<?= $l52_easy_statement_3_image ?>" },
+                    { word: "<?= $l52_easy_statement_4 ?>", isProper: <?= $l52_easy_statement_4_status_for_1 ?>, image: "data:image/png;base64,<?= $l52_easy_statement_4_image ?>" },
+                    { word: "<?= $l52_easy_statement_5 ?>", isProper: <?= $l52_easy_statement_5_status_for_1 ?>, image: "data:image/png;base64,<?= $l52_easy_statement_5_image ?>" },
+                    { word: "<?= $l52_easy_statement_6 ?>", isProper: <?= $l52_easy_statement_6_status_for_1 ?>, image: "data:image/png;base64,<?= $l52_easy_statement_6_image ?>" },
+                    { word: "<?= $l52_easy_statement_7 ?>", isProper: <?= $l52_easy_statement_7_status_for_1 ?>, image: "data:image/png;base64,<?= $l52_easy_statement_7_image ?>" },
+                    { word: "<?= $l52_easy_statement_8 ?>", isProper: <?= $l52_easy_statement_8_status_for_1 ?>, image: "data:image/png;base64,<?= $l52_easy_statement_8_image ?>" },
+                    { word: "<?= $l52_easy_statement_9 ?>", isProper: <?= $l52_easy_statement_9_status_for_1 ?>, image: "data:image/png;base64,<?= $l52_easy_statement_9_image ?>" },
+                    { word: "<?= $l52_easy_statement_10 ?>", isProper: <?= $l52_easy_statement_10_status_for_1 ?>, image: "data:image/png;base64,<?= $l52_easy_statement_10_image ?>" }
 
                ];
 
@@ -415,40 +441,39 @@
                }
 
                function checkNounType(isProperNoun) {
-               const wordObj = words[currentIndex];
-               const correctSound = new Audio('correct.ogg');
-               const wrongSound = new Audio('wrong.ogg');
+                    const wordObj = words[currentIndex];
+                    const correctSound = new Audio('correct.ogg');
+                    const wrongSound = new Audio('wrong.ogg');
 
-               if (wordObj.isProper === isProperNoun) {
-               properNounBtn.classList.remove('wrong');
-               commonNounBtn.classList.remove('wrong');
-               if (isProperNoun) {
-                    properNounBtn.classList.add('correct');
-               } else {
-                    commonNounBtn.classList.add('correct');
+                    if (wordObj.isProper === isProperNoun) {
+                         properNounBtn.classList.remove('wrong');
+                         commonNounBtn.classList.remove('wrong');
+                         if (isProperNoun) {
+                              properNounBtn.classList.add('correct');
+                         } else {
+                              commonNounBtn.classList.add('correct');
+                         }
+                         currentIndex++;
+
+                         // Play the correct sound
+                         correctSound.play();
+
+                         setTimeout(() => {
+                              displayWord();
+                              properNounBtn.classList.remove('correct');
+                              commonNounBtn.classList.remove('correct');
+                         }, 1500);
+                    } else {
+                         if (isProperNoun) {
+                              properNounBtn.classList.add('wrong');
+                         } else {
+                              commonNounBtn.classList.add('wrong');
+                         }
+
+                         // Play the wrong sound
+                         wrongSound.play();
+                    }
                }
-               currentIndex++;
-
-               // Play the correct sound
-               correctSound.play();
-
-               setTimeout(() => {
-                    displayWord();
-                    properNounBtn.classList.remove('correct');
-                    commonNounBtn.classList.remove('correct');
-               }, 1500);
-               } else {
-               if (isProperNoun) {
-                    properNounBtn.classList.add('wrong');
-               } else {
-                    commonNounBtn.classList.add('wrong');
-               }
-
-               // Play the wrong sound
-               wrongSound.play();
-               }
-               }
-
 
                properNounBtn.addEventListener("click", () => {
                     properNounBtn.style.color = "white"; // Change button text color to white

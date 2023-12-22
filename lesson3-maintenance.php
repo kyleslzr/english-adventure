@@ -765,11 +765,11 @@
                                                                       <textarea name="' . $inputName . '" class="mb-3 fs-5 rounded ms-2 form-control" placeholder="Enter given item" aria-describedby="basic-addon1" required>' . $inputValue . '</textarea>
                                                                       <div class="d-flex align-items-center mb-3">
                                                                            <input class="form-check-input" type="radio" name="' . $inputName . '_status" id="inlineRadio2_' . $i . '" value="1" ' . ($inputStatus === 1 ? 'checked' : '') . ' required>
-                                                                           <input type="text" name="' . $inputName . '_choice_answer_1" class="fs-5 rounded ms-2 form-control" placeholder="Enter 1st choice" aria-describedby="basic-addon1" value="' . $correctAnswer1 . '" required>
+                                                                           <input type="text" name="' . $inputName . '_choice_answer_1" class="fs-5 rounded ms-2 form-control l32-' . $difficulty . '-option-1" placeholder="Enter 1st choice" aria-describedby="basic-addon1" value="' . $correctAnswer1 . '" required>
                                                                       </div>
                                                                       <div class="d-flex align-items-center">
                                                                            <input class="form-check-input" type="radio" name="' . $inputName . '_status" id="inlineRadio2_' . $i . '" value="2" ' . ($inputStatus === 2 ? 'checked' : '') . '>
-                                                                           <input type="text" name="' . $inputName . '_choice_answer_2" class="fs-5 rounded ms-2 form-control" placeholder="Enter 2nd choice" aria-describedby="basic-addon1" value="' . $correctAnswer2 . '" required>
+                                                                           <input type="text" name="' . $inputName . '_choice_answer_2" class="fs-5 rounded ms-2 form-control l32-' . $difficulty . '-option-2" placeholder="Enter 2nd choice" aria-describedby="basic-addon1" value="' . $correctAnswer2 . '" required>
                                                                       </div>
                                                                  </div>
                                                             </div>
@@ -795,5 +795,34 @@
           <!-- act 1 form -->
 
           <?php include "common/alert.php" ?>
+          <script>
+          function addInputListeners(className) {
+          document.addEventListener('DOMContentLoaded', function () {
+               // Get all inputs with the specified class
+               var inputs = document.querySelectorAll('.' + className);
+
+               // Add an input event listener to each input
+               inputs.forEach(function (input) {
+               input.addEventListener('input', function () {
+                    // Get the value of the changed input
+                    var value = input.value;
+
+                    // Update the value of all inputs with the specified class
+                    inputs.forEach(function (otherInput) {
+                    otherInput.value = value;
+                    });
+               });
+               });
+          });
+          }
+
+          // Call the function for each class
+          addInputListeners('l32-easy-option-1');
+          addInputListeners('l32-average-option-1');
+          addInputListeners('l32-difficult-option-1');
+          addInputListeners('l32-easy-option-2');
+          addInputListeners('l32-average-option-2');
+          addInputListeners('l32-difficult-option-2');
+          </script>
      </body>
 </html>

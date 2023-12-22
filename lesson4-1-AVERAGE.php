@@ -1,12 +1,18 @@
+<?php
+session_start();
 
+if (!isset($_SESSION['user_ID'])) {
+     header("Location: userlogin.php");
+     exit();
+}
 
+$user_ID = $_SESSION['user_ID'];
+$lessonActivity1 = 41;
+$lessonActivity2 = 42;
 
-
-
-
-
-
-
+include "function/retrieve-lesson-title-direction-url.php";
+include "function/retrieve-lesson-4-activities.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +20,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lesson 1 AVERAGE- English Adventures</title>
   <link rel="stylesheet" href="css/side-score-style.css">
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
   <style>
     
     body {
@@ -49,12 +56,9 @@
     grid-row-gap: 15px; /* Row gap of 10px */
     
   }
-  .image-box {
-  
-  }
   .image-box img {
-    width: 250px;
-    height: auto;
+     width: 250px;
+     height: 240px;
     outline: 5px solid #fff;
     box-shadow: 4px 4px 8px rgba(2, 2, 2, 3);
     border-radius: 15px;
@@ -383,9 +387,9 @@
 
   <img class="logo-image" src="logo.png" alt="English Adventures Logo">
   
-  <div class="score-label left">Directions: Look at the pictures. Identify whether it has /b/ or /p/ sounds. Four Pictures One Word.</div>
+  <div class="score-label left">Directions: <?= $lessonDirections1 ?></div>
 
-  <div class="lesson-title" style="top: 52px;">Pronouncing the words with b and p</div>
+<div class="lesson-title" style="top: 52px;"><?= $lesson1 ?></div>
   
   <div class="centered-board"></div>
 
@@ -446,18 +450,18 @@
 </div>
 
 <script>
-  const initialImages = ['bee1.jpg', 'bee2.jpg', 'bee3.jpg', 'bee4.jpg'];
-  const duckImages = ['bag1.jpg', 'bag2.jpg', 'bag3.jpg', 'bag4.jpg'];
-  const padImages = ['box1.jpg', 'box2.jpg', 'box3.jpg', 'box4.jpg'];
-  const dotImages = ['web1.jpg', 'web2.jpg', 'web3.jpg', 'web4.jpg'];
-  const budImages = ['rib1.jpg', 'rib2.jpg', 'rib3.jpg', 'rib4.jpg'];
-  const potImages = ['pig1.jpg', 'pig2.jpg', 'pig3.jpg', 'pig4.jpg'];
-  const ratImages = ['hip1.jpg', 'hip2.jpg', 'hip3.jpg', 'hip4.jpg'];
-  const kitImages = ['cup1.jpg', 'cup2.jpg', 'cup3.jpg', 'cup4.jpg'];
-  const tenImages = ['cop1.jpg', 'cop2.jpg', 'cop3.jpg', 'cop4.jpg'];
-  const topImages = ['pin1.jpg', 'pin2.jpg', 'pin3.jpg', 'pin4.jpg'];
+  const initialImages = ['data:image/png;base64,<?= $l41_average_word_1_image ?>', 'data:image/png;base64,<?= $l41_average_word_1_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_1_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_1_image_3 ?>'];
+  const duckImages = ['data:image/png;base64,<?= $l41_average_word_2_image ?>', 'data:image/png;base64,<?= $l41_average_word_2_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_2_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_2_image_3 ?>'];
+  const padImages = ['data:image/png;base64,<?= $l41_average_word_3_image ?>', 'data:image/png;base64,<?= $l41_average_word_3_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_3_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_3_image_3 ?>'];
+  const dotImages = ['data:image/png;base64,<?= $l41_average_word_4_image ?>', 'data:image/png;base64,<?= $l41_average_word_4_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_4_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_4_image_3 ?>'];
+  const budImages = ['data:image/png;base64,<?= $l41_average_word_5_image ?>', 'data:image/png;base64,<?= $l41_average_word_5_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_5_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_5_image_3 ?>'];
+  const potImages = ['data:image/png;base64,<?= $l41_average_word_6_image ?>', 'data:image/png;base64,<?= $l41_average_word_6_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_6_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_6_image_3 ?>'];
+  const ratImages = ['data:image/png;base64,<?= $l41_average_word_7_image ?>', 'data:image/png;base64,<?= $l41_average_word_7_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_7_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_7_image_3 ?>'];
+  const kitImages = ['data:image/png;base64,<?= $l41_average_word_8_image ?>', 'data:image/png;base64,<?= $l41_average_word_8_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_8_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_8_image_3 ?>'];
+  const tenImages = ['data:image/png;base64,<?= $l41_average_word_9_image ?>', 'data:image/png;base64,<?= $l41_average_word_9_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_9_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_9_image_3 ?>'];
+  const topImages = ['data:image/png;base64,<?= $l41_average_word_10_image ?>', 'data:image/png;base64,<?= $l41_average_word_10_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_10_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_10_image_3 ?>'];
   let currentAnswer = '';
-  let correctAnswer = 'bee'; // Set the initial correct answer
+  let correctAnswer = '<?= $l41_average_word_1_correct_word ?>'; // Set the initial correct answer
 
   function loadInitialGame() {
     initialImages.forEach((img, index) => {
@@ -637,39 +641,39 @@ function checkAnswer() {
     if (currentAnswer.toLowerCase() === correctAnswer) {
         correctSound.play(); // Play correct sound
 
-        showCorrectImage(correctAnswer + '.jpg');
-        const pronounceCorrect = new Audio(`pronounce/${correctAnswer}.mp3`);
-        pronounceCorrect.play();
+        showCorrectImage('bee.jpg');
+        responsiveVoice.speak("You're correct. The answer is " + correctAnswer, "US English Female");
 
         setTimeout(() => {
-            if (correctAnswer === 'bee') {
+            if (correctAnswer === '<?= $l41_average_word_1_correct_word ?>') {
                 loadDuckGame();
-                correctAnswer = 'bag';
-            } else if (correctAnswer === 'bag') {
+                correctAnswer = '<?= $l41_average_word_2_correct_word ?>';
+            } else if (correctAnswer === '<?= $l41_average_word_2_correct_word ?>') {
                 loadPadGame();
-                correctAnswer = 'box';
-            } else if (correctAnswer === 'box') {
+                correctAnswer = '<?= $l41_average_word_3_correct_word ?>';
+            } else if (correctAnswer === '<?= $l41_average_word_3_correct_word ?>') {
                 loadDotGame();
-                correctAnswer = 'web';
-            } else if (correctAnswer === 'web') {
+                correctAnswer = '<?= $l41_average_word_4_correct_word ?>';
+            } else if (correctAnswer === '<?= $l41_average_word_4_correct_word ?>') {
                 loadBudGame();
-                correctAnswer = 'rib';
-            } else if (correctAnswer === 'rib') {
+                correctAnswer = '<?= $l41_average_word_5_correct_word ?>';
+            } else if (correctAnswer === '<?= $l41_average_word_5_correct_word ?>') {
                 loadPotGame();
-                correctAnswer = 'pig';
-            } else if (correctAnswer === 'pig') {
+                correctAnswer = '<?= $l41_average_word_6_correct_word ?>';
+            } else if (correctAnswer === '<?= $l41_average_word_6_correct_word ?>') {
                 loadRatGame();
-                correctAnswer = 'hip';
-            } else if (correctAnswer === 'hip') {
+                correctAnswer = '<?= $l41_average_word_7_correct_word ?>';
+            } else if (correctAnswer === '<?= $l41_average_word_7_correct_word ?>') {
                 loadKitGame();
-                correctAnswer = 'cup';
-            } else if (correctAnswer === 'cup') {
+                correctAnswer = '<?= $l41_average_word_8_correct_word ?>';
+            } else if (correctAnswer === '<?= $l41_average_word_8_correct_word ?>') {
                 loadTenGame(); 
-                correctAnswer = 'cop';
-            } else if (correctAnswer === 'cop') {
+                correctAnswer = '<?= $l41_average_word_9_correct_word ?>';
+            } else if (correctAnswer === '<?= $l41_average_word_9_correct_word ?>') {
                 loadTopGame();
-                correctAnswer = 'pin';
+                correctAnswer = '<?= $l41_average_word_10_correct_word ?>';
             }
+
 
         }, 3000);
     } else {

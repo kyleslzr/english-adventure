@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_ID'])) {
+     header("Location: userlogin.php");
+     exit();
+}
+
+$user_ID = $_SESSION['user_ID'];
+$lessonActivity1 = 51;
+$lessonActivity2 = 52;
+
+include "function/retrieve-lesson-title-direction-url.php";
+include "function/retrieve-lesson-5-activities.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +21,7 @@
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>Lesson 1 - English Adventures</title>
           <link rel="stylesheet" href="css/side-score-style.css">
+          <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
           <style>
                body {
                     overflow: hidden;
@@ -45,7 +61,7 @@
 
                .image-box img {
                     width: 250px;
-                    height: auto;
+                    height: 240px;
                     outline: 5px solid #fff;
                     box-shadow: 4px 4px 8px rgba(2, 2, 2, 3);
                     border-radius: 15px;
@@ -440,10 +456,9 @@
 
           <img class="logo-image" src="logo.png" alt="English Adventures Logo">
 
-          <div class="score-label left">Directions: Look at the pictures. Identify whether it has /d/ or /t/ sounds.
-               Four Pictures One Word.</div>
+          <div class="score-label left">Directions: <?= $lessonDirections1 ?></div>
 
-          <div class="lesson-title" style="top: 52px;">Pronouncing words with the Sounds of d and t</div>
+          <div class="lesson-title" style="top: 52px;"><?= $lesson1 ?></div>
 
           <div class="centered-board"></div>
 
@@ -508,18 +523,18 @@
           </div>
 
           <script>
-               const initialImages = ['doctorhide1.jpg', 'doctorhide2.jpg', 'doctorhide3.jpg', 'doctorhide4.jpg'];
-               const duckImages = ['duck1.jpg', 'duck2.jpg', 'duck3.jpg', 'duck4.jpg'];
-               const padImages = ['pad1.jpg', 'pad2.jpg', 'pad3.jpg', 'pad4.jpg'];
-               const dotImages = ['dot1.jpg', 'dot2.jpg', 'dot3.jpg', 'dot4.jpg'];
-               const budImages = ['bud1.jpg', 'bud2.jpg', 'bud3.jpg', 'bud4.jpg'];
-               const potImages = ['pot1.jpg', 'pot2.jpg', 'pot3.jpg', 'pot4.jpg'];
-               const ratImages = ['rat1.jpg', 'rat2.jpg', 'rat3.jpg', 'rat4.jpg'];
-               const kitImages = ['kit1.jpg', 'kit2.jpg', 'kit3.jpg', 'kit4.jpg'];
-               const tenImages = ['ten1.jpg', 'ten2.jpg', 'ten3.jpg', 'ten4.jpg'];
-               const topImages = ['top1.jpg', 'top2.jpg', 'top3.jpg', 'top4.jpg'];
+               const initialImages = ['data:image/png;base64,<?= $l51_easy_word_1_image ?>', 'data:image/png;base64,<?= $l51_easy_word_1_image_2 ?>', 'data:image/png;base64,<?= $l51_easy_word_1_image_3 ?>', 'data:image/png;base64,<?= $l51_easy_word_1_image_3 ?>'];
+               const duckImages = ['data:image/png;base64,<?= $l51_easy_word_2_image ?>', 'data:image/png;base64,<?= $l51_easy_word_2_image_2 ?>', 'data:image/png;base64,<?= $l51_easy_word_2_image_3 ?>', 'data:image/png;base64,<?= $l51_easy_word_2_image_3 ?>'];
+               const padImages = ['data:image/png;base64,<?= $l51_easy_word_3_image ?>', 'data:image/png;base64,<?= $l51_easy_word_3_image_2 ?>', 'data:image/png;base64,<?= $l51_easy_word_3_image_3 ?>', 'data:image/png;base64,<?= $l51_easy_word_3_image_3 ?>'];
+               const dotImages = ['data:image/png;base64,<?= $l51_easy_word_4_image ?>', 'data:image/png;base64,<?= $l51_easy_word_4_image_2 ?>', 'data:image/png;base64,<?= $l51_easy_word_4_image_3 ?>', 'data:image/png;base64,<?= $l51_easy_word_4_image_3 ?>'];
+               const budImages = ['data:image/png;base64,<?= $l51_easy_word_5_image ?>', 'data:image/png;base64,<?= $l51_easy_word_5_image_2 ?>', 'data:image/png;base64,<?= $l51_easy_word_5_image_3 ?>', 'data:image/png;base64,<?= $l51_easy_word_5_image_3 ?>'];
+               const potImages = ['data:image/png;base64,<?= $l51_easy_word_6_image ?>', 'data:image/png;base64,<?= $l51_easy_word_6_image_2 ?>', 'data:image/png;base64,<?= $l51_easy_word_6_image_3 ?>', 'data:image/png;base64,<?= $l51_easy_word_6_image_3 ?>'];
+               const ratImages = ['data:image/png;base64,<?= $l51_easy_word_7_image ?>', 'data:image/png;base64,<?= $l51_easy_word_7_image_2 ?>', 'data:image/png;base64,<?= $l51_easy_word_7_image_3 ?>', 'data:image/png;base64,<?= $l51_easy_word_7_image_3 ?>'];
+               const kitImages = ['data:image/png;base64,<?= $l51_easy_word_8_image ?>', 'data:image/png;base64,<?= $l51_easy_word_8_image_2 ?>', 'data:image/png;base64,<?= $l51_easy_word_8_image_3 ?>', 'data:image/png;base64,<?= $l51_easy_word_8_image_3 ?>'];
+               const tenImages = ['data:image/png;base64,<?= $l51_easy_word_9_image ?>', 'data:image/png;base64,<?= $l51_easy_word_9_image_2 ?>', 'data:image/png;base64,<?= $l51_easy_word_9_image_3 ?>', 'data:image/png;base64,<?= $l51_easy_word_9_image_3 ?>'];
+               const topImages = ['data:image/png;base64,<?= $l51_easy_word_10_image ?>', 'data:image/png;base64,<?= $l51_easy_word_10_image_2 ?>', 'data:image/png;base64,<?= $l51_easy_word_10_image_3 ?>', 'data:image/png;base64,<?= $l51_easy_word_10_image_3 ?>'];
                let currentAnswer = '';
-               let correctAnswer = 'doctor'; // Set the initial correct answer
+               let correctAnswer = '<?= $l51_easy_word_1_correct_word ?>'; // Set the initial correct answer
 
                function loadInitialGame() {
                     initialImages.forEach((img, index) => {
@@ -697,38 +712,37 @@
 
                     if (currentAnswer.toLowerCase() === correctAnswer) {
                          correctSound.play(); // Play correct sound
-                         showCorrectImage(correctAnswer + '.jpg');
-                         const pronounceCorrect = new Audio(`pronounce/${correctAnswer}.mp3`);
-                         pronounceCorrect.play();
-                         
+                         showCorrectImage('bee.jpg');
+                         responsiveVoice.speak("You're correct. The answer is " + correctAnswer, "US English Female");
+
                          setTimeout(() => {
-                              if (correctAnswer === 'doctor') {
+                              if (correctAnswer === '<?= $l51_easy_word_1_correct_word ?>') {
                                    loadDuckGame();
-                                   correctAnswer = 'duck';
-                              } else if (correctAnswer === 'duck') {
+                                   correctAnswer = '<?= $l51_easy_word_2_correct_word ?>';
+                              } else if (correctAnswer === '<?= $l51_easy_word_2_correct_word ?>') {
                                    loadPadGame();
-                                   correctAnswer = 'pad';
-                              } else if (correctAnswer === 'pad') {
+                                   correctAnswer = '<?= $l51_easy_word_3_correct_word ?>';
+                              } else if (correctAnswer === '<?= $l51_easy_word_3_correct_word ?>') {
                                    loadDotGame();
-                                   correctAnswer = 'dot';
-                              } else if (correctAnswer === 'dot') {
+                                   correctAnswer = '<?= $l51_easy_word_4_correct_word ?>';
+                              } else if (correctAnswer === '<?= $l51_easy_word_4_correct_word ?>') {
                                    loadBudGame();
-                                   correctAnswer = 'bud';
-                              } else if (correctAnswer === 'bud') {
+                                   correctAnswer = '<?= $l51_easy_word_5_correct_word ?>';
+                              } else if (correctAnswer === '<?= $l51_easy_word_5_correct_word ?>') {
                                    loadPotGame();
-                                   correctAnswer = 'pot';
-                              } else if (correctAnswer === 'pot') {
+                                   correctAnswer = '<?= $l51_easy_word_6_correct_word ?>';
+                              } else if (correctAnswer === '<?= $l51_easy_word_6_correct_word ?>') {
                                    loadRatGame();
-                                   correctAnswer = 'rat';
-                              } else if (correctAnswer === 'rat') {
+                                   correctAnswer = '<?= $l51_easy_word_7_correct_word ?>';
+                              } else if (correctAnswer === '<?= $l51_easy_word_7_correct_word ?>') {
                                    loadKitGame();
-                                   correctAnswer = 'kit';
-                              } else if (correctAnswer === 'kit') {
+                                   correctAnswer = '<?= $l51_easy_word_8_correct_word ?>';
+                              } else if (correctAnswer === '<?= $l51_easy_word_8_correct_word ?>') {
                                    loadTenGame();
-                                   correctAnswer = 'ten';
-                              } else if (correctAnswer === 'ten') {
+                                   correctAnswer = '<?= $l51_easy_word_9_correct_word ?>';
+                              } else if (correctAnswer === '<?= $l51_easy_word_9_correct_word ?>') {
                                    loadTopGame();
-                                   correctAnswer = 'top';
+                                   correctAnswer = '<?= $l51_easy_word_10_correct_word ?>';
                               }
 
                          }, 3000);

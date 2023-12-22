@@ -1,10 +1,26 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_ID'])) {
+     header("Location: userlogin.php");
+     exit();
+}
+
+$user_ID = $_SESSION['user_ID'];
+$lessonActivity1 = 31;
+$lessonActivity2 = 32;
+
+include "function/retrieve-lesson-title-direction-url.php";
+include "function/retrieve-lesson-3-activities.php";
+?>
+
 <!DOCTYPE html>
 <html>
+
      <head>
           <title>Lesson 1 AVERAGE - English Adventures</title>
           <link rel="stylesheet" href="css/side-score-style.css">
           <style>
-               
                body {
                     overflow: hidden;
                     margin: 0;
@@ -83,13 +99,14 @@
                }
 
                .word-image {
-                    max-width: 320px;
+                    max-width: 200px;
+                    max-height: 193px;
                     height: auto;
                     outline: 15px solid #00741E;
                     border-radius: 5px;
 
                }
-               
+
                .logo-image {
                     position: absolute;
                     top: 27px;
@@ -135,8 +152,8 @@
                     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
                     outline: 4px solid #fff;
                     z-index: 2;
-               } 
-               
+               }
+
                .score-label.left {
                     left: 30px;
                     top: 31px;
@@ -166,23 +183,27 @@
                }
 
                @keyframes stretchAnimation {
-  0%, 100% {
-  transform: translateY(0) scaleY(1);
-  }
-  50% {
-   transform: translateY(-1.1%) scaleY(1.025);
-  }
-       }
 
-  .image-right {
-       width: 230px;
-       height: auto;
-       position: absolute;
-       right: 36px;
-       top: 190px;
-       animation: stretchAnimation 3s infinite; /* Adjust the duration and iteration count as needed */
+                    0%,
+                    100% {
+                         transform: translateY(0) scaleY(1);
+                    }
 
-        }
+                    50% {
+                         transform: translateY(-1.1%) scaleY(1.025);
+                    }
+               }
+
+               .image-right {
+                    width: 230px;
+                    height: auto;
+                    position: absolute;
+                    right: 36px;
+                    top: 190px;
+                    animation: stretchAnimation 3s infinite;
+                    /* Adjust the duration and iteration count as needed */
+
+               }
 
                .retry-button {
                     position: fixed;
@@ -205,6 +226,7 @@
                     transform: scale(0.10);
 
                }
+
                .centered-boardd {
                     width: 1150px;
                     position: absolute;
@@ -220,99 +242,115 @@
                }
 
                .animate__fadeOut {
-               animation: fadeOut 2.3s; /* Specify the animation name and duration here */
-               animation-fill-mode: forwards;
-               
+                    animation: fadeOut 2.3s;
+                    /* Specify the animation name and duration here */
+                    animation-fill-mode: forwards;
+
                }
 
                @keyframes fadeOut {
                     0% {
                          opacity: 1;
                     }
+
                     80% {
-                         opacity: 1; /* Adjust the opacity value as needed */
+                         opacity: 1;
+                         /* Adjust the opacity value as needed */
                     }
+
                     100% {
                          opacity: 0;
                          display: none;
                     }
-                    }
+               }
 
                .animate__bounceOutUp {
-               animation: bounceOutUp 6.7s; /* Specify the animation name and duration here */
-               animation-fill-mode: forwards;
+                    animation: bounceOutUp 6.7s;
+                    /* Specify the animation name and duration here */
+                    animation-fill-mode: forwards;
                }
 
                @keyframes bounceOutUp {
-               0% {
-                    transform: translateY(0) scaley(1); 
+                    0% {
+                         transform: translateY(0) scaley(1);
+                    }
+
+                    37% {
+                         transform: translateY(1%) scaley(1);
+
+                    }
+
+                    100% {
+                         transform: translateY(-100%) scaley(1);
+                    }
                }
 
-               37% {
-                    transform: translateY(1%) scaley(1); 
-               
+               .vine,
+               .vinee,
+               .vineee {
+                    animation: bounceAnimation 2s linear infinite;
                }
 
-               100% {
-                    transform: translateY(-100%) scaley(1);
-               }
-               }
-               .vine, .vinee, .vineee {
-    animation: bounceAnimation 2s linear infinite;
-}
+               @keyframes bounceAnimation {
 
-@keyframes bounceAnimation {
-     0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-}
-40% {
-    transform: translateY(-3px);
-}
-60% {
-    transform: translateY(9px);
-}}
+                    0%,
+                    20%,
+                    50%,
+                    80%,
+                    100% {
+                         transform: translateY(0);
+                    }
+
+                    40% {
+                         transform: translateY(-3px);
+                    }
+
+                    60% {
+                         transform: translateY(9px);
+                    }
+               }
 
                .vine {
                     width: 439px;
-    height: auto;
-    position: absolute;
-    left: 36px;
-    top: -87px;
-    z-index: -2;
+                    height: auto;
+                    position: absolute;
+                    left: 36px;
+                    top: -87px;
+                    z-index: -2;
 
-        }
-        .vinee {
-          width: 373px;
-    height: auto;
-    position: absolute;
-    right: -39px;
-    top: -67px;
-    z-index: -2;
-    animation-delay: 1s;
+               }
 
-        }
+               .vinee {
+                    width: 373px;
+                    height: auto;
+                    position: absolute;
+                    right: -39px;
+                    top: -67px;
+                    z-index: -2;
+                    animation-delay: 1s;
 
-        .bush {
-          width: 512px;
-    height: auto;
-    position: absolute;
-    right: -119px;
-    bottom: -25px;
-    z-index: -2;
-    animation: stretchAnimation 1.5s infinite;
-    z-index: -3;
-    animation-delay: 1s;
-    filter: saturate(1.5);
-}
-    
+               }
+
+               .bush {
+                    width: 512px;
+                    height: auto;
+                    position: absolute;
+                    right: -119px;
+                    bottom: -25px;
+                    z-index: -2;
+                    animation: stretchAnimation 1.5s infinite;
+                    z-index: -3;
+                    animation-delay: 1s;
+                    filter: saturate(1.5);
+               }
           </style>
      </head>
 
      <body>
-     <audio autoplay loop controlsList="nodownload" style="display: none">
-  <source src="music2 (2).ogg" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+          <audio autoplay loop controlsList="nodownload" style="display: none">
+               <source src="music2 (2).ogg" type="audio/mpeg">
+               Your browser does not support the audio element.
+          </audio>
           <a class="retry-button" href="lesson3-2-AVERAGE.php">
                <img src="retry.png" />
           </a>
@@ -328,27 +366,27 @@
           <div class="image-container" id="imageContainer"></div>
           <div class="word-container" id="wordContainer"></div>
           <div class="button-container">
-               <button class="button" id="properNounBtn">PROPER NOUN</button>
-               <button class="button" id="commonNounBtn">COMMON NOUN</button>
+               <button class="button" id="properNounBtn"><?= $l32_average_statement_1_choice_answer_1 ?></button>
+               <button class="button" id="commonNounBtn"><?= $l32_average_statement_1_choice_answer_2 ?></button>
           </div>
 
           <img class="logo-image" src="logo.png" alt="English Adventures Logo">
 
-          <div class="score-label left">Directions: Identify Common Nouns and Proper Nouns</div>
+          <div class="score-label left">Directions: <?= $lessonDirections2 ?></div>
 
-          <div class="lesson-title" style="top: 52px;">Recognizing Common and Proper Nouns</div>
+          <div class="lesson-title" style="top: 52px;"><?= $lesson2 ?></div>
 
           <div class="centered-board"></div>
 
           <div class="word-container hide" id="wordContainer"></div>
-          
+
 
           <img class="image-right" src="traveler5.png" alt="Traveler 5 Image">
 
           <img class="centered-boardd animate__bounceOutUp" src="board1.png" alt="Traveler 5 Image">
 
-<img class="centered-boarddd animate__fadeOut" src="bg.jpg" alt="Traveler 5 Image">
-<img class="vine animate__bounce" src="vine1.png" alt="Traveler 5 Image" />
+          <img class="centered-boarddd animate__fadeOut" src="bg.jpg" alt="Traveler 5 Image">
+          <img class="vine animate__bounce" src="vine1.png" alt="Traveler 5 Image" />
           <img class="vinee animate__bounce" src="vine2.png" alt="Traveler 5 Image" />
           <img class="bush animate__bounce" src="bush.webp" alt="Traveler 5 Image" />
 
@@ -361,16 +399,16 @@
           <script>
 
                const words = [
-                    { word: "Pacquiao", isProper: true, image: "mannypac.jpg" },
-                    { word: "Mountain", isProper: false, image: "mountain.jpg" },
-                    { word: "Mt.Everest", isProper: true, image: "mountever.jpg" },
-                    { word: "Jupiter", isProper: true, image: "jupiter.jpg" },
-                    { word: "Library", isProper: false, image: "library.jpg" },
-                    { word: "Scientist", isProper: false, image: "scientist.jpg" },
-                    { word: "Planet", isProper: false, image: "planet.jpg" },
-                    { word: "Disneyland", isProper: true, image: "disneyland.jpg" },
-                    { word: "Bicycle", isProper: false, image: "bic.jpg" },
-                    { word: "RizalPark", isProper: true, image: "rizalpark.jpg" }
+                    { word: "<?= $l32_average_statement_1 ?>", isProper: <?= $l32_average_statement_1_status_for_1 ?>, image: "data:image/png;base64,<?= $l32_average_statement_1_image ?>" },
+                    { word: "<?= $l32_average_statement_2 ?>", isProper: <?= $l32_average_statement_2_status_for_1 ?>, image: "data:image/png;base64,<?= $l32_average_statement_2_image ?>" },
+                    { word: "<?= $l32_average_statement_3 ?>", isProper: <?= $l32_average_statement_3_status_for_1 ?>, image: "data:image/png;base64,<?= $l32_average_statement_3_image ?>" },
+                    { word: "<?= $l32_average_statement_4 ?>", isProper: <?= $l32_average_statement_4_status_for_1 ?>, image: "data:image/png;base64,<?= $l32_average_statement_4_image ?>" },
+                    { word: "<?= $l32_average_statement_5 ?>", isProper: <?= $l32_average_statement_5_status_for_1 ?>, image: "data:image/png;base64,<?= $l32_average_statement_5_image ?>" },
+                    { word: "<?= $l32_average_statement_6 ?>", isProper: <?= $l32_average_statement_6_status_for_1 ?>, image: "data:image/png;base64,<?= $l32_average_statement_6_image ?>" },
+                    { word: "<?= $l32_average_statement_7 ?>", isProper: <?= $l32_average_statement_7_status_for_1 ?>, image: "data:image/png;base64,<?= $l32_average_statement_7_image ?>" },
+                    { word: "<?= $l32_average_statement_8 ?>", isProper: <?= $l32_average_statement_8_status_for_1 ?>, image: "data:image/png;base64,<?= $l32_average_statement_8_image ?>" },
+                    { word: "<?= $l32_average_statement_9 ?>", isProper: <?= $l32_average_statement_9_status_for_1 ?>, image: "data:image/png;base64,<?= $l32_average_statement_9_image ?>" },
+                    { word: "<?= $l32_average_statement_10 ?>", isProper: <?= $l32_average_statement_10_status_for_1 ?>, image: "data:image/png;base64,<?= $l32_average_statement_10_image ?>" }
                ];
 
                const imageContainer = document.getElementById("imageContainer");
@@ -399,38 +437,38 @@
                }
 
                function checkNounType(isProperNoun) {
-               const wordObj = words[currentIndex];
-               const correctSound = new Audio('correct.ogg');
-               const wrongSound = new Audio('wrong.ogg');
+                    const wordObj = words[currentIndex];
+                    const correctSound = new Audio('correct.ogg');
+                    const wrongSound = new Audio('wrong.ogg');
 
-               if (wordObj.isProper === isProperNoun) {
-               properNounBtn.classList.remove('wrong');
-               commonNounBtn.classList.remove('wrong');
-               if (isProperNoun) {
-                    properNounBtn.classList.add('correct');
-               } else {
-                    commonNounBtn.classList.add('correct');
-               }
-               currentIndex++;
+                    if (wordObj.isProper === isProperNoun) {
+                         properNounBtn.classList.remove('wrong');
+                         commonNounBtn.classList.remove('wrong');
+                         if (isProperNoun) {
+                              properNounBtn.classList.add('correct');
+                         } else {
+                              commonNounBtn.classList.add('correct');
+                         }
+                         currentIndex++;
 
-               // Play the correct sound
-               correctSound.play();
+                         // Play the correct sound
+                         correctSound.play();
 
-               setTimeout(() => {
-                    displayWord();
-                    properNounBtn.classList.remove('correct');
-                    commonNounBtn.classList.remove('correct');
-               }, 1500);
-               } else {
-               if (isProperNoun) {
-                    properNounBtn.classList.add('wrong');
-               } else {
-                    commonNounBtn.classList.add('wrong');
-               }
+                         setTimeout(() => {
+                              displayWord();
+                              properNounBtn.classList.remove('correct');
+                              commonNounBtn.classList.remove('correct');
+                         }, 1500);
+                    } else {
+                         if (isProperNoun) {
+                              properNounBtn.classList.add('wrong');
+                         } else {
+                              commonNounBtn.classList.add('wrong');
+                         }
 
-               // Play the wrong sound
-               wrongSound.play();
-               }
+                         // Play the wrong sound
+                         wrongSound.play();
+                    }
                }
 
 
