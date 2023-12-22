@@ -302,15 +302,20 @@ include "function/retrieve-lesson-title-direction-url.php";
           </audio>
 
 
-          <video id="tutorialVideo" class="lesson-video" controls style="display: none;">
-               <source src="l41.mp4" type="video/mp4">
-               Your browser does not support the video tag.
-          </video>
+          <div id="tutorialVideo" class="lesson-video" style="display: none;">
+               <iframe width="100%" height="100%" src="<?= $lesson_tutorial_url_1 ?>"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+          </div>
 
-          <video id="tutorialVideo2" class="lesson-video" controls style="display: none;">
-               <source src="l42.mp4" type="video/mp4">
-               Your browser does not support the video tag.
-          </video>
+          <div id="tutorialVideo2" class="lesson-video" controls style="display: none;">
+               <iframe width="100%" height="100%" src="<?= $lesson_tutorial_url_2 ?>"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+          </div>
+
 
           <button id="closeVideoButton" onclick="closeTutorialVideo()" style="
     display: none;
