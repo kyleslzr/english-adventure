@@ -344,7 +344,7 @@ include "function/retrieve-lesson-3-activities.php";
                <img src="home.png" />
           </a>
 
-          <div class="container">
+          <div class="container" id="random">
                <div class="box" data-answer="<?= $l31_average_word_1_correct_word ?>">
                     <img src="data:image/png;base64,<?= $l31_average_word_1_image ?>" alt="<?= $l31_average_word_1_correct_word ?>">
                     <input class="answer-input" type="text">
@@ -395,6 +395,35 @@ include "function/retrieve-lesson-3-activities.php";
           </div>
 
           <?php include "js/record-score.php"; ?>
+                    <!-- random -->
+                    <script>
+               document.addEventListener("DOMContentLoaded", function () {
+                    // Get the container element
+                    var container = document.getElementById("random");
+
+                    // Get all the buttons inside the container
+                    var buttons = container.querySelectorAll(".box");
+
+                    // Convert NodeList to array for easier manipulation
+                    var buttonsArray = Array.from(buttons);
+
+                    // Function to shuffle array elements using Fisher-Yates algorithm
+                    function shuffleArray(array) {
+                         for (let i = array.length - 1; i > 0; i--) {
+                              const j = Math.floor(Math.random() * (i + 1));
+                              [array[i], array[j]] = [array[j], array[i]];
+                         }
+                    }
+
+                    // Shuffle the buttons array
+                    shuffleArray(buttonsArray);
+
+                    // Append shuffled buttons back to the container
+                    buttonsArray.forEach(function (button) {
+                         container.appendChild(button);
+                    });
+               });
+          </script>
           <script>
 
                const boxes = document.querySelectorAll(".box");

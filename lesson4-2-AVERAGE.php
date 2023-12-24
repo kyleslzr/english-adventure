@@ -323,7 +323,7 @@ include "function/retrieve-lesson-4-activities.php";
                <img src="home.png" />
           </a>
 
-          <div class="animal-container">
+          <div class="animal-container" id="random">
                <button class="animal-button" draggable="true" data-animal="<?= $l41_average_word_1_correct_word_l42 ?>"><?= $l41_average_word_1_correct_word_l42 ?></button>
                <button class="animal-button" draggable="true" data-animal="<?= $l41_average_word_2_correct_word_l42 ?>"><?= $l41_average_word_2_correct_word_l42 ?></button>
                <button class="animal-button" draggable="true" data-animal="<?= $l41_average_word_3_correct_word_l42 ?>"><?= $l41_average_word_3_correct_word_l42 ?></button>
@@ -333,7 +333,7 @@ include "function/retrieve-lesson-4-activities.php";
                <button class="animal-button" draggable="true" data-animal="<?= $l41_average_word_7_correct_word_l42 ?>"><?= $l41_average_word_7_correct_word_l42 ?></button>
                <button class="animal-button" draggable="true" data-animal="<?= $l41_average_word_8_correct_word_l42 ?>"><?= $l41_average_word_8_correct_word_l42 ?></button>
           </div>
-          <div class="droppable-container">
+          <div class="droppable-container" id="random-1">
                <div class="droppable" data-animal="<?= $l41_average_word_1_correct_word_l42 ?>">
                     <img src="data:image/png;base64,<?= $l41_average_word_1_image_l42 ?>" alt="<?= $l41_average_word_1_correct_word_l42 ?>">
                     <div class="animal-word"></div>
@@ -455,6 +455,64 @@ include "function/retrieve-lesson-4-activities.php";
                <?php include "function/retrieve-all-scores-l2-act1.php"; ?>
           </div>
           <?php include "js/record-score.php"; ?>
+          <!-- random -->
+          <script>
+               document.addEventListener("DOMContentLoaded", function () {
+                    // Get the container element
+                    var container = document.getElementById("random");
+
+                    // Get all the buttons inside the container
+                    var buttons = container.querySelectorAll(".animal-button");
+
+                    // Convert NodeList to array for easier manipulation
+                    var buttonsArray = Array.from(buttons);
+
+                    // Function to shuffle array elements using Fisher-Yates algorithm
+                    function shuffleArray(array) {
+                         for (let i = array.length - 1; i > 0; i--) {
+                              const j = Math.floor(Math.random() * (i + 1));
+                              [array[i], array[j]] = [array[j], array[i]];
+                         }
+                    }
+
+                    // Shuffle the buttons array
+                    shuffleArray(buttonsArray);
+
+                    // Append shuffled buttons back to the container
+                    buttonsArray.forEach(function (button) {
+                         container.appendChild(button);
+                    });
+               });
+          </script>
+          <!-- random -->
+          <script>
+               document.addEventListener("DOMContentLoaded", function () {
+                    // Get the container element
+                    var container = document.getElementById("random-1");
+
+                    // Get all the buttons inside the container
+                    var buttons = container.querySelectorAll(".droppable");
+
+                    // Convert NodeList to array for easier manipulation
+                    var buttonsArray = Array.from(buttons);
+
+                    // Function to shuffle array elements using Fisher-Yates algorithm
+                    function shuffleArray(array) {
+                         for (let i = array.length - 1; i > 0; i--) {
+                              const j = Math.floor(Math.random() * (i + 1));
+                              [array[i], array[j]] = [array[j], array[i]];
+                         }
+                    }
+
+                    // Shuffle the buttons array
+                    shuffleArray(buttonsArray);
+
+                    // Append shuffled buttons back to the container
+                    buttonsArray.forEach(function (button) {
+                         container.appendChild(button);
+                    });
+               });
+          </script>
 
      </body>
 
