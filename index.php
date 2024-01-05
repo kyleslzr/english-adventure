@@ -170,6 +170,10 @@
                     padding: 10px;
                     border-radius: 5px;
                }
+
+               .logo-image:hover {
+                      filter: brightness(.8);
+               }
           </style>
      </head>
 
@@ -181,11 +185,8 @@
                specifically intended for the benefit
                of Grade 1 pupils. This initiative is aligned with the content presented in "Workbook for English"
                authored by Darlene Niel Panganiban of Aral Pinas.</div>
-
-
-
-
           </div>
+
           <a href="https://www.facebook.com/SanJoseAcademyBulacanFalcons" target="_blank">
                <img class="logo-image" src="SJAB LOGO.png" alt="English Adventures Logo">
           </a>

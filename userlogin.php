@@ -43,12 +43,12 @@
 
                .logo-image {
                     position: absolute;
-                    top: 18px;
-                    left: 70px;
+                    bottom: 14px;
+                    left: 22px;
                     width: auto;
-                    height: 178px;
-
-               }
+                    height: 95px;
+                    z-index: 10;
+                    }
 
                .text {
                     position: absolute;
@@ -69,24 +69,23 @@
                     border-radius: 5px;
                     background-color: #00741E;
                     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-                    outline: 4px solid #fff;
                     z-index: 2;
                }
 
                .score-label.left {
-                    left: 30px;
-                    top: 297px;
+                    left: 129px;
+                    bottom: 17px;
                     color: #fff;
-                    font-size: 24.8px;
-                    background-color: #00741E;
+                    font-size: 13.8px;
+                    background-color: #00741e9c;
                     white-space: normal;
                     display: inline-block;
-                    width: 240px;
-                    padding: 10px 10px;
+                    width: 565px;
+                    padding: 8px;
                     z-index: 3;
-                    text-align: center;
-                    font-weight: bolder;
-               }
+                    text-align: justify;
+                    line-height: 18px;
+                    }
 
                .start-button,
                .delete-button {
@@ -121,13 +120,13 @@
 
                .traveler {
                     position: absolute;
-                    bottom: -133px;
-                    right: -15px;
-                    width: 342px;
+                    bottom: 0px;
+                    right: 8px;
+                    width: 371px;
                     height: auto;
                     animation: stretchAnimation 3s infinite;
-
-               }
+                    z-index: 8;
+                    }
 
                .records {
                     position: absolute;
@@ -204,10 +203,9 @@
 
                .logo-imagee {
                     position: absolute;
-                    top: 27px;
-                    right: 24px;
+                    top: 37px;
                     width: auto;
-                    height: 102px;
+                    height: 175px;
                }
 
                login-form label {
@@ -216,27 +214,37 @@
                }
 
                .login-form input {
-                    width: 200px;
+                    width: 285px;
+                    height: 30px;
                     margin-bottom: 10px;
                     padding: 5px;
+                    border: 5px solid #00741e;
+                    border-radius: 10px;
+                    font-size: 20px;
+                    display: flex;
+                    align-items: center;
                }
 
                .login-form button {
+                    width: 140px;
+                    height: 46px;
+                    font-size: 23px;
                     padding: 5px 10px;
-                    background-color: #00741E;
-                    color: #fff;
+                    background-color: #ffcc00;
+                    color: #00741e;
                     border: none;
-                    border-radius: 3px;
+                    border-radius: 10px;
                     cursor: pointer;
                     text-align: center;
+                    font-weight: bold;
+                    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
                }
-
                .login-form .buttonb {
                     padding: 5px 10px;
-                    background-color: transparent;
+                    background-color: #ffcc0080;
                     color: #337420;
                     border: none;
-                    border-radius: 3px;
+                    border-radius: 10px;
                     cursor: pointer;
                     text-align: center;
                }
@@ -248,7 +256,20 @@
                .login-form {
                     display: flex;
                     justify-content: center;
+                    align-items: center;
+                    margin-top: 153px;
                }
+               .logo-image:hover {
+                      filter: brightness(.8);
+               }
+               .board20 {
+                    position: absolute;
+                    top: 204px;
+                    width: auto;
+                    height: 421px;
+                    z-index: -4;
+                    }
+               
           </style>
      </head>
 
@@ -258,8 +279,11 @@
           </a>
           <!-- <img class="logo" src="logo.png" alt="English Adventures Logo" -->
           </div>
-          <div class="centered-board"></div>
-          <div class="lesson-title" style="top: 52px;">Login</div>
+          <div class="lesson-title" style="top: 282px;display: flex;align-items: center;justify-content: center;"><svg xmlns="http://www.w3.org/2000/svg" height="32" width="28" viewBox="0 0 448 512" style="
+    height: 41px;
+    margin-right: 14px;
+
+"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="white" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>Login</div>
 
           <span style="color: color(srgb 0.3028 0.538 0.2358); font-size: 13px; margin: 15px 0px;">
              <?php 
@@ -273,26 +297,34 @@
                     }
              ?>
           </span>
-
+          <div class="score-label left">This&nbsp; educational&nbsp; gaming tool&nbsp; is made available &nbsp;for
+               the&nbsp; esteemed institution of<br>SAN JOSE ACADEMY OF BULACAN located in San Jose Del Monte, Bulacan,
+               specifically intended for the benefit
+               of Grade 1 pupils. This initiative is aligned with the content presented in "Workbook for English"
+               authored by Darlene Niel Panganiban of Aral Pinas.</div>
+          </div>
+          <a href="https://www.facebook.com/SanJoseAcademyBulacanFalcons" target="_blank">
+               <img class="logo-image" src="SJAB LOGO.png" alt="English Adventures Logo">
+          </a>
           <div class="login-form">
                <form class="form"  action="function/sign-in.php" method="post">
                     <div>
-                         <input type="text" id="username" name="username" placeholder="username" required>
+                         <input type="text" id="username" name="username" placeholder="Username" required>
                     </div>
 
                     <div>
-                         <input type="password" id="password" name="password" placeholder="password" required>
+                         <input type="password" id="password" name="password" placeholder="Password" required>
                     </div>
 
-                    <div style="text-align: end;">
+                    <div style="text-align: center;margin-top: 25px;">
                          <button type="button" class="buttonb" style="margin: 0px 10px;" onclick="window.location.href = 'usersignup.php';">Signup</button><button type="submit">Login</button>
                     </div>
 
                </form>
           </div>
-
-          <img class="logo-image" src="SJAB LOGO.png" alt="English Adventures Logo">
+          <img class="traveler" src="traveler.png" alt="Traveler">
           <img class="logo-imagee" src="logo.png" alt="Traveler">
+          <img class="board20" src="board20.png" alt="Traveler">
      </body>
 
 </html>
