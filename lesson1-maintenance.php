@@ -646,6 +646,9 @@
                                    </div>
                                    <div class="modal-body">
                                    <div>
+                                        <div class="alert alert-info" role="alert">
+                                             Enter a word, then choose whether it is correct or incorrect.
+                                        </div>
                                         <div class="input-group mb-3">
                                              <input type="hidden" name="round" value="<?= $lesson ?>_<?= $difficulty ?>">
                                              <input type="hidden" name="return" value="<?= $returnToThisPage ?>">
