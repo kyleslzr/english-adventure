@@ -246,7 +246,7 @@
      $count = 1;
 
      while ($row = mysqli_fetch_assoc($result)) {
-     for ($i = 1; $i <= 15; $i++) {
+     for ($i = 1; $i <= 8; $i++) {
           $inputName = "l12_average_statement_$i";
           $inputNameImage = $inputName . "_image";
           $correctNounsName = $inputName . "_correct_nouns";
@@ -279,7 +279,7 @@
      $count = 1;
 
      while ($row = mysqli_fetch_assoc($result)) {
-     for ($i = 1; $i <= 15; $i++) {
+     for ($i = 1; $i <= 8; $i++) {
           $inputName = "l12_difficult_statement_$i";
           $inputNameImage = $inputName . "_image";
           $correctNounsName = $inputName . "_correct_nouns";

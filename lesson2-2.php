@@ -383,7 +383,6 @@ include "function/retrieve-lesson-2-activities.php";
                     { word: "<?= $l22_easy_statement_8 ?>", isProper: <?= $l22_easy_statement_8_status_for_1 ?>, image: "data:image/png;base64,<?= $l22_easy_statement_8_image ?>" },
                     { word: "<?= $l22_easy_statement_9 ?>", isProper: <?= $l22_easy_statement_9_status_for_1 ?>, image: "data:image/png;base64,<?= $l22_easy_statement_9_image ?>" },
                     { word: "<?= $l22_easy_statement_10 ?>", isProper: <?= $l22_easy_statement_10_status_for_1 ?>, image: "data:image/png;base64,<?= $l22_easy_statement_10_image ?>" }
-
                ];
 
                const imageContainer = document.getElementById("imageContainer");

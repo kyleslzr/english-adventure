@@ -171,9 +171,7 @@
                     border-radius: 5px;
                }
 
-               .logo-image:hover {
-                      filter: brightness(.8);
-               }
+ 
           </style>
      </head>
 
