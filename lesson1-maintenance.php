@@ -402,7 +402,7 @@
           <div class="container-xxl">
                <div>
                     <div class="d-flex justify-content-center">
-                         <div class="lesson-title text-center">Lesson 1- Maintenance</div>
+                         <div class="lesson-title text-center">Lesson 1- Maintenance <?= $user_ID ?></div>
                     </div>
                </div>
                <div class="d-flex justify-content-center">
