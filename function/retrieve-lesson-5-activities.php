@@ -98,7 +98,7 @@
      for ($i = 1; $i <= 10; $i++) {
           $inputNameImage = "l51_difficult_word_" . $count . "_image";
           $inputNameImage2 = "l51_difficult_word_" . $count . "_image_2";
-          $inputNameImage3 = "l51_difficult_" . $count . "_image_3";
+          $inputNameImage3 = "l51_difficult_word_" . $count . "_image_3";
           $inputNameImage4 = "l51_difficult_word_" . $count . "_image_4";
           $statusName = "l51_difficult_word_" . $count . "_correct_word";
 
@@ -106,7 +106,16 @@
           ${$inputNameImage2} = base64_encode($row[$inputNameImage2]);
           ${$inputNameImage3} = base64_encode($row[$inputNameImage3]);
           ${$inputNameImage4} = base64_encode($row[$inputNameImage4]);
-          ${$statusName} = $row[$statusName];
+          
+                  // Check if the key exists in the $row array
+          if (isset($row[$statusName])) {
+               ${$statusName} = $row[$statusName];
+          } else {
+               // Handle the case where the key is not set
+               // You might want to provide a default value or take appropriate action
+               ${$statusName} = 'Default_Correct_Word';
+          }
+
 
           $count++;
      }

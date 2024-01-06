@@ -100,7 +100,7 @@
      for ($i = 1; $i <= 10; $i++) {
           $inputNameImage = "l41_difficult_word_" . $count . "_image";
           $inputNameImage2 = "l41_difficult_word_" . $count . "_image_2";
-          $inputNameImage3 = "l41_difficult_" . $count . "_image_3";
+          $inputNameImage3 = "l41_difficult_word_" . $count . "_image_3";
           $inputNameImage4 = "l41_difficult_word_" . $count . "_image_4";
           $statusName = "l41_difficult_word_" . $count . "_correct_word";
 
