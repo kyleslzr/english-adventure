@@ -24,7 +24,7 @@ include "function/retrieve-lesson-4-activities.php";
   <style>
     
     body {
-      overflow: hidden;
+      overflow: scroll;
       margin: 0;
       padding: 0;
       height: 100vh;
@@ -73,10 +73,13 @@ height: 240px;
    
   }
   #word-input {
-    width: 250px;
+    position: relative;
+    top: 18px;
+    left: 5px;
+    width: 236px;
     color: #00741E;
     text-align: center;
-    height: 60px;
+    height: 53px;
     border: none;
     padding: 5px;
     font-size: 40px;
@@ -122,24 +125,29 @@ height: 240px;
     margin-right: 570px;
     margin-top: 20px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1px;
   }
   .letter-button {
-    margin: 5px;
+    margin: 3px;
     background-color: #ffcc00;
     color: #00741E;
     border: none;
     cursor: pointer;
-    width: 78px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 32px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    
-    border-radius: 10px
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   #submit-button {
+    position: relative;
+    left: 50px;
+    top: -69px;
     padding: 2px 2px;
     background-color: #00741E;
     color: #fff;
@@ -147,12 +155,12 @@ height: 240px;
     cursor: pointer;
     margin-right: 670px;
     margin-top: -23px;
-    width: 158px;
-    height:60px;
-    font-size: 35px;
+    width: 118px;
+    height: 55px;
+    font-size: 26px;
     font-weight: bold;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    border-radius: 10px
+    border-radius: 10px;
 
   }
   .right-container {
@@ -426,21 +434,32 @@ height: 240px;
     <input type="text" id="word-input" placeholder="">
   </div>
   <div class="letters-container">
-    <button class="letter-button" onclick="addLetter('a')">A</button>
-    <button class="letter-button" onclick="addLetter('c')">C</button>
-    <button class="letter-button" onclick="addLetter('d')">D</button>
-    <button class="letter-button" onclick="addLetter('e')">E</button>
-    <button class="letter-button" onclick="addLetter('b')">B</button>
-    <button class="letter-button" onclick="addLetter('i')">I</button>
-    <button class="letter-button" onclick="addLetter('h')">H</button>
-    <button class="letter-button" onclick="addLetter('w')">W</button>
-    <button class="letter-button" onclick="addLetter('n')">N</button>
-    <button class="letter-button" onclick="addLetter('o')">O</button>
-    <button class="letter-button" onclick="addLetter('p')">P</button>
-    <button class="letter-button" onclick="addLetter('r')">R</button>
-    <button class="letter-button" onclick="addLetter('x')">X</button>
-    <button class="letter-button" onclick="addLetter('g')">G</button>
-    <button class="letter-button" onclick="addLetter('u')">U</button>
+  <button class="letter-button" onclick="addLetter('a')">A</button>
+  <button class="letter-button" onclick="addLetter('b')">B</button>
+  <button class="letter-button" onclick="addLetter('c')">C</button>
+  <button class="letter-button" onclick="addLetter('d')">D</button>
+  <button class="letter-button" onclick="addLetter('e')">E</button>
+  <button class="letter-button" onclick="addLetter('g')">G</button>
+  <button class="letter-button" onclick="addLetter('h')">H</button>
+  <button class="letter-button" onclick="addLetter('i')">I</button>
+  <button class="letter-button" onclick="addLetter('j')">J</button>
+  <button class="letter-button" onclick="addLetter('k')">K</button>
+  <button class="letter-button" onclick="addLetter('l')">L</button>
+  <button class="letter-button" onclick="addLetter('m')">M</button>
+  <button class="letter-button" onclick="addLetter('n')">N</button>
+  <button class="letter-button" onclick="addLetter('o')">O</button>
+  <button class="letter-button" onclick="addLetter('p')">P</button>
+  <button class="letter-button" onclick="addLetter('q')">Q</button>
+  <button class="letter-button" onclick="addLetter('r')">R</button>
+  <button class="letter-button" onclick="addLetter('s')">S</button>
+  <button class="letter-button" onclick="addLetter('t')">T</button>
+  <button class="letter-button" onclick="addLetter('u')">U</button>
+  <button class="letter-button" onclick="addLetter('v')">V</button>
+  <button class="letter-button" onclick="addLetter('w')">W</button>
+  <button class="letter-button" onclick="addLetter('x')">X</button>
+  <button class="letter-button" onclick="addLetter('y')">Y</button>
+  <button class="letter-button" onclick="addLetter('z')">Z</button>
+
   </div>
 <div class="button-container">
   <button id="submit-button" onclick="checkAnswer()">SUBMIT</button>

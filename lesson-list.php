@@ -43,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['logout'])) {
                     text-align: center;
                     color: #fff;
                     position: relative;
+                    overflow: hidden;
                }
 
                .logo-image {

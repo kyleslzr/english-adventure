@@ -30,7 +30,7 @@ include "function/retrieve-lesson-1-activity-1.php";
                html {
                     width: 1535.2px;
                     height: 747px;
-                    overflow: scroll;
+                    overflow: hidden;
                     background-color: green;
 
                }
@@ -43,7 +43,7 @@ include "function/retrieve-lesson-1-activity-1.php";
                     background-image: url('cute_background8.jpg');
                     background-size: cover;
                     background-repeat: no-repeat;
-                    background-position-y: -71px;
+                    background-position-y: -80px;
                     font-family: Arial, sans-serif;
                     display: flex;
                     justify-content: flex-start;
@@ -52,6 +52,7 @@ include "function/retrieve-lesson-1-activity-1.php";
                     text-align: center;
                     color: #fff;
                     position: relative;
+                    z-index: -1;
                }
 
                .button-container {
@@ -194,7 +195,7 @@ include "function/retrieve-lesson-1-activity-1.php";
                     width: 700px;
                     position: absolute;
                     bottom: -73.5px;
-                    z-index: -2;
+                    z-index: -1;
                     left: -500px;
                     animation: slideOutRight 12s linear infinite;
                     animation-fill-mode: forwards;
@@ -309,7 +310,7 @@ include "function/retrieve-lesson-1-activity-1.php";
                     top: 190px;
                     animation: stretchAnimation 3s infinite;
                     /* Adjust the duration and iteration count as needed */
-                    z-index: 1;
+                    z-index: -2;
                }
 
                .retry-button {

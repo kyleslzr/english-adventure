@@ -355,7 +355,7 @@ include "function/retrieve-lesson-title-direction-url.php";
                <div class="lesson-labels recognizing-sounds">
                     <div class="lesson-label" style="padding: 10px 41px; width: 700px;"><?= $lesson1 ?></div>
                     <div class="lesson-btn">
-                         <a href="#" class="tutor-button" onclick="showTutorialVideo()">
+                         <a style="background-color: #ffdf7e;" href="#" class="tutor-button" onclick="showTutorialVideo()">
                               <div style="
            display: flex;
            align-items: center;
@@ -441,7 +441,7 @@ include "function/retrieve-lesson-title-direction-url.php";
 ">
                     <div class="lesson-label"><?= $lesson2 ?></div>
                     <div class="lesson-btn">
-                         <a href="#" class="tutor-button" onclick="showTutorialVideo2()">
+                         <a style="background-color: #ffdf7e;"href="#" class="tutor-button" onclick="showTutorialVideo2()">
                               <div style="
            display: flex;
            align-items: center;
@@ -451,7 +451,7 @@ include "function/retrieve-lesson-title-direction-url.php";
                                         viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                                         <style>
                                              svg {
-                                                  fill: #00741e
+                                                  fill: #00741e 
                                              }
                                         </style>
                                         <path

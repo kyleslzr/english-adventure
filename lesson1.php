@@ -24,7 +24,7 @@ include "function/retrieve-lesson-title-direction-url.php";
                     background-image: url('cute_background8.jpg');
                     background-size: cover;
                     background-repeat: no-repeat;
-                    background-position-y: -71px;
+                    background-position-y: -80px;
                     font-family: Arial, sans-serif;
                     display: flex;
                     justify-content: flex-start;
@@ -33,6 +33,7 @@ include "function/retrieve-lesson-title-direction-url.php";
                     text-align: center;
                     color: #fff;
                     position: relative;
+                    z-index: -1;
                }
 
                .logo-image {
@@ -165,7 +166,7 @@ include "function/retrieve-lesson-title-direction-url.php";
                .recognizing-sounds {
                     position: relative;
                     left: -220px;
-                    top: 220px;
+                    top: 195px;
                }
 
                .recognizing-nouns {
@@ -407,7 +408,8 @@ include "function/retrieve-lesson-title-direction-url.php";
                <div class="lesson-labels recognizing-sounds">
                     <div class="lesson-label"><?= $lesson1 ?></div>
                     <div class="lesson-btn">
-                         <a href="#" class="tutor-button" onclick="showTutorialVideo()">
+                         <a style="background-color: #ffdf7e;" 
+          href="#" class="tutor-button" onclick="showTutorialVideo()">
                               <div style="
            display: flex;
            align-items: center;
@@ -488,7 +490,9 @@ include "function/retrieve-lesson-title-direction-url.php";
                <div class="lesson-labels recognizing-sounds">
                     <div class="lesson-label"><?= $lesson2 ?></div>
                     <div class="lesson-btn">
-                         <a href="#" class="tutor-button" onclick="showTutorialVideo2()">
+                         <a style="
+    background-color: #ffdf7e;
+" href="#" class="tutor-button" onclick="showTutorialVideo2()">
                               <div style="
            display: flex;
            align-items: center;

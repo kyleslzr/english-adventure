@@ -365,7 +365,7 @@ include "function/retrieve-lesson-title-direction-url.php";
                <div class="lesson-labels recognizing-sounds">
                     <div class="lesson-label" style="padding: 10px 92px;"><?= $lesson1 ?></div>
                     <div class="lesson-btn">
-                         <a href="#" class="tutor-button" onclick="showTutorialVideo()">
+                         <a style="background-color: #ffdf7e;" href="#" class="tutor-button" onclick="showTutorialVideo()">
                               <div style="
            display: flex;
            align-items: center;
@@ -449,7 +449,7 @@ include "function/retrieve-lesson-title-direction-url.php";
                <div class="lesson-labels recognizing-sounds">
                     <div class="lesson-label"><?= $lesson2 ?></div>
                     <div class="lesson-btn">
-                         <a href="#" class="tutor-button" onclick="showTutorialVideo2()">
+                         <a style="background-color: #ffdf7e;" href="#" class="tutor-button" onclick="showTutorialVideo2()">
                               <div style="
            display: flex;
            align-items: center;
