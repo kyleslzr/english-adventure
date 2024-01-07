@@ -116,10 +116,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['logout'])) {
 
                .home-button {
                     position: absolute;
-                    top: 150px;
+                    top: 151px;
                     transform: scale(0.10);
                     z-index: 10;
-                    right: -485px;
+                    left: -485px;
                }
 
                .records {
@@ -151,7 +151,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['logout'])) {
 
                .custom-button {
                     position: absolute;
-                    bottom: 144px;
+                    bottom: 134px;
                     right: -479px;
                     transform: scale(0.10);
                }
@@ -199,7 +199,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['logout'])) {
 
           <form id="logout-form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                <button type="submit" id="log-out-btn" style="border: none; background-color: transparent;" class="home-button">
-                    <img src="logout.png" style="margin-top: -15px;"/>
+                    <img src="logout.png" style="margin-top: -35px;"/>
                </button>
                <input type="hidden" name="logout" value="1">
           </form>

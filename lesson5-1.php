@@ -42,140 +42,136 @@ include "function/retrieve-lesson-5-activities.php";
                }
 
                .game-container {
-                    flex: 1;
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: flex-start;
-                    max-width: 700px;
-                    max-height: 700px;
-                    margin-left: 594px;
-                    margin-top: 87px;
-                    display: grid;
-                    grid-template-columns: repeat(2, 1fr);
-                    grid-column-gap: 20px;
-                    /* Column gap of 20px */
-                    grid-row-gap: 15px;
-                    /* Row gap of 10px */
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: 700px;
+    max-height: 700px;
+    margin-left: 453px;
+    margin-top: 78px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 15px;
 
-               }
+    
+  }
+  .image-box img {
+     width: 250px;
+height: 240px;
+    outline: 5px solid #fff;
+    box-shadow: 4px 4px 8px rgba(2, 2, 2, 3);
+    border-radius: 15px;
+  }
+  .word-container {
+    flex: 1;
+    text-align: center;
+    max-width: 250px;
+    max-height: 40px;
+    margin-right: 580px;
+    margin-top: 80px;
+   
+  }
+  #word-input {
+    position: relative;
+    top: 81px;
+    left: 22px;
+    width: 242px;
+    color: #00741E;
+    text-align: center;
+    height: 49px;
+    border: none;
+    padding: 5px;
+    font-size: 40px;
+    font-weight: bold;
+    outline: 5px solid #00741E;
+    border-radius: 10px;
+    text-transform: uppercase;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
 
-               .image-box img {
-                    width: 250px;
-                    height: 240px;
-                    outline: 5px solid #fff;
-                    box-shadow: 4px 4px 8px rgba(2, 2, 2, 3);
-                    border-radius: 15px;
-               }
+  .erase-container {
+    position: absolute;
+    bottom: 82px; /* Adjust the positioning as needed */
+    right: 367px; /* Adjust the positioning as needed */
+  }
 
-               .word-container {
-                    flex: 1;
-                    text-align: center;
-                    max-width: 250px;
-                    max-height: 40px;
-                    margin-right: 580px;
-                    margin-top: 80px;
+  #erase-button {
+    background-color: #EE2F41;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
+    font-weight: bold;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin-bottom: -12px;
+    margin-right: 1px;
+}
+       .button-clicked {
+      background-color: #FFC107;
+      color: #000;
+      transition: background-color 1s, color 1s;
+    }
 
-               }
-
-               #word-input {
-                    width: 250px;
-                    /* Occupy the full available width */
-                    color: #00741E;
-                    text-align: center;
-                    height: 60px;
-                    border: none;
-                    padding: 5px;
-                    /* Add padding for a comfortable typing area */
-                    font-size: 40px;
-                    font-weight: bold;
-                    outline: 5px solid #00741E;
-                    border-radius: 15px;
-                    text-transform: uppercase;
-                    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
-               }
-
-               .erase-container {
-                    position: absolute;
-                    bottom: 84px;
-                    /* Adjust the positioning as needed */
-                    right: 367px;
-                    /* Adjust the positioning as needed */
-               }
-
-               #erase-button {
-                    background-color: #EE2F41;
-                    color: #fff;
-                    border: none;
-                    cursor: pointer;
-                    width: 90px;
-                    height: 60px;
-                    font-size: 22px;
-                    font-weight: bold;
-                    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-                    border-radius: 10px;
-                    margin-bottom: -18px;
-               }
-
-               .button-clicked {
-                    background-color: #FFC107;
-                    color: #000;
-                    transition: background-color 1s, color 1s;
-               }
-
-               .letters-container {
-
-                    flex: 1;
-                    text-align: center;
-                    padding: 20px;
-                    max-width: 570px;
-                    max-height: 570px;
-                    margin-right: 570px;
-                    margin-top: 20px;
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    gap: 1px;
-               }
-
-               .letter-button {
-                    margin: 5px;
-                    background-color: #ffcc00;
-                    color: #00741E;
-                    border: none;
-                    cursor: pointer;
-                    width: 78px;
-                    height: 60px;
-                    font-weight: bold;
-                    font-size: 40px;
-                    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-
-                    border-radius: 10px
-               }
-
-               #submit-button {
-                    padding: 2px 2px;
-                    background-color: #00741E;
-                    color: #fff;
-                    border: none;
-                    cursor: pointer;
-                    margin-right: 670px;
-                    margin-top: -23px;
-                    width: 158px;
-                    height: 60px;
-                    font-size: 35px;
-                    font-weight: bold;
-                    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-                    border-radius: 10px
-               }
-
-               .right-container {
-                    flex: 1;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
+    .letters-container {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    max-width: 575px;
+    max-height: 570px;
+    margin-right: 538px;
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+  }
+  .letter-button {
+    margin: 3px;
+    background-color: #ffcc00;
+    color: #00741E;
+    border: none;
+    cursor: pointer;
+    width: 55px;
+    height: 55px;
+    font-weight: bold;
+    font-size: 32px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #submit-button {
+    position: relative;
+    left: 50px;
+    top: -69px;
+    padding: 2px 2px;
+    background-color: #00741E;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-right: 637px;
+    margin-top: -19px;
+    width: 123px;
+    height: 55px;
+    font-size: 26px;
+    font-weight: bold;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+  .right-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
 
-               }
+  }
 
                .button-container {
                     margin-top: 10px;
@@ -497,28 +493,37 @@ include "function/retrieve-lesson-5-activities.php";
                     <input type="text" id="word-input" placeholder="">
                </div>
                <div class="letters-container">
-                    <button class="letter-button" onclick="addLetter('a')">A</button>
-                    <button class="letter-button" onclick="addLetter('c')">C</button>
-                    <button class="letter-button" onclick="addLetter('d')">D</button>
-                    <button class="letter-button" onclick="addLetter('e')">E</button>
-                    <button class="letter-button" onclick="addLetter('b')">B</button>
-                    <button class="letter-button" onclick="addLetter('i')">I</button>
-                    <button class="letter-button" onclick="addLetter('k')">K</button>
-                    <button class="letter-button" onclick="addLetter('l')">L</button>
-                    <button class="letter-button" onclick="addLetter('n')">N</button>
-                    <button class="letter-button" onclick="addLetter('o')">O</button>
-                    <button class="letter-button" onclick="addLetter('p')">P</button>
-                    <button class="letter-button" onclick="addLetter('r')">R</button>
-                    <button class="letter-button" onclick="addLetter('s')">S</button>
-                    <button class="letter-button" onclick="addLetter('t')">T</button>
-                    <button class="letter-button" onclick="addLetter('u')">U</button>
+  <button class="letter-button" onclick="addLetter('a')">A</button>
+  <button class="letter-button" onclick="addLetter('b')">B</button>
+  <button class="letter-button" onclick="addLetter('c')">C</button>
+  <button class="letter-button" onclick="addLetter('d')">D</button>
+  <button class="letter-button" onclick="addLetter('e')">E</button>
+  <button class="letter-button" onclick="addLetter('g')">G</button>
+  <button class="letter-button" onclick="addLetter('h')">H</button>
+  <button class="letter-button" onclick="addLetter('i')">I</button>
+  <button class="letter-button" onclick="addLetter('j')">J</button>
+  <button class="letter-button" onclick="addLetter('k')">K</button>
+  <button class="letter-button" onclick="addLetter('l')">L</button>
+  <button class="letter-button" onclick="addLetter('m')">M</button>
+  <button class="letter-button" onclick="addLetter('n')">N</button>
+  <button class="letter-button" onclick="addLetter('o')">O</button>
+  <button class="letter-button" onclick="addLetter('p')">P</button>
+  <button class="letter-button" onclick="addLetter('q')">Q</button>
+  <button class="letter-button" onclick="addLetter('r')">R</button>
+  <button class="letter-button" onclick="addLetter('s')">S</button>
+  <button class="letter-button" onclick="addLetter('t')">T</button>
+  <button class="letter-button" onclick="addLetter('u')">U</button>
+  <button class="letter-button" onclick="addLetter('v')">V</button>
+  <button class="letter-button" onclick="addLetter('w')">W</button>
+  <button class="letter-button" onclick="addLetter('x')">X</button>
+  <button class="letter-button" onclick="addLetter('y')">Y</button>
+  <button class="letter-button" onclick="addLetter('z')">Z</button>
                </div>
                <div class="button-container">
                     <button id="submit-button" onclick="checkAnswer()">SUBMIT</button>
-
                     <div class="erase-container">
-                         <button id="erase-button" onclick="eraseLetters()">ERASE</button>
-                    </div>
+  <button id="erase-button" onclick="eraseLetters()"><svg xmlns="http://www.w3.org/2000/svg" height="32" width="36" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M576 128c0-35.3-28.7-64-64-64H205.3c-17 0-33.3 6.7-45.3 18.7L9.4 233.4c-6 6-9.4 14.1-9.4 22.6s3.4 16.6 9.4 22.6L160 429.3c12 12 28.3 18.7 45.3 18.7H512c35.3 0 64-28.7 64-64V128zM271 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg></button>
+</div>
                </div>
           </div>
 

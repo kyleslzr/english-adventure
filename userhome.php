@@ -21,7 +21,7 @@ echo $user_ID;
                     margin: 0;
                     padding: 0;
                     height: 100vh;
-                    background-image: url('cute_background1.jpg');
+                    background-image: url('mbg.jpg');
                     background-size: cover;
                     background-repeat: no-repeat;
                     background-position: center center;
@@ -32,6 +32,21 @@ echo $user_ID;
                     text-align: center;
                     color: #fff;
                     position: relative;
+               }
+
+               .lesson-title {
+                    position: absolute;
+                    font-size: 60px;
+                    font-weight: bold;
+                    margin-top: 50px;
+                    background-color: #00741E;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    cursor: default;
+                    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+                    outline: 4px solid #fff;
+                    top: 0;
+                    left: 37%;
                }
 
                .logo-image {
@@ -51,10 +66,14 @@ echo $user_ID;
                }
 
                .lesson-buttons {
+                    position: absolute;
                     display: flex;
-                    flex-direction: column;
+                    flex-direction: row;
                     gap: 15px;
-                    margin-left: 300px;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    flex-wrap: wrap;
                }
 
                .lesson-button {
@@ -165,6 +184,9 @@ echo $user_ID;
      </head>
 
      <body>
+          <div>
+          <div class="lesson-title">Maintenance</div>
+          </div>
 
           <audio autoplay loop controlsList="nodownload" style="display: none">
                <source src="music.ogg" type="audio/mpeg">
@@ -174,22 +196,13 @@ echo $user_ID;
           <a class="home-button" href="index.php">
                <img src="home1.png" style="
     margin-right: 15px;
-    margin-top: -15px;
+    margin-top: -32px;
 " />
 
           </a>
-          <a class="book" href="English Workbook Grade 1.pdf" target="_blank">
-               <img src="book1.png" style="
-                    position: absolute;
-                    bottom: -2px;
-                    left: -5px;
-                    width: 260px;
-                    z-index: 2;
-                    " />
-          </a>
+
           <img class="logo-image" src="logo.png" alt="English Adventures Logo">
 
-          <img class="traveler-image" src="traveler3.png" alt="Traveler">
           <div class="lesson-buttons">
 
                <a href="lesson1-maintenance.php" class="lesson-button">

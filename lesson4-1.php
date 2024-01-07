@@ -24,7 +24,7 @@ include "function/retrieve-lesson-4-activities.php";
   <style>
     
     body {
-      overflow: scroll;
+      overflow: hidden;
       margin: 0;
       padding: 0;
       height: 100vh;
@@ -48,12 +48,13 @@ include "function/retrieve-lesson-4-activities.php";
     justify-content: flex-start;
     max-width: 700px;
     max-height: 700px;
-    margin-left: 594px;
-    margin-top: 87px;
+    margin-left: 453px;
+    margin-top: 78px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 20px; /* Column gap of 20px */
-    grid-row-gap: 15px; /* Row gap of 10px */
+    grid-column-gap: 20px;
+    grid-row-gap: 15px;
+
     
   }
   .image-box img {
@@ -74,18 +75,18 @@ height: 240px;
   }
   #word-input {
     position: relative;
-    top: 18px;
-    left: 5px;
-    width: 236px;
+    top: 81px;
+    left: 22px;
+    width: 242px;
     color: #00741E;
     text-align: center;
-    height: 53px;
+    height: 49px;
     border: none;
     padding: 5px;
     font-size: 40px;
     font-weight: bold;
     outline: 5px solid #00741E;
-    border-radius: 15px;
+    border-radius: 10px;
     text-transform: uppercase;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -101,32 +102,32 @@ height: 240px;
     color: #fff;
     border: none;
     cursor: pointer;
-    width: 90px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     font-size: 22px;
     font-weight: bold;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
-    margin-bottom: -18px;
-  }
+    margin-bottom: -12px;
+    margin-right: 1px;
+}
        .button-clicked {
       background-color: #FFC107;
       color: #000;
       transition: background-color 1s, color 1s;
     }
 
-  .letters-container {
-  
+    .letters-container {
     flex: 1;
     text-align: center;
     padding: 20px;
-    max-width: 570px;
+    max-width: 575px;
     max-height: 570px;
-    margin-right: 570px;
-    margin-top: 20px;
+    margin-right: 538px;
+    margin-top: 80px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
+    gap: 4px;
   }
   .letter-button {
     margin: 3px;
@@ -153,15 +154,14 @@ height: 240px;
     color: #fff;
     border: none;
     cursor: pointer;
-    margin-right: 670px;
+    margin-right: 637px;
     margin-top: -23px;
-    width: 118px;
+    width: 123px;
     height: 55px;
     font-size: 26px;
     font-weight: bold;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
-
   }
   .right-container {
     flex: 1;
@@ -465,7 +465,7 @@ height: 240px;
   <button id="submit-button" onclick="checkAnswer()">SUBMIT</button>
 
 <div class="erase-container">
-  <button id="erase-button" onclick="eraseLetters()">ERASE</button>
+  <button id="erase-button" onclick="eraseLetters()"><svg xmlns="http://www.w3.org/2000/svg" height="32" width="36" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M576 128c0-35.3-28.7-64-64-64H205.3c-17 0-33.3 6.7-45.3 18.7L9.4 233.4c-6 6-9.4 14.1-9.4 22.6s3.4 16.6 9.4 22.6L160 429.3c12 12 28.3 18.7 45.3 18.7H512c35.3 0 64-28.7 64-64V128zM271 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg></button>
 </div>
 
 <script>

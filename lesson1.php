@@ -166,7 +166,7 @@ include "function/retrieve-lesson-title-direction-url.php";
                .recognizing-sounds {
                     position: relative;
                     left: -220px;
-                    top: 195px;
+                    top: 215px;
                }
 
                .recognizing-nouns {

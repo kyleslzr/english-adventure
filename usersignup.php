@@ -308,8 +308,8 @@
                          <input type="password" id="password" name="password" placeholder="Password" required>
                     </div>
 
-                    <div style="text-align: center;margin-top: 25px;">
-                         <button type="button" class="buttonb" style="margin: 0px 10px;" onclick="window.location.href = 'userlogin.php';">Login</button><button type="submit">Signup</button>
+                    <div style="text-align: center;margin-top: 13px;">
+                         <button type="button" class="buttonb" style="margin: 0px 5px;" onclick="window.location.href = 'userlogin.php';">Login</button><button style="margin: 0px 5px;" type="submit">Signup</button>
                     </div>
                     
              <?php 

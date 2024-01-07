@@ -335,7 +335,7 @@
                     margin: 0;
                     padding: 0;
                     height: 100vh;
-                    background-image: url('cute_background8.jpg');
+                    background-image: url('mbg.jpg');
                     background-size: cover;
                     background-repeat: no-repeat;
                     font-family: Arial, sans-serif;
@@ -344,9 +344,9 @@
                .lesson-title {
                     font-size: 50px;
                     font-weight: bold;
-                    margin-top: 50px;
+                    margin-top: 16px;
                     background-color: #00741E;
-                    padding: 10px 20px;
+                    padding: 0px 20px;
                     border-radius: 5px;
                     cursor: default;
                     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
