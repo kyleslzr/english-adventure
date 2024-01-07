@@ -326,7 +326,7 @@ include "function/retrieve-lesson-2-activities.php";
                <img src="home.png" />
           </a>
 
-          <div class="animal-container" id="random">
+          <div class="animal-container">
                <button class="animal-button" draggable="true" data-animal="<?= $l21_difficult_word_1_correct_word ?>" pronounce-sound="<?= $l21_difficult_word_1_correct_word ?>"><?= $l21_difficult_word_1_correct_word ?></button>
                <button class="animal-button" draggable="true" data-animal="<?= $l21_difficult_word_2_correct_word ?>" pronounce-sound="<?= $l21_difficult_word_2_correct_word ?>"><?= $l21_difficult_word_2_correct_word ?></button>
                <button class="animal-button" draggable="true" data-animal="<?= $l21_difficult_word_3_correct_word ?>" pronounce-sound="<?= $l21_difficult_word_3_correct_word ?>"><?= $l21_difficult_word_3_correct_word ?></button>
@@ -336,7 +336,7 @@ include "function/retrieve-lesson-2-activities.php";
                <button class="animal-button" draggable="true" data-animal="<?= $l21_difficult_word_7_correct_word ?>" pronounce-sound="<?= $l21_difficult_word_7_correct_word ?>"><?= $l21_difficult_word_7_correct_word ?></button>
                <button class="animal-button" draggable="true" data-animal="<?= $l21_difficult_word_8_correct_word ?>" pronounce-sound="<?= $l21_difficult_word_8_correct_word ?>"><?= $l21_difficult_word_8_correct_word ?></button>
           </div>
-          <div class="droppable-container" id="random2">
+          <div class="droppable-container">
                <div class="droppable" data-animal="<?= $l21_difficult_word_1_correct_word ?>">
                     <img src='data:image/png;base64,<?= $l21_difficult_word_1_image ?>'/>
                     <div class="animal-word"></div>

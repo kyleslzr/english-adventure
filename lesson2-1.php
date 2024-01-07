@@ -192,7 +192,7 @@ include "function/retrieve-lesson-2-activities.php";
                }
 
                .droppable img {
-                    max-width: 70%;
+                    max-width: 100%;
                     max-height: 70%;
                     margin: 0 auto;
                }

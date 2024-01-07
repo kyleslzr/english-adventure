@@ -5,8 +5,6 @@
           header("Location: lesson-list.php");
           exit();
      }
-
-     $user_ID = $_SESSION['user_ID'];
 ?>
 
 <!DOCTYPE html>

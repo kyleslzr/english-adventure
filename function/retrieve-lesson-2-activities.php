@@ -1,5 +1,7 @@
 <!-- lesson 1 activity -->
 <?php
+error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
+
      include "function/conn.php";
 
      // Check for a successful connection
@@ -28,6 +30,7 @@
           ${$inputNameImage} = base64_encode($row[$inputNameImage]);
           // ${$statusName} = $row[$statusName];
           ${$statusName} = strtoupper($row[$statusName]);
+          
 
           $count++;
      }

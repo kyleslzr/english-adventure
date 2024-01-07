@@ -63,7 +63,7 @@ include "function/retrieve-lesson-1-activity-1.php";
                     /* Adjust as needed */
                     max-height: 1000px;
                     z-index: 5;
-                    margin-top: 152px;
+                    margin-top: 142px;
                }
 
                .word-button {
@@ -146,7 +146,7 @@ include "function/retrieve-lesson-1-activity-1.php";
                .move {
                     width: 420px;
                     position: absolute;
-                    bottom: -4.5px;
+                    bottom: -14px;
                     z-index: -2;
                     left: -500px;
                     animation: slideOutRight 6s linear infinite;
@@ -158,7 +158,7 @@ include "function/retrieve-lesson-1-activity-1.php";
                .movee {
                     width: 420px;
                     position: absolute;
-                    bottom: -4.5px;
+                    bottom: -14px;
                     z-index: -2;
                     left: -500px;
                     animation: slideOutRight 6s linear infinite;
@@ -170,7 +170,7 @@ include "function/retrieve-lesson-1-activity-1.php";
                .moveee {
                     width: 420px;
                     position: absolute;
-                    bottom: -4.5px;
+                    bottom: -14px;
                     z-index: -2;
                     left: -500px;
                     animation: slideOutRight 6s linear infinite;
@@ -182,7 +182,7 @@ include "function/retrieve-lesson-1-activity-1.php";
                .moveeee {
                     width: 420px;
                     position: absolute;
-                    bottom: -4.5px;
+                    bottom: -14px;
                     z-index: -2;
                     left: -500px;
                     animation: slideOutRight 6s linear infinite;
@@ -194,8 +194,8 @@ include "function/retrieve-lesson-1-activity-1.php";
                .moveeeee {
                     width: 700px;
                     position: absolute;
-                    bottom: -73.5px;
-                    z-index: -1;
+                    bottom: -80px;
+                    z-index: -2;
                     left: -500px;
                     animation: slideOutRight 12s linear infinite;
                     animation-fill-mode: forwards;

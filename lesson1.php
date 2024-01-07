@@ -234,7 +234,7 @@ include "function/retrieve-lesson-title-direction-url.php";
                .move {
                     width: 420px;
                     position: absolute;
-                    bottom: -4.5px;
+                    bottom: -14px;
                     z-index: -2;
                     left: -500px;
                     animation: slideOutRight 6s linear infinite;
@@ -246,7 +246,7 @@ include "function/retrieve-lesson-title-direction-url.php";
                .movee {
                     width: 420px;
                     position: absolute;
-                    bottom: -4.5px;
+                    bottom: -14px;
                     z-index: -2;
                     left: -500px;
                     animation: slideOutRight 6s linear infinite;
@@ -258,7 +258,7 @@ include "function/retrieve-lesson-title-direction-url.php";
                .moveee {
                     width: 420px;
                     position: absolute;
-                    bottom: -4.5px;
+                    bottom: -14px;
                     z-index: -2;
                     left: -500px;
                     animation: slideOutRight 6s linear infinite;
@@ -270,7 +270,7 @@ include "function/retrieve-lesson-title-direction-url.php";
                .moveeee {
                     width: 420px;
                     position: absolute;
-                    bottom: -4.5px;
+                    bottom: -14px;
                     z-index: -2;
                     left: -500px;
                     animation: slideOutRight 6s linear infinite;

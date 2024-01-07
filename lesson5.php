@@ -233,7 +233,7 @@ include "function/retrieve-lesson-title-direction-url.php";
                     position: absolute;
                     width: 1536px;
                     z-index: -2;
-                    top: -50px;
+                    top: -54px;
                }
 
                .move {

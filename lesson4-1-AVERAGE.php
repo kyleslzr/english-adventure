@@ -48,7 +48,7 @@ include "function/retrieve-lesson-4-activities.php";
     justify-content: flex-start;
     max-width: 700px;
     max-height: 700px;
-    margin-left: 453px;
+    margin-left: 563px;
     margin-top: 78px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -76,11 +76,11 @@ height: 240px;
   #word-input {
     position: relative;
     top: 81px;
-    left: 22px;
+    left: 20px;
     width: 242px;
     color: #00741E;
     text-align: center;
-    height: 49px;
+    height: 39px;
     border: none;
     padding: 5px;
     font-size: 40px;
@@ -108,8 +108,11 @@ height: 240px;
     font-weight: bold;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
-    margin-bottom: -12px;
     margin-right: 1px;
+    position: absolute;
+    top: -38px;
+    left: -58px;
+
 }
        .button-clicked {
       background-color: #FFC107;
@@ -469,16 +472,16 @@ height: 240px;
 </div>
 
 <script>
-  const initialImages = ['data:image/png;base64,<?= $l41_average_word_1_image ?>', 'data:image/png;base64,<?= $l41_average_word_1_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_1_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_1_image_3 ?>'];
-  const duckImages = ['data:image/png;base64,<?= $l41_average_word_2_image ?>', 'data:image/png;base64,<?= $l41_average_word_2_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_2_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_2_image_3 ?>'];
-  const padImages = ['data:image/png;base64,<?= $l41_average_word_3_image ?>', 'data:image/png;base64,<?= $l41_average_word_3_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_3_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_3_image_3 ?>'];
-  const dotImages = ['data:image/png;base64,<?= $l41_average_word_4_image ?>', 'data:image/png;base64,<?= $l41_average_word_4_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_4_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_4_image_3 ?>'];
-  const budImages = ['data:image/png;base64,<?= $l41_average_word_5_image ?>', 'data:image/png;base64,<?= $l41_average_word_5_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_5_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_5_image_3 ?>'];
-  const potImages = ['data:image/png;base64,<?= $l41_average_word_6_image ?>', 'data:image/png;base64,<?= $l41_average_word_6_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_6_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_6_image_3 ?>'];
-  const ratImages = ['data:image/png;base64,<?= $l41_average_word_7_image ?>', 'data:image/png;base64,<?= $l41_average_word_7_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_7_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_7_image_3 ?>'];
-  const kitImages = ['data:image/png;base64,<?= $l41_average_word_8_image ?>', 'data:image/png;base64,<?= $l41_average_word_8_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_8_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_8_image_3 ?>'];
-  const tenImages = ['data:image/png;base64,<?= $l41_average_word_9_image ?>', 'data:image/png;base64,<?= $l41_average_word_9_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_9_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_9_image_3 ?>'];
-  const topImages = ['data:image/png;base64,<?= $l41_average_word_10_image ?>', 'data:image/png;base64,<?= $l41_average_word_10_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_10_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_10_image_3 ?>'];
+  const initialImages = ['data:image/png;base64,<?= $l41_average_word_1_image ?>', 'data:image/png;base64,<?= $l41_average_word_1_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_1_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_1_image_4 ?>'];
+  const duckImages = ['data:image/png;base64,<?= $l41_average_word_2_image ?>', 'data:image/png;base64,<?= $l41_average_word_2_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_2_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_2_image_4 ?>'];
+  const padImages = ['data:image/png;base64,<?= $l41_average_word_3_image ?>', 'data:image/png;base64,<?= $l41_average_word_3_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_3_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_3_image_4 ?>'];
+  const dotImages = ['data:image/png;base64,<?= $l41_average_word_4_image ?>', 'data:image/png;base64,<?= $l41_average_word_4_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_4_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_4_image_4 ?>'];
+  const budImages = ['data:image/png;base64,<?= $l41_average_word_5_image ?>', 'data:image/png;base64,<?= $l41_average_word_5_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_5_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_5_image_4 ?>'];
+  const potImages = ['data:image/png;base64,<?= $l41_average_word_6_image ?>', 'data:image/png;base64,<?= $l41_average_word_6_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_6_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_6_image_4 ?>'];
+  const ratImages = ['data:image/png;base64,<?= $l41_average_word_7_image ?>', 'data:image/png;base64,<?= $l41_average_word_7_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_7_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_7_image_4 ?>'];
+  const kitImages = ['data:image/png;base64,<?= $l41_average_word_8_image ?>', 'data:image/png;base64,<?= $l41_average_word_8_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_8_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_8_image_4 ?>'];
+  const tenImages = ['data:image/png;base64,<?= $l41_average_word_9_image ?>', 'data:image/png;base64,<?= $l41_average_word_9_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_9_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_9_image_4 ?>'];
+  const topImages = ['data:image/png;base64,<?= $l41_average_word_10_image ?>', 'data:image/png;base64,<?= $l41_average_word_10_image_2 ?>', 'data:image/png;base64,<?= $l41_average_word_10_image_3 ?>', 'data:image/png;base64,<?= $l41_average_word_10_image_4 ?>'];
   let currentAnswer = '';
   let correctAnswer = '<?= $l41_average_word_1_correct_word ?>'; // Set the initial correct answer
 

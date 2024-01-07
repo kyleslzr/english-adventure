@@ -86,7 +86,7 @@ include "function/retrieve-lesson-1-activity-2.php";
                }
 
                #question-container img {
-                    max-width: 500px;
+                    max-width: 800px;
                     max-height: 300px;
                     height: auto;
                     border-radius: 10px;
@@ -397,7 +397,7 @@ include "function/retrieve-lesson-1-activity-2.php";
                .move {
                     width: 420px;
                     position: absolute;
-                    bottom: -4.5px;
+                    bottom: -14px;
                     z-index: -2;
                     left: -500px;
                     animation: slideOutRight 6s linear infinite;
@@ -409,7 +409,7 @@ include "function/retrieve-lesson-1-activity-2.php";
                .movee {
                     width: 420px;
                     position: absolute;
-                    bottom: -4.5px;
+                    bottom: -14px;
                     z-index: -2;
                     left: -500px;
                     animation: slideOutRight 6s linear infinite;
@@ -421,7 +421,7 @@ include "function/retrieve-lesson-1-activity-2.php";
                .moveee {
                     width: 420px;
                     position: absolute;
-                    bottom: -4.5px;
+                    bottom: -14px;
                     z-index: -2;
                     left: -500px;
                     animation: slideOutRight 6s linear infinite;
@@ -433,7 +433,7 @@ include "function/retrieve-lesson-1-activity-2.php";
                .moveeee {
                     width: 420px;
                     position: absolute;
-                    bottom: -4.5px;
+                    bottom: -14px;
                     z-index: -2;
                     left: -500px;
                     animation: slideOutRight 6s linear infinite;
@@ -445,7 +445,7 @@ include "function/retrieve-lesson-1-activity-2.php";
                .moveeeee {
                     width: 700px;
                     position: absolute;
-                    bottom: -73.5px;
+                    bottom: -80px;
                     z-index: -2;
                     left: -500px;
                     animation: slideOutRight 12s linear infinite;
