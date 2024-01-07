@@ -163,6 +163,10 @@
           $theCorrectAnswer = $inputName . "_status";
           // l22_easy_statement_1_choice_answer_1
 
+             // Initialize variables with default values
+    ${$correctAnswer1} = 'Default_Correct_Word';
+    ${$correctAnswer2} = 'Default_Correct_Word';
+
           ${$inputName} = $row[$inputName];
           ${$correctAnswer1} = $row[$correctAnswer1];
           ${$correctAnswer2} = $row[$correctAnswer2];
@@ -171,6 +175,9 @@
           ${$inputName. "_status_for_2"} = $row[$theCorrectAnswer] === 2 ? 'true' : 'false';
           ${$statusName} = $row[$statusName] === 'correct' ? 'true' : 'false';
           ${$inputNameImage} = base64_encode($row[$inputNameImage]);
+
+
+               
 
           $count++;
      }

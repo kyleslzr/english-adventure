@@ -129,7 +129,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['logout'])) {
                     font-size: 30px;
                     display: flex;
                     align-items: center;
-
                }
 
                .start-button {
