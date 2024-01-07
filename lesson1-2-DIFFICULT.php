@@ -86,7 +86,7 @@ include "function/retrieve-lesson-1-activity-2.php";
                }
 
                #question-container img {
-                    max-width: 800px;
+                    max-width: 500px;
                     max-height: 300px;
                     height: auto;
                     border-radius: 10px;

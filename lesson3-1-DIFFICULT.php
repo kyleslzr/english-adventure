@@ -154,7 +154,7 @@ include "function/retrieve-lesson-3-activities.php";
 
                .container {
                     display: flex;
-                    margin-top: 50px;
+                    margin-top: -78px;
                     margin-left: 80px;
                     width: 800px;
                     flex-wrap: wrap;
@@ -184,17 +184,17 @@ include "function/retrieve-lesson-3-activities.php";
                .answer-input {
                     position: relative;
                     z-index: 10;
-                    width: 180px;
-                    /* Occupy the full available width */
+                    width: 189px;
                     color: #00741e;
                     text-align: center;
                     border: 5px solid #00741e;
-                    height: 35px;
+                    height: 47px;
                     font-size: 28px;
                     font-weight: bold;
                     text-transform: uppercase;
                     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
                     outline: none;
+                    margin-top: 5PX;
                }
 
                .centered-boardd {

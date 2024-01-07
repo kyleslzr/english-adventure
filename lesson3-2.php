@@ -99,13 +99,14 @@ include "function/retrieve-lesson-3-activities.php";
                }
 
                .word-image {
-                    max-width: 200px;
-                    max-height: 193px;
+                    max-width: 290px;
+                    max-height: 215px;
                     height: auto;
-                    outline: 15px solid #00741E;
+                    outline: 15px solid white;
+                    box-shadow: 12px 12px 12px rgba(3, 3, 3, 3);
                     border-radius: 5px;
-
                }
+
 
                .logo-image {
                     position: absolute;

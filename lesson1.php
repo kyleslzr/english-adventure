@@ -282,7 +282,7 @@ include "function/retrieve-lesson-title-direction-url.php";
                .moveeeee {
                     width: 700px;
                     position: absolute;
-                    bottom: -73.5px;
+                    bottom: -80px;
                     z-index: -2;
                     left: -500px;
                     animation: slideOutRight 12s linear infinite;
