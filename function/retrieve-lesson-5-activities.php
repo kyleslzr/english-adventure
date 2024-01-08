@@ -103,10 +103,16 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
           $inputNameImage4 = "l51_difficult_word_" . $count . "_image_4";
           $statusName = "l51_difficult_word_" . $count . "_correct_word";
 
-          ${$inputNameImage} = base64_encode($row[$inputNameImage]);
-          ${$inputNameImage2} = base64_encode($row[$inputNameImage2]);
-          ${$inputNameImage3} = base64_encode($row[$inputNameImage3]);
-          ${$inputNameImage4} = base64_encode($row[$inputNameImage4]);
+          // ${$inputNameImage} = base64_encode($row[$inputNameImage]);
+          // ${$inputNameImage2} = base64_encode($row[$inputNameImage2]);
+          // ${$inputNameImage3} = base64_encode($row[$inputNameImage3]);
+          // ${$inputNameImage4} = base64_encode($row[$inputNameImage4]);
+
+          ${$inputNameImage} = isset($row[$inputNameImage]) ? base64_encode($row[$inputNameImage]) : '';
+          ${$inputNameImage2} = isset($row[$inputNameImage2]) ? base64_encode($row[$inputNameImage2]) : '';
+          ${$inputNameImage3} = isset($row[$inputNameImage3]) ? base64_encode($row[$inputNameImage3]) : '';
+          ${$inputNameImage4} = isset($row[$inputNameImage4]) ? base64_encode($row[$inputNameImage4]) : '';
+
           
                   // Check if the key exists in the $row array
           if (isset($row[$statusName])) {
@@ -163,10 +169,6 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
           $correctAnswer2 = $inputName . "_choice_answer_2";
           $theCorrectAnswer = $inputName . "_status";
           // l22_easy_statement_1_choice_answer_1
-
-             // Initialize variables with default values
-    ${$correctAnswer1} = 'Default_Correct_Word';
-    ${$correctAnswer2} = 'Default_Correct_Word';
 
           ${$inputName} = $row[$inputName];
           ${$correctAnswer1} = $row[$correctAnswer1];

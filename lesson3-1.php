@@ -152,7 +152,7 @@ include "function/retrieve-lesson-3-activities.php";
 
                .container {
                     display: flex;
-                    margin-top: -78px;
+                    margin-top: 49px;
                     margin-left: 80px;
                     width: 800px;
                     flex-wrap: wrap;

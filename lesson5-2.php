@@ -99,7 +99,7 @@ include "function/retrieve-lesson-5-activities.php";
                }
 
                .word-image {
-                    max-width: 200px;
+                    max-width: 300px;
                     max-height: 193px;
                     height: auto;
                     outline: 15px solid #00741E;

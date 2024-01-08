@@ -48,7 +48,7 @@ include "function/retrieve-lesson-5-activities.php";
     justify-content: flex-start;
     max-width: 700px;
     max-height: 700px;
-    margin-left: 453px;
+    margin-left: 566px;
     margin-top: 78px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -74,13 +74,13 @@ height: 240px;
    
   }
   #word-input {
-    position: relative;
+     position: relative;
     top: 81px;
     left: 22px;
-    width: 242px;
+    width: 234px;
     color: #00741E;
     text-align: center;
-    height: 49px;
+    height: 39px;
     border: none;
     padding: 5px;
     font-size: 40px;
@@ -98,7 +98,7 @@ height: 240px;
   }
 
   #erase-button {
-    background-color: #EE2F41;
+     background-color: #EE2F41;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -108,8 +108,9 @@ height: 240px;
     font-weight: bold;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
-    margin-bottom: -12px;
-    margin-right: 1px;
+    top: -39px;
+    left: -56px;
+    position: absolute;
 }
        .button-clicked {
       background-color: #FFC107;
